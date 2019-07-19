@@ -1,0 +1,47 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e909"
+    },
+    "user_id": "<id>",
+    "username": "<string>",
+    "imgUrl": "<string>",
+    "zipcode": "<integer>",
+    "description": "<string>", 
+    "experience": ["< 1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"],
+    "communicationStyle": {                                                              
+        "text": "<boolean>",
+        "video": "<boolean>",
+        "inperson": "<boolean>"
+    },
+    "skills": {
+        "python": ["beginner", "intermediate", "advanced", "none"],
+        "php":  ["beginner", "intermediate", "advanced", "none"],
+        "ruby":  ["beginner", "intermediate", "advanced", "none"],
+        "c++":  ["beginner", "intermediate", "advanced", "none"],
+        "c#":  ["beginner", "intermediate", "advanced", "none"],
+        "ux":  ["beginner", "intermediate", "advanced", "none"],
+        "web-design":  ["beginner", "intermediate", "advanced", "none"],
+        "sql":  ["beginner", "intermediate", "advanced", "none"],
+        "java":  ["beginner", "intermediate", "advanced", "none"],
+        "rust":  ["beginner", "intermediate", "advanced", "none"],
+        "go":  ["beginner", "intermediate", "advanced", "none"],
+        "swift":  ["beginner", "intermediate", "advanced", "none"],
+        "kotlin":  ["beginner", "intermediate", "advanced", "none"],
+        "other1":  ["beginner", "intermediate", "advanced", "none"],
+        "other2": ["beginner", "intermediate", "advanced", "none"],
+        "other3": ["beginner", "intermediate", "advanced", "none"]
+    },
+    "contact": {
+        "website": "<string>",
+        "github": "<string>",
+        "linkedin": "<string>"
+    },
+
+    "published": "<string>",
+    "shortDescription": "<string>",
+    "otherDetails": {
+        "lookingForCoFounder": "<boolean>",
+        "availableForHire": "<boolean>",
+        "availableForProjects": "<boolean>"
+    }
+}
