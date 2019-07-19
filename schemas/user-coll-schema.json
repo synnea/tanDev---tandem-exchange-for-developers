@@ -1,0 +1,8 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e909"
+    },
+    "email": "<string>",
+    "password": "<hashed_password_string>",
+    "username": "<string>"
+}
