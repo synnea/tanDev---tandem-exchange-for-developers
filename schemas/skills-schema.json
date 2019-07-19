@@ -1,9 +1,0 @@
-{
-    "_id": {
-        "$oid": "580100f4da893943d393e989"
-    },
-    "user_id": "<id>",
-    "python": "<boolean>" {
-        "level": ["beginner", "intermediate", "advanced"]
-    },
-}
