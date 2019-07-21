@@ -1,0 +1,44 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e911"
+    },
+    "username": "send-nodes",
+    "imgUrl": "https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "zipcode": "10117",
+  "shortDescription": "Designer looking to learn the ropes of backend development",
+    "description": "7+ years experience as a web designer, both freelance and at start-ups in Europe and Silicon Valley. Can you help me wrap my head around backend technologies for a personal project I’m working on? I’m also potentially open to finding a co-founder.",
+    "experience": "5-7 years",
+    "communicationStyle": {                                                            
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "web-design": "advanced",
+        "ux":  "advanced",
+        "css": "advanced",
+        "javascript": "intermediate"
+    },
+   "desiredSkills": {
+        "python": true,
+        "php": true,
+        "c#": true,
+        "Server-side management": true,
+        "java": true
+    },
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+ 
+    "otherDetails": {
+        "lookingForCoFounder": true,
+        "availableForHire": true,
+        "availableForProjects": true
+    },
+    "published": "06-07-2019"
+ }
+ 
+ 
