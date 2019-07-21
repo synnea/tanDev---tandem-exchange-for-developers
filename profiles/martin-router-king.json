@@ -1,0 +1,46 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e910"
+    },
+    "username": "martin-router-king",
+    "imgUrl": "https://www.pexels.com/photo/person-holding-node-text-1261427/",
+    "zipcode": "10119",
+  "shortDescription": "Color-blind coder looking for someone with a flair for design",
+    "description": "Began coding as a kid of 10 in the suburbs in Mumbai. I am now living in Berlin working for a start-up as a backend engineer. For a side project of my own, I’m looking for someone with good design skills to help out. Preferably, you should also know good UX practices.",
+    "experience": "10+ years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": false
+    },
+    "skills": {
+        "javascript": "advanced",
+        "php":  "advanced",
+        "c++": "intermediate"
+    },
+   "desiredSkills": {
+        "ux": true,
+        "web-design": true,
+        "swift": true
+ 
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": true,
+        "availableForHire": true,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "05-07-2019"
+ }
+ 
+ 
+ 

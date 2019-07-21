@@ -1,0 +1,42 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e910"
+    },
+    "username": "pythongirl",
+    "imgUrl": "https://www.pexels.com/photo/asian-female-asian-girl-cute-girl-fashion-model-2033768/",
+    "zipcode": "10247",
+  "shortDescription": "<string>",
+    "description": "AI and Machine learning enthusiast fluent in Python looking to add JavaScript and elementary web design to her skillset.",
+    "experience": "1-3 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "python": "advanced",
+        "php":  "advanced",
+        "c++": "intermediate"
+    },
+   "desiredSkills": {
+        "ux": true,
+        "web-design": true,
+        "swift": true
+ 
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+    "published": "03-07-2019"
+ }
+ 
+ 
