@@ -1,0 +1,46 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e924"
+    },
+    "username": "weeb-developer",
+    "imgUrl": "https://live.staticflickr.com/4889/30840711517_c8a7c9c303_b.jpg",
+    "zipcode": "10245",
+  "shortDescription": "I'll show you my back if you show me your front. (But sorry, that's not me in my profile pic)",
+    "description": "'Sup. I moved to Tempelhof from Canada recently. Despite my provocative tag line, I'm actually interested in a serious skill tandem. I'd like to meet up once or twice a week. I hope to transition to a full-stack developer within the year. I'd like to get serious in a frontend JS framework, not fussy about which one.",
+    "experience": "3-5 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "php": "advanced",
+        "python": "advanced",
+        "java": "advanced",
+        "c++": "intermediate"
+
+    },
+   "desiredSkills": {
+        "angular": true,
+        "react": true,
+        "vue": true    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "22-07-2019"
+ }
+ 
+ 
+ 
