@@ -67,8 +67,8 @@ profile = db.profile.find_one({"_id": ObjectId(profile_id)})
 
 favorites = []
 
-if heart is click:
-    favorites = favorites.append[user_id]
+if heart is clicked:
+    favorites = favorites.append[username]
 
 
 
@@ -140,6 +140,16 @@ def delete_profile(username):
 
 
 db.profile.insert_one("display":"true");
+
+
+## My Profile - Editing
+
+def edit_myprofile(username):
+    profile.update( {'username': username},
+    {
+.... replace all fields with request.form.get
+    })
+    return redirect(url_for('myprofile'))
 
 
     
