@@ -1,0 +1,47 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e917"
+    },
+    "username": "Big Back Clock",
+    "imgUrl": "https://www.pngkey.com/png/detail/13-130180_clock-clipart-disney-beauty-and-the-beast-clock.png",
+    "zipcode": "10178",
+  "shortDescription": "Went with the times, so I'm a mobile dev. Then realized I had no idea about how computers work. Oops.",
+    "description": "I recently graduated from a bootcamp and have since been working as an iOS developer. I never learned algorithms, data structures or any of that computer science-y stuff, so looking for someone with more formal CS schooling to partner up for an idea of mine.",
+    "experience": "1 year",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "swift": "advanced",
+        "rust": "intermediate",
+        "css":  "advanced",
+        "kotlin": "intermediate"
+    },
+   "desiredSkills": {
+        "python": true,
+        "php": true,
+        "java": true,
+        "ruby": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": true,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "10-07-2019"
+ }
+ 
+ 
+ 

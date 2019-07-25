@@ -1,0 +1,47 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e923"
+    },
+    "username": "Jisoo",
+    "imgUrl": "https://images.pexels.com/photos/2102710/pexels-photo-2102710.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "zipcode": "10245",
+  "shortDescription": "Korean designer and frontend dev. Will teach you in exchange for a mobile dev language (or German!)",
+    "description": "Hello everyone. I'm Jisoo, 27 years old, in Berlin for 2 years now. I'm a frontend dev and designer at a big startup here in the city, but I'm looking to learn either Swift or Kotlin. Also, I'm currently B1 in German, can you help me?",
+    "experience": "3-5 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "javascript": "advanced",
+        "web-design": "advanced",
+        "angular": "advanced",
+        "vue": "intermediate",
+        "ux": "intermediate"
+
+    },
+   "desiredSkills": {
+        "swift": true,
+        "kotlin": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": false,
+        "availableForProjects": false
+    },
+ 
+ 
+    "published": "22-07-2019"
+ }
+ 
+ 
+ 

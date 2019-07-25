@@ -1,0 +1,51 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e916"
+    },
+    "username": "hypertext-assassin",
+    "imgUrl": "https://images.pexels.com/photos/480/city-man-person-face.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "zipcode": "10176",
+  "shortDescription": "Frontend dev here. Open to learning more about basicall anything you're willing to teach me.",
+    "description": "6 professional years experience with HTML, CSS3 and JS. Had my humble beginnings hacking MySpace with custom CSS and quite possibly unleasing eye cancer upon the world. Interested in broadening my expertise. Backend, data, design? Show me what you got.",
+    "experience": "5-10 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "javascript": "advanced",
+        "css":  "advanced",
+        "react": "advanced",
+        "web-design": "beginner"
+    },
+   "desiredSkills": {
+        "rust": true,
+        "go": true,
+        "swift": true,
+        "python": true,
+        "php": true,
+        "kotlin": true,
+        "java": true,
+        "ruby": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "05-07-2019"
+ }
+ 
+ 
+ 

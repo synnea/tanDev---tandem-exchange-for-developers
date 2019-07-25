@@ -1,0 +1,50 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e925"
+    },
+    "username": "binary beats",
+    "imgUrl": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "zipcode": "10249",
+  "shortDescription": "New to Berlin, frontend dev and jazzhop musician.",
+    "description": "First the basics: frontend dev, 3 years of experience with JS, Vue in particular. New to Berlin, originally from Chicago. I'm mostly here to find like-minded people to hang out with, really, but if we manage to teach each other something, so much the better!",
+    "experience": "3-5 years",
+    "communicationStyle": {                                                             
+        "text": false,
+        "video": false,
+        "inperson": true
+    },
+    "skills": {
+        "javascript": "advanced",
+        "angular": "intermediate",
+        "vue": "advanced",
+        "css": "advanced"
+
+    },
+   "desiredSkills": {
+"java": true,
+"perl": true,
+"python": true,
+"ruby": true,
+"c++": true,
+"c#": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": false,
+        "availableForProjects": false
+    },
+ 
+ 
+    "published": "23-07-2019"
+ }
+ 
+ 
+ 

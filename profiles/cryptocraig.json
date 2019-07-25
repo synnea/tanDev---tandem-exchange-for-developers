@@ -1,0 +1,49 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e922"
+    },
+    "username": "Cryptocraig",
+    "imgUrl": "https://images.pexels.com/photos/6969/sunset-summer-hipster-pipe.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "zipcode": "10243",
+  "shortDescription": "My name is Craig, and I'm a cryptocurrency enthusiast. Can you help me build a startup in the field?",
+    "description": "Hello to all interested parties reading this. I'm an American living in Berlin and I've been bitten by the blockchain bug. Looking for someone proficient in the main cryptocurrency languages such as Python, Perl, C++, etc. I can offer 3 years of frontend experience and an eye for design.",
+    "experience": "5-7 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "javascript": "advanced",
+        "css": "advanced",
+        "react": "advanced",
+        "angular": "intermediate",
+        "vue": "beginner"
+
+    },
+   "desiredSkills": {
+        "perl": true,
+        "python": true,
+        "java": true,
+        "c++": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": true,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "20-07-2019"
+ }
+ 
+ 
+ 

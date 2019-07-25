@@ -1,0 +1,47 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e915"
+    },
+    "username": "kungfoosian",
+    "imgUrl": "https://images.pexels.com/photos/2265247/pexels-photo-2265247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "zipcode": "10176",
+  "shortDescription": "Frontend expert looking",
+    "description": "Data scientist proficient in Python looking for someone to introduce me to all this newfangles stuff. What's a Rust? I hear that's hot.",
+    "experience": "10+ years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": false
+    },
+    "skills": {
+        "python": "advanced",
+        "php":  "advanced",
+        "c++": "advanced",
+        "javascript": "intermediate"
+    },
+   "desiredSkills": {
+        "rust": true,
+        "go": true,
+        "swift": true
+ 
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "05-07-2019"
+ }
+ 
+ 
+ 

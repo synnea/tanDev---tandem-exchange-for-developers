@@ -1,0 +1,49 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e921"
+    },
+    "username": "Nom Chompsky",
+    "imgUrl": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "zipcode": "10243",
+  "shortDescription": "I'm a German backend developer. I have no sense of humor, but I can definitely screw in a lightbulb.",
+    "description": "Studied at TU Berlin. Yes, I am a 'real' Berliner, born in the DDR! I got a (slightly boring) job as a Java developer. Looking to make some connections with other developers and designers.",
+    "experience": "5-7 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "javascript": "intermediate",
+        "ruby": "advanced",
+        "java": "advanced",
+        "perl": "advanced"
+
+    },
+   "desiredSkills": {
+        "css": true,
+        "react": true,
+        "web-design": true,
+        "ux": true,
+        "python": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": false,
+        "availableForHire": true,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "20-07-2019"
+ }
+ 
+ 
+ 

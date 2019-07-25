@@ -16,6 +16,10 @@
     },
     "skills": {
         "python": ["beginner", "intermediate", "advanced", "none"],
+        "css":["beginner", "intermediate", "advanced", "none"],
+        "react": ["beginner", "intermediate", "advanced", "none"],
+        "vue": ["beginner", "intermediate", "advanced", "none"],
+        "angular": ["beginner", "intermediate", "advanced", "none"],
         "php":  ["beginner", "intermediate", "advanced", "none"],
         "ruby":  ["beginner", "intermediate", "advanced", "none"],
         "c++":  ["beginner", "intermediate", "advanced", "none"],
@@ -28,17 +32,18 @@
         "go":  ["beginner", "intermediate", "advanced", "none"],
         "swift":  ["beginner", "intermediate", "advanced", "none"],
         "kotlin":  ["beginner", "intermediate", "advanced", "none"],
-        "other1":  ["beginner", "intermediate", "advanced", "none"],
-        "other2": ["beginner", "intermediate", "advanced", "none"],
-        "other3": ["beginner", "intermediate", "advanced", "none"]
+        "perl": ["beginner", "intermediate", "advanced", "none"]
     },
     "desiredSkills": {
         "python": "<boolean>",
         "php": "<boolean>",
         "ruby": "<boolean>",
+        "react": "<boolean>",
         "c++": "<boolean>",
         "c#": "<boolean>",
         "ux": "<boolean>",
+        "vue": "<boolean>",
+        "angular": "<boolean>",
         "web-desig": "<boolean>",
         "sql": "<boolean>",
         "java": "<boolean>",
@@ -46,9 +51,7 @@
         "go": "<boolean>",
         "swift": "<boolean>",
         "kotlin": "<boolean>",
-        "other1": "<boolean>",
-        "other2": "<boolean>",
-        "other3": "<boolean>"
+        "perl": "<boolean>"
 
     },
     "contact": {

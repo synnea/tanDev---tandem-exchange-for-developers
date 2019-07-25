@@ -1,0 +1,50 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e926"
+    },
+    "username": "roboolean",
+    "imgUrl": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "district": "Mitte",
+  "shortDescription": "Experienced software engineer with a big idea. Looking for frontend and mobile devs.",
+    "description": "Hello everyone, my name is Prisha, I've been in Berlin for 3 years. I quit my job recently to focus on an AI/machine learning startup. If you are a frontend or mobile dev and are interested in these topics, I'd love to hear from you!",
+    "experience": "5-7 years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": true
+    },
+    "skills": {
+        "ruby": "advanced",
+        "perl": "advanced",
+        "java": "advanced",
+        "c#": "advanced"
+
+    },
+   "desiredSkills": {
+       "kotlin": true,
+       "swift": true,
+       "javascript": true,
+       "react": true,
+       "angular": true,
+       "vue": true
+   },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": true,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "24-07-2019"
+ }
+ 
+ 
+ 

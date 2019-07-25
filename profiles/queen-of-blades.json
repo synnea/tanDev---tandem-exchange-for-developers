@@ -1,0 +1,44 @@
+{
+    "_id": {
+        "$oid": "580100f4da893943d393e920"
+    },
+    "username": "Queen of Blades",
+    "imgUrl": "http://i.imgur.com/K4g8pBY.png",
+    "zipcode": "10179",
+  "shortDescription": "Insert witty tagline. But basically: I design, you code.",
+    "description": "I'm an old-school designer, still remembering the days of GeoCities and Angelfire. I'm looking for a frontend developer to realize a few ideas of mine. Preferably you're older than 25, know who my profile pic represents, and keep a steady supply of blood in your coffeestream.",
+    "experience": "10+ years",
+    "communicationStyle": {                                                             
+        "text": true,
+        "video": true,
+        "inperson": false
+    },
+    "skills": {
+        "web-design": "advanced",
+        "ux": "advanced"
+    },
+   "desiredSkills": {
+        "javascript": true,
+        "css": true,
+        "react": true
+    },
+ 
+    "contact": {
+        "website": "http://examplewebsite.com",
+        "github": "https://www.github.com/user",
+        "linkedin": "http://www.linkedin.com",
+        "instagram": "http://www.instagram.com"
+    },
+
+    "otherDetails": {
+        "lookingForCoFounder": true,
+        "availableForHire": false,
+        "availableForProjects": true
+    },
+ 
+ 
+    "published": "15-07-2019"
+ }
+ 
+ 
+ 
