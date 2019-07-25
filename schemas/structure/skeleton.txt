@@ -53,7 +53,7 @@ if request.method == *POST*:
                 if selected: add to filter
                 return list of selected filters
 
-        display matching database entries
+        display matching database entries where display=true;
 
     
 ### Profile(user xzy)
@@ -107,7 +107,6 @@ newdoc.password = request.get(password)
 
 ## Logout page
 
-# log out page
 @app.route('/logout')
 def logout():
     session.clear()
@@ -139,6 +138,8 @@ def delete_profile(username):
 
 ### MyProfile - Publishing
 
+
+db.profile.insert_one("display":"true");
 
 
     
