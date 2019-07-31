@@ -1,4 +1,6 @@
-@import "_variables.scss";
+@import "_base.scss";
+@import "_components.scss";
+@import "_layout.scss";
 
 #hero {
     background: url("/static/img/hero.jpg") center center no-repeat fixed;
