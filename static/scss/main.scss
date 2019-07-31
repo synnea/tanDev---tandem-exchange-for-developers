@@ -1,3 +1,6 @@
-html {
-    background: red;
+@import "_variables.scss";
+
+#hero {
+    background: url("/static/img/tandev-bg.jpeg");
+    height: 80vh;
 }

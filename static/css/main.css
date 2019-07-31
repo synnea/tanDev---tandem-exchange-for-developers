@@ -1,4 +1,5 @@
-html {
-  background: red;
+#hero {
+  background: url("/static/img/tandev-bg.jpeg");
+  height: 80vh;
 }
 /*# sourceMappingURL=main.css.map */
