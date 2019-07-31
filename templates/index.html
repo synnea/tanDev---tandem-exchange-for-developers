@@ -1,7 +1,40 @@
 {% extends 'base.html' %}
 
-{% block content %}
+  <!-- BEGIN NAVBAR -->
 
-<h1>Template Test</h1>
+  <div class="container-fluid navbar-container">
+    <nav class="navbar navbar-light bg-light fixed-top navbar-expand" id="navbar">
 
-{% endblock %}
+
+        <!-- Dropdown Button -->
+
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <!-- Navbar Menu Items -->
+
+
+            <ul class="navbar-nav nav-fill w-100" id="menuButtons">
+
+                <li class="active nav-item mr-2" id="navHome">
+                    <div class="nav-link hvr-bounce-in"><img src="" class="img-fluid home-img"
+                            alt="home-icon"></div>
+                </li>
+
+
+                <li class="active nav-item mr-2 mt-0 mb-0 d-xs-none d-md-block " id="navAbout">
+                    <a class="nav-link hvr-bounce-in" id="navAboutLink">About</a>
+                </li>
+
+                <li class="active nav-item mr-2 mt-0 mb-0 d-xs-none d-md-block " id="navSearch">
+                    <a class="nav-link hvr-bounce-in" id="navSearchLink">Search</a>
+                </li>
+
+                <li class="active nav-item mr-2 mt-0 mb-0 d-xs-none d-md-block" id="navLogReg">
+                    <a class="nav-link hvr-bounce-in" id="navLogRegLink">Login/Register</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</div>
