@@ -1,5 +1,6 @@
 #hero {
-  background: url("/static/img/tandev-bg.jpeg");
+  background: url("/static/img/hero.jpg") center center cover no-repeat fixed;
+  background-size: cover;
   height: 80vh;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,10 @@
 @import "_variables.scss";
 
 #hero {
-    background: url("/static/img/tandev-bg.jpeg");
+    background: url("/static/img/hero.jpg") center center cover no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 80vh;
 }
