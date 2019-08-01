@@ -26,6 +26,7 @@
 </head>
 
 <body>
+    
     {% block content %} {% endblock %}
 
 
@@ -37,9 +38,9 @@
 
     <!-- Project scripts, with conditional loading depending on the active page -->
 
-    {% if active == 'index' %}
 
-    <script src="{{url_for('static', filename='js/index.js')}}
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
    
 </body>
 
