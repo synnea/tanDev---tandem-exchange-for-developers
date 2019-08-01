@@ -19,21 +19,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         type="text/css" />
 
-       
 
 
-        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}" />
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}" />
 </head>
 
 <body>
-    
+
+    <!-- Navigation -->
+
+    {% include 'layouts/nav.html' %}
+
+    <!-- Add page content  -->
+
     {% block content %} {% endblock %}
 
 
     <!-- Bootstrap scripts -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>  
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 
     <!-- Project scripts, with conditional loading depending on the active page -->
@@ -43,7 +49,7 @@
 
     {% endif %}
 
-   
+
 </body>
 
 </html>
