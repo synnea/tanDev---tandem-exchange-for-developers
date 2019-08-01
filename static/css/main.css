@@ -1,9 +1,17 @@
 #hero {
-  background: url("/static/img/hero.jpg") center center no-repeat fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  height: 80vh;
+  background: url("/static/img/puzzle-lg.jpg") no-repeat;
+  background-size: cover !important;
+  background-position: center top;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  height: 60vh;
+}
+
+@media (max-width: 576px) {
+  #hero {
+    background: url("/static/img/puzzle-xs.jpg") no repeat;
+    background-size: cover;
+    height: 50vh;
+  }
 }
 /*# sourceMappingURL=main.css.map */

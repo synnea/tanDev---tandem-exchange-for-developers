@@ -2,11 +2,3 @@
 @import "_components.scss";
 @import "_layout.scss";
 
-#hero {
-    background: url("/static/img/hero.jpg") center center no-repeat fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    height: 80vh;
-}
