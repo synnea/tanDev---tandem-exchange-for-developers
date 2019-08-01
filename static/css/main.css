@@ -26,14 +26,22 @@
 
 @media (min-width: 1200px) {
   #hero {
-    background: url("/static/img/puzzle-lg.jpg");
+    background: url("/static/img/puzzle-lg-cropped.jpg");
     background-position: center center;
     background-size: cover;
     height: 100vh;
   }
 }
 
+#index-carousel {
+  height: 100vh;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+.bg-light {
+  background-color: transparent !important;
 }
 /*# sourceMappingURL=main.css.map */
