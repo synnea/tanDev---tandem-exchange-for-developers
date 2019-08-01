@@ -9,9 +9,26 @@
 
 @media (min-width: 992px) {
   #hero {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  #hero {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #hero {
     background: url("/static/img/puzzle-md.jpg");
     background-position: center center;
-    height: 70vh;
   }
 }
 
@@ -20,7 +37,6 @@
     background: url("/static/img/puzzle-lg.jpg");
     background-position: center center;
     background-size: cover;
-    height: 80vh;
   }
 }
 
@@ -29,8 +45,33 @@
     background: url("/static/img/puzzle-lg-cropped.jpg");
     background-position: center center;
     background-size: cover;
+  }
+}
+
+#hero-content {
+  height: 60vh;
+}
+
+@media (min-width: 992px) {
+  #hero-content {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-content {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  #hero-content {
     height: 100vh;
   }
+}
+
+#h-text {
+  text-align: center;
 }
 
 #index-carousel {

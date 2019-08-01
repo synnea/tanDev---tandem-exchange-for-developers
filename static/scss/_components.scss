@@ -1,5 +1,21 @@
 // This SCSS file contains components which are used only once across the various pages.
 
+@mixin height-scaling {
+    height: 60vh;
+
+    @media (min-width: $bp-tablet) {
+        height: 70vh;
+    }
+
+    @media (min-width: $bp-ipadpro) {
+        height: 80vh;
+    }
+
+    @media (min-width: $bp-desktop) {
+        height: 100vh;
+    }
+}
+
 
 #hero {
     background: url("/static/img/puzzle-uncropped-xs.jpg") center center no-repeat;
@@ -7,12 +23,11 @@
     background-position: center center;
     -moz-background-size: cover !important;
     -o-background-size: cover !important;
-    height: 60vh;
+    @include height-scaling;
 
     @media (min-width: $bp-tablet) {
         background: url("/static/img/puzzle-md.jpg");
         background-position: center center;
-        height: 70vh;
 
     }
 
@@ -20,7 +35,6 @@
         background: url("/static/img/puzzle-lg.jpg");
         background-position: center center;
         background-size: cover;
-        height: 80vh;
 
     }
 
@@ -28,14 +42,19 @@
         background: url("/static/img/puzzle-lg-cropped.jpg");
         background-position: center center;
         background-size: cover;
-        height: 100vh;
 
     }
 
 }
 
+#hero-content {
+    @include height-scaling;
+}
+
+#h-text {
+    text-align: center;
+}
+
 #index-carousel {
     height: 100vh;
 }
-
-
