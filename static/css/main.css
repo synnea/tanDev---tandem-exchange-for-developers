@@ -44,4 +44,8 @@ html {
 .bg-light {
   background-color: transparent !important;
 }
+
+.bg-light.scrolled {
+  background-color: #1C2541 !important;
+}
 /*# sourceMappingURL=main.css.map */
