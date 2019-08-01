@@ -82,6 +82,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.navLogo {
+  height: 5vh;
+  width: 10vh;
+  font-size: 1.5em;
+}
+
+.nav-link {
+  color: #0B132B !important;
+  font-size: 1.5em;
+}
+
+.nav-link.scrolled {
+  color: #B0C3D2 !important;
+}
+
 .bg-light {
   background-color: transparent !important;
 }

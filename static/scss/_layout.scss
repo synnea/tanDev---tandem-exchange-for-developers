@@ -1,16 +1,30 @@
-
 // This SCSS file contains layouts and commonly occuring components across the pages.
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
-  //   Navbar
+//   Navbar
+
+.navLogo {
+    height: 5vh;
+    width: 10vh;
+    font-size: 1.5em;
+}
+
+.nav-link {
+    color: $darkblue !important;
+    font-size: 1.5em;
+}
+
+.nav-link.scrolled {
+    color: $lightblue !important;
+}
 
 .bg-light {
     background-color: transparent !important;
 }
 
 .bg-light.scrolled {
-    background-color: $brightmidblue !important;  
+    background-color: $brightmidblue !important;
 }
