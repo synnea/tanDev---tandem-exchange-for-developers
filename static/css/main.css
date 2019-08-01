@@ -80,6 +80,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .navLogo {
@@ -90,7 +91,8 @@ html {
 
 .nav-link {
   color: #0B132B !important;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link.scrolled {

@@ -4,35 +4,36 @@
 <!-- BEGIN NAVBAR -->
 
 <div class="container-fluid navbar-container">
-    <nav class="navbar navbar-light bg-light fixed-top navbar-expand" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
 
+        <a class="navLogo hvr-bounce-in" href="#"><img src="/static/img/logos/tandev_v1_brightlightblue.svg"
+                class="img-fluid navLogo" alt="logo"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <!-- Dropdown Button -->
 
 
-        <div class="container-fluid collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse"  id="navbarNavDropdown">
 
             <!-- Navbar Menu Items -->
 
 
-            <ul class="navbar-nav nav-fill w-100" id="menuButtons">
+            <ul class="navbar-nav nav-fill w-100">
 
-                <li class="active nav-item mr-2" id="navHome">
-                    <div class="navbar-logo hvr-bounce-in"><img src="/static/img/logos/tandev_v1_brightlightblue.svg" class="img-fluid navLogo" alt="logo">
-                    </div>
+                <li class="nav-item mr-2 mt-0 mb-0" id="navAbout">
+                    <a class="nav-link hvr-bounce-in" href="#" id="navAboutLink">About</a>
                 </li>
 
-
-                <li class="nav-item mr-2 mt-0 mb-0 d-xs-none d-md-block " id="navAbout">
-                    <a class="nav-link hvr-bounce-in" id="navAboutLink">About</a>
+                <li class="nav-item mr-2 mt-0 mb-0" id="navSearch">
+                    <a class="nav-link hvr-bounce-in" href="#" id="navSearchLink">Search</a>
                 </li>
 
-                <li class="nav-item mr-2 mt-0 mb-0 d-xs-none d-md-block " id="navSearch">
-                    <a class="nav-link hvr-bounce-in" id="navSearchLink">Search</a>
-                </li>
-
-                <li class="nav-item mr-2 mt-0 mb-0 d-xs-none d-md-block" id="navLogReg">
-                    <a class="nav-link hvr-bounce-in" id="navLogRegLink">Login/Register</a>
+                <li class="nav-item mr-2 mt-0 mb-0" id="navLogReg">
+                    <a class="nav-link hvr-bounce-in" href="#" id="navLogRegLink">Login/Register</a>
                 </li>
             </ul>
         </div>

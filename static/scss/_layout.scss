@@ -2,6 +2,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 //   Navbar
@@ -14,7 +15,8 @@ html {
 
 .nav-link {
     color: $darkblue !important;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link.scrolled {
