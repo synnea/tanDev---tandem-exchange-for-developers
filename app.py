@@ -12,7 +12,7 @@ app.config['MONGO_URI']=os.environ.get("MONGO_URI")
 
 @app.route('/')
 def get_index():
-    return render_template("index.html")
+    return render_template("pages/index.html")
 
 
 if __name__ == '__main__':
