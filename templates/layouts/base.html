@@ -38,8 +38,10 @@
 
     <!-- Project scripts, with conditional loading depending on the active page -->
 
-
+    {% if active == 'home' %}
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+    {% endif %}
 
    
 </body>

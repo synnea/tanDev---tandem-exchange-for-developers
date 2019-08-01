@@ -1,3 +1,6 @@
+// This SCSS file contains components which are used only once across the various pages.
+
+
 #hero {
     background: url("/static/img/puzzle-uncropped-xs.jpg") center center no-repeat;
     background-size: cover !important;
@@ -35,16 +38,4 @@
     height: 100vh;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
 
-//   Navbar
-
-.bg-light {
-    background-color: transparent !important;
-}
-
-.bg-light.scrolled {
-    background-color: $brightmidblue !important;  
-}
