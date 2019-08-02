@@ -48,6 +48,8 @@
 
     <!-- Project scripts, with conditional loading depending on the active page -->
 
+    <script src="{{url_for('static', filename='js/common.js')}}"></script>
+
     {% if active == 'home' %}
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
 
