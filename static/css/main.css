@@ -83,8 +83,8 @@ html {
   overflow-x: hidden;
 }
 
-.test-class {
-  color: red;
+.container-fluid {
+  padding: 0;
 }
 
 .navLogo {
@@ -105,6 +105,12 @@ html {
 
 .bg-light {
   background-color: transparent !important;
+}
+
+@media (max-width: 992px) {
+  .bg-light {
+    background-color: #0B132B !important;
+  }
 }
 
 .bg-light.scrolled {
