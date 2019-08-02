@@ -84,19 +84,19 @@
 
 #hero-btn {
   position: absolute;
-  left: 45%;
   top: 75%;
-}
-
-@media (max-width: 767px) {
-  #hero-btn {
-    left: 33%;
-  }
+  left: 33%;
 }
 
 @media (min-width: 768px) {
   #hero-btn {
     left: 42%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-btn {
+    left: 45%;
   }
 }
 
