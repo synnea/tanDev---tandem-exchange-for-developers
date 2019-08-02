@@ -88,9 +88,15 @@ html {
 }
 
 .navLogo {
-  height: 5vh;
+  height: 8vh;
   width: 10vh;
-  font-size: 1.5em;
+  margin-left: 2vw;
+}
+
+@media (min-width: 1024px) {
+  .navLogo {
+    width: 15vh;
+  }
 }
 
 .nav-link {

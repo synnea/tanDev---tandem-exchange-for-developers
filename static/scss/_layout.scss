@@ -12,9 +12,15 @@ html {
 //   Navbar
 
 .navLogo {
-    height: 5vh;
+    height: 8vh;
     width: 10vh;
-    font-size: 1.5em;
+    margin-left: 2vw;
+
+    @media (min-width: $bp-ipadpro) {
+
+        width: 15vh;
+
+    }
 }
 
 .nav-link {
