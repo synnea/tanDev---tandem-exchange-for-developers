@@ -23,6 +23,8 @@
     background-position: center center;
     -moz-background-size: cover !important;
     -o-background-size: cover !important;
+    position: relative;
+
     @include height-scaling;
 
     @media (min-width: $bp-tablet) {
@@ -55,6 +57,37 @@
     text-align: center !important;
 }
 
+#lead {
+    font-weight: bold;
+    background:rgba(255,255,255,0.3);
+    border-radius: 25px;
+    margin-top: 5vh;
+}
+
+#hero-btn {
+position: absolute;
+left: 45%;
+top: 75%;
+
+@media (max-width: 767px) {
+    left: 33%;
+}
+
+@media (min-width: $bp-mobile) {
+    left: 42%;
+}
+
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
 
 #index-carousel {
     height: 100vh;
