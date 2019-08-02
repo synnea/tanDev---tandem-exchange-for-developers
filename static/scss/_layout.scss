@@ -27,10 +27,26 @@ html {
     color: $darkblue !important;
     font-size: 1.2em;
     font-family: 'Montserrat', sans-serif;
+
+    @media(max-width: $bp-tablet) {
+        color: white !important;
+    }
+    
+
 }
 
+
+.navbar-collapse {
+
+    @media(max-width: $bp-tablet) {
+        margin-right: 35%;
+    }
+
+}
+
+
 .nav-link.scrolled {
-    color: $lightblue !important;
+    color: white !important;
 }
 
 .bg-light {
@@ -43,4 +59,8 @@ html {
 
 .bg-light.scrolled {
     background-color: $brightmidblue !important;
+
+    @media(max-width: $bp-tablet) {
+        background-color: $darkblue !important;
+    }
 }
