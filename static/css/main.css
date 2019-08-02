@@ -83,6 +83,10 @@ html {
   overflow-x: hidden;
 }
 
+.test-class {
+  color: red;
+}
+
 .navLogo {
   height: 5vh;
   width: 10vh;
