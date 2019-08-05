@@ -76,10 +76,26 @@
 }
 
 #lead {
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
   margin-top: 5vh;
+  font-size: 1rem !important;
+  text-shadow: 0.1rem 0.1rem 0.8rem white;
+}
+
+@media (min-width: 1024px) {
+  #lead {
+    font-size: 2rem !important;
+  }
+}
+
+.main-logo {
+  max-width: 80%;
+  margin-left: 1vh;
+}
+
+@media (min-width: 1024px) {
+  .main-logo {
+    max-width: 100%;
+  }
 }
 
 #hero-btn {
@@ -116,6 +132,10 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
 }
 
 .container-fluid {
