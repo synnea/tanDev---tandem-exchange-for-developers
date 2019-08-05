@@ -9,36 +9,85 @@
     <div class="img-overlay">&nbsp;</div>
 
     <div class="container-fluid">
-    <div class="row">
+        <div class="row">
 
-        <div class="col-12 d-flex justify-content-center align-items-center d-block" id="hero-content">
+            <div class="col-12 d-flex justify-content-center align-items-center d-block" id="hero-content">
 
 
-            <div class="h-text text-center">
-                <img src="/static/img/logos/tandev_v1_darkblue.svg" class="img-fluid main-logo" alt="tandev-logo-gradient">
-                <h2 id="lead">exchange your skills with other developers and designers!</h2>
+                <div class="h-text text-center">
+                    <img src="/static/img/logos/tandev_v1_darkblue.svg" class="img-fluid main-logo"
+                        alt="tandev-logo-gradient">
+                    <h2 id="lead">exchange your skills with other developers and designers!</h2>
+
+                </div>
+            </div>
+            <div class="col-12 d-block" id="btn-div">
+
+                <a href="#" class="btn btn-primary btn-large" id="hero-btn">Sign up!</a>
 
             </div>
-        </div>
-        <div class="col-12 d-block" id="btn-div">
 
-            <a href="#" class="btn btn-primary btn-large" id="hero-btn">Sign up!</a>
+
 
         </div>
-
 
 
     </div>
-
-
-</div>
 
 
 </section>
 
 <section id="index-carousel">
 
-    <div class="section-header"
+    <div class="container-fluid">
+
+        <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
+
+        <div class="col-12">
+            <h4 class="header">See our users</h4>>
+        </div>
+
+        <div class="row carousel-row">
+
+
+            <div class="col-6 d-block">
+                <!-- Begin card -->
+
+                <a class="card index-card" href="">
+                    <div class="card-img-wrapper">
+                        <!-- Inline style used here to import link with jinja -->
+                        <img class="card-img-top" src="https://placeholder.com/200.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+                        <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div class="col-6 d-block">
+                <!-- Begin card -->
+
+                <a class="card index-card" href="">
+                    <div class="card-img-wrapper">
+                        <!-- Inline style used here to import link with jinja -->
+                        <img class="card-img-top" src="https://placeholder.com/200.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+                        <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
 
 </section>
 

@@ -101,7 +101,7 @@
 
 #btn-div {
   position: absolute;
-  top: 75%;
+  top: 72%;
   left: 33%;
 }
 
@@ -138,6 +138,15 @@
 
 #index-carousel {
   height: 100vh;
+}
+
+.card-body {
+  height: 50vh;
+}
+
+.carousel-row {
+  max-width: 75%;
+  margin: 0 auto;
 }
 
 html {
