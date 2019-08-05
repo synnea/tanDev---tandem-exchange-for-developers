@@ -80,7 +80,7 @@
    
 }
 
-#hero-btn {
+#btn-div {
     position: absolute;
 
     top: 75%;
@@ -92,11 +92,19 @@
     }
 }
 
-#btn-itself {
+#hero-btn {
 
+    margin-top: 5vh;
+    padding: 2vh 2vw;
     @media (min-width: $bp-ipadpro) {
     font-size: 2rem;
+    background-color: $teal;
 }
+}
+
+
+#hero-btn:hover {
+    background-color: $brightmidblue;
 }
 
 .img-overlay {

@@ -99,22 +99,32 @@
   }
 }
 
-#hero-btn {
+#btn-div {
   position: absolute;
   top: 75%;
   left: 33%;
 }
 
 @media (min-width: 768px) {
-  #hero-btn {
+  #btn-div {
     left: 42%;
   }
 }
 
+#hero-btn {
+  margin-top: 5vh;
+  padding: 2vh 2vw;
+}
+
 @media (min-width: 1024px) {
-  #btn-itself {
+  #hero-btn {
     font-size: 2rem;
+    background-color: #1C2541;
   }
+}
+
+#hero-btn:hover {
+  background-color: #2581B0;
 }
 
 .img-overlay {
