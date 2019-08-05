@@ -89,10 +89,13 @@
     @media (min-width: $bp-mobile) {
         left: 42%;
     }
+}
+
+#btn-itself {
 
     @media (min-width: $bp-ipadpro) {
-        left: 45%;
-    }
+    font-size: 2rem;
+}
 }
 
 .img-overlay {

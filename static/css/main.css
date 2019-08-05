@@ -111,8 +111,8 @@
 }
 
 @media (min-width: 1024px) {
-  #hero-btn {
-    left: 45%;
+  #btn-itself {
+    font-size: 2rem;
   }
 }
 
