@@ -47,6 +47,9 @@
             <h4 class="header">See our users</h4>>
         </div>
 
+        {% for profile in carousel %}
+
+        {% if loop.index % 2 == 0 %}
         <div class="row carousel-row">
 
 
@@ -59,35 +62,40 @@
                         <img class="card-img-top" src="https://placeholder.com/200.jpg" alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">{{profile.username}}</h5>
 
-                        <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
+                        <div class="card-text">{{profile.shortDescription}}</div>
                     </div>
                 </a>
 
             </div>
+            {% endif %}
 
-
+            {% if loop.index % 2 == 1 %}
             <div class="col-6 d-block">
                 <!-- Begin card -->
 
                 <a class="card index-card" href="">
                     <div class="card-img-wrapper">
                         <!-- Inline style used here to import link with jinja -->
-                        <img class="card-img-top" src="https://www.pexels.com/photo/asian-female-asian-girl-cute-girl-fashion-model-2033768/" alt="Card image cap">
+                        <img class="card-img-top"
+                            src="https://www.pexels.com/photo/asian-female-asian-girl-cute-girl-fashion-model-2033768/"
+                            alt="Card image cap">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">{{profile.username}}</h5>
 
-                        <div class="readmore-link">Read More <i class="fas fa-arrow-circle-right"></i></div>
+                        <div class="card-text">{{profile.shortDescription}}</div>
                     </div>
                 </a>
-
             </div>
         </div>
     </div>
 
-    </div>
+
+
+    {% endif %}
+    {% endfor %}
 
 </section>
 
