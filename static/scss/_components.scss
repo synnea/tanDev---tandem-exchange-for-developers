@@ -78,7 +78,7 @@
     margin-left: 1vh;
 
     @media (min-width: $bp-ipadpro) {
-        max-width: 100%;
+        max-width: 70%;
  
     }
    
@@ -129,9 +129,12 @@
 
 .card-body {
     height: 50vh;
+
 }
 
 .carousel-row {
     max-width: 75%;
     margin: 0 auto;
 }
+
+
