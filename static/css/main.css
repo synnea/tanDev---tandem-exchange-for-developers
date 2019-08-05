@@ -73,6 +73,7 @@
 
 #h-text {
   text-align: center !important;
+  font-family: "Roboto", sans-serif;
 }
 
 #lead {
@@ -156,6 +157,7 @@ body {
 
 .nav-link {
   color: #0B132B !important;
+  text-transform: uppercase;
   font-size: 1.2em;
   font-family: 'Montserrat', sans-serif;
 }
