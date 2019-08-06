@@ -441,10 +441,16 @@ a {
 }
 
 .about-text {
-  max-width: 75%;
+  max-width: 70%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25em;
+}
+
+.about-text-wrapper {
+  padding-top: 5vh;
 }
 
 #about-text {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
 /*# sourceMappingURL=main.css.map */
