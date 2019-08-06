@@ -237,8 +237,23 @@ a {
 
 @media (min-width: 1024px) {
   .about-banner {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-banner {
     background: url("/static/img/hero.jpg") center top no-repeat scroll;
     background-position: contain;
+  }
+}
+
+.header-box {
+  height: 50vh;
+}
+
+@media (min-width: 1024px) {
+  .header-box {
     height: 80vh;
   }
 }

@@ -1,11 +1,19 @@
 // This SCSS file contains components which are used only on about.html
 
 
+@mixin height-scaling {
+    height: 50vh;
+
+    @media (min-width: $bp-ipadpro) {
+        height: 80vh;
+    }
+}
+
 .about-banner {
 
     background: url("/static/img/hero-cropped.jpg") center top no-repeat scroll;
     background-size: cover;
-    height: 50vh;
+    @include height-scaling;
 
 
     @media (min-width: $bp-ipadpro) {
@@ -13,9 +21,12 @@
 
         background: url("/static/img/hero.jpg") center top no-repeat scroll;
         background-position: contain;
-        height: 80vh;
 
     }
 
 
+}
+
+.header-box {
+    @include height-scaling;
 }
