@@ -1,3 +1,76 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.navLogo {
+  height: 8vh;
+  width: 10vh;
+  margin-left: 2vw;
+}
+
+@media (min-width: 1024px) {
+  .navLogo {
+    width: 15vh;
+  }
+}
+
+.nav-link {
+  color: #0B132B !important;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 992px) {
+  .nav-link {
+    color: white !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    margin-right: 35%;
+  }
+}
+
+.nav-link.scrolled {
+  color: white !important;
+}
+
+.bg-light {
+  background-color: transparent !important;
+}
+
+@media (max-width: 992px) {
+  .bg-light {
+    background-color: #0B132B !important;
+  }
+}
+
+.bg-light.scrolled {
+  background-color: #2581B0 !important;
+}
+
+@media (max-width: 992px) {
+  .bg-light.scrolled {
+    background-color: #0B132B !important;
+  }
+}
+
 #hero {
   background: url("/static/img/puzzle-uncropped-xs.jpg") center center no-repeat;
   background-size: cover !important;
@@ -156,76 +229,9 @@
   margin: 0 auto;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
-  max-width: 100%;
-}
-
-a {
-  text-decoration: none !important;
-  color: black;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-.navLogo {
-  height: 8vh;
-  width: 10vh;
-  margin-left: 2vw;
-}
-
-@media (min-width: 1024px) {
-  .navLogo {
-    width: 15vh;
-  }
-}
-
-.nav-link {
-  color: #0B132B !important;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  font-family: 'Montserrat', sans-serif;
-}
-
-@media (max-width: 992px) {
-  .nav-link {
-    color: white !important;
-  }
-}
-
-@media (max-width: 992px) {
-  .navbar-collapse {
-    margin-right: 35%;
-  }
-}
-
-.nav-link.scrolled {
-  color: white !important;
-}
-
-.bg-light {
-  background-color: transparent !important;
-}
-
-@media (max-width: 992px) {
-  .bg-light {
-    background-color: #0B132B !important;
-  }
-}
-
-.bg-light.scrolled {
-  background-color: #2581B0 !important;
-}
-
-@media (max-width: 992px) {
-  .bg-light.scrolled {
-    background-color: #0B132B !important;
-  }
+.about-banner {
+  background: url("/static/img/hero.jpg") center top no-repeat scroll;
+  background-position: contain;
+  height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */

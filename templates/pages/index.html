@@ -44,7 +44,7 @@
         <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
 
         <div class="col-12">
-            <h4 class="header">See our users</h4>>
+            <h4 class="header">See our users</h4>
         </div>
 
         {% for profile in carousel %}
@@ -53,7 +53,7 @@
         <div class="row carousel-row">
 
 
-            <div class="col-6 d-block">
+            <div class="col-6 d-inline">
                 <!-- Begin card -->
 
                 <a class="card index-card" href="">
@@ -72,7 +72,7 @@
             {% endif %}
 
             {% if loop.index % 2 == 1 %}
-            <div class="col-6 d-block">
+            <div class="col-6 d-inline">
                 <!-- Begin card -->
 
                 <a class="card index-card" href="">
