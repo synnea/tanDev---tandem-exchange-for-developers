@@ -230,8 +230,16 @@ a {
 }
 
 .about-banner {
-  background: url("/static/img/hero.jpg") center top no-repeat scroll;
-  background-position: contain;
-  height: 100vh;
+  background: url("/static/img/hero-cropped.jpg") center top no-repeat scroll;
+  background-size: cover;
+  height: 50vh;
+}
+
+@media (min-width: 1024px) {
+  .about-banner {
+    background: url("/static/img/hero.jpg") center top no-repeat scroll;
+    background-position: contain;
+    height: 80vh;
+  }
 }
 /*# sourceMappingURL=main.css.map */
