@@ -2,6 +2,8 @@
 
 // INDEX HTML
 
+@import "_layout.scss";
+
 // Landing Page
 
 @mixin height-scaling {
@@ -79,9 +81,9 @@
 
     @media (min-width: $bp-ipadpro) {
         max-width: 70%;
- 
+
     }
-   
+
 }
 
 #btn-div {
@@ -100,10 +102,11 @@
 
     margin-top: 5vh;
     padding: 2vh 2vw;
+
     @media (min-width: $bp-ipadpro) {
-    font-size: 2rem;
-    background-color: $teal;
-}
+        font-size: 2rem;
+        background-color: $teal;
+    }
 }
 
 
@@ -111,12 +114,8 @@
     background-color: $brightmidblue;
 }
 
-.img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.img-overlay-index {
+    @include img-overlay;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -142,6 +141,3 @@
     max-width: 75%;
     margin: 0 auto;
 }
-
-
-

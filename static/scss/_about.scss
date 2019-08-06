@@ -1,7 +1,8 @@
 // This SCSS file contains components which are used only on about.html
 
+@import "_layout.scss";
 
-@mixin height-scaling {
+@mixin about-height-scaling {
     height: 50vh;
 
     @media (min-width: $bp-ipadpro) {
@@ -13,7 +14,7 @@
 
     background: url("/static/img/hero-cropped.jpg") center top no-repeat scroll;
     background-size: cover;
-    @include height-scaling;
+    @include about-height-scaling;
 
 
     @media (min-width: $bp-ipadpro) {
@@ -27,6 +28,13 @@
 
 }
 
-.header-box {
-    @include height-scaling;
+.page-header-box {
+    @include about-height-scaling;
+}
+
+
+
+.img-overlay-about {
+    @include img-overlay;
+    background-color: rgba(0, 0, 0, 0.3);
 }

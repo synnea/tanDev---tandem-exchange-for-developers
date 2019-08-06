@@ -19,7 +19,7 @@ a {
     padding: 0;
 }
 
-//   Navbar
+//   NAVBAR STYLING
 
 .navLogo {
     height: 8vh;
@@ -74,4 +74,24 @@ a {
     @media(max-width: $bp-tablet) {
         background-color: $darkblue !important;
     }
+}
+
+// Image Overlay
+
+@mixin img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+// Page Headers
+
+.page-header {
+    font-family: 'Montserrat', 700;
+    color: white;
+    text-shadow: 1em 1em 1em $darkblue;
+    text-transform: uppercase;
+
 }
