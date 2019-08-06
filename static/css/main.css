@@ -429,9 +429,15 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  height: 60.5vh;
+}
+
+@media (min-width: 1024px) {
+  .img-overlay-about {
+    height: 80vh;
+  }
 }
 
 .about-text {
