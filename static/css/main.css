@@ -433,4 +433,12 @@ a {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.about-text {
+  max-width: 75%;
+}
+
+#about-text {
+  background-color: rgba(0, 0, 0, 0.3);
+}
 /*# sourceMappingURL=main.css.map */
