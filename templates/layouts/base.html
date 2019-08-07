@@ -50,12 +50,22 @@
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Project scripts, with conditional loading depending on the active page -->
+    <!-- Common script which loads JavaScript applicabe to all pages -->
 
     <script src="{{url_for('static', filename='js/common.js')}}"></script>
 
-    {% if active == 'home' %}
-    <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+     <!-- Conditional CSS which loads only when the 'About' page is active. The code colors the nav elements a light blue in order to make them more visible against the 'About' page's background. -->
+
+    {% if active == 'about' %}
+
+    <style>
+
+        .nav-link {
+            color: #2581B0 !important;
+        }
+    
+    </style>
 
     {% endif %}
 
