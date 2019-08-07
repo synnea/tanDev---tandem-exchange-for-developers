@@ -81,6 +81,22 @@ a {
   text-transform: uppercase;
 }
 
+h3.heading {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  font-size: 1.9rem;
+  font-family: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.heading-ul {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #2581B0;
+  margin: 0 auto 8vh;
+}
+
 footer {
   height: 15vh;
   background-color: #0B132B;
@@ -186,6 +202,22 @@ a {
   color: white;
   text-shadow: 1em 0.5em #0B132B;
   text-transform: uppercase;
+}
+
+h3.heading {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  font-size: 1.9rem;
+  font-family: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.heading-ul {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #2581B0;
+  margin: 0 auto 8vh;
 }
 
 footer {
@@ -453,6 +485,22 @@ a {
   text-transform: uppercase;
 }
 
+h3.heading {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  font-size: 1.9rem;
+  font-family: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.heading-ul {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #2581B0;
+  margin: 0 auto 8vh;
+}
+
 footer {
   height: 15vh;
   background-color: #0B132B;
@@ -504,22 +552,6 @@ ul {
   .page-header-box {
     height: 80vh;
   }
-}
-
-h3.heading {
-  padding-top: 10vh;
-  padding-bottom: 5vh;
-  font-size: 1.9rem;
-  font-family: 700;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-}
-
-.heading-ul {
-  width: 3rem;
-  height: 0.2rem;
-  background-color: #2581B0;
-  margin: 0 auto 8vh;
 }
 
 .img-overlay-about {
