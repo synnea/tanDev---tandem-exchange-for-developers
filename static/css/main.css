@@ -3,6 +3,7 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -109,6 +110,7 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -373,6 +375,7 @@ html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -561,5 +564,14 @@ h3.heading {
   padding-bottom: 5rem;
   padding-top: 0 !important;
   border-radius: 0;
+}
+
+.feature-icon {
+  margin: 3vh;
+}
+
+.feature-header {
+  margin-bottom: 2rem;
+  color: #1C2541;
 }
 /*# sourceMappingURL=main.css.map */
