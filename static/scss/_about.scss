@@ -32,6 +32,22 @@
     @include about-height-scaling;
 }
 
+h3.heading {
+padding-top: 10vh;
+padding-bottom: 5vh;
+font-size: 1.9rem;
+font-family: 700;
+font-family: 'Montserrat', sans-serif;
+text-transform: uppercase;
+}
+
+.heading-ul {
+    width: 3rem;
+    height: 0.2rem;
+    background-color: $brightmidblue;
+    margin: 0 auto 8vh;
+
+}
 
 
 .img-overlay-about {
@@ -51,16 +67,13 @@
 }
 
 .about-text {
-    max-width: 65%;
+
+    width:75%;
+    line-height: 2em;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
     margin: 0 auto;
-    padding-top: 10vh;
     padding-bottom: 10vh;
-}
-
-.about-text-wrapper {
-    padding-top: 5vh;
 }
 
 
@@ -71,3 +84,18 @@
 #about-text {
     background-color: white;
 }
+
+// Features Section
+
+.features {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.jumbotron {
+    margin-bottom: 0 !important;
+    padding-bottom: 5rem;
+    padding-top: 0 !important;
+    border-radius: 0;
+}
+
