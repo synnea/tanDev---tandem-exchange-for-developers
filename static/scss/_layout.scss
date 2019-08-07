@@ -3,6 +3,8 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -44,7 +46,7 @@ a {
     @media(max-width: $bp-tablet) {
         color: white !important;
     }
-    
+
 
 }
 
@@ -87,4 +89,32 @@ a {
     text-shadow: 1em 0.5em $darkblue;
     text-transform: uppercase;
 
+}
+
+// Footer
+
+footer {
+    height: 15vh;
+    background-color: $darkblue;
+    position: bottom fixed;
+    color: $brightmidblue;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center !important;
+}
+
+footer-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+
+}
+
+col-4 {
+    margin-left: 4vh;
+}
+
+ul {
+    margin: 0;
 }

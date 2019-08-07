@@ -51,13 +51,21 @@
 }
 
 .about-text {
-    max-width: 70%;
+    max-width: 65%;
     font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
+    margin: 0 auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 .about-text-wrapper {
     padding-top: 5vh;
+}
+
+
+.footer-p {
+    margin: 0;
 }
 
 #about-text {
