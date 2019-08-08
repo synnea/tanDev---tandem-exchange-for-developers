@@ -20,7 +20,7 @@ db = client.tandev
 def home_page():
 
 
-    carousel = db.profile.aggregate( [ { "$sample": { "size": 2 } } ])
+    carousel = db.profile.aggregate( [ { "$sample": { "size": 6 } } ])
     carousel = list(carousel)
     return render_template("pages/index.html", active="home", carousel=carousel)
 
