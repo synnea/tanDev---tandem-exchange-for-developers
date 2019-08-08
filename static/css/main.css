@@ -443,6 +443,8 @@ ul {
   height: 30vh;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
 }
 
 .carousel-row {
