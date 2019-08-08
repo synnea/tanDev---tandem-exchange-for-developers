@@ -4,7 +4,7 @@
 <head>
 
     <!-- Common metadata, such as information on the author and a description.  -->
-    
+
     <meta charset="UTF-8">
     <meta name="description"
         content="a skill exchange website based in Berlin which seeks to connect developers and designers with each other who wish to exchange their skills.">
@@ -14,7 +14,7 @@
     <title>tanDev - tandem exchanges for developers</title>
 
 
- <!-- Load favicon -->
+    <!-- Load favicon -->
     <link rel="icon" type="image/vnd.microsoft.icon" href="/static/img/favicon.ico">
 
     <!-- Load stylesheets -->
@@ -22,8 +22,8 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Roboto&display=swap" rel="stylesheet">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Roboto&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         type="text/css" />
 
@@ -52,9 +52,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Common script which loads JavaScript applicabe to all pages -->
 
@@ -63,17 +63,18 @@
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
 
 
-     <!-- Conditional CSS which loads only when the 'About' page is active. The code colors the nav elements a light blue in order to make them more visible against the 'About' page's background. -->
+    <!-- Conditional CSS and JS files which load only when the 'About' page is active. The CSS colors the nav elements a light blue in order to make them more visible against the 'About' page's background. -->
+    <!-- The JavaScript adds the scroll animations. -->
 
     {% if active == 'about' %}
 
     <style>
-
         .nav-link {
             color: #2581B0 !important;
         }
-    
     </style>
+
+    <script src="{{url_for('static', filename='js/about.js')}}"></script>
 
     {% endif %}
 
