@@ -409,11 +409,13 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 40vh;
+  margin-bottom: 35vh;
 }
 
 @media (min-width: 768px) {
   .card-deck {
     margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -436,6 +438,7 @@ ul {
 .card-footer {
   background-color: #2581B0;
   font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .card-img-top {
@@ -443,12 +446,16 @@ ul {
   height: 30vh;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top center;
-     object-position: top center;
+  -o-object-position: center center;
+     object-position: center center;
 }
 
 .carousel-row {
   max-width: 75%;
+}
+
+.card-icon {
+  margin-right: 1rem;
 }
 
 html {

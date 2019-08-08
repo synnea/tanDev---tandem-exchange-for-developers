@@ -135,9 +135,11 @@
     display: flex;
     justify-content: center;
     margin-top: 40vh;
+    margin-bottom: 35vh;
 
     @media (min-width: $bp-mobile) {
         margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -147,6 +149,7 @@
     height: auto;
     margin-left: 2rem;
     max-width: 80%;
+ 
 }
 
 .card-title {
@@ -160,15 +163,20 @@
 .card-footer {
     background-color: $brightmidblue;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 .card-img-top {
     width: 100%;
     height: 30vh;
     object-fit: cover;
-    object-position: top center;
+    object-position: center center;
 }
 
 .carousel-row {
     max-width: 75%;
+}
+
+.card-icon {
+    margin-right: 1rem;
 }
