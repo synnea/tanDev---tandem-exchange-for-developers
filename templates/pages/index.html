@@ -48,53 +48,92 @@
         <div class="heading-ul"></div>
     </div>
 
-    <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
+    <div class="container">
+        <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
 
-    {% for profile in carousel %}
+        <div id="index-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-    {% if loop.index % 2 == 1 %}
+              <!--Controls-->
+  <div class="controls-top">
+        <a class="btn-floating" href="#index-carousel" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#index-carousel" data-slide="next"><i
+            class="fas fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+    
 
-    <div class="card-deck">
-        <div class="row" class="justify-content-center">
-            <div class="col-12 col-md-6">
-                <a href="#">
-                    <div class="card">
-                        <img src="{{profile.imgUrl}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{profile.username}}</h5>
-                            <p class="card-text">{{profile.shortDescription}}</p>
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+
+                <!--carousel slide-->
+
+                {% for profile in carousel %}
+
+                {% if loop.index % 2 == 1 %}
+                <div class="carousel-item">
+
+                    <div class="card-deck">
+
+                        <div class="row" class="justify-content-center">
+                            <div class="col-12 col-md-6">
+                                <a href="#">
+                                    <div class="card">
+                                        <img src="{{profile.imgUrl}}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{profile.username}} Card 1</h5>
+                                            <p class="card-text">{{profile.shortDescription}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="card-callout"><i class="fas fa-search-plus card-icon"
+                                                    data-fa-transform="shrink-3"></i>Click for more!</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {% endif %}
+
+                            {% if loop.index % 2 == 0 %}
+                            <div class="col-12 col-md-6">
+                                <a href="#">
+                                    <div class="card">
+                                        <img src="{{profile.imgUrl}}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{profile.username}} Card 2</h5>
+                                            <p class="card-text">{{profile.shortDescription}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="card-callout"><i class="fas fa-search-plus card-icon"
+                                                    data-fa-transform="shrink-3"></i>Click for more!</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <p class="card-callout"><i class="fas fa-search-plus card-icon" data-fa-transform="shrink-3" ></i>Click for more!</p>
-                        </div>
+
                     </div>
-                </a>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+
+                <!-- End inner carousel -->
             </div>
 
-            {% endif %}
+            <ol class="carousel-indicators">
+                <li data-target="#index-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#index-carousel" data-slide-to="1"></li>
+                <li data-target="#index-carousel" data-slide-to="2"></li>
+            </ol>
 
-            {% if loop.index % 2 == 0 %}
-            <div class="col-12 col-md-6">
-                <a href="#">
-                    <div class="card">
-                        <img src="{{profile.imgUrl}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{profile.username}}</h5>
-                            <p class="card-text">{{profile.shortDescription}}</p>
-                        </div>
-                        <div class="card-footer">
-                            <p class="card-callout"><i class="fas fa-search-plus card-icon" data-fa-transform="shrink-3" ></i>Click for more!</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
+            <!-- End carousel wrapper -->
+
         </div>
 
+        <!-- End container -->
+
     </div>
-
-
-    {% endif %}
-    {% endfor %}
 
 </section>
 
