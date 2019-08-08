@@ -18,6 +18,11 @@ a {
     color: black;
 }
 
+a:hover {
+    text-decoration: none !important;
+    color: black;
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -99,6 +104,7 @@ h3.heading {
     font-family: 700;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
+    display: block;
 }
 
 .heading-ul {
@@ -106,6 +112,7 @@ h3.heading {
     height: 0.2rem;
     background-color: $brightmidblue;
     margin: 0 auto 8vh;
+    display: block;
 
 }
 
