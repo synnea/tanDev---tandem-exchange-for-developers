@@ -39,62 +39,46 @@
 
 <section id="index-carousel">
 
-    <div class="container-fluid">
+
 
         <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
 
-        <div class="col-12">
-            <h3 class="heading text-center">See our users
-            </h3>
-
-            <div class="heading-ul"></div>
-        </div>
-
         {% for profile in carousel %}
 
-        {% if loop.index % 2 == 0 %}
-        <div class="row carousel-row">
+        {% if loop.index % 2 == 1 %}
 
-
-            <div class="col-6 d-inline">
-                <!-- Begin card -->
-
-                <a class="card index-card" href="">
-                    <div class="card-img-wrapper">
-                        <!-- Inline style used here to import link with jinja -->
-                        <img class="card-img-top" src="https://placeholder.com/200.jpg" alt="Card image cap">
-                    </div>
+        <div class="card-deck">
+            <a>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{profile.username}}</h5>
-
-                        <div class="card-text">{{profile.shortDescription}}</div>
+                        <p class="card-text">{{profile.shortDescription}}</p>
                     </div>
-                </a>
+                    <div class="card-footer">
+                        <small class="text-muted">Click to find out more!</small>
+                    </div>
+                </div>
+            </a>
 
-            </div>
             {% endif %}
 
-            {% if loop.index % 2 == 1 %}
-            <div class="col-6 d-inline">
-                <!-- Begin card -->
+            {% if loop.index % 2 == 0 %}
 
-                <a class="card index-card" href="">
-                    <div class="card-img-wrapper">
-                        <!-- Inline style used here to import link with jinja -->
-                        <img class="card-img-top"
-                            src="https://www.pexels.com/photo/asian-female-asian-girl-cute-girl-fashion-model-2033768/"
-                            alt="Card image cap">
-                    </div>
+            <a>
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{profile.username}}</h5>
-
-                        <div class="card-text">{{profile.shortDescription}}</div>
+                        <p class="card-text">{{profile.shortDescription}}</p>
                     </div>
-                </a>
-            </div>
-        </div>
-    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Cick to find out more!</small>
+                    </div>
+                </div>
+            </a>
 
+        </div>
 
 
     {% endif %}

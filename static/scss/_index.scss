@@ -127,12 +127,13 @@
 // Index Carousel
 
 #index-carousel {
-    height: 100vh;
+    height: auto;
 }
 
-.card-body {
-    height: 50vh;
-
+.card {
+    display: inline-block;
+    width: 30vh;
+    height: 30vh;
 }
 
 .card-img-top {
@@ -143,5 +144,4 @@
 
 .carousel-row {
     max-width: 75%;
-    margin: 0 auto;
 }

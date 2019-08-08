@@ -383,11 +383,13 @@ ul {
 }
 
 #index-carousel {
-  height: 100vh;
+  height: auto;
 }
 
-.card-body {
-  height: 50vh;
+.card {
+  display: inline-block;
+  width: 30vh;
+  height: 30vh;
 }
 
 .card-img-top {
@@ -399,7 +401,6 @@ ul {
 
 .carousel-row {
   max-width: 75%;
-  margin: 0 auto;
 }
 
 html {
