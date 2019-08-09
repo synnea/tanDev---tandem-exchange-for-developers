@@ -185,4 +185,10 @@
 .carousel-indicators {
     color: $darkblue;
     background-color: $brightmidblue;
+    width: 20vh;
+    margin: 0 auto;
+}
+
+.indicator-wrapper {
+    margin: 10vh 0;
 }

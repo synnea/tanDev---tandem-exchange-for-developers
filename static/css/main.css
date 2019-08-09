@@ -462,6 +462,12 @@ ul {
 .carousel-indicators {
   color: #0B132B;
   background-color: #2581B0;
+  width: 20vh;
+  margin: 0 auto;
+}
+
+.indicator-wrapper {
+  margin: 10vh 0;
 }
 
 html {
