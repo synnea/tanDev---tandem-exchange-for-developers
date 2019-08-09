@@ -131,7 +131,7 @@
 }
 
 .card-deck {
-    height: 80vh;
+    height: 15vh;
     display: flex;
     justify-content: center;
     margin-top: 40vh;
@@ -140,6 +140,7 @@
     @media (min-width: $bp-mobile) {
         margin-top: 0;
         margin-bottom: 0;
+        height: 80vh;
     }
 }
 
@@ -179,4 +180,9 @@
 
 .card-icon {
     margin-right: 1rem;
+}
+
+.carousel-indicators {
+    color: $darkblue;
+    background-color: $brightmidblue;
 }

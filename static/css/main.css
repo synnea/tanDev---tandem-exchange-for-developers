@@ -401,7 +401,7 @@ ul {
 }
 
 .card-deck {
-  height: 80vh;
+  height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -416,6 +416,7 @@ ul {
   .card-deck {
     margin-top: 0;
     margin-bottom: 0;
+    height: 80vh;
   }
 }
 
@@ -456,6 +457,11 @@ ul {
 
 .card-icon {
   margin-right: 1rem;
+}
+
+.carousel-indicators {
+  color: #0B132B;
+  background-color: #2581B0;
 }
 
 html {

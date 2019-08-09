@@ -50,8 +50,9 @@
 
     <div class="container">
         <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
+        <!-- Much of the carousel code on this section was taking from Anna Greaves' index.html page for her FamilyHub project. Link: https://github.com/Code-Institute-Submissions/familyhub/blob/master/templates/pages/index.html -->
 
-        <div id="index-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+        <div class="carousel slide carousel-multi-item" data-ride="carousel"  id="index-carousel" >
     
 
             <!--Slides-->
@@ -67,12 +68,12 @@
                     <div class="card-deck">
 
                         <div class="row" class="justify-content-center">
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-6 d-none d-md-block">
                                 <a href="#">
                                     <div class="card">
                                         <img src="{{profile.imgUrl}}" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title">{{profile.username}} Card 1</h5>
+                                            <h5 class="card-title">{{profile.username}}</h5>
                                             <p class="card-text">{{profile.shortDescription}}</p>
                                         </div>
                                         <div class="card-footer">
@@ -91,7 +92,7 @@
                                     <div class="card">
                                         <img src="{{profile.imgUrl}}" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title">{{profile.username}} Card 2</h5>
+                                            <h5 class="card-title">{{profile.username}}</h5>
                                             <p class="card-text">{{profile.shortDescription}}</p>
                                         </div>
                                         <div class="card-footer">
