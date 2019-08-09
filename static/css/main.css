@@ -615,7 +615,7 @@ ul {
 @media (min-width: 1024px) {
   .about-banner {
     background: url("/static/img/hero.jpg") center top no-repeat scroll;
-    background-position: contain;
+    background-size: cover;
   }
 }
 
