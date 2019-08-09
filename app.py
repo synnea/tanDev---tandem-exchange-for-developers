@@ -19,6 +19,8 @@ db = client.tandev
 @app.route('/index', methods=['GET'])
 def home_page():
 
+# Create a list of 6 random profiles to be used in the index.html carousel.
+
 
     carousel = db.profile.aggregate( [ { "$sample": { "size": 6 } } ])
     carousel = list(carousel)
@@ -28,6 +30,10 @@ def home_page():
 @app.route('/about', methods=['GET'])
 def about():
     return render_template("pages/about.html", active="about")
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    return render_template("pages/search.html", active="search")
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
