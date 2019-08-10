@@ -8,7 +8,8 @@
         "../scss/_index.scss",
         "../scss/_layout.scss",
         "../scss/_about.scss",
-        "../scss/_layout.scss"
+        "../scss/_layout.scss",
+        "../scss/_search.scss"
     ],
     "names": [],
     "file": "main.css"
