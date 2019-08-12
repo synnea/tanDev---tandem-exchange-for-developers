@@ -27,6 +27,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         type="text/css" />
 
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+
 
 
 
@@ -56,15 +64,21 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Common script which loads JavaScript applicabe to all pages -->
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+    </script>
 
-    <script src="{{url_for('static', filename='js/common.js')}}"></script>
+    <!-- Special navbar behavior, with two distinct styles for desktop and mobile. Applicable for index and about pages. -->
 
+    {% if active == 'index' or active == 'about' %}
+    <script src="{{url_for('static', filename='js/nav.js')}}"></script>
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+    {% endif %}
 
 
     <!-- Conditional CSS and JS files which load only when the 'About' page is active. The CSS colors the nav elements a light blue in order to make them more visible against the 'About' page's background. -->
-    <!-- The JavaScript adds the scroll animations. -->
 
     {% if active == 'about' %}
 
@@ -74,10 +88,29 @@
         }
     </style>
 
+
+
     <script src="{{url_for('static', filename='js/about.js')}}"></script>
 
     {% endif %}
 
+    <!-- Conditional CSS and JS files which load only when the 'About' page is active.-->
+
+    {% if active == 'search' %}
+
+    <style>
+       .bg-light {
+            background-color: #0B132B !important;
+        }
+
+       .nav-link {
+            color: #2581B0 !important;
+        }
+    </style>
+
+    <script src="{{url_for('static', filename='js/search.js')}}"></script>
+
+    {% endif %}
 
 </body>
 

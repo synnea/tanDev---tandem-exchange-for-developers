@@ -17,14 +17,14 @@ db = client.tandev
 
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
-def home_page():
+def index():
 
 # Create a list of 6 random profiles to be used in the index.html carousel.
 
 
     carousel = db.profile.aggregate( [ { "$sample": { "size": 6 } } ])
     carousel = list(carousel)
-    return render_template("pages/index.html", active="home", carousel=carousel)
+    return render_template("pages/index.html", active="index", carousel=carousel)
 
 
 @app.route('/about', methods=['GET'])
