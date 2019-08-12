@@ -46,7 +46,6 @@ a:hover {
     color: $darkblue !important;
 
     text-transform: uppercase;
-    font-size: 1.2em;
     font-family: 'Montserrat', sans-serif;
 
     @media(max-width: $bp-tablet) {
@@ -54,6 +53,12 @@ a:hover {
     }
 
 
+}
+
+.nav-link {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
 

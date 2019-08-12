@@ -39,7 +39,6 @@ a:hover {
 #navbar.nav-link {
   color: #0B132B !important;
   text-transform: uppercase;
-  font-size: 1.2em;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -47,6 +46,12 @@ a:hover {
   #navbar.nav-link {
     color: white !important;
   }
+}
+
+.nav-link {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 992px) {
@@ -169,7 +174,6 @@ a:hover {
 #navbar.nav-link {
   color: #0B132B !important;
   text-transform: uppercase;
-  font-size: 1.2em;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -177,6 +181,12 @@ a:hover {
   #navbar.nav-link {
     color: white !important;
   }
+}
+
+.nav-link {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 992px) {
@@ -511,7 +521,6 @@ a:hover {
 #navbar.nav-link {
   color: #0B132B !important;
   text-transform: uppercase;
-  font-size: 1.2em;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -519,6 +528,12 @@ a:hover {
   #navbar.nav-link {
     color: white !important;
   }
+}
+
+.nav-link {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 992px) {
