@@ -36,7 +36,7 @@ a:hover {
   }
 }
 
-.nav-link {
+#navbar.nav-link {
   color: #0B132B !important;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -44,37 +44,37 @@ a:hover {
 }
 
 @media (max-width: 992px) {
-  .nav-link {
+  #navbar.nav-link {
     color: white !important;
   }
 }
 
 @media (max-width: 992px) {
-  .navbar-collapse {
+  #navbar.navbar-collapse {
     margin-right: 35%;
   }
 }
 
-.nav-link.scrolled {
+#navbar.nav-link.scrolled {
   color: white !important;
 }
 
-.bg-light {
+#navbar.bg-light {
   background-color: transparent !important;
 }
 
 @media (max-width: 992px) {
-  .bg-light {
+  #navbar.bg-light {
     background-color: #0B132B !important;
   }
 }
 
-.bg-light.scrolled {
+#navbar.bg-light.scrolled {
   background-color: #2581B0 !important;
 }
 
 @media (max-width: 992px) {
-  .bg-light.scrolled {
+  #navbar.bg-light.scrolled {
     background-color: #0B132B !important;
   }
 }
@@ -166,7 +166,7 @@ a:hover {
   }
 }
 
-.nav-link {
+#navbar.nav-link {
   color: #0B132B !important;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -174,37 +174,37 @@ a:hover {
 }
 
 @media (max-width: 992px) {
-  .nav-link {
+  #navbar.nav-link {
     color: white !important;
   }
 }
 
 @media (max-width: 992px) {
-  .navbar-collapse {
+  #navbar.navbar-collapse {
     margin-right: 35%;
   }
 }
 
-.nav-link.scrolled {
+#navbar.nav-link.scrolled {
   color: white !important;
 }
 
-.bg-light {
+#navbar.bg-light {
   background-color: transparent !important;
 }
 
 @media (max-width: 992px) {
-  .bg-light {
+  #navbar.bg-light {
     background-color: #0B132B !important;
   }
 }
 
-.bg-light.scrolled {
+#navbar.bg-light.scrolled {
   background-color: #2581B0 !important;
 }
 
 @media (max-width: 992px) {
-  .bg-light.scrolled {
+  #navbar.bg-light.scrolled {
     background-color: #0B132B !important;
   }
 }
@@ -508,7 +508,7 @@ a:hover {
   }
 }
 
-.nav-link {
+#navbar.nav-link {
   color: #0B132B !important;
   text-transform: uppercase;
   font-size: 1.2em;
@@ -516,37 +516,37 @@ a:hover {
 }
 
 @media (max-width: 992px) {
-  .nav-link {
+  #navbar.nav-link {
     color: white !important;
   }
 }
 
 @media (max-width: 992px) {
-  .navbar-collapse {
+  #navbar.navbar-collapse {
     margin-right: 35%;
   }
 }
 
-.nav-link.scrolled {
+#navbar.nav-link.scrolled {
   color: white !important;
 }
 
-.bg-light {
+#navbar.bg-light {
   background-color: transparent !important;
 }
 
 @media (max-width: 992px) {
-  .bg-light {
+  #navbar.bg-light {
     background-color: #0B132B !important;
   }
 }
 
-.bg-light.scrolled {
+#navbar.bg-light.scrolled {
   background-color: #2581B0 !important;
 }
 
 @media (max-width: 992px) {
-  .bg-light.scrolled {
+  #navbar.bg-light.scrolled {
     background-color: #0B132B !important;
   }
 }

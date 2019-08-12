@@ -41,7 +41,7 @@ a:hover {
     }
 }
 
-.nav-link {
+#navbar.nav-link {
 
     color: $darkblue !important;
 
@@ -57,7 +57,7 @@ a:hover {
 }
 
 
-.navbar-collapse {
+#navbar.navbar-collapse {
 
     @media(max-width: $bp-tablet) {
         margin-right: 35%;
@@ -66,11 +66,11 @@ a:hover {
 }
 
 
-.nav-link.scrolled {
+#navbar.nav-link.scrolled {
     color: white !important;
 }
 
-.bg-light {
+#navbar.bg-light {
     background-color: transparent !important;
 
     @media(max-width: $bp-tablet) {
@@ -78,7 +78,7 @@ a:hover {
     }
 }
 
-.bg-light.scrolled {
+#navbar.bg-light.scrolled {
     background-color: $brightmidblue !important;
 
     @media(max-width: $bp-tablet) {
