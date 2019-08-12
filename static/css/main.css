@@ -739,7 +739,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar {
-  background: #2A65B0;
+  background: #7791B4;
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -747,12 +747,12 @@ a[data-toggle="collapse"] {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #2A65B0;
+  background: #7791B4;
 }
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #2A65B0;
+  border-bottom: 1px solid #7791B4;
 }
 
 #sidebar ul p {
@@ -767,18 +767,18 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar ul li a:hover {
-  color: #2A65B0;
+  color: #7791B4;
   background: #8EDAF4;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
   color: #fff;
-  background: #2A65B0;
+  background: #7791B4;
 }
 
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #2A65B0;
+  background: #7791B4;
 }
 /*# sourceMappingURL=main.css.map */

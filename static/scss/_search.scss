@@ -35,19 +35,19 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar {
-    background: $darkbrightblue;
+    background: $midblue;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: $darkbrightblue;
+    background: $midblue;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid $darkbrightblue;
+    border-bottom: 1px solid $midblue;
 }
 
 #sidebar ul p {
@@ -61,16 +61,16 @@ a[data-toggle="collapse"] {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: $darkbrightblue;
+    color: $midblue;
     background: $brightlightblue;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: $darkbrightblue;
+    background: $midblue;
 }
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: $darkbrightblue;
+    background: $midblue;
 }
