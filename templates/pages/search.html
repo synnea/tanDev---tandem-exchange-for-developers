@@ -39,51 +39,84 @@
     <div class="wrapper">
 
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Search Users</h3>
-            </div>
+           
+                <div class="sidebar-header">
+                    <h3>Search Users</h3>
+                </div>
 
-            <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
+
+
+                <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
+
+                <ul class="nav nav-tabs">
+
+                    <li class="tab-nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#skillstab">I'm proficient in...</a>
+                    </li>
+                    <li class="tab-nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab">Looking for...</a>
+                    </li>
+
+                </ul>
+
+
+                <div class="tab-content">
+                    <div id="skillstab" class="tab-pane fade show active">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Option 1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">Option 2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="" disabled>Option 3
+                            </label>
+                        </div>
+
+
+                    </div>
+                    <div id="desiredSkillsTab" class="tab-pane fade">
+                        <h3>Python</h3>
+                        <p>Stars.</p>
+                    </div>
+                </div>
+
+                <ul class="list-unstyled components">
+
+
+
+
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+           
         </nav>
 
     </div>

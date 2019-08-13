@@ -36,13 +36,13 @@
 
 .img-overlay-about {
     position: absolute;
-    top: 0;
+    top: 10vh;
     left: 0;
         
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 
-    height: 60.5vh;
+    height: 50vh;
 
     @media (min-width: $bp-ipadpro) {
         height: 80vh;

@@ -646,11 +646,11 @@ ul {
 
 .img-overlay-about {
   position: absolute;
-  top: 0;
+  top: 10vh;
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  height: 60.5vh;
+  height: 50vh;
 }
 
 @media (min-width: 1024px) {
@@ -783,5 +783,9 @@ ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
   background: #7791B4;
+}
+
+.form-check-label {
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */
