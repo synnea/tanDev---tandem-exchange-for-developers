@@ -66,11 +66,11 @@
 
 #lead {
     margin-top: 5vh;
-    font-size: 1rem !important;
+    font-size: 0.75rem !important;
     text-shadow: 0.1rem 0.1rem 0.8rem white;
 
     @media (min-width: $bp-ipadpro) {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
     }
 }
 
@@ -104,7 +104,7 @@
     padding: 2vh 2vw;
 
     @media (min-width: $bp-ipadpro) {
-        font-size: 2rem;
+        font-size: 1.5rem;
         background-color: $teal;
     }
 }

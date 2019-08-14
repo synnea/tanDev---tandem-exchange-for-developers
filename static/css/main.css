@@ -8,6 +8,7 @@ html {
 
 body {
   max-width: 100%;
+  font-size: 0.8em;
 }
 
 a {
@@ -49,7 +50,7 @@ a:hover {
 }
 
 .nav-link {
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
 }
@@ -94,7 +95,7 @@ a:hover {
 h3.heading {
   padding-top: 10vh;
   padding-bottom: 5vh;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-family: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -143,6 +144,7 @@ html {
 
 body {
   max-width: 100%;
+  font-size: 0.8em;
 }
 
 a {
@@ -184,7 +186,7 @@ a:hover {
 }
 
 .nav-link {
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
 }
@@ -229,7 +231,7 @@ a:hover {
 h3.heading {
   padding-top: 10vh;
   padding-bottom: 5vh;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-family: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -348,13 +350,13 @@ ul {
 
 #lead {
   margin-top: 5vh;
-  font-size: 1rem !important;
+  font-size: 0.75rem !important;
   text-shadow: 0.1rem 0.1rem 0.8rem white;
 }
 
 @media (min-width: 1024px) {
   #lead {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
   }
 }
 
@@ -388,7 +390,7 @@ ul {
 
 @media (min-width: 1024px) {
   #hero-btn {
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: #1C2541;
   }
 }
@@ -490,6 +492,7 @@ html {
 
 body {
   max-width: 100%;
+  font-size: 0.8em;
 }
 
 a {
@@ -531,7 +534,7 @@ a:hover {
 }
 
 .nav-link {
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
 }
@@ -576,7 +579,7 @@ a:hover {
 h3.heading {
   padding-top: 10vh;
   padding-bottom: 5vh;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-family: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
@@ -664,7 +667,7 @@ ul {
   width: 75%;
   line-height: 2em;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.25em;
+  font-size: 1em;
   margin: 0 auto;
   padding-bottom: 10vh;
 }
@@ -710,6 +713,8 @@ ul {
 #sidebar {
   width: 80vw;
   min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
@@ -786,7 +791,7 @@ a[data-toggle="collapse"] {
 
 #sidebar ul li a {
   padding: 10px;
-  font-size: 1.1em;
+  font-size: 0.9em;
   display: block;
 }
 
@@ -802,7 +807,7 @@ a[aria-expanded="true"] {
 }
 
 ul ul a {
-  font-size: 0.9em !important;
+  font-size: 0.7em !important;
   padding-left: 30px !important;
   background: #7791B4;
 }
@@ -866,5 +871,9 @@ ul ul a {
 .bootstrap-select > .dropdown-toggle {
   width: 80%;
   margin-left: 1em;
+}
+
+.search-btn-wrap {
+  height: 20vh;
 }
 /*# sourceMappingURL=main.css.map */
