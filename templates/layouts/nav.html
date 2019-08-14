@@ -13,43 +13,45 @@
 
 
         {% if active == 'search' %}
-
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-
-            {% endif %}
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" id="hamburger"></span>
+  
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Filters</span>
             </button>
 
-            <!-- Dropdown Button -->
+     
+
+        {% endif %}
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" id="hamburger"></span>
+        </button>
+
+        <!-- Dropdown Button -->
 
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                <!-- Navbar Menu Items -->
+            <!-- Navbar Menu Items -->
 
 
 
-                <ul class="navbar-nav ml-auto nav-fill w-50">
+            <ul class="navbar-nav ml-auto nav-fill w-50">
 
-                    <li class="nav-item" id="navAbout">
-                        <a class="nav-link hvr-bounce-in" href="{{url_for('about')}}" id="navAboutLink">About</a>
-                    </li>
+                <li class="nav-item" id="navAbout">
+                    <a class="nav-link hvr-bounce-in" href="{{url_for('about')}}" id="navAboutLink">About</a>
+                </li>
 
-                    <li class="nav-item" id="navSearch">
-                        <a class="nav-link hvr-bounce-in" href="{{url_for('search')}}" id="navSearchLink">Search</a>
-                    </li>
+                <li class="nav-item" id="navSearch">
+                    <a class="nav-link hvr-bounce-in" href="{{url_for('search')}}" id="navSearchLink">Search</a>
+                </li>
 
-                    <li class="nav-item" id="navLogReg">
-                        <a class="nav-link hvr-bounce-in" href="#" id="navLogRegLink">Login/Register</a>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item" id="navLogReg">
+                    <a class="nav-link hvr-bounce-in" href="#" id="navLogRegLink">Login/Register</a>
+                </li>
+            </ul>
+        </div>
 
     </nav>
 </div>

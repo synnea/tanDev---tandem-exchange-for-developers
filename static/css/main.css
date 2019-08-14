@@ -724,6 +724,12 @@ ul {
   }
 }
 
+@media (min-width: 1024px) {
+  #sidebarCollapse {
+    margin-left: 15vw;
+  }
+}
+
 #sidebar.active {
   margin-left: -80vw;
 }

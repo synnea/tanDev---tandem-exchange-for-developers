@@ -1,5 +1,8 @@
 // As with the HTML code for the sidebar, much of the CSS was taken from  https://bootstrapious.com/p/bootstrap-sidebar and heavily edited.
 
+
+// Style Sidebar
+
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -19,7 +22,11 @@
 
 }
    
-
+#sidebarCollapse {
+    @media (min-width: $bp-ipadpro) {
+        margin-left: 15vw;
+    }
+}
 
 #sidebar.active {
     margin-left: -80vw;
@@ -92,6 +99,9 @@ ul ul a {
     padding-left: 30px !important;
     background: $midblue;
 }
+
+
+
 
 .nav-tabs {
     padding-left: 1em;
