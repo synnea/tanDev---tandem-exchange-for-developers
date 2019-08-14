@@ -656,6 +656,7 @@ ul {
 @media (min-width: 1024px) {
   .img-overlay-about {
     height: 80vh;
+    top: 0;
   }
 }
 
@@ -741,7 +742,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar {
-  background: #0B132B;
+  background: #2581B0;
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -749,7 +750,7 @@ a[data-toggle="collapse"] {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #0B132B;
+  background: #2581B0;
 }
 
 #sidebar ul.components {
@@ -785,7 +786,20 @@ ul ul a {
   background: #7791B4;
 }
 
+.nav-tabs {
+  padding-left: 1em;
+}
+
 .skill-column {
   padding: 2rem;
+}
+
+.abc-checkbox {
+  margin-bottom: 0.5rem;
+}
+
+.district-row {
+  border: 1px solid white;
+  padding: 1em;
 }
 /*# sourceMappingURL=main.css.map */

@@ -2,22 +2,95 @@
 
 {% block content %}
 
-<section id="search-header">
 
-    <div class="col-12">
 
-        <h3 class="heading text-center">Search
-        </h3>
 
-        <div class="heading-ul"></div>
-    </div>
-</section>
-
-<section id="search-window">
+<div class="wrapper">
 
     <!-- The following code for a responsive, collapsible bootstrap sidebar was taken from https://bootstrapious.com/p/bootstrap-sidebar and edited. -->
 
-    <!-- The sidebar toggle button -->
+    
+<!-- Begin Sidebar -->
+    
+    <nav id="sidebar">
+
+            <div class="sidebar-header">
+                <h3>Search Users</h3>
+            </div>
+    
+    
+    
+            <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
+    
+            <ul class="nav nav-tabs">
+    
+                <li class="tab-nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#skillstab">I'm proficient in...</a>
+                </li>
+                <li class="tab-nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab">Looking for...</a>
+                </li>
+    
+            </ul>
+    
+            <!-- Tab Contents -->
+    
+            <div class="tab-content">
+    
+                <!-- Begin "I'm proficient in..." Skills Tab -->
+                <div id="skillstab" class="tab-pane fade show active">
+                    <div class="skill-column">
+    
+                        {% include 'components/skills_list.html' %}
+    
+                    </div>
+    
+                    <!-- End "I'm proficient in..." Skills Tab -->
+                </div>
+    
+    
+                <!-- Begin "Looking for..." desired skills tab -->
+                <div id="desiredSkillsTab" class="tab-pane fade">
+    
+                    <div class="skill-column">
+    
+                        {% include 'components/desired_skills_list.html' %}
+    
+    
+                    </div>
+                    <!-- End "Looking for..." desired skills tab -->
+                </div>
+            </div>
+    
+            <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
+    
+            <div class="row district-row">
+    
+                <div class="col-6">
+    
+                    <h5>District</h5>
+    
+                </div>
+    
+                <div class="col-6">
+                    <select class="selectpicker districtSelect" multiple>
+                        <option value="Mitte">Mitte</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+    
+                </div>
+            </div>
+    
+    
+    
+    
+    
+        </nav>
+
+ <!-- End Sidebar -->
+
+ <!-- Begin Content -->
 
     <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,100 +105,15 @@
         </nav>
     </div>
 
-    <!-- End sidebar toggle button -->
-
-    <!-- Sidebar -->
-
-    <div class="wrapper">
-
-        <nav id="sidebar">
-
-            <div class="sidebar-header">
-                <h3>Search Users</h3>
-            </div>
-
-
-
-            <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
-
-            <ul class="nav nav-tabs">
-
-                <li class="tab-nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#skillstab">I'm proficient in...</a>
-                </li>
-                <li class="tab-nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab">Looking for...</a>
-                </li>
-
-            </ul>
-
-            <!-- Tab Contents -->
-
-            <div class="tab-content">
-
-                <!-- Begin "I'm proficient in..." Skills Tab -->
-                <div id="skillstab" class="tab-pane fade show active">
-                    <div class="skill-column">
-
-                        {% include 'components/skills_list.html' %}
-
-                    </div>
-
-                    <!-- End "I'm proficient in..." Skills Tab -->
-                </div>
-
-
-                <!-- Begin "Looking for..." desired skills tab -->
-                <div id="desiredSkillsTab" class="tab-pane fade">
-
-                    <div class="skill-column">
-
-                        {% include 'components/desired_skills_list.html' %}
-
-
-                    </div>
-                    <!-- End "Looking for..." desired skills tab -->
-                </div>
-            </div>
-
-
-
-            <ul class="list-unstyled components">
+<!-- End Content -->
 
 
 
 
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
+</div>
 
-        </nav>
 
-    </div>
 
-</section>
 
 
 {% endblock %}
