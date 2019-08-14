@@ -801,7 +801,13 @@ ul ul a {
 }
 
 .skill-column {
-  padding: 2rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .skill-column {
+    padding: 2rem;
+  }
 }
 
 .abc-checkbox {
@@ -820,18 +826,15 @@ ul ul a {
   padding: 1em;
 }
 
-#districtSelect {
-  max-width: 20%;
-}
-
 @media (max-width: 1024px) {
   #districtSelect {
-    margin: 0.5em 0;
+    margin: 1em 0;
+    width: 50% !important;
   }
 }
 
 .filtercol {
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 
 @media (max-width: 1024px) {

@@ -96,7 +96,13 @@ ul ul a {
 }
 
 .skill-column {
-    padding: 2rem;
+    padding: 1rem;
+
+    @media (min-width: $bp-mobile) {
+        padding: 2rem;
+    }
+
+
 }
 
 .abc-checkbox {
@@ -116,16 +122,17 @@ ul ul a {
 }
 
 #districtSelect {
-    max-width: 20%;
+
 
     @media (max-width: $bp-ipadpro) {
-        margin: 0.5em 0;
+        margin: 1em 0;
+        width: 50% !important;
         }
 
 }
 
 .filtercol {
-    margin-left: 1em;
+    margin-left: 1rem;
 }
 
 .filter-header {

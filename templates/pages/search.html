@@ -66,14 +66,20 @@
 
         <div class="row top-filter-row">
 
+
+            <!-- District filter option header -->
+
             <div class="col-12 col-md-6">
 
                 <h5 class="filter-header">District</h5>
 
             </div>
 
+            <!-- District filter options -->
+
             <div class="col-12 col-md-6">
-                <select class="selectpicker districtSelect" id="districtSelect" multiple>
+                <select class="selectpicker districtSelect" id="districtSelect" multiple
+                    data-selected-text-format="count">
                     <option value="Mitte">Mitte</option>
                     <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
                     <option value="Pankow">Pankow</option>
@@ -93,6 +99,8 @@
             </div>
         </div>
 
+        <!-- Communication filter option header -->
+
         <div class="div filter-row">
 
             <div class="row">
@@ -103,6 +111,8 @@
 
                 </div>
             </div>
+
+            <!-- Communication filter options -->
 
             <div class="row">
 
@@ -131,7 +141,7 @@
 
             <div class="row">
                 <div class="col-12 col-md-3 filtercol">
-                    <div class="form-check abc-checkbox ">
+                    <div class="form-check abc-checkbox">
                         <input class="form-check-input" name="inperson" id="inperson" type="checkbox">
                         <label class="form-check-label" for="inperson">
                             In person
@@ -145,7 +155,10 @@
         <div class="div filter-row">
 
             <div class="row">
-                <div class="col-12">
+
+                <!-- Other filter option header -->
+
+                <div class="col-12 col-md-3">
 
 
                     <h5 class="filter-header">Other</h5>
@@ -153,8 +166,10 @@
                 </div>
             </div>
 
+            <!-- Other filter options -->
+            
             <div class="row">
-                <div class="col-12 filtercol">
+                <div class="col-12 col-md-3 filtercol">
 
                     <div class="form-check abc-checkbox ">
                         <input class="form-check-input" name="lookingForCoFounder" id="lookingForCoFounder"
@@ -169,7 +184,7 @@
             </div>
 
             <div class="row">
-                <div class="col-12 filtercol">
+                <div class="col-12  col-md-3 filtercol">
 
                     <div class="form-check abc-checkbox ">
                         <input class="form-check-input" name="availableForHir" id="availableForHir" type="checkbox">
@@ -183,7 +198,7 @@
 
             <div class="row">
 
-                <div class="col-12 filtercol">
+                <div class="col-12 col-md-3 filtercol">
 
                     <div class="form-check abc-checkbox ">
                         <input class="form-check-input" name="availableForProjects" id="availableForProjects"
