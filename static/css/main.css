@@ -724,6 +724,10 @@ ul {
   }
 }
 
+#sidebarCollapse {
+  background-color: #ee4266;
+}
+
 @media (min-width: 1024px) {
   #sidebarCollapse {
     margin-left: 15vw;
@@ -818,6 +822,10 @@ ul ul a {
   color: black !important;
 }
 
+.skill-column {
+  padding: 1em;
+}
+
 @media (min-width: 768px) {
   .skill-column {
     padding: 2rem;
@@ -830,29 +838,27 @@ ul ul a {
 
 .top-filter-row {
   border: 1px solid white;
+  padding: 1em;
 }
 
 .filter-row {
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
+  padding: 1em;
 }
 
-@media (max-width: 1024px) {
-  #districtSelect {
-    margin: 1em 0;
-    width: 50% !important;
-  }
+.selector-wrapper {
+  margin: 1em;
+  display: inline !important;
 }
 
 .filtercol {
   margin-left: 1rem;
 }
 
-@media (max-width: 1024px) {
-  .filter-header {
-    margin: 1em 0;
-  }
+.filter-header {
+  margin: 1em;
 }
 
 .refresh {
