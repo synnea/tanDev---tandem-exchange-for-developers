@@ -11,8 +11,16 @@
 
 
 
-    @media (min-width: $bp-mobile) {
+    @media (max-width: $bp-mini) {
         width: 40vw;
+    }
+
+    @media (max-width: $bp-mobile) {
+        width: 60vh;
+    }
+
+    @media (max-width: $bp-ipadpro) {
+        width: 50vh;
     }
 }
 
@@ -131,6 +139,8 @@ ul ul a {
 
 }
 
+
+
 .filtercol {
     margin-left: 1rem;
 }
@@ -143,6 +153,11 @@ ul ul a {
 }
 
 .refresh {
-    margin-left: 1em;
+    margin-left: 5.5em;
     margin-top: 0.5em;
+}
+
+.bootstrap-select>.dropdown-toggle {
+    width: 80%;
+    margin-left: 1em;
 }
