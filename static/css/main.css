@@ -824,13 +824,17 @@ ul ul a {
   max-width: 20%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #districtSelect {
     margin: 0.5em 0;
   }
 }
 
-@media (max-width: 768px) {
+.filtercol {
+  margin-left: 1em;
+}
+
+@media (max-width: 1024px) {
   .filter-header {
     margin: 1em 0;
   }
