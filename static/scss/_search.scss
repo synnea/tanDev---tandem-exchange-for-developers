@@ -14,7 +14,7 @@
     }
 
     @media (min-width: $bp-desktop) {
-        width: 30vw;
+        width: 35vw;
     }
 
 }
@@ -30,7 +30,7 @@
     }
 
     @media (min-width: $bp-desktop) {
-        width: -30vw;
+        width: -35vw;
     }
 }
 
@@ -106,7 +106,7 @@ ul ul a {
 }
 
 .skill-column {
-    padding: 1rem;
+
 
     @media (min-width: $bp-mobile) {
         padding: 2rem;
@@ -121,14 +121,14 @@ ul ul a {
 
 .top-filter-row {
     border: 1px solid white;
-    padding: 1em;
+  
 }
 
 .filter-row {
     border-left: 1px solid white;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-    padding: 1em;
+   
 }
 
 #districtSelect {
@@ -163,3 +163,4 @@ ul ul a {
     width: 80%;
     margin-left: 1em;
 }
+
