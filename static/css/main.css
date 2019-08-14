@@ -741,7 +741,7 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar {
-  background: #7791B4;
+  background: #0B132B;
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -749,7 +749,7 @@ a[data-toggle="collapse"] {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #7791B4;
+  background: #0B132B;
 }
 
 #sidebar ul.components {
@@ -783,9 +783,5 @@ ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
   background: #7791B4;
-}
-
-.form-check-label {
-  color: black;
 }
 /*# sourceMappingURL=main.css.map */

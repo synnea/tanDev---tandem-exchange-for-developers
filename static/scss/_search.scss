@@ -9,6 +9,8 @@
     width: 80vw;
     min-height: 100vh;
 
+
+
     @media (min-width: $bp-mobile) {
         width: 40vw;
     }
@@ -36,14 +38,14 @@ a[data-toggle="collapse"] {
 
 
 #sidebar {
-    background: $midblue;
+    background: $darkblue;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: $midblue;
+    background: $darkblue;
 }
 
 #sidebar ul.components {
@@ -79,6 +81,3 @@ ul ul a {
     background: $midblue;
 }
 
-.form-check-label {
-    color: black;
-}
