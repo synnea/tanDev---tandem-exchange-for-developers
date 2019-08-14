@@ -9,99 +9,138 @@
 
     <!-- The following code for a responsive, collapsible bootstrap sidebar was taken from https://bootstrapious.com/p/bootstrap-sidebar and edited. -->
 
-    
-<!-- Begin Sidebar -->
-    
+
+    <!-- Begin Sidebar -->
+
     <nav id="sidebar">
 
-            <div class="sidebar-header d-flex justify-content-center">
-                    <h3>Search Users</h3>
-            </div>
-    
-    
-    
-            <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
-    
-            <ul class="nav nav-tabs">
-    
-                <li class="tab-nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skillsTab">I'm proficient in...</a>
-                </li>
-                <li class="tab-nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkillsTab">Looking for...</a>
-                </li>
-    
-            </ul>
-    
-            <!-- Tab Contents -->
-    
-            <div class="tab-content">
-    
-                <!-- Begin "I'm proficient in..." Skills Tab -->
-                <div id="skillstab" class="tab-pane fade show active">
-                    <div class="skill-column">
-    
-                        {% include 'components/skills_list.html' %}
-    
-                    </div>
-    
-                    <!-- End "I'm proficient in..." Skills Tab -->
-                </div>
-    
-    
-                <!-- Begin "Looking for..." desired skills tab -->
-                <div id="desiredSkillsTab" class="tab-pane fade">
-    
-                    <div class="skill-column">
-    
-                        {% include 'components/desired_skills_list.html' %}
-    
-    
-                    </div>
-                    <!-- End "Looking for..." desired skills tab -->
-                </div>
-            </div>
-    
-            <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
-    
-            <div class="row district-row">
-    
-                <div class="col-6">
-    
-                    <h5>District</h5>
-    
-                </div>
-    
-                <div class="col-6">
-                    <select class="selectpicker districtSelect" id="districtSelect" multiple>
-                        <option value="Mitte">Mitte</option>
-                        <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-                        <option value="Pankow">Pankow</option>
-                        <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
-                        <option value="Spandau">Spandau</option>
-                        <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-                        <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-                        <option value="Neukölln">Neukölln</option>
-                        <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-                        <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-                        <option value="Lichtenberg">Lichtenberg</option>
-                        <option value="Reinickendorf">Reinickendorf</option>
-                    </select>
+        <div class="sidebar-header d-flex justify-content-center">
+            <h3>Search Users</h3>
+        </div>
 
-                    <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
-    
+
+
+        <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
+
+        <ul class="nav nav-tabs">
+
+            <li class="tab-nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skillsTab">I'm proficient in...</a>
+            </li>
+            <li class="tab-nav-item">
+                <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkillsTab">Looking for...</a>
+            </li>
+
+        </ul>
+
+        <!-- Tab Contents -->
+
+        <div class="tab-content">
+
+            <!-- Begin "I'm proficient in..." Skills Tab -->
+            <div id="skillstab" class="tab-pane fade show active">
+                <div class="skill-column">
+
+                    {% include 'components/skills_list.html' %}
+
+                </div>
+
+                <!-- End "I'm proficient in..." Skills Tab -->
+            </div>
+
+
+            <!-- Begin "Looking for..." desired skills tab -->
+            <div id="desiredSkillsTab" class="tab-pane fade">
+
+                <div class="skill-column">
+
+                    {% include 'components/desired_skills_list.html' %}
+
+
+                </div>
+                <!-- End "Looking for..." desired skills tab -->
+            </div>
+        </div>
+
+        <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
+
+        <div class="row top-filter-row">
+
+            <div class="col-12 col-md-6">
+
+                <h5 class="filter-header">District</h5>
+
+            </div>
+
+            <div class="col-12 col-md-6">
+                <select class="selectpicker districtSelect" id="districtSelect" multiple>
+                    <option value="Mitte">Mitte</option>
+                    <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                    <option value="Pankow">Pankow</option>
+                    <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                    <option value="Spandau">Spandau</option>
+                    <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                    <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                    <option value="Neukölln">Neukölln</option>
+                    <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                    <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                    <option value="Lichtenberg">Lichtenberg</option>
+                    <option value="Reinickendorf">Reinickendorf</option>
+                </select>
+
+                <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
+
+            </div>
+        </div>
+
+        <div class="row filter-row">
+
+            <div class="col-12 col-md-3">
+
+                <h5 class="filter-header">Communication</h5>
+
+            </div>
+
+
+            <div class="col-12 col-md-3 commcol">
+
+                <div class="form-check abc-checkbox ">
+                    <input class="form-check-input" name="text" id="text" type="checkbox">
+                    <label class="form-check-label" for="text">
+                        Text
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-3 commcol">
+                <div class="form-check abc-checkbox ">
+                    <input class="form-check-input" name="video" id="video" type="checkbox">
+                    <label class="form-check-label" for="video">
+                        Video
+                    </label>
                 </div>
             </div>
-    
-    
-    
-    
-    
-        </nav>
 
- <!-- End Sidebar -->
+            <div class="col-12 col-md-3 commcol">
+                <div class="form-check abc-checkbox ">
+                    <input class="form-check-input" name="inperson" id="inperson" type="checkbox">
+                    <label class="form-check-label" for="inperson">
+                        In person
+                    </label>
+                </div>
 
- <!-- Begin Content -->
+            </div>
+        </div>
+
+
+
+
+    </nav>
+
+    <!-- End Sidebar -->
+
+    <!-- Begin Content -->
 
     <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -116,12 +155,12 @@
         </nav>
     </div>
 
-<!-- End Content -->
-
-
+    <!-- End Content -->
 
 
 </div>
+
+
 
 
 
