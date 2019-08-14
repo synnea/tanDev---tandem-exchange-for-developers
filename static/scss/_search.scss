@@ -28,11 +28,12 @@
     }
 
     background-color: $pink;
+    transition: all 1s ease;
 }
 
 #sidebar.active {
     margin-left: -80vw;
-
+    transition: all 1s ease;
 
     @media (min-width: $bp-mobile) {
         width: -60vw;
@@ -45,22 +46,17 @@
 
 a[data-toggle="collapse"] {
     position: relative;
+    transition: all 1s ease;
 }
 
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
 
 
 #sidebar {
     background: $brightmidblue;
     color: #fff;
-    transition: all 0.3s;
+
     padding-top: 2rem;
+    transition: all 1s ease;
 }
 
 #sidebar .sidebar-header {

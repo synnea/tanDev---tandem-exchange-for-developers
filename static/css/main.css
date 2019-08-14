@@ -726,6 +726,8 @@ ul {
 
 #sidebarCollapse {
   background-color: #ee4266;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 @media (min-width: 1024px) {
@@ -736,6 +738,8 @@ ul {
 
 #sidebar.active {
   margin-left: -80vw;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 @media (min-width: 768px) {
@@ -752,23 +756,16 @@ ul {
 
 a[data-toggle="collapse"] {
   position: relative;
-}
-
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 #sidebar {
   background: #2581B0;
   color: #fff;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
   padding-top: 2rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 #sidebar .sidebar-header {

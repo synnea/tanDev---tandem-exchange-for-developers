@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Activate sidebar toggle functionality
 
     $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
+        $('#sidebar').toggleClass('active', 500);
     });
 
     // Change navbar class to static-top.
