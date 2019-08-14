@@ -10,8 +10,21 @@ $(document).ready(function () {
 
     $(function () {
         $("#navbar").removeClass("fixed-top").addClass("static-top");
-    })
+    });
 
+    // Clear the selected items in the dropdown menus on the search page.
+
+    $(function () {
+
+       
+
+        $('#districtRefresh').on("click", function() {
+            var itemSelectorOption = $('#districtSelect.selectpicker option:selected');
+            itemSelectorOption.remove(); 
+            $('#districtSelect').selectpicker('refresh');
+        })
+        
+    });
 
 
 });

@@ -14,8 +14,8 @@
     
     <nav id="sidebar">
 
-            <div class="sidebar-header">
-                <h3>Search Users</h3>
+            <div class="sidebar-header d-flex justify-content-center">
+                    <h3>Search Users</h3>
             </div>
     
     
@@ -25,10 +25,10 @@
             <ul class="nav nav-tabs">
     
                 <li class="tab-nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#skillstab">I'm proficient in...</a>
+                    <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skillsTab">I'm proficient in...</a>
                 </li>
                 <li class="tab-nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab">Looking for...</a>
+                    <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkillsTab">Looking for...</a>
                 </li>
     
             </ul>
@@ -73,11 +73,22 @@
                 </div>
     
                 <div class="col-6">
-                    <select class="selectpicker districtSelect" multiple>
+                    <select class="selectpicker districtSelect" id="districtSelect" multiple>
                         <option value="Mitte">Mitte</option>
-                        <option>Ketchup</option>
-                        <option>Relish</option>
+                        <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                        <option value="Pankow">Pankow</option>
+                        <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                        <option value="Spandau">Spandau</option>
+                        <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                        <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                        <option value="Neukölln">Neukölln</option>
+                        <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                        <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                        <option value="Lichtenberg">Lichtenberg</option>
+                        <option value="Reinickendorf">Reinickendorf</option>
                     </select>
+
+                    <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
     
                 </div>
             </div>

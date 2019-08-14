@@ -746,11 +746,13 @@ a[data-toggle="collapse"] {
   color: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  padding-top: 2rem;
 }
 
 #sidebar .sidebar-header {
   padding: 20px;
   background: #2581B0;
+  text-transform: uppercase;
 }
 
 #sidebar ul.components {
@@ -790,6 +792,14 @@ ul ul a {
   padding-left: 1em;
 }
 
+#skillsTab.nav-link {
+  color: black !important;
+}
+
+#desiredSkillsTab.nav-link {
+  color: black !important;
+}
+
 .skill-column {
   padding: 2rem;
 }
@@ -801,5 +811,10 @@ ul ul a {
 .district-row {
   border: 1px solid white;
   padding: 1em;
+}
+
+.refresh {
+  margin-left: 1em;
+  margin-top: 0.5em;
 }
 /*# sourceMappingURL=main.css.map */
