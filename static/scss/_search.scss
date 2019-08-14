@@ -9,26 +9,28 @@
     width: 80vw;
     min-height: 100vh;
 
-
-
-    @media (max-width: $bp-mini) {
-        width: 40vw;
+    @media (min-width: $bp-mobile) {
+        width: 60vw;
     }
 
-    @media (max-width: $bp-mobile) {
-        width: 60vh;
+    @media (min-width: $bp-desktop) {
+        width: 30vw;
     }
 
-    @media (max-width: $bp-ipadpro) {
-        width: 50vh;
-    }
 }
+   
+
 
 #sidebar.active {
     margin-left: -80vw;
 
+
     @media (min-width: $bp-mobile) {
-        margin-left: -40vw;
+        width: -60vw;
+    }
+
+    @media (min-width: $bp-desktop) {
+        width: -30vw;
     }
 }
 

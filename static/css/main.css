@@ -712,21 +712,15 @@ ul {
   min-height: 100vh;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 768px) {
   #sidebar {
-    width: 40vw;
+    width: 60vw;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
   #sidebar {
-    width: 60vh;
-  }
-}
-
-@media (max-width: 1024px) {
-  #sidebar {
-    width: 50vh;
+    width: 30vw;
   }
 }
 
@@ -736,7 +730,13 @@ ul {
 
 @media (min-width: 768px) {
   #sidebar.active {
-    margin-left: -40vw;
+    width: -60vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  #sidebar.active {
+    width: -30vw;
   }
 }
 
