@@ -110,6 +110,14 @@ h3.heading {
   display: block;
 }
 
+.heading-ul-large {
+  width: 30rem;
+  height: 0.1rem;
+  background-color: #2581B0;
+  margin: 0 auto;
+  display: block;
+}
+
 footer {
   height: 15vh;
   background-color: #0B132B;
@@ -243,6 +251,14 @@ h3.heading {
   height: 0.2rem;
   background-color: #2581B0;
   margin: 0 auto 8vh;
+  display: block;
+}
+
+.heading-ul-large {
+  width: 30rem;
+  height: 0.1rem;
+  background-color: #2581B0;
+  margin: 0 auto;
   display: block;
 }
 
@@ -594,6 +610,14 @@ h3.heading {
   display: block;
 }
 
+.heading-ul-large {
+  width: 30rem;
+  height: 0.1rem;
+  background-color: #2581B0;
+  margin: 0 auto;
+  display: block;
+}
+
 footer {
   height: 15vh;
   background-color: #0B132B;
@@ -877,5 +901,11 @@ ul ul a {
 
 .logreg-wrapper {
   height: 100vh;
+}
+
+.form-jumbo {
+  width: 50%;
+  height: 50vh;
+  margin-top: 20vh;
 }
 /*# sourceMappingURL=main.css.map */
