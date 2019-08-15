@@ -713,7 +713,7 @@ ul {
 #sidebar {
   width: 80vw;
   min-height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -844,8 +844,6 @@ ul ul a {
 }
 
 .filter-row {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
   border-bottom: 1px solid white;
   padding: 1em;
 }
@@ -875,5 +873,9 @@ ul ul a {
 
 .search-btn-wrap {
   height: 20vh;
+}
+
+.logreg-wrapper {
+  height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */

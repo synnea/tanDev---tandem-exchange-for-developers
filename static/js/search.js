@@ -12,18 +12,31 @@ $(document).ready(function () {
         $("#navbar").removeClass("fixed-top").addClass("static-top");
     });
 
+
+    // Activate the custom multiple select dropdown picker.
+
+    $(function () {
+        $('select').selectpicker();
+    });
+
+
+
+    $(function () {
+        $('select').selectpicker();
+    });
+
     // Clear the selected items in the dropdown menus on the search page.
 
     $(function () {
 
-       
 
-        $('#districtRefresh').on("click", function() {
+
+        $('#districtRefresh').on("click", function () {
             var itemSelectorOption = $('#districtSelect.selectpicker option:selected');
-            itemSelectorOption.remove(); 
+            itemSelectorOption.remove();
             $('#districtSelect').selectpicker('refresh');
         })
-        
+
     });
 
 

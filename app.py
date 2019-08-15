@@ -35,5 +35,11 @@ def about():
 def search():
     return render_template("pages/search.html", active="search")
 
+@app.route('/logreg', methods=['GET', 'POST'])
+def logreg():
+    return render_template("pages/logreg.html", active="logreg")
+
+
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
