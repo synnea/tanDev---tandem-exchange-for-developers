@@ -1,18 +1,16 @@
-<form id="registerform">
+<form id="registerform" method="POST" action="{{url_for('register', _anchor='registerform')}}">
 
     <div class="form-group">
         <label for="newUsername">Username</label>
         <p><small>Usernames must be unique.</small></p>
-        <input type="text" class="form-control" id="newUsername" required>
+        <input type="text" class="form-control" name="username" id="newUsername" required>
     </div>
     <div class="form-group">
         <label for="loginPassword">Password</label>
-        <input type="password" class="form-control" id="newPassword" placeholder="Password" required>
+        <input type="password" class="form-control" name="password" id="newPassword" placeholder="Password" required>
     </div>
-    <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="notBot" required>
-        <label class="form-check-label" for="notBot">I am not a robot</label>
-    </div>
+
+
     <button type="submit" class="btn btn-search">Register</button>
 
 </form>
