@@ -11,6 +11,8 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'tandev'
 app.config['MONGO_URI']= os.environ.get("MONGO_URI")
+
+# Assign a randomized secret key
 app.secret_key = os.urandom(24)
 
 mongo = PyMongo(app)
@@ -18,24 +20,29 @@ mongo = PyMongo(app)
 client = MongoClient(app.config['MONGO_URI'])
 db = client.tandev
 
+
+# Begin creating routes
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
 def index():
 
-# Create a list of 6 random profiles whose display key is set to 'True' to be used in the index.html carousel.
+    """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the index.html carousel. """
 
 
     carousel = db.profile.aggregate( [{ "$match" : { "display" : True } }, { "$sample": { "size": 6 } } ])
     carousel = list(carousel)
     return render_template("pages/index.html", active="index", carousel=carousel)
 
-#About page
 
+
+#About page
 @app.route('/about', methods=['GET'])
 def about():
     return render_template("pages/about.html", active="about")
 
 
+
+# Search page
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     return render_template("pages/search.html", active="search")
@@ -46,8 +53,13 @@ def logreg():
     return render_template("pages/logreg.html", active="logreg")
 
 
+# Register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+
+    """ Check if the username already exists in the database. Return warning to the user if it exists.
+    If it doesn't exist, add user to the database and create a new document in the database. """
+
     if request.method == 'POST':
         exists = db.profile.find_one({'username': request.form.get('username')})
         if exists:
@@ -75,6 +87,8 @@ def register():
 
     return render_template("pages/logreg.html", active="logreg")
 
+
+#Account page
 @app.route('/account/<username>', methods = ['GET', 'POST'])
 def account(username):
     return render_template("pages/account.html", username=username)
