@@ -16,36 +16,40 @@
 
                 <!-- Create separate login and register tabs. -->
 
-                <ul class="nav nav-tabs">
+                <nav>
+                    <ul class="nav nav-tabs">
 
-                    <li class="tab-nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#loginTab" id="loginTab">
-                            <i class="fas fa-sign-in-alt"></i> Login</a>
-                    </li>
-                    <li class="tab-nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#registerTab" id="registerTab"><i
-                                class="fas fa-user-plus"></i> Register</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#loginTab" id="login-tab" role="tab"
+                                aria-controls="login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#registerTab"
+                                id="register-tab" role="tab" aria-controls="register"><i
+                                    class="fas fa-user-plus"></i> Register</a>
+                        </li>
 
-                </ul>
+                    </ul>
+                </nav>
+
 
                 <!-- Tab Contents -->
 
                 <div class="tab-content">
 
                     <!-- Begin Login Tab -->
-                    <div id="logintab" class="tab-pane fade show active">
+                    <div class="tab-pane container fade show active" id="loginTab" role="tabpanel" aria-labelledby="login-tab">
 
- 
-                            {% include 'components/login_form.html' %}
+
+                        {% include 'components/login_form.html' %}
 
                     </div>
 
                     <!-- Begin Register Tab -->
 
-                    <div id="registertab" class="tab-pane fade">
+                    <div class="tab-pane container fade" id="registerTab" role="tabpanel" aria-labelledby="register-tab">
 
-                            {% include 'components/register_form.html' %}
+                        {% include 'components/register_form.html' %}
 
                     </div>
 
