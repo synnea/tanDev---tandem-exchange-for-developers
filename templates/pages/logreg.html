@@ -24,9 +24,8 @@
                                 aria-controls="login"><i class="fas fa-sign-in-alt"></i> Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#registerTab"
-                                id="register-tab" role="tab" aria-controls="register"><i
-                                    class="fas fa-user-plus"></i> Register</a>
+                            <a class="nav-link" data-toggle="tab" href="#registerTab" id="register-tab" role="tab"
+                                aria-controls="register"><i class="fas fa-user-plus"></i> Register</a>
                         </li>
 
                     </ul>
@@ -38,7 +37,8 @@
                 <div class="tab-content">
 
                     <!-- Begin Login Tab -->
-                    <div class="tab-pane container fade show active" id="loginTab" role="tabpanel" aria-labelledby="login-tab">
+                    <div class="tab-pane container fade show active" id="loginTab" role="tabpanel"
+                        aria-labelledby="login-tab">
 
 
                         {% include 'components/login_form.html' %}
@@ -47,9 +47,26 @@
 
                     <!-- Begin Register Tab -->
 
-                    <div class="tab-pane container fade" id="registerTab" role="tabpanel" aria-labelledby="register-tab">
+                    <div class="tab-pane container fade" id="registerTab" role="tabpanel"
+                        aria-labelledby="register-tab">
 
-                        {% include 'components/register_form.html' %}
+                        <form id="registerform" method="POST" action="{{url_for('register')}}">
+
+                            <div class="form-group">
+                                <label for="newUsername">Username</label>
+                                <p><small>Usernames must be unique.</small></p>
+                                <input type="text" class="form-control" name="username" id="newUsername" pattern="[a-zA-Z0-9\-]{3,20}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" name="password" id="newPassword"
+                                    placeholder="Password" required>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-search">Register</button>
+
+                        </form>
 
                     </div>
 
