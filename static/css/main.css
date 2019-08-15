@@ -836,16 +836,8 @@ ul ul a {
   background: #7791B4;
 }
 
-.nav-tabs {
-  padding-left: 1em;
-}
-
-#skillsTab.nav-link {
-  color: black !important;
-}
-
-#desiredSkillsTab.nav-link {
-  color: black !important;
+.nav-tabs .nav-link {
+  color: #0B132B !important;
 }
 
 .skill-column {

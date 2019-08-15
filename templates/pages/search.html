@@ -21,26 +21,29 @@
 
 
         <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
+        <nav>
+            <ul class="nav nav-tabs">
 
-        <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active skill-tab-item" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
+                        aria-controls="skills"><i class="fas fa-share-alt"></i> I'm proficient
+                        in...</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link skill-tab-item" data-toggle="tab" visibility="shown" href="#desiredSkillsTab" id="desiredSkills-tab" role="tab"
+                        aria-controls="desiredSkills"><i class="fas fa-search"></i> Looking
+                        for...</a>
+                </li>
 
-            <li class="tab-nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skillsTab"><i
-                        class="fas fa-share-alt"></i> I'm proficient in...</a>
-            </li>
-            <li class="tab-nav-item">
-                <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkillsTab"><i
-                        class="fas fa-search"></i> Looking for...</a>
-            </li>
-
-        </ul>
+            </ul>
+        </nav>
 
         <!-- Tab Contents -->
 
         <div class="tab-content">
 
             <!-- Begin "I'm proficient in..." Skills Tab -->
-            <div id="skillstab" class="tab-pane fade show active">
+            <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel" aria-labelledby="skills-tab">
                 <div class="skill-column">
 
                     {% include 'components/skills_list.html' %}
@@ -52,7 +55,8 @@
 
 
             <!-- Begin "Looking for..." desired skills tab -->
-            <div id="desiredSkillsTab" class="tab-pane fade">
+            <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
+                aria-labelledby="desiredSkills-tab">
 
                 <div class="skill-column">
 

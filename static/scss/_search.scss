@@ -105,16 +105,8 @@ ul ul a {
 
 // Filter styling
 
-.nav-tabs {
-    padding-left: 1em;
-}
-
-#skillsTab.nav-link {
-    color: black !important;
-}
-
-#desiredSkillsTab.nav-link {
-    color: black !important;
+.nav-tabs .nav-link {
+    color: $darkblue !important;
 }
 
 .skill-column {
