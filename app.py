@@ -1,14 +1,15 @@
 
 import os
-from flask import Flask, render_template, url_for, redirect, request, session
+from flask import Flask, render_template, url_for, redirect, request, session, flash
 from flask_pymongo import PyMongo
+from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId 
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'tandev'
-app.config['MONGO_URI']= "mongodb+srv://root:car4eih@myfirstcluster-kuy4g.mongodb.net/tandev?retryWrites=true&w=majority"
+app.config['MONGO_URI']= os.environ.get("MONGO_URI")
 app.secret_key = os.urandom(24)
 
 mongo = PyMongo(app)
@@ -32,14 +33,25 @@ def index():
 def about():
     return render_template("pages/about.html", active="about")
 
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     return render_template("pages/search.html", active="search")
+
 
 @app.route('/logreg', methods=['GET', 'POST'])
 def logreg():
     return render_template("pages/logreg.html", active="logreg")
 
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        exists = db.profile.find_one({'username': request.form.get('username')})
+        if exists:
+            flash("Sorry, this username already exists")
+            return redirect(url_for('logreg'))
+    return render_template("pages/logreg.html", active="logreg")
 
 
 if __name__ == '__main__':
