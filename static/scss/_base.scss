@@ -22,3 +22,39 @@ $bp-mobile: 768px;
 $bp-tablet: 992px;
 $bp-ipadpro: 1024px;
 $bp-desktop: 1200px;
+
+// The following button mixins were created using https://charliepark.org/bootstrap_buttons/.
+
+@mixin custom-btn {
+    background-color: hsl(211, 70%, 22%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#74abe6", endColorstr="#10365f");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#74abe6), to(#10365f));
+    background-image: -moz-linear-gradient(top, #74abe6, #10365f);
+    background-image: -ms-linear-gradient(top, #74abe6, #10365f);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #74abe6), color-stop(100%, #10365f));
+    background-image: -webkit-linear-gradient(top, #74abe6, #10365f);
+    background-image: -o-linear-gradient(top, #74abe6, #10365f);
+    background-image: linear-gradient(#74abe6, #10365f);
+    border-color: #10365f #10365f hsl(211, 70%, 10.5%);
+    color: #fff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+    -webkit-font-smoothing: antialiased;
+};
+
+@mixin custom-btn-hover {
+    background-color: hsl(232, 72%, 7%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b2eab", endColorstr="#04081e");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#1b2eab), to(#04081e));
+    background-image: -moz-linear-gradient(top, #1b2eab, #04081e);
+    background-image: -ms-linear-gradient(top, #1b2eab, #04081e);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1b2eab), color-stop(100%, #04081e));
+    background-image: -webkit-linear-gradient(top, #1b2eab, #04081e);
+    background-image: -o-linear-gradient(top, #1b2eab, #04081e);
+    background-image: linear-gradient(#1b2eab, #04081e);
+    border-color: #04081e #04081e hsl(232, 72%, -1%);
+    color: #fff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
+    -webkit-font-smoothing: antialiased;
+}

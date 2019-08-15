@@ -103,15 +103,17 @@
     margin-top: 5vh;
     padding: 2vh 2vw;
 
+    @include custom-btn;
+
     @media (min-width: $bp-ipadpro) {
         font-size: 1.5rem;
-        background-color: $teal;
+
     }
 }
 
 
 #hero-btn:hover {
-    background-color: $brightmidblue;
+    @include custom-btn-hover;
 }
 
 .img-overlay-index {

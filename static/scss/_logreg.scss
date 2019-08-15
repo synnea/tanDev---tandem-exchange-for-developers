@@ -1,3 +1,6 @@
+@import "_base.scss";
+
+
 .logreg-wrapper {
     height: 100vh;
     background: url("/static/img/logreg-bg.jpg") center center no-repeat;
@@ -16,6 +19,13 @@
     border-radius: 25px;
 }
 
+.logreg-label {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: $darkblue;
+}
 
 .jumbo-content {
     margin-top: 5vh;
@@ -28,4 +38,24 @@
 
 #registerform {
     margin-top: 5vh;
+}
+
+#loginform {
+    margin-top: 5vh;
+}
+
+.logreg-btn {
+
+@include custom-btn;
+
+}
+
+
+.logreg-btn:hover {
+    @include custom-btn-hover;
+}
+
+
+.logreg-btn:hover {
+    background-color: $brightmidblue;
 }

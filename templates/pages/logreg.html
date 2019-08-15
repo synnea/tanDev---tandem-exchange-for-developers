@@ -45,18 +45,18 @@
                         <form id="loginform">
 
                             <div class="form-group">
-                                <label for="loginUsername">Username</label>
+                                <label class="logreg-label" for="loginUsername">Username</label>
                                 <input type="text" class="form-control" id="loginUsername" required>
                             </div>
                             <div class="form-group">
-                                <label for="loginPassword">Password</label>
+                                <label class="logreg-label" for="loginPassword">Password</label>
                                 <input type="password" class="form-control" id="loginPassword" placeholder="Password"
                                     required>
                             </div>
 
                             <!-- Login Button  -->
 
-                            <button type="submit" class="btn btn-search">Log in</button>
+                            <button type="submit" class="btn btn-primary btn-large logreg-btn">Log in</button>
                         </form>
 
                     </div>
@@ -71,20 +71,22 @@
                         <form id="registerform" method="POST" action="{{url_for('register')}}">
 
                             <div class="form-group">
-                                <label for="newUsername">Username</label>
-                                <p><small>Usernames must be unique.</small></p>
+                                <label class="logreg-label" for="newUsername">Username</label>
+
                                 <input type="text" class="form-control" name="username" id="newUsername"
                                     pattern="[a-zA-Z0-9\-]{3,20}" required>
+
+                                    <p><small>* Usernames must be unique and must contain no special characters other than hyphens.</small></p>
                             </div>
                             <div class="form-group">
-                                <label for="loginPassword">Password</label>
+                                <label class="logreg-label" for="loginPassword">Password</label>
                                 <input type="password" class="form-control" name="password" id="newPassword"
                                     placeholder="Password" required>
                             </div>
 
                             <!-- Registration Submit Button -->
 
-                            <button type="submit" class="btn btn-search">Register</button>
+                            <button type="submit" class="btn btn-primary btn-large logreg-btn">Register</button>
 
                         </form>
 
