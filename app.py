@@ -4,7 +4,8 @@ from flask import Flask, render_template, url_for, redirect, request, session, f
 from flask_pymongo import PyMongo
 from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
-from bson.objectid import ObjectId 
+from bson.objectid import ObjectId
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -50,8 +51,32 @@ def register():
         exists = db.profile.find_one({'username': request.form.get('username')})
         if exists:
             flash("Sorry, this username already exists")
-            return redirect(url_for('logreg'))
+            return redirect(url_for('register', _anchor = 'register-tab'))
+        register = {
+            "username": request.form.get('username'),
+            "email": "",
+            "password": generate_password_hash(request.form.get('password')),
+            "imgUrl": "",
+            "zipcode": "",
+            "shortDescription": "",
+            "description": "",
+            "experience": "",
+            "communicationStyle": {},
+            "skills": {},
+            "desiredSkills": {},
+            "contact": {},
+            "otherDetails": {},
+            "published": datetime.now().strftime("%d-%M-%Y")
+        }
+        db.profile.insert_one(register)
+        session['username'] = request.form.get('username')
+        return redirect(url_for('account', username = session['username']))
+
     return render_template("pages/logreg.html", active="logreg")
+
+@app.route('/account/<username>', methods = ['GET', 'POST'])
+def account(username):
+    return render_template("pages/account.html", username=username)
 
 
 if __name__ == '__main__':

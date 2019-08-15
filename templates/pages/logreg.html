@@ -50,12 +50,12 @@
                     <div class="tab-pane container fade" id="registerTab" role="tabpanel"
                         aria-labelledby="register-tab">
 
-                        <form id="registerform" method="POST" action="{{url_for('register', _anchor='registerTab')}}">
+                        <form id="registerform" method="POST" action="{{url_for('register')}}">
 
                             <div class="form-group">
                                 <label for="newUsername">Username</label>
                                 <p><small>Usernames must be unique.</small></p>
-                                <input type="text" class="form-control" name="username" id="newUsername" required>
+                                <input type="text" class="form-control" name="username" id="newUsername" pattern="[a-zA-Z0-9\-]{3,20}" required>
                             </div>
                             <div class="form-group">
                                 <label for="loginPassword">Password</label>
