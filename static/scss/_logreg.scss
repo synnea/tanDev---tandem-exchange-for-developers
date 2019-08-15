@@ -11,13 +11,28 @@
 }
 
 .form-jumbo {
-    background: rgba(255,255,255,0.3);
-    width: 40%;
-    height: 70vh;
+    background: rgba(255, 255, 255, 0.3);
+    width: 80%;
+    height: auto;
     margin-top: 10vh;
     padding-top: 10vh;
     border-radius: 25px;
+
+@media (min-width: $bp-mobile) {
+    height: 60vh;
+    padding-top: 10vh !important;
 }
+    @media (min-width: $bp-desktop) {
+
+        width: 40%;
+        height: auto;
+    }
+}
+
+.form-row {
+    margin: 0 !important;
+}
+
 
 .logreg-label {
     font-size: 1.1em;
@@ -29,6 +44,10 @@
 
 .jumbo-content {
     margin-top: 5vh;
+
+    @media (min-width: $bp-mobile) {
+        max-width: 70%;
+    }
 }
 
 .tab-nav-item {
@@ -46,16 +65,12 @@
 
 .logreg-btn {
 
-@include custom-btn;
+    @include custom-btn;
+    margin-left: 25%;
 
 }
 
 
 .logreg-btn:hover {
     @include custom-btn-hover;
-}
-
-
-.logreg-btn:hover {
-    background-color: $brightmidblue;
 }

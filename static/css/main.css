@@ -4,6 +4,10 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -148,6 +152,10 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -522,6 +530,10 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -920,11 +932,29 @@ ul ul a {
 
 .form-jumbo {
   background: rgba(255, 255, 255, 0.3);
-  width: 40%;
-  height: 70vh;
+  width: 80%;
+  height: auto;
   margin-top: 10vh;
   padding-top: 10vh;
   border-radius: 25px;
+}
+
+@media (min-width: 768px) {
+  .form-jumbo {
+    height: 60vh;
+    padding-top: 10vh !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-jumbo {
+    width: 40%;
+    height: auto;
+  }
+}
+
+.form-row {
+  margin: 0 !important;
 }
 
 .logreg-label {
@@ -937,6 +967,12 @@ ul ul a {
 
 .jumbo-content {
   margin-top: 5vh;
+}
+
+@media (min-width: 768px) {
+  .jumbo-content {
+    max-width: 70%;
+  }
 }
 
 .tab-nav-item {
@@ -963,6 +999,7 @@ ul ul a {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
   -webkit-font-smoothing: antialiased;
+  margin-left: 25%;
 }
 
 .logreg-btn:hover {
@@ -976,9 +1013,5 @@ ul ul a {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
   -webkit-font-smoothing: antialiased;
-}
-
-.logreg-btn:hover {
-  background-color: #2581B0;
 }
 /*# sourceMappingURL=main.css.map */
