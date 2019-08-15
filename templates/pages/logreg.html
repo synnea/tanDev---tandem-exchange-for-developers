@@ -33,25 +33,23 @@
 
                 <div class="tab-content">
 
-                    <!-- Begin "I'm proficient in..." Skills Tab -->
-                    <div id="skillstab" class="tab-pane fade show active">
+                    <!-- Begin Login Tab -->
+                    <div id="logintab" class="tab-pane fade show active">
 
-                        <form id="loginform">
-
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Example label</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput"
-                                    placeholder="Example input">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput2">Another label</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2"
-                                    placeholder="Another input">
-                            </div>
-                            
-                        </form>
+ 
+                            {% include 'components/login_form.html' %}
 
                     </div>
+
+                    <!-- Begin Register Tab -->
+
+                    <div id="registertab" class="tab-pane fade">
+
+                            {% include 'components/register_form.html' %}
+
+                    </div>
+
+
                 </div>
             </div>
         </div>

@@ -19,12 +19,7 @@ $(document).ready(function () {
         $('select').selectpicker();
     });
 
-
-
-    $(function () {
-        $('select').selectpicker();
-    });
-
+    
     // Clear the selected items in the dropdown menus on the search page.
 
     $(function () {
