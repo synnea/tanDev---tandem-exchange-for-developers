@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="container logreg-wrapper">
+<div class="container-fluid logreg-wrapper">
 
 
     <div class="row justify-content-center">
@@ -12,7 +12,7 @@
         <!-- Create centered jumbotron -->
 
         <div class="jumbotron form-jumbo">
-            <div class="col-12">
+            <div class="col-12 jumbo-content">
 
                 <!-- Create separate login and register tabs. -->
 
@@ -40,8 +40,24 @@
                     <div class="tab-pane container fade show active" id="loginTab" role="tabpanel"
                         aria-labelledby="login-tab">
 
+                        <!-- Login Form -->
 
-                        {% include 'components/login_form.html' %}
+                        <form id="loginform">
+
+                            <div class="form-group">
+                                <label for="loginUsername">Username</label>
+                                <input type="text" class="form-control" id="loginUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Password"
+                                    required>
+                            </div>
+
+                            <!-- Login Button  -->
+
+                            <button type="submit" class="btn btn-search">Log in</button>
+                        </form>
 
                     </div>
 
@@ -50,12 +66,15 @@
                     <div class="tab-pane container fade" id="registerTab" role="tabpanel"
                         aria-labelledby="register-tab">
 
+                        <!-- Registration Form -->
+
                         <form id="registerform" method="POST" action="{{url_for('register')}}">
 
                             <div class="form-group">
                                 <label for="newUsername">Username</label>
                                 <p><small>Usernames must be unique.</small></p>
-                                <input type="text" class="form-control" name="username" id="newUsername" pattern="[a-zA-Z0-9\-]{3,20}" required>
+                                <input type="text" class="form-control" name="username" id="newUsername"
+                                    pattern="[a-zA-Z0-9\-]{3,20}" required>
                             </div>
                             <div class="form-group">
                                 <label for="loginPassword">Password</label>
@@ -63,6 +82,7 @@
                                     placeholder="Password" required>
                             </div>
 
+                            <!-- Registration Submit Button -->
 
                             <button type="submit" class="btn btn-search">Register</button>
 

@@ -1,16 +1,31 @@
 .logreg-wrapper {
     height: 100vh;
-    background: red;
+    background: url("/static/img/logreg-bg.jpg") center center no-repeat;
+    background-size: cover !important;
+    background-position: center center;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
 }
 
 .form-jumbo {
-    width: 50%;
+    background: rgba(255,255,255,0.3);
+    width: 40%;
     height: 70vh;
     margin-top: 10vh;
     padding-top: 10vh;
+    border-radius: 25px;
+}
+
+
+.jumbo-content {
+    margin-top: 5vh;
 }
 
 .tab-nav-item {
     margin-top: 5vh;
     padding: 1em;
+}
+
+#registerform {
+    margin-top: 5vh;
 }
