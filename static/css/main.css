@@ -146,6 +146,14 @@ ul {
   margin: 0;
 }
 
+.message {
+  color: #ee4266;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -292,6 +300,14 @@ col-4 {
 
 ul {
   margin: 0;
+}
+
+.message {
+  color: #ee4266;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
 }
 
 #hero {
@@ -672,6 +688,14 @@ ul {
   margin: 0;
 }
 
+.message {
+  color: #ee4266;
+  font-size: 1.4em;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+}
+
 .about-banner {
   background: url("/static/img/hero-cropped.jpg") center top no-repeat scroll;
   background-size: cover;
@@ -1014,5 +1038,9 @@ ul ul a {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
   -webkit-font-smoothing: antialiased;
+}
+
+.flashed-msg-box {
+  margin-left: 5vw;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,17 @@
-{% with messages = get_flashed_messages() %}
+<!-- Code for the Flask flash messages taken from the Flask documentation, https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/ -->
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
 
 {% if messages %}
+<ul class=flashes>
+    {% for category, message in messages %}
 
-{% for message in messages %}
+    <li class="{{ category }}">
+        <p class="message">{{message}}</p>
+    </li>
 
-<h1>{{message}}</h1>
-
-{% endfor %}
+    {% endfor %}
+</ul>
 {% endif %}
 {% endwith %}

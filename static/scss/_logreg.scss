@@ -71,7 +71,10 @@
 
 }
 
-
 .logreg-btn:hover {
     @include custom-btn-hover;
+}
+
+.flashed-msg-box {
+    margin-left: 5vw;
 }

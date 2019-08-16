@@ -50,13 +50,14 @@
                             </div>
                             <div class="form-group">
                                 <label class="logreg-label" for="loginPassword">Password</label>
-                                <input type="password" class="form-control" name="password" id="loginPassword" placeholder="Password"
-                                    required>
+                                <input type="password" class="form-control" name="password" id="loginPassword"
+                                    placeholder="Password" required>
                             </div>
 
                             <!-- Login Button  -->
 
-                            <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn" value="login">Login</button>
+                            <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn"
+                                value="login">Login</button>
                         </form>
 
                     </div>
@@ -77,9 +78,13 @@
                                 a-z, A-Z, numbers from 0-9, and hyphens. They must also be between 3 and 20 letters long. -->
 
                                 <input type="text" class="form-control" name="username" id="newUsername"
-                                    pattern="[a-zA-Z0-9\-]{3,20}" title="allow username without special characters (apart from hypthens) and between 3 to 20 characters" required>
+                                    pattern="[a-zA-Z0-9\-]{3,20}"
+                                    title="allow username without special characters (apart from hypthens) and between 3 to 20 characters"
+                                    required>
 
-                                    <p><small>* Usernames must be unique and must contain no special characters other than hyphens. Please choose a username between 3 and 20 characters in length.</small></p>
+                                <p><small>* Usernames must be unique and must contain no special characters other than
+                                        hyphens. Please choose a username between 3 and 20 characters in length.</small>
+                                </p>
                             </div>
 
                             <!-- E-Mail input form. Pattern enforces that emails must contain characters, followed by an @, followed by more characters and a full-stop. -->
@@ -87,25 +92,29 @@
                             <div class="form-group">
                                 <label class="logreg-label" for="newEmail">E-Mail</label>
                                 <input type="email" class="form-control" name="email" id="newEmail"
-                                    placeholder="myemail@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email addresses must follow standard email pattern"
-                                    required>
+                                    placeholder="myemail@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="email addresses must follow standard email pattern" required>
                             </div>
 
                             <div class="form-group">
                                 <label class="logreg-label" for="newPassword">Password</label>
                                 <input type="password" class="form-control" name="password" id="newPassword"
-                                    placeholder="Password" pattern="[a-zA-Z0-9\-]{6,}" title="allow passwords with minimum 6 characters"
-                                    required>
-                                    <p><small>* Passwords must not contain special characters other than hyphens. Please choose a password that is at least 6 characters long.</small></p>
+                                    placeholder="Password" pattern="[a-zA-Z0-9\-]{6,}"
+                                    title="allow passwords with minimum 6 characters" required>
+                                <p><small>* Passwords must not contain special characters other than hyphens. Please
+                                        choose a password that is at least 6 characters long.</small></p>
                             </div>
 
                             <!-- Registration Submit Button -->
 
-                            <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn" value="register">Register</button>
+                            <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn"
+                                value="register">Register</button>
 
                         </form>
 
                     </div>
+
+                    <!-- Box to display flashed messages. -->
 
 
                 </div>

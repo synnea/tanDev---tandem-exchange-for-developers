@@ -23,4 +23,18 @@ $(document).ready(function () {
         }
     });
 
+    // The following two functions hide the flash messages when the login/register tabs are being switched.
+
+    $(function() {
+        $('#register-tab').on("click", function() {
+            $(".message").hide();
+        })
+    });
+
+    $(function() {
+        $('#login-tab').on("click", function() {
+            $(".message").hide();
+        })
+    });
+
 });

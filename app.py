@@ -48,30 +48,26 @@ def search():
     return render_template("pages/search.html", active="search")
 
 
-@app.route('/logreg', methods=['GET', 'POST'])
-def logreg():
-    return render_template("pages/logreg.html", active="logreg")
-
-
 # Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 
-    """ Checks if the user already exists in the database """
+    """ Checks if the user already exists in the database. If they don't exist, the user is notified of this. 
+    If the username does exist, the password is matched against it. If it matches, the user is logged in.
+    Otherwise, the user is notified that his username and password combination didn't match. """
 
     if request.method == 'POST' and request.form['btn'] == 'login':
         existing_user = db.profile.find_one({'username': request.form.get('username')})
         if not existing_user:
-            flash("Hmm... this username doesn't seem to exist.")
+            flash("Hmm... this username doesn't seem to exist.", "error")
             return redirect(url_for('login'))
 
-        print('2nd thing works')
         if check_password_hash(existing_user["password"], 
         request.form.get("password")):
             session['username'] = request.form.get('username')
             return redirect(url_for('myprofile', username = session['username']))
         else:
-            flash("Uh-oh! Password didn't match.")
+            flash("Uh-oh! Username and password combo doesn't match.", "error")
             return redirect(url_for('login'))
 
     else:
@@ -83,12 +79,14 @@ def login():
 def register():
 
     """ Check if the username already exists in the database. Return warning to the user if it exists.
-    If it doesn't exist, add user to the database and create a new document in the database. """
+    If it doesn't exist, add user to the database and create a new document in the database.
+    This function was written with the help of Tim Nelson who helped me get the hang of Python backend coding, so I could do
+    the remaining functions on my own. """
 
     if request.method == 'POST' and request.form['btn'] == 'register':
         exists = db.profile.find_one({'username': request.form.get('username')})
         if exists:
-            flash("Sorry, this username already exists")
+            flash("Sorry, this username already exists", "error")
             return redirect(url_for('register', _anchor = 'register-tab'))
         register = {
             "username": request.form.get('username'),
