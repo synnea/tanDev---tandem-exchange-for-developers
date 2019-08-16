@@ -129,7 +129,7 @@ def myprofile(username):
 
     loggedIn = True if 'username' in session else False
 
-    return render_template("pages/myprofile.html", username=username, loggedIn=loggedIn)
+    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
 
 
 if __name__ == '__main__':

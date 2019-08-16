@@ -92,7 +92,7 @@
     {% endif %}
 
 
-    <!-- Conditional CSS and JS files which load only when the 'About' page is active. The CSS colors the nav elements a light blue in order to make them more visible against the 'About' page's background. -->
+    <!-- Conditional CSS and JS for about page. -->
 
     {% if active == 'about' %}
 
@@ -102,14 +102,12 @@
         }
     </style>
 
-
-
     <script src="{{url_for('static', filename='js/about.js')}}"></script>
 
 
-    <!-- Conditional CSS and JS files which load only when the 'About' page is active.-->
+    <!-- Alternative navbar styling for pages other than index and about.-->
 
-    {% elif active == 'search' %}
+    {% elif active == 'search' or active == 'logreg' or active == 'myprofile' %}
 
     <style>
         #navbar.bg-light {
@@ -121,21 +119,17 @@
         }
     </style>
 
+    {% endif %}
 
+    <!-- Conditional JS for search page. -->
+
+    {% if active == 'search' %}
 
     <script src="{{url_for('static', filename='js/search.js')}}"></script>
 
+    <!-- Conditional JS for logreg page. -->
+
     {% elif active == 'logreg' %}
-
-    <style>
-        #navbar.bg-light {
-            background-color: #0B132B !important;
-        }
-
-        .nav-link {
-            color: #2581B0 !important;
-        }
-    </style>
 
     <script src="{{url_for('static', filename='js/logreg.js')}}"></script>
     {% endif %}
