@@ -28,24 +28,32 @@ def index():
 
     """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the index.html carousel. """
 
+    loggedIn = True if 'username' in session else False
+
 
     carousel = db.profile.aggregate( [{ "$match" : { "display" : True } }, { "$sample": { "size": 6 } } ])
     carousel = list(carousel)
-    return render_template("pages/index.html", active="index", carousel=carousel)
+    return render_template("pages/index.html", active="index", carousel=carousel, loggedIn=loggedIn)
 
 
 
 #About page
 @app.route('/about', methods=['GET'])
 def about():
-    return render_template("pages/about.html", active="about")
+
+    loggedIn = True if 'username' in session else False
+
+    return render_template("pages/about.html", active="about", loggedIn=loggedIn)
 
 
 
 # Search page
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    return render_template("pages/search.html", active="search")
+
+    loggedIn = True if 'username' in session else False
+
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn)
 
 
 # Login
@@ -55,6 +63,8 @@ def login():
     """ Checks if the user already exists in the database. If they don't exist, the user is notified of this. 
     If the username does exist, the password is matched against it. If it matches, the user is logged in.
     Otherwise, the user is notified that his username and password combination didn't match. """
+
+    loggedIn = True if 'username' in session else False
 
     if request.method == 'POST' and request.form['btn'] == 'login':
         existing_user = db.profile.find_one({'username': request.form.get('username')})
@@ -71,7 +81,7 @@ def login():
             return redirect(url_for('login'))
 
     else:
-        return render_template("pages/logreg.html", active="logreg")
+        return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn)
 
 
 # Register
@@ -82,6 +92,8 @@ def register():
     If it doesn't exist, add user to the database and create a new document in the database.
     This function was written with the help of Tim Nelson who helped me get the hang of Python backend coding, so I could do
     the remaining functions on my own. """
+
+    loggedIn = True if 'username' in session else False
 
     if request.method == 'POST' and request.form['btn'] == 'register':
         exists = db.profile.find_one({'username': request.form.get('username')})
@@ -108,13 +120,16 @@ def register():
         session['username'] = request.form.get('username')
         return redirect(url_for('myprofile', username = session['username']))
 
-    return render_template("pages/logreg.html", active="logreg")
+    return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn)
 
 
 # My profile page
 @app.route('/myprofile/<username>', methods = ['GET', 'POST'])
 def myprofile(username):
-    return render_template("pages/myprofile.html", username=username)
+
+    loggedIn = True if 'username' in session else False
+
+    return render_template("pages/myprofile.html", username=username, loggedIn=loggedIn)
 
 
 if __name__ == '__main__':
