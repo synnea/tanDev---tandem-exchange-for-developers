@@ -1046,4 +1046,12 @@ ul ul a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
   -webkit-font-smoothing: antialiased;
 }
+
+.myprofile-wrapper {
+  height: 140vh;
+}
+
+.welcome-row {
+  height: 40vh;
+}
 /*# sourceMappingURL=main.css.map */
