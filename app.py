@@ -56,15 +56,26 @@ def logreg():
 # Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    """ Checks if the user already exists in the database """
+
     if request.method == 'POST' and request.form['btn'] == 'login':
-        """ Checks if the user already exists in the database """
-
         existing_user = db.profile.find_one({'username': request.form.get('username')})
-        if existing_user:
-                        flash("Ok")
-                        return redirect(url_for('register', _anchor = 'register-tab'))
+        if not existing_user:
+            flash("Hmm... this username doesn't seem to exist.")
+            return redirect(url_for('login'))
 
-    return render_template("pages/logreg.html", active="logreg")
+        print('2nd thing works')
+        if check_password_hash(existing_user["password"], 
+        request.form.get("password")):
+            session['username'] = request.form.get('username')
+            return redirect(url_for('myprofile', username = session['username']))
+        else:
+            flash("Uh-oh! Password didn't match.")
+            return redirect(url_for('login'))
+
+    else:
+        return render_template("pages/logreg.html", active="logreg")
 
 
 # Register
@@ -97,14 +108,14 @@ def register():
         }
         db.profile.insert_one(register)
         session['username'] = request.form.get('username')
-        return redirect(url_for('account', username = session['username']))
+        return redirect(url_for('myprofile', username = session['username']))
 
     return render_template("pages/logreg.html", active="logreg")
 
 
-#Account page
+# My profile page
 @app.route('/myprofile/<username>', methods = ['GET', 'POST'])
-def account(username):
+def myprofile(username):
     return render_template("pages/myprofile.html", username=username)
 
 
