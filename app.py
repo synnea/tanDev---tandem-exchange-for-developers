@@ -89,9 +89,9 @@ def register():
 
 
 #Account page
-@app.route('/account/<username>', methods = ['GET', 'POST'])
+@app.route('/myprofile/<username>', methods = ['GET', 'POST'])
 def account(username):
-    return render_template("pages/account.html", username=username)
+    return render_template("pages/myprofile.html", username=username)
 
 
 if __name__ == '__main__':
