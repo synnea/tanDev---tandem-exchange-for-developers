@@ -53,6 +53,16 @@ def logreg():
     return render_template("pages/logreg.html", active="logreg")
 
 
+# Login
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         """ Checks if the user already exists in the database """
+
+#         existing_user = db.profile.find_one({'username': request.form.get('username')})
+#         if existing_user: 
+
+
 # Register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -60,7 +70,7 @@ def register():
     """ Check if the username already exists in the database. Return warning to the user if it exists.
     If it doesn't exist, add user to the database and create a new document in the database. """
 
-    if request.method == 'POST':
+    if request.method == 'POST' and request.form['btn'] == 'register':
         exists = db.profile.find_one({'username': request.form.get('username')})
         if exists:
             flash("Sorry, this username already exists")
