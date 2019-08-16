@@ -146,12 +146,15 @@ ul {
   margin: 0;
 }
 
-.message {
+.error > .message {
   color: #ee4266;
   font-size: 1.4em;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
+}
+
+.flashes {
+  margin-right: 1em;
+  margin-top: 1em;
 }
 
 html {
@@ -302,12 +305,15 @@ ul {
   margin: 0;
 }
 
-.message {
+.error > .message {
   color: #ee4266;
   font-size: 1.4em;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
+}
+
+.flashes {
+  margin-right: 1em;
+  margin-top: 1em;
 }
 
 #hero {
@@ -688,12 +694,15 @@ ul {
   margin: 0;
 }
 
-.message {
+.error > .message {
   color: #ee4266;
   font-size: 1.4em;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-left: 1.5rem;
+}
+
+.flashes {
+  margin-right: 1em;
+  margin-top: 1em;
 }
 
 .about-banner {
@@ -946,7 +955,7 @@ ul ul a {
 }
 
 .logreg-wrapper {
-  height: 120vh;
+  height: 140vh;
   background: url("/static/img/logreg-bg.jpg") center center no-repeat;
   background-size: cover !important;
   background-position: center center;
@@ -965,7 +974,6 @@ ul ul a {
 
 @media (min-width: 768px) {
   .form-jumbo {
-    height: 60vh;
     padding-top: 10vh !important;
   }
 }
@@ -973,7 +981,6 @@ ul ul a {
 @media (min-width: 1200px) {
   .form-jumbo {
     width: 50%;
-    height: auto;
   }
 }
 
@@ -1038,9 +1045,5 @@ ul ul a {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
   -webkit-font-smoothing: antialiased;
-}
-
-.flashed-msg-box {
-  margin-left: 5vw;
 }
 /*# sourceMappingURL=main.css.map */

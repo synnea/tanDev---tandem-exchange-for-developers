@@ -2,7 +2,7 @@
 
 
 .logreg-wrapper {
-    height: 120vh;
+    height: 140vh;
     background: url("/static/img/logreg-bg.jpg") center center no-repeat;
     background-size: cover !important;
     background-position: center center;
@@ -19,13 +19,11 @@
     border-radius: 25px;
 
 @media (min-width: $bp-mobile) {
-    height: 60vh;
     padding-top: 10vh !important;
 }
     @media (min-width: $bp-desktop) {
 
         width: 50%;
-        height: auto;
     }
 }
 
@@ -75,6 +73,3 @@
     @include custom-btn-hover;
 }
 
-.flashed-msg-box {
-    margin-left: 5vw;
-}

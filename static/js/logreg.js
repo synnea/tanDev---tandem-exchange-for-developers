@@ -27,13 +27,13 @@ $(document).ready(function () {
 
     $(function() {
         $('#register-tab').on("click", function() {
-            $(".message").hide();
+            $(".flashes").hide();
         })
     });
 
     $(function() {
         $('#login-tab').on("click", function() {
-            $(".message").hide();
+            $(".flashes").hide();
         })
     });
 
