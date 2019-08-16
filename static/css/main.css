@@ -922,7 +922,7 @@ ul ul a {
 }
 
 .logreg-wrapper {
-  height: 100vh;
+  height: 120vh;
   background: url("/static/img/logreg-bg.jpg") center center no-repeat;
   background-size: cover !important;
   background-position: center center;
@@ -948,7 +948,7 @@ ul ul a {
 
 @media (min-width: 1200px) {
   .form-jumbo {
-    width: 40%;
+    width: 50%;
     height: auto;
   }
 }

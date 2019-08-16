@@ -2,7 +2,7 @@
 
 
 .logreg-wrapper {
-    height: 100vh;
+    height: 120vh;
     background: url("/static/img/logreg-bg.jpg") center center no-repeat;
     background-size: cover !important;
     background-position: center center;
@@ -24,7 +24,7 @@
 }
     @media (min-width: $bp-desktop) {
 
-        width: 40%;
+        width: 50%;
         height: auto;
     }
 }

@@ -54,13 +54,17 @@ def logreg():
 
 
 # Login
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         """ Checks if the user already exists in the database """
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST' and request.form['btn'] == 'login':
+        """ Checks if the user already exists in the database """
 
-#         existing_user = db.profile.find_one({'username': request.form.get('username')})
-#         if existing_user: 
+        existing_user = db.profile.find_one({'username': request.form.get('username')})
+        if existing_user:
+                        flash("Ok")
+                        return redirect(url_for('register', _anchor = 'register-tab'))
+
+    return render_template("pages/logreg.html", active="logreg")
 
 
 # Register
