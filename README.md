@@ -3,13 +3,11 @@
 ### Milestone Project 3: Data-Centric Development
 
 
-*Tandem language learning is a method of language learning based on mutual language exchange between tandem partners, where ideally each learner is a native speaker in the language the other party wants to learn...*
+"*Tandem language learning is a method of language learning based on mutual language exchange between tandem partners, where ideally each learner is a native speaker in the language the other party wants to learn...*"
 
-But for developers.
+tanDev is about this... but for developers.
 
-tanDev was conceived as a platform to connect developers and designers who wish to learn from each other and work together.
-
-The project features a Python backend and a MongoDB database.
+Conceived as a platform to connect developers and designers who wish to learn from each other and work together, the project features a Python backend and a MongoDB database.
 
 The current deployed version can be accessed at: https://tandev.herokuapp.com/index.
 
