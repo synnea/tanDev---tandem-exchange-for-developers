@@ -13,13 +13,13 @@
 
 
         {% if active == 'search' %}
-  
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-                <span>Toggle Filters</span>
-            </button>
 
-     
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Filters</span>
+        </button>
+
+
 
         {% endif %}
 
@@ -49,7 +49,7 @@
 
                 <!-- If the user is logged in, they see the "Login/Register" navbar item.
                 If they are not logged in, they see "My Account", with additional dropdown items. -->
-                
+
 
                 {% if loggedIn != True %}
                 <li class="nav-item" id="navLogReg">
@@ -60,9 +60,20 @@
 
                 {% if loggedIn == True %}
 
-                <li class="nav-item" id="navAccount">
-                    <a class="nav-link hvr-bounce-in" href="{{url_for('myprofile', username=session['username'])}}" id="navAccount">My Account</a>
+                <li class="nav-item dropdown" id="navAccount">
+                    <a class="nav-link hvr-bounce-in dropdown-toggle"
+                        href="{{url_for('myprofile', username=session['username'])}}" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navAccount">
+                        My Account</a>
 
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" id="dropdownProfile"
+                            href="{{url_for('myprofile', username=session['username'])}}">My Profile</a>
+                        <a class="dropdown-item" href="#">My Favorites</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
 
                 {% endif %}
             </ul>
