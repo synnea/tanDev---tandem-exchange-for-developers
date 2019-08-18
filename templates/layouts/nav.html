@@ -39,11 +39,11 @@
 
             <ul class="navbar-nav ml-auto nav-fill w-50">
 
-                <li class="nav-item" id="navAbout">
+                <li class="nav-item main-nav-item" id="navAbout">
                     <a class="nav-link hvr-bounce-in" href="{{url_for('about')}}" id="navAboutLink">About</a>
                 </li>
 
-                <li class="nav-item" id="navSearch">
+                <li class="nav-item main-nav-item" id="navSearch">
                     <a class="nav-link hvr-bounce-in" href="{{url_for('search')}}" id="navSearchLink">Search</a>
                 </li>
 
@@ -52,7 +52,7 @@
 
 
                 {% if loggedIn != True %}
-                <li class="nav-item" id="navLogReg">
+                <li class="nav-item main-nav-item" id="navLogReg">
                     <a class="nav-link hvr-bounce-in" href="{{url_for('login')}}" id="navLogRegLink">Login/Register</a>
                 </li>
 
@@ -60,7 +60,7 @@
 
                 {% if loggedIn == True %}
 
-                <li class="nav-item dropdown" id="navAccount">
+                <li class="nav-item dropdown main-nav-item" id="navAccount">
                     <a class="nav-link hvr-bounce-in dropdown-toggle"
                         href="{{url_for('myprofile', username=session['username'])}}" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navAccount">
@@ -68,10 +68,10 @@
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" id="dropdownProfile"
-                            href="{{url_for('myprofile', username=session['username'])}}">My Profile</a>
-                        <a class="dropdown-item" href="#">My Favorites</a>
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                            href="{{url_for('myprofile', username=session['username'])}}"><i class="fas fa-users"></i> My Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-heart"></i> My Favorites</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
 

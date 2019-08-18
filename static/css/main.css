@@ -43,6 +43,7 @@ a:hover {
 
 .nav-link {
   color: #0B132B !important;
+  font-size: 1.1em;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
 }
@@ -51,12 +52,6 @@ a:hover {
   .nav-link {
     color: white !important;
   }
-}
-
-.nav-link {
-  font-size: 1.1em;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 992px) {
@@ -202,6 +197,7 @@ a:hover {
 
 .nav-link {
   color: #0B132B !important;
+  font-size: 1.1em;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
 }
@@ -210,12 +206,6 @@ a:hover {
   .nav-link {
     color: white !important;
   }
-}
-
-.nav-link {
-  font-size: 1.1em;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 992px) {
@@ -591,6 +581,7 @@ a:hover {
 
 .nav-link {
   color: #0B132B !important;
+  font-size: 1.1em;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
 }
@@ -599,12 +590,6 @@ a:hover {
   .nav-link {
     color: white !important;
   }
-}
-
-.nav-link {
-  font-size: 1.1em;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 992px) {
@@ -1053,5 +1038,10 @@ ul ul a {
 
 .welcome-row {
   height: 40vh;
+}
+
+.dropdown-menu {
+  background-color: #2581B0;
+  margin-top: 1vh;
 }
 /*# sourceMappingURL=main.css.map */
