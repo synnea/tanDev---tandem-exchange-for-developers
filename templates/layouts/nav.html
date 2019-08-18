@@ -47,10 +47,20 @@
                     <a class="nav-link hvr-bounce-in" href="{{url_for('search')}}" id="navSearchLink">Search</a>
                 </li>
 
-                
+                {% if loggedIn != True %}
                 <li class="nav-item" id="navLogReg">
                     <a class="nav-link hvr-bounce-in" href="{{url_for('login')}}" id="navLogRegLink">Login/Register</a>
                 </li>
+
+                {% endif %}
+
+                {% if loggedIn == True %}
+
+                <li class="nav-item" id="navAccount">
+                    <a class="nav-link hvr-bounce-in" href="{{url_for('myprofile', username=session['username'])}}" id="navAccount">My Account</a>
+
+
+                {% endif %}
             </ul>
         </div>
 
