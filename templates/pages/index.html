@@ -21,12 +21,29 @@
 
                 </div>
             </div>
+
+            <!-- If the user is logged in, they see a prominently placed "Sign up!" button.
+            If they are not logged in, the text is replaced by "My Account". -->
+
+            {% if loggedIn != True %}
             <div class="col-12 d-block" id="btn-div">
 
-                <a href="{{url_for('register', _anchor = 'register-tab')}}" class="btn btn-primary btn-large" id="hero-btn">Sign up!</a>
+                <a href="{{url_for('register', _anchor = 'register-tab')}}" class="btn btn-primary btn-large"
+                    id="hero-btn">Sign up!</a>
+
+            </div>
+            {% endif %}
+
+            {% if loggedIn == True %}
+
+            <div class="col-12 d-block" id="btn-div">
+
+                <a href="{{url_for('myprofile', username=session['username'])}}" class="btn btn-primary btn-large"
+                    id="hero-btn">My Account</a>
 
             </div>
 
+            {% endif %}
 
 
         </div>
@@ -69,14 +86,14 @@
 
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-6 d-none d-md-block">
-                                    {% include 'components/profile_card.html' %}
+                                {% include 'components/profile_card.html' %}
                             </div>
 
                             {% endif %}
 
                             {% if loop.index % 2 == 0 %}
                             <div class="col-12 col-md-6">
-                                    {% include 'components/profile_card.html' %}
+                                {% include 'components/profile_card.html' %}
                             </div>
                         </div>
 

@@ -47,6 +47,10 @@
                     <a class="nav-link hvr-bounce-in" href="{{url_for('search')}}" id="navSearchLink">Search</a>
                 </li>
 
+                <!-- If the user is logged in, they see the "Login/Register" navbar item.
+                If they are not logged in, they see "My Account", with additional dropdown items. -->
+                
+
                 {% if loggedIn != True %}
                 <li class="nav-item" id="navLogReg">
                     <a class="nav-link hvr-bounce-in" href="{{url_for('login')}}" id="navLogRegLink">Login/Register</a>
