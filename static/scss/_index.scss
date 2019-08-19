@@ -90,11 +90,12 @@
     position: absolute;
 
     top: 72%;
-    left: 33%;
+    left: 37%;
 
 
     @media (min-width: $bp-mobile) {
-        left: 42%;
+        top: 60%;
+        left: 45%;
     }
 }
 
@@ -102,6 +103,8 @@
 
     margin-top: 5vh;
     padding: 2vh 2vw;
+
+
 
     @include custom-btn;
 
