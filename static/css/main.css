@@ -1066,4 +1066,9 @@ ul ul a {
     margin-left: 5vw;
   }
 }
+
+.profile-selectpicker {
+  max-width: 50%;
+  display: inline;
+}
 /*# sourceMappingURL=main.css.map */
