@@ -66,7 +66,7 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="navAccount">
                         My Account</a>
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" id="account-dropdown" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" id="dropdownProfile"
                             href="{{url_for('myprofile', username=session['username'])}}"><i class="fas fa-users"></i> My Profile</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-heart"></i> My Favorites</a>

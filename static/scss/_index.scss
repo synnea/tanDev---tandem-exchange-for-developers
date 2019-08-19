@@ -90,13 +90,12 @@
 #btn-div {
     position: absolute;
 
-    top: 72%;
+    top: 60%;
     left: 37%;
 
 
     @media (min-width: $bp-mobile) {
-        top: 60%;
-        left: 45%;
+        left: 46%;
     }
 }
 

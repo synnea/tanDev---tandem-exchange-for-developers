@@ -2,11 +2,19 @@
     height: 140vh;
 }
 
+.profile-group {
+    width: 100%;
+}
+
 .welcome-row {
     height: 40vh;
 }
 
-.dropdown-menu {
+#account-dropdown {
     background-color: $brightmidblue;
-    margin-top: 1vh;
+
+    @media (min-width: $bp-tablet) {
+        margin-left: 5vw;
+    }
+
 }

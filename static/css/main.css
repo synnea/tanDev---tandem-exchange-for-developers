@@ -54,6 +54,10 @@ a:hover {
   }
 }
 
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  background-color: auto;
+}
+
 @media (max-width: 992px) {
   .navbar-collapse {
     margin-right: 35%;
@@ -206,6 +210,10 @@ a:hover {
   .nav-link {
     color: white !important;
   }
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  background-color: auto;
 }
 
 @media (max-width: 992px) {
@@ -410,14 +418,13 @@ ul {
 
 #btn-div {
   position: absolute;
-  top: 72%;
+  top: 60%;
   left: 37%;
 }
 
 @media (min-width: 768px) {
   #btn-div {
-    top: 60%;
-    left: 45%;
+    left: 46%;
   }
 }
 
@@ -592,6 +599,10 @@ a:hover {
   .nav-link {
     color: white !important;
   }
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  background-color: auto;
 }
 
 @media (max-width: 992px) {
@@ -1038,12 +1049,21 @@ ul ul a {
   height: 140vh;
 }
 
+.profile-group {
+  width: 100%;
+}
+
 .welcome-row {
   height: 40vh;
 }
 
-.dropdown-menu {
+#account-dropdown {
   background-color: #2581B0;
-  margin-top: 1vh;
+}
+
+@media (min-width: 992px) {
+  #account-dropdown {
+    margin-left: 5vw;
+  }
 }
 /*# sourceMappingURL=main.css.map */

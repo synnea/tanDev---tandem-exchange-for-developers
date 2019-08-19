@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container-fluid myprofile-wrapper">
+<div class="container myprofile-wrapper">
 
     <div class="row welcome-row justify-content-center align-items-center">
         <div class="col-12">
@@ -11,14 +11,70 @@
 
 
         <div class="col-12 page-header-box">
-            <h1 class="page-header">My Profile</h1>
+            <h3 class="heading text-center">My Profile</h1>
+                <div class="heading-ul"></div>
         </div>
+
+
 
     </div>
 
-    <form id="profile-form">
+    <form id="profile-form" method="POST">
 
-        
+        <div class="form-group">
+
+            <div class="form-row">
+                <div class="col-6">
+
+
+                    <label class="profile-label" for="profile-shortDesc">
+                        Short Description
+                    </label>
+                    <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
+                        maxlength="200" placeholder="Keep it short and sweet!" value required>
+                </div>
+
+
+
+                <div class="col-6">
+
+
+                    <label class="profile-label" for="profile-shortDesc">
+                        Profile Image.
+                    </label>
+                    <small>Please enter the URL of your profile image</small>
+                    <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
+                        placeholder="http://www.picturehost.com/mypic.jpg" value required>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="form-row col-12 ">
+
+
+                <select class="selectpicker" id="profileSelect" multiple data-selected-text-format="count">
+                    <option value="Mitte">Mitte</option>
+                    <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                    <option value="Pankow">Pankow</option>
+                    <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                    <option value="Spandau">Spandau</option>
+                    <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                    <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                    <option value="Neukölln">Neukölln</option>
+                    <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                    <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                    <option value="Lichtenberg">Lichtenberg</option>
+                    <option value="Reinickendorf">Reinickendorf</option>
+                </select>
+
+
+                <button class="refresh" id="districtRefresh-profile"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
 
     </form>
 
