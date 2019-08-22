@@ -107,7 +107,13 @@ def register():
             "description": "",
             "experience": "",
             "communicationStyle": {},
-            "skills": SON([("python", False), ("sql", False)]),
+            "skills": 
+            SON([("css", False), ("javascript", False), ("react", False), 
+            ("vue", False), ("angular", False), ("php", False), ("ruby", False), 
+            ("c++", False), ("c#", False),  ("UX", False), ("design", False), 
+            ("sql", False), ("java", False), ("rust", False), ("go", False), 
+            ("swift", False), ("kotlin", False), ("perl", False), 
+            ]),
             "desiredSkills": {},
             "contact": {},
             "otherDetails": {},
@@ -132,8 +138,8 @@ def myprofile(username):
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
             "district": request.form.get('district'),
-            "skills.python": request.form.get('python'),
-            "skills.sql": request.form.get('sql')
+            "skills.css": request.form.get('css'),
+            "skills.javascript": request.form.get('javascript')
         }})
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
