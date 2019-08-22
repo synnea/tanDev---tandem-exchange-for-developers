@@ -132,6 +132,8 @@ def myprofile(username):
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
             "district": request.form.get('district'),
+            "skills.python": request.form.get('python'),
+            "skills.sql": request.form.get('sql')
         }})
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
