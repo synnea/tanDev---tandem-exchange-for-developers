@@ -9,12 +9,16 @@ $(document).ready(function () {
     });
 
     // Function that toggles the next set of skill level checkboxes 
-    // after a skill box has been selected.
+    // after a skill box has been selected. Only one skill options list
+    // can be open at any given time
 
     $(function () {
         $(".skill-field").on("click", function () {
-            $(this).next(".skill-options").slideToggle("slow");
-            return false;
+            $(".skill-options").fadeOut();
+            let clicked = $(this).next(".skill-options")
+            $(clicked).slideToggle("slow");
+
+            return false; 
         });
     
     });
