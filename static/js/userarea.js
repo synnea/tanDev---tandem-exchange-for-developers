@@ -1,16 +1,22 @@
 $(document).ready(function () {
 
-    $(".skill-options").hide();
 
-    $(function() {
-    $("#python-box").on("click", function () {
-        $("#python-options").slideToggle();
-    });
-});
+    // Hides the skill level checkboxes upon load.
 
-$(function() {
-    $("#sql-box").on("click", function () {
-        $("#sql-options").slideToggle();
+
+    $(function () {
+        $(".skill-options").hide();
     });
-});
+
+    // Function that toggles the next set of skill level checkboxes 
+    // after a skill box has been selected.
+
+    $(function () {
+        $(".skill-field").on("click", function () {
+            $(this).next(".skill-options").slideToggle("slow");
+            return false;
+        });
+    
+    });
+
 });
