@@ -23,9 +23,7 @@ db = client.tandev
 
 # Begin creating routes
 @app.route('/', methods=['GET'])
-@app.route('/index', methods=['GET'])
 def index():
-
     """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the index.html carousel. """
 
     loggedIn = True if 'username' in session else False
@@ -59,7 +57,6 @@ def search():
 # Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-
     """ Checks if the user already exists in the database. If they don't exist, the user is notified of this. 
     If the username does exist, the password is matched against it. If it matches, the user is logged in.
     Otherwise, the user is notified that his username and password combination didn't match. """
@@ -87,7 +84,6 @@ def login():
 # Register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-
     """ Check if the username already exists in the database. Return warning to the user if it exists.
     If it doesn't exist, add user to the database and create a new document in the database.
     This function was written with the help of Tim Nelson who helped me get the hang of Python backend coding, so I could do
@@ -131,6 +127,22 @@ def myprofile(username):
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
 
+# Logout
+@app.route('/logout', methods = ['GET'])
+def logout():
+
+    session.clear()
+
+    return redirect(url_for('index'))
+
+
+# My profile page
+@app.route('/user/<username>', methods = ['GET', 'POST'])
+def user_detail(username):
+
+    loggedIn = True if 'username' in session else False
+
+    return render_template("pages/user_detail.html", username=username, loggedIn=loggedIn)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
