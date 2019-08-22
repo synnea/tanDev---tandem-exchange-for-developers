@@ -1,5 +1,4 @@
 
-function func() {
-    var type = document.getElementsByName("rating");
-    if()
-}
+$(document).ready(function () {
+
+});
