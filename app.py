@@ -6,6 +6,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
+from bson.son import SON
 
 app = Flask(__name__)
 
@@ -106,7 +107,7 @@ def register():
             "description": "",
             "experience": "",
             "communicationStyle": {},
-            "skills": {},
+            "skills": SON([("python", False), ("sql", False)]),
             "desiredSkills": {},
             "contact": {},
             "otherDetails": {},
