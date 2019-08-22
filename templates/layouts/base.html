@@ -136,6 +136,12 @@
     <script src="{{url_for('static', filename='js/logreg.js')}}"></script>
     {% endif %}
 
+    {% if active == 'myprofile' %}
+
+    <script src="{{url_for('static', filename='js/userarea.js')}}"></script>
+
+    {% endif %}
+
 </body>
 
 </html>
