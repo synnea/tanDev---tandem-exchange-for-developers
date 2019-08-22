@@ -126,11 +126,11 @@ def myprofile(username):
     loggedIn = True if 'username' in session else False
 
     if request.method == 'POST' and request.form['btn'] == 'publish':
-        db.profile.update( {'username': username},
+        db.profile.update_many( {'username': username},
         { "$set": {
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
-
+            "district": request.form.get('district'),
         }})
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
