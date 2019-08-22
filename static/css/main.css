@@ -1071,4 +1071,8 @@ ul ul a {
   max-width: 50%;
   display: inline;
 }
+
+.opacity {
+  opacity: 0.5;
+}
 /*# sourceMappingURL=main.css.map */
