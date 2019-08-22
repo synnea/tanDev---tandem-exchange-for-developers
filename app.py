@@ -101,7 +101,7 @@ def register():
             "email": "",
             "password": generate_password_hash(request.form.get('password')),
             "imgUrl": "",
-            "zipcode": "",
+            "district": "",
             "shortDescription": "",
             "description": "",
             "experience": "",
@@ -130,6 +130,7 @@ def myprofile(username):
         { "$set": {
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
+
         }})
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
