@@ -110,16 +110,11 @@ def register():
             "shortDescription": "",
             "description": "",
             "experience": "",
-            "communicationStyle": {},
-            "skills": SON([("css", False), ("javascript", False), ("react", False),
-            ("vue", False), ("angular", False), ("php", False), ("ruby", False),
-            ("c++", False), ("c#", False),  ("UX", False), ("design", False),
-            ("sql", False), ("java", False), ("rust", False), ("go", False),
-            ("swift", False), ("kotlin", False), ("perl", False)
-            ]),
-            "desiredSkills": {},
-            "contact": {},
-            "otherDetails": {},
+            "communicationStyle": [],
+            "skills": [],
+            "desiredSkills": [],
+            "contact": [],
+            "otherDetails": [],
             "published": datetime.now().strftime("%d-%M-%Y")
         }
         db.profile.insert_one(register)
@@ -143,26 +138,7 @@ def myprofile(username):
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
             "district": request.form.get('district'),
-            "skills.python": request.form.get('python'),
-            "skills.css": request.form.get("css"),
-            "skills.javascript": request.form.get("javascript"),
-            "skills.react": request.form.get("react"),
-            "skills.vue": request.form.get("vue"),
-            "skills.angular": request.form.get("angular"),
-            "skills.UX": request.form.get("UX"),
-            "skills.php": request.form.get("php"),
-            "skills.ruby": request.form.get("ruby"),
-            "skills.c++": request.form.get("c++"),
-            "skills.c#": request.form.get("c#"),
-            "skills.design": request.form.get("design"),
-            "skills.sql": request.form.get("sql"),
-            "skills.java": request.form.get("java"),
-            "skills.rust": request.form.get("rust"),
-            "skills.go": request.form.get("go"),
-            "skills.swift": request.form.get("swift"),
-            "skills.kotlin": request.form.get("kotlin"),
-            "skills.perl": request.form.get("perl"),
-
+            "skills": request.form.getlist("skills")
 
         }})
 
