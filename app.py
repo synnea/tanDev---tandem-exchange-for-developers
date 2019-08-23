@@ -134,29 +134,40 @@ def register():
 # My profile page
 @app.route('/myprofile/<username>', methods = ['GET', 'POST'])
 def myprofile(username):
+    """ Check if the user selected at least skill and one desired skill.
+    If they haven't, display an error message.
+    Else, if all requirements are met, add the new data to the user's database document """
 
     loggedIn = True if 'username' in session else False
 
 
     if request.method == 'POST' and request.form['btn'] == 'publish':
-        db.profile.update_many( {'username': username},
-        { "$set": {
-            'shortDescription': request.form.get('shortDescription'),
-            "imgURL": request.form.get('imgURL'),
-            "district": request.form.get('district'),
-            "skills": request.form.getlist("skills"),
-            "desiredSkills": request.form.getlist("desiredSkills"),
-            "communicationStyle": request.form.getlist("communicationStyle"),
-            "otherDetails": request.form.getlist("other"),
-            "published": datetime.now().strftime("%d-%M-%Y"),
-            "contact.github": request.form.get('github'),
-            "contact.linkedin": request.form.get('linkedin'),
-            "contact.twitter": request.form.get('twitter')
+        
+        if request.form.getlist("skills") and request.form.getlist("desiredSkills") != "":
 
-        }}) 
+            db.profile.update_many( {'username': username},
+            { "$set": {
+                'shortDescription': request.form.get('shortDescription'),
+                "imgURL": request.form.get('imgURL'),
+                "district": request.form.get('district'),
+                "skills": request.form.getlist("skills"),
+                "desiredSkills": request.form.getlist("desiredSkills"),
+                "communicationStyle": request.form.getlist("communicationStyle"),
+                "otherDetails": request.form.getlist("other"),
+                "published": datetime.now().strftime("%d-%M-%Y"),
+                "contact.github": request.form.get('github'),
+                "contact.linkedin": request.form.get('linkedin'),
+                "contact.twitter": request.form.get('twitter')
+
+            }})
+
+        else:
+            flash("Please select at least one acquired and one desired skill", "error")
+            return redirect(url_for('myprofile', username = session['username'])) 
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills,
     commstyles=commstyles, other=other)
+
 
 # Logout
 @app.route('/logout', methods = ['GET'])
