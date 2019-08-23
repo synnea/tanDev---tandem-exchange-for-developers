@@ -26,6 +26,10 @@ db = client.tandev
 skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",  "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
 "Java", "Rust", "Go", "Swift", "Kotlin", "Perl" ])
 
+commstyles = list(["Text", "Video", "In person"])
+
+other = list(["Project Work", "For Hire", "Looking for Co-Founder"])
+
 # Begin creating routes
 @app.route('/', methods=['GET'])
 def index():
@@ -115,7 +119,7 @@ def register():
             "desiredSkills": [],
             "contact": [],
             "otherDetails": [],
-            "published": datetime.now().strftime("%d-%M-%Y")
+            "registered": datetime.now().strftime("%d-%M-%Y")
         }
         db.profile.insert_one(register)
         session['username'] = request.form.get('username')
@@ -139,10 +143,16 @@ def myprofile(username):
             "district": request.form.get('district'),
             "skills": request.form.getlist("skills"),
             "desiredSkills": request.form.getlist("desiredSkills"),
+            "communicationStyle": request.form.getlist("communicationStyle"),
+            "otherDetails": request.form.getlist("other"),
+            "published": datetime.now().strftime("%d-%M-%Y")
 
         }})
 
-    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills)
+        published=datetime.now().strftime("%d-%M-%Y") 
+
+    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills,
+    commstyles=commstyles, other=other, published=published)
 
 # Logout
 @app.route('/logout', methods = ['GET'])

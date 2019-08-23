@@ -47,7 +47,7 @@
                     <div class="col-6">
 
 
-                        <label class="profile-label" for="profile-shortDesc">
+                        <label class="profile-label" for="profile-img">
                             Profile Image.
                         </label>
                         <small>Please enter the URL of your profile image</small>
@@ -63,7 +63,7 @@
                 <div class="form-row">
 
                     <div class="col-12">
-                        <label class="profile-label" for="profile-shortDesc">
+                        <label class="profile-label" for="profile-district">
                             District
                         </label>
                     </div>
@@ -107,7 +107,7 @@
                     <!-- MY SKILLS SECTION -->
 
                     <div class="col-12">
-                        <label class="profile-label" for="profile-shortDesc">
+                        <label class="profile-label" for="profile-skills">
                             My skills
                         </label>
                     </div>
@@ -142,9 +142,6 @@
                             <div class="skill-column">
                                 <div class="col-12">
                                     {% for skill in skills %}
-
-
-
 
 
                                     <div class="form-check">
@@ -192,18 +189,58 @@
                             <!-- End "Looking for..." desired skills tab -->
                         </div>
                     </div>
+                </div <!-- COMMUNICATION STYLE SECTION -->
+
+                <div class="row">
+                    <div class="col-6">
+                        <label class="profile-label" for="profile-commstyle">
+                            Communication Style
+                        </label>
+
+
+                        {% for commstyle in commstyles %}
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="communicationStyle"
+                                value="{{commstyle}}" id="comm-box">
+                            <label class="form-check-label" for="comm-box">
+                                {{commstyle}}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
 
 
 
 
+                    <!-- OTHER SECTION -->
+
+                    <div class="col-6">
+                        <label class="profile-label" for="profile-other">
+                            Other
+                        </label>
 
 
+                        {% for other in other %}
 
-                    <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn"
-                        value="publish">Publish
-                        your Profile</button>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="other" value="{{other}}"
+                                id="other-box">
+                            <label class="form-check-label" for="other-box">
+                                {{other}}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
-        </form>
+            </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn" value="publish">Publish
+        your Profile</button>
+    </div>
+    </form>
 
 
     </div>
