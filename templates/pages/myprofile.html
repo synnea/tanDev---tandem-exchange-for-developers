@@ -11,8 +11,8 @@
 
 
         <div class="col-12 page-header-box">
-            <h3 class="heading text-center">My Profile</h1>
-                <div class="heading-ul"></div>
+            <h3 class="heading text-center">My Profile</h3>
+            <div class="heading-ul"></div>
         </div>
 
 
@@ -28,7 +28,7 @@
                 <div class="col-12">
                     <h3 class="heading">
                         < header>
-                            </header>
+
                     </h3>
                 </div>
                 <div class="col-6">
@@ -112,33 +112,95 @@
                     </label>
                 </div>
 
-                <div class="col-12">
-                    {% for skill in skills %}
+                <!-- The Tabs -->
+                <div class="tablist">
+                    <nav>
+                        <ul class="nav nav-tabs">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#profile-skillsTab" id="skills-tab"
+                                    role="tab" aria-controls="profile-skillsTab"><i class="fas fa-share-alt"></i> I'm
+                                    proficient
+                                    in...</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#profile-desiredSkillsTab" id="DS-tab"
+                                    role="tab" aria-controls="profile-desiredSkillsTab"><i class="fas fa-search"></i>
+                                    Looking
+                                    for...</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                    <!-- Tab Contents -->
+
+                    <div class="tab-content">
+
+                        <!-- Begin "I'm proficient in..." Skills Tab -->
+
+                        <div class="col-12">
+                            {% for skill in skills %}
+
+
+                            <div class="tab-pane container fade show active" id="profile-skillsTab" role="tabpanel"
+                                aria-labelledby="skills-tab">
+                                <div class="skill-column profile-skill-column">
+
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
+                                            id="have-skill-box">
+                                        <label class="form-check-label" for="have-skill-box">
+                                            {{skill}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- End "I'm proficient .." skills tab -->
+
+                        <!-- Begin "Looking for..." desired skills tab -->
+
+                        <div class="col-12">
+                            {% for skill in skills %}
+
+
+                            <div class="tab-pane container fade show" id="profile-desiredSkillsTab" role="tabpanel"
+                                aria-labelledby="DS-tab">
+
+                                <div class="skill-column">
 
 
 
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="desiredSkills"
+                                            value="{{skill}}" id="desired-skill-box">
+                                        <label class="form-check-label" for="desired-skill-box">
+                                            {{skill}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
 
-                    <!-- Skill groups -->
+                            {% endfor %}
 
-
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" id="skill-box">
-                        <label class="form-check-label" for="skill-box">
-                            {{skill}}
-                        </label>
+                        </div>
                     </div>
-
-
-                    {% endfor %}
-
-
-
-
-
+                    <!-- End "Looking for..." desired skills tab -->
                 </div>
             </div>
+
+
+
+
+
         </div>
+
         <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn" value="publish">Publish
             your Profile</button>
     </form>
