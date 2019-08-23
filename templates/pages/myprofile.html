@@ -112,99 +112,60 @@
                     </label>
                 </div>
 
-                <!-- Python skill group -->
+                {% for skill in skills %}
 
-                <div class="col-12">
-                    <div class="form-group skill-field">
 
+
+
+                <!-- Skill groups -->
+
+
+                <div class="form-group skill-field">
+
+                    <div class="form-check abc-checkbox ">
+                        <input class="form-check-input" id="skill-box" type="checkbox" name="skill" value="{{skill}}">
+                        <label class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="skill-options" id="python-options">
+                    <div class="form-inline">
                         <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" id="python-box" type="checkbox" name="skill" value="python">
-                            <label class="form-check-label" for="python-box">
-                                Python
+                            <input class="form-check-input" id="skill-beginner" name="{{skill}}" value="beginner"
+                                type="checkbox">
+                            <label class="form-check-label" for="skill-beginner">
+                                Beginner
                             </label>
                         </div>
                     </div>
 
-                    <div class="skill-options" id="python-options">
-                        <div class="form-inline">
-                            <div class="form-check abc-checkbox ">
-                                <input class="form-check-input" id="python-beginner" name="python" value="beginner"
-                                    type="checkbox">
-                                <label class="form-check-label" for="python-beginner">
-                                    Beginner
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-inline">
-                            <div class="form-check abc-checkbox ">
-                                <input class="form-check-input" id="python-intermediate" name="python" value="intermediate"
-                                    type="checkbox">
-                                <label class="form-check-label" for="python-intermediate">
-                                    Intermediate
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-inline">
-                            <div class="form-check abc-checkbox ">
-                                <input class="form-check-input" id="python-advanced" name="advanced" value="advanced"
-                                    type="checkbox">
-                                <label class="form-check-label" for="python-advanced">
-                                    Advanced
-                                </label>
-                            </div>
+                    <div class="form-inline">
+                        <div class="form-check abc-checkbox ">
+                            <input class="form-check-input" id="skill-intermediate" name="{{skill}}"
+                                value="intermediate" type="checkbox">
+                            <label class="form-check-label" for="skill-intermediate">
+                                Intermediate
+                            </label>
                         </div>
                     </div>
 
-                    <!-- SQL FORM GROUP -->
-
-                    <div class="form-group skill-field">
-
-                            <div class="form-check abc-checkbox">
-                                <input class="form-check-input" id="sql-box" type="checkbox" name="skill" value="sql">
-                                <label class="form-check-label" for="sql-box">
-                                    SQL
-                                </label>
-                            </div>
+                    <div class="form-inline">
+                        <div class="form-check abc-checkbox ">
+                            <input class="form-check-input" id="python-advanced" name="{{skill}}" value="advanced"
+                                type="checkbox">
+                            <label class="form-check-label" for="python-advanced">
+                                Advanced
+                            </label>
                         </div>
-    
-                        <div class="skill-options" id="sql-options">
-                            <div class="form-inline">
-                                <div class="form-check abc-checkbox ">
-                                    <input class="form-check-input" id="sql-beginner" name="sql" value="beginner"
-                                        type="checkbox">
-                                    <label class="form-check-label" for="sql-beginner">
-                                        Beginner
-                                    </label>
-                                </div>
-                            </div>
-    
-                            <div class="form-inline">
-                                <div class="form-check abc-checkbox ">
-                                    <input class="form-check-input" id="sql-intermediate" name="sql" value="intermediate"
-                                        type="checkbox">
-                                    <label class="form-check-label" for="sql-intermediate">
-                                        Intermediate
-                                    </label>
-                                </div>
-                            </div>
-    
-                            <div class="form-inline">
-                                <div class="form-check abc-checkbox ">
-                                    <input class="form-check-input" id="sql-advanced" name="sql" value="advanced"
-                                        type="checkbox">
-                                    <label class="form-check-label" for="sql-advanced">
-                                        Advanced
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
+                    </div>
                 </div>
+
+                {% endfor %}
+
+
+
 
 
             </div>

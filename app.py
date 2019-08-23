@@ -7,6 +7,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
 from bson.son import SON
+import json
 
 app = Flask(__name__)
 
@@ -21,6 +22,9 @@ mongo = PyMongo(app)
 client = MongoClient(app.config['MONGO_URI'])
 db = client.tandev
 
+#Helper Lists
+skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",  "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
+"Java", "Rust", "Go", "Swift", "Kotlin", "Perl" ])
 
 # Begin creating routes
 @app.route('/', methods=['GET'])
@@ -131,6 +135,8 @@ def myprofile(username):
 
     loggedIn = True if 'username' in session else False
 
+
+
     if request.method == 'POST' and request.form['btn'] == 'publish':
         db.profile.update_many( {'username': username},
         { "$set": {
@@ -141,7 +147,7 @@ def myprofile(username):
             "skills.sql": request.form.get('sql')
         }})
 
-    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
+    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills)
 
 # Logout
 @app.route('/logout', methods = ['GET'])
