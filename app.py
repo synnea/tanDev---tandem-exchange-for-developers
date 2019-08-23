@@ -107,7 +107,12 @@ def register():
             "description": "",
             "experience": "",
             "communicationStyle": {},
-            "skills": SON([("python", False), ("sql", False)]),
+            "skills": SON([("css", False), ("javascript", False), ("react", False),
+            ("vue", False), ("angular", False), ("php", False), ("ruby", False),
+            ("c++", False), ("c#", False),  ("UX", False), ("design", False),
+            ("sql", False), ("java", False), ("rust", False), ("go", False),
+            ("swift", False), ("kotlin", False), ("perl", False)
+            ]),
             "desiredSkills": {},
             "contact": {},
             "otherDetails": {},
