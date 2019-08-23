@@ -7,6 +7,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
 from bson.son import SON
+import json
 
 app = Flask(__name__)
 
@@ -21,6 +22,9 @@ mongo = PyMongo(app)
 client = MongoClient(app.config['MONGO_URI'])
 db = client.tandev
 
+#Helper Lists
+skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",  "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
+"Java", "Rust", "Go", "Swift", "Kotlin", "Perl" ])
 
 # Begin creating routes
 @app.route('/', methods=['GET'])
@@ -106,17 +110,11 @@ def register():
             "shortDescription": "",
             "description": "",
             "experience": "",
-            "communicationStyle": {},
-            "skills": 
-            SON([("css", False), ("javascript", False), ("react", False), 
-            ("vue", False), ("angular", False), ("php", False), ("ruby", False), 
-            ("c++", False), ("c#", False),  ("UX", False), ("design", False), 
-            ("sql", False), ("java", False), ("rust", False), ("go", False), 
-            ("swift", False), ("kotlin", False), ("perl", False), 
-            ]),
-            "desiredSkills": {},
-            "contact": {},
-            "otherDetails": {},
+            "communicationStyle": [],
+            "skills": [],
+            "desiredSkills": [],
+            "contact": [],
+            "otherDetails": [],
             "published": datetime.now().strftime("%d-%M-%Y")
         }
         db.profile.insert_one(register)
@@ -132,17 +130,19 @@ def myprofile(username):
 
     loggedIn = True if 'username' in session else False
 
+
     if request.method == 'POST' and request.form['btn'] == 'publish':
         db.profile.update_many( {'username': username},
         { "$set": {
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
             "district": request.form.get('district'),
-            "skills.css": request.form.get('css'),
-            "skills.javascript": request.form.get('javascript')
+            "skills": request.form.getlist("skills"),
+            "desiredSkills": request.form.getlist("desiredSkills"),
+
         }})
 
-    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn)
+    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills)
 
 # Logout
 @app.route('/logout', methods = ['GET'])
