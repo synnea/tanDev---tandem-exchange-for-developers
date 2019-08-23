@@ -119,8 +119,8 @@
                         <ul class="nav nav-tabs">
 
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
-                                    aria-controls="skills"><i class="fas fa-share-alt"></i> I'm proficient
+                                <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab"
+                                    role="tab" aria-controls="skills"><i class="fas fa-share-alt"></i> I'm proficient
                                     in...</a>
                             </li>
                             <li class="nav-item">
@@ -140,8 +140,24 @@
                         <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
                             aria-labelledby="skills-tab">
                             <div class="skill-column">
+                                <div class="col-12">
+                                    {% for skill in skills %}
 
-                                {% include 'components/skills_list.html' %}
+
+
+
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
+                                            id="skill-box">
+                                        <label class="form-check-label" for="skill-box">
+                                            {{skill}}
+                                        </label>
+                                    </div>
+
+
+                                    {% endfor %}
+                                </div>
 
                             </div>
 
