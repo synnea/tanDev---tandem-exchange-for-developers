@@ -117,9 +117,11 @@ def register():
             "communicationStyle": [],
             "skills": [],
             "desiredSkills": [],
-            "contact": [],
             "otherDetails": [],
-            "registered": datetime.now().strftime("%d-%M-%Y")
+            "contact": SON()
+            "registered": datetime.now().strftime("%d-%M-%Y"),
+            "published": "",
+            "display": False
         }
         db.profile.insert_one(register)
         session['username'] = request.form.get('username')
@@ -145,14 +147,12 @@ def myprofile(username):
             "desiredSkills": request.form.getlist("desiredSkills"),
             "communicationStyle": request.form.getlist("communicationStyle"),
             "otherDetails": request.form.getlist("other"),
-            "published": datetime.now().strftime("%d-%M-%Y")
+            "published": datetime.now().strftime("%d-%M-%Y"),
 
-        }})
-
-        published=datetime.now().strftime("%d-%M-%Y") 
+        }}) 
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills,
-    commstyles=commstyles, other=other, published=published)
+    commstyles=commstyles, other=other)
 
 # Logout
 @app.route('/logout', methods = ['GET'])

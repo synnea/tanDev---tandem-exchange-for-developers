@@ -21,43 +21,43 @@
 
         <form id="profile-form" method="POST">
 
-            <div class="form-group">
-
-                <div class="form-row">
-
-                    <div class="col-12">
-                        <h3 class="heading">
-                            < header>
-
-                        </h3>
-                    </div>
-                    <div class="col-6">
 
 
+            <div class="form-row">
 
-                        <label class="profile-label" for="profile-shortDesc">
-                            Short Description
-                        </label>
-                        <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
-                            maxlength="200" placeholder="Keep it short and sweet!" value required>
-                    </div>
+                <div class="col-12">
+                    <h3 class="heading">
+                        < header>
+
+                    </h3>
+                </div>
+                <div class="col-6">
 
 
 
-                    <div class="col-6">
-
-
-                        <label class="profile-label" for="profile-img">
-                            Profile Image.
-                        </label>
-                        <small>Please enter the URL of your profile image</small>
-                        <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
-                            placeholder="http://www.picturehost.com/mypic.jpg" value required>
-
-                    </div>
+                    <label class="profile-label" for="profile-shortDesc">
+                        Short Description
+                    </label>
+                    <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
+                        maxlength="200" placeholder="Keep it short and sweet!" value required>
                 </div>
 
+
+
+                <div class="col-6">
+
+
+                    <label class="profile-label" for="profile-img">
+                        Profile Image.
+                    </label>
+                    <small>Please enter the URL of your profile image</small>
+                    <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
+                        placeholder="http://www.picturehost.com/mypic.jpg" value required>
+
+                </div>
             </div>
+
+
 
             <div class="form-group">
                 <div class="form-row">
@@ -189,62 +189,108 @@
                             <!-- End "Looking for..." desired skills tab -->
                         </div>
                     </div>
-                </div <!-- COMMUNICATION STYLE SECTION -->
-
-                <div class="row">
-                    <div class="col-6">
-                        <label class="profile-label" for="profile-commstyle">
-                            Communication Style
-                        </label>
-
-
-                        {% for commstyle in commstyles %}
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="communicationStyle"
-                                value="{{commstyle}}" id="comm-box">
-                            <label class="form-check-label" for="comm-box">
-                                {{commstyle}}
-                            </label>
-                        </div>
-                        {% endfor %}
-                    </div>
-
-
-
-
-                    <!-- OTHER SECTION -->
-
-                    <div class="col-6">
-                        <label class="profile-label" for="profile-other">
-                            Other
-                        </label>
-
-
-                        {% for other in other %}
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="other" value="{{other}}"
-                                id="other-box">
-                            <label class="form-check-label" for="other-box">
-                                {{other}}
-                            </label>
-                        </div>
-                        {% endfor %}
-                    </div>
                 </div>
+
+            </div>
+            <!-- COMMUNICATION STYLE SECTION -->
+
+            <div class="row">
+
+
+                <div class="col-6">
+                    <label class="profile-label" for="profile-commstyle">
+                        Communication Style
+                    </label>
+
+
+                    {% for commstyle in commstyles %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="communicationStyle" value="{{commstyle}}"
+                            id="comm-box">
+                        <label class="form-check-label" for="comm-box">
+                            {{commstyle}}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+
+
+
+
+                <!-- OTHER SECTION -->
+
+                <div class="col-6">
+                    <label class="profile-label" for="profile-other">
+                        Other
+                    </label>
+
+
+                    {% for other in other %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="{{other}}" id="other-box">
+                        <label class="form-check-label" for="other-box">
+                            {{other}}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+
+
+
             </div>
 
+            <div class="row">
+
+                <div class="col-12">
+                    <h3 class="heading">
+                        <  footer  >
+
+                    </h3>
+                </div>
+
+                <div class="col-12">
+                        <label class="contact-label" for="contact">
+                            Contact
+                        </label>
+                    </div>
+
+                <div class="col-xs-6 col-md-4">
+
+
+
+                        <label class="contact" for="profile-shortDesc">
+                            Github
+                        </label>
+                        <input id="github" class="form-control" type="text" name="contac"
+                            maxlength="200" placeholder="www.github.com/myawesomerepo">
+                    </div>
+    
+    
+    
+                    <div class="col-6">
+    
+    
+                        <label class="profile-label" for="profile-img">
+                            Profile Image.
+                        </label>
+                        <small>Please enter the URL of your profile image</small>
+                        <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
+                            placeholder="http://www.picturehost.com/mypic.jpg" value required>
+    
+                    </div>
+
+
+
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn"
+                value="publish">Publish
+                your Profile</button>
+
+        </form>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn" value="publish">Publish
-        your Profile</button>
-    </div>
-    </form>
-
-
-    </div>
-
-    </div>
 
     {% endblock %}
