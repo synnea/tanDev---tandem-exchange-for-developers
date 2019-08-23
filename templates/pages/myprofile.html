@@ -1,132 +1,131 @@
-{% extends 'layouts/base.html' %}
+    {% extends 'layouts/base.html' %}
 
-{% block content %}
+    {% block content %}
 
-<div class="container myprofile-wrapper">
+    <div class="container myprofile-wrapper">
 
-    <div class="row welcome-row justify-content-center align-items-center">
-        <div class="col-12">
-            <h1>Welcome, {{username}}</h1>
+        <div class="row welcome-row justify-content-center align-items-center">
+            <div class="col-12">
+                <h1>Welcome, {{username}}</h1>
+            </div>
+
+
+            <div class="col-12 page-header-box">
+                <h3 class="heading text-center">My Profile</h3>
+                <div class="heading-ul"></div>
+            </div>
+
+
+
         </div>
 
+        <form id="profile-form" method="POST">
 
-        <div class="col-12 page-header-box">
-            <h3 class="heading text-center">My Profile</h3>
-            <div class="heading-ul"></div>
-        </div>
+            <div class="form-group">
+
+                <div class="form-row">
+
+                    <div class="col-12">
+                        <h3 class="heading">
+                            < header>
+
+                        </h3>
+                    </div>
+                    <div class="col-6">
 
 
 
-    </div>
+                        <label class="profile-label" for="profile-shortDesc">
+                            Short Description
+                        </label>
+                        <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
+                            maxlength="200" placeholder="Keep it short and sweet!" value required>
+                    </div>
 
-    <form id="profile-form" method="POST">
 
-        <div class="form-group">
 
-            <div class="form-row">
+                    <div class="col-6">
 
-                <div class="col-12">
-                    <h3 class="heading">
-                        < header>
 
-                    </h3>
+                        <label class="profile-label" for="profile-shortDesc">
+                            Profile Image.
+                        </label>
+                        <small>Please enter the URL of your profile image</small>
+                        <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
+                            placeholder="http://www.picturehost.com/mypic.jpg" value required>
+
+                    </div>
                 </div>
-                <div class="col-6">
+
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+
+                    <div class="col-12">
+                        <label class="profile-label" for="profile-shortDesc">
+                            District
+                        </label>
+                    </div>
+
+                    <div class="col-12">
+
+                        <select class="form-control" name="district" id="profileSelect">
+                            <option value="Mitte">Mitte</option>
+                            <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                            <option value="Pankow">Pankow</option>
+                            <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                            <option value="Spandau">Spandau</option>
+                            <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                            <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                            <option value="Neukölln">Neukölln</option>
+                            <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                            <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                            <option value="Lichtenberg">Lichtenberg</option>
+                            <option value="Reinickendorf">Reinickendorf</option>
+
+                        </select>
+                    </div>
 
 
-
-                    <label class="profile-label" for="profile-shortDesc">
-                        Short Description
-                    </label>
-                    <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
-                        maxlength="200" placeholder="Keep it short and sweet!" value required>
-                </div>
-
-
-
-                <div class="col-6">
-
-
-                    <label class="profile-label" for="profile-shortDesc">
-                        Profile Image.
-                    </label>
-                    <small>Please enter the URL of your profile image</small>
-                    <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
-                        placeholder="http://www.picturehost.com/mypic.jpg" value required>
 
                 </div>
             </div>
+            <div class="form-group">
 
-        </div>
+                <div class="form-row">
 
-        <div class="form-group">
-            <div class="form-row">
+                    <div class="col-12">
 
-                <div class="col-12">
-                    <label class="profile-label" for="profile-shortDesc">
-                        District
-                    </label>
-                </div>
+                        <h3 class="heading">
+                            < body>
+                                </header>
+                        </h3>
 
-                <div class="col-12">
+                    </div>
 
-                    <select class="form-control" name="district" id="profileSelect">
-                        <option value="Mitte">Mitte</option>
-                        <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-                        <option value="Pankow">Pankow</option>
-                        <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
-                        <option value="Spandau">Spandau</option>
-                        <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-                        <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-                        <option value="Neukölln">Neukölln</option>
-                        <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-                        <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-                        <option value="Lichtenberg">Lichtenberg</option>
-                        <option value="Reinickendorf">Reinickendorf</option>
+                    <!-- MY SKILLS SECTION -->
 
-                    </select>
-                </div>
+                    <div class="col-12">
+                        <label class="profile-label" for="profile-shortDesc">
+                            My skills
+                        </label>
+                    </div>
 
+                    <!-- The Tabs -->
 
-
-            </div>
-        </div>
-        <div class="form-group">
-
-            <div class="form-row">
-
-                <div class="col-12">
-
-                    <h3 class="heading">
-                        < body>
-                            </header>
-                    </h3>
-
-                </div>
-
-                <!-- MY SKILLS SECTION -->
-
-                <div class="col-12">
-                    <label class="profile-label" for="profile-shortDesc">
-                        My skills
-                    </label>
-                </div>
-
-                <!-- The Tabs -->
-                <div class="tablist">
+                    <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
                     <nav>
                         <ul class="nav nav-tabs">
 
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#profile-skillsTab" id="skills-tab"
-                                    role="tab" aria-controls="profile-skillsTab"><i class="fas fa-share-alt"></i> I'm
-                                    proficient
+                                <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
+                                    aria-controls="skills"><i class="fas fa-share-alt"></i> I'm proficient
                                     in...</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#profile-desiredSkillsTab" id="DS-tab"
-                                    role="tab" aria-controls="profile-desiredSkillsTab"><i class="fas fa-search"></i>
-                                    Looking
+                                <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkills-tab"
+                                    role="tab" aria-controls="desiredSkills"><i class="fas fa-search"></i> Looking
                                     for...</a>
                             </li>
 
@@ -138,78 +137,51 @@
                     <div class="tab-content">
 
                         <!-- Begin "I'm proficient in..." Skills Tab -->
+                        <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
+                            aria-labelledby="skills-tab">
+                            <div class="skill-column">
 
-                        <div class="col-12">
-                            {% for skill in skills %}
+                                {% include 'components/skills_list.html' %}
 
-
-                            <div class="tab-pane container fade show active" id="profile-skillsTab" role="tabpanel"
-                                aria-labelledby="skills-tab">
-                                <div class="skill-column profile-skill-column">
-
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
-                                            id="have-skill-box">
-                                        <label class="form-check-label" for="have-skill-box">
-                                            {{skill}}
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
-                            {% endfor %}
 
+                            <!-- End "I'm proficient in..." Skills Tab -->
                         </div>
 
-
-                        <!-- End "I'm proficient .." skills tab -->
 
                         <!-- Begin "Looking for..." desired skills tab -->
+                        <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
+                            aria-labelledby="desiredSkills-tab">
 
-                        <div class="col-12">
-                            {% for skill in skills %}
+                            <div class="skill-column">
 
-
-                            <div class="tab-pane container fade show" id="profile-desiredSkillsTab" role="tabpanel"
-                                aria-labelledby="DS-tab">
-
-                                <div class="skill-column">
+                                {% include 'components/desired_skills_list.html' %}
 
 
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="desiredSkills"
-                                            value="{{skill}}" id="desired-skill-box">
-                                        <label class="form-check-label" for="desired-skill-box">
-                                            {{skill}}
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
-
-                            {% endfor %}
-
+                            <!-- End "Looking for..." desired skills tab -->
                         </div>
                     </div>
-                    <!-- End "Looking for..." desired skills tab -->
+
+
+
+
+
+
+
+                    <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn"
+                        value="publish">Publish
+                        your Profile</button>
                 </div>
-            </div>
-
-
-
-
-
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn" value="publish">Publish
-            your Profile</button>
-    </form>
+        </form>
 
 
 
 
 
 
-</div>
+    </div>
 
-{% endblock %}
+    </div>
+
+    {% endblock %}
