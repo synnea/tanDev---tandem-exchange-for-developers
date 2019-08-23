@@ -118,7 +118,8 @@ def register():
             "skills": [],
             "desiredSkills": [],
             "otherDetails": [],
-            "contact": SON()
+            "contact": SON([("github", ""), ("linkedin", ""), ("twitter", "") 
+            ]),
             "registered": datetime.now().strftime("%d-%M-%Y"),
             "published": "",
             "display": False
@@ -148,6 +149,9 @@ def myprofile(username):
             "communicationStyle": request.form.getlist("communicationStyle"),
             "otherDetails": request.form.getlist("other"),
             "published": datetime.now().strftime("%d-%M-%Y"),
+            "contact.github": request.form.get('github'),
+            "contact.linkedin": request.form.get('linkedin'),
+            "contact.twitter": request.form.get('twitter')
 
         }}) 
 
