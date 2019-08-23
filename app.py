@@ -131,14 +131,14 @@ def myprofile(username):
     loggedIn = True if 'username' in session else False
 
 
-
     if request.method == 'POST' and request.form['btn'] == 'publish':
         db.profile.update_many( {'username': username},
         { "$set": {
             'shortDescription': request.form.get('shortDescription'),
             "imgURL": request.form.get('imgURL'),
             "district": request.form.get('district'),
-            "skills": request.form.getlist("skills")
+            "skills": request.form.getlist("skills"),
+            "desiredSkills": request.form.getlist("desiredSkills"),
 
         }})
 

@@ -171,7 +171,21 @@
 
                             <div class="skill-column">
 
-                                {% include 'components/desired_skills_list.html' %}
+                                <div class="col-12">
+                                    {% for skill in skills %}
+
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="desiredSkills"
+                                            value="{{skill}}" id="skill-box">
+                                        <label class="form-check-label" for="skill-box">
+                                            {{skill}}
+                                        </label>
+                                    </div>
+
+
+                                    {% endfor %}
+                                </div>
 
 
                             </div>
