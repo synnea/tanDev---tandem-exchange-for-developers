@@ -144,7 +144,26 @@ def myprofile(username):
             "imgURL": request.form.get('imgURL'),
             "district": request.form.get('district'),
             "skills.python": request.form.get('python'),
-            "skills.sql": request.form.get('sql')
+            "skills.css": request.form.get("css"),
+            "skills.javascript": request.form.get("javascript"),
+            "skills.react": request.form.get("react"),
+            "skills.vue": request.form.get("vue"),
+            "skills.angular": request.form.get("angular"),
+            "skills.UX": request.form.get("UX"),
+            "skills.php": request.form.get("php"),
+            "skills.ruby": request.form.get("ruby"),
+            "skills.c++": request.form.get("c++"),
+            "skills.c#": request.form.get("c#"),
+            "skills.design": request.form.get("design"),
+            "skills.sql": request.form.get("sql"),
+            "skills.java": request.form.get("java"),
+            "skills.rust": request.form.get("rust"),
+            "skills.go": request.form.get("go"),
+            "skills.swift": request.form.get("swift"),
+            "skills.kotlin": request.form.get("kotlin"),
+            "skills.perl": request.form.get("perl"),
+
+
         }})
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills)
