@@ -8,7 +8,9 @@
             <div class="col-12">
                 <h1>Welcome, {{username}}</h1>
             </div>
+        </div>
 
+        <div class="jumbotron profile-jumbo">
 
             <div class="col-12">
                 <h3 class="heading text-center">My Profile</h3>
@@ -16,89 +18,92 @@
             </div>
 
 
-        </div>
-
-        <!-- Display flashed messages. -->
-
-        {% include 'components/message.html' %}
-
-        <form id="profile-form" method="POST">
 
 
+            <!-- Display flashed messages. -->
 
-            <div class="row">
+            {% include 'components/message.html' %}
 
-                <div class="col-12">
-                    <h3 class="heading">
-                        < header>
-
-                    </h3>
-                </div>
-                <div class="col-6">
+            <form id="profile-form" method="POST">
 
 
 
-                    <label class="profile-label" for="profile-shortDesc">
-                        Short Description
-                    </label>
-                    <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
-                        maxlength="200" placeholder="Keep it short and sweet!" value required>
-                </div>
-
-
-
-                <div class="col-6">
-
-
-                    <label class="profile-label" for="profile-img">
-                        Profile Image.
-                    </label>
-                    <small>Please enter the URL of your profile image</small>
-                    <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
-                        placeholder="http://www.picturehost.com/mypic.jpg" value required>
-
-                </div>
-            </div>
-
-
-
-            <div class="form-group">
                 <div class="row">
 
-                    <div class="col-12">
-                        <label class="profile-label" for="profile-district">
-                            District
+                    <div class="col-12 justify-content-center">
+                        <h3 class="heading">
+                            < header>
+
+                        </h3>
+                    </div>
+                    <div class="col-6">
+
+
+
+                        <label class="profile-label" for="profile-shortDesc">
+                            Short Description
                         </label>
-                    </div>
-
-                    <div class="col-12">
-
-                        <select class="form-control" name="district" id="profileSelect">
-                            <option value="Mitte">Mitte</option>
-                            <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-                            <option value="Pankow">Pankow</option>
-                            <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
-                            <option value="Spandau">Spandau</option>
-                            <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-                            <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-                            <option value="Neukölln">Neukölln</option>
-                            <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-                            <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-                            <option value="Lichtenberg">Lichtenberg</option>
-                            <option value="Reinickendorf">Reinickendorf</option>
-
-                        </select>
+                        <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
+                            maxlength="200" placeholder="Keep it short and sweet!" value required>
                     </div>
 
 
 
+                    <div class="col-6">
+
+
+                        <label class="profile-label" for="profile-img">
+                            Profile Image.
+                        </label>
+                        <small>Please enter the URL of your profile image</small>
+                        <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
+                            placeholder="http://www.picturehost.com/mypic.jpg" value required>
+
+                    </div>
                 </div>
-            </div>
+
+
+
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <label class="profile-label" for="profile-district">
+                                District
+                            </label>
+                        </div>
+
+                        <div class="col-12">
+
+                            <select class="form-control" name="district" id="profileSelect">
+                                <option value="Mitte">Mitte</option>
+                                <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                                <option value="Pankow">Pankow</option>
+                                <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                                <option value="Spandau">Spandau</option>
+                                <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                                <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                                <option value="Neukölln">Neukölln</option>
+                                <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                                <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                                <option value="Lichtenberg">Lichtenberg</option>
+                                <option value="Reinickendorf">Reinickendorf</option>
+
+                            </select>
+                        </div>
+
+
+
+                    </div>
+                </div>
+        </div>
+
+        <div class="jumbotron profile-jumbo">
             <div class="form-group">
 
 
 
-                <div class="col-12">
+                <div class="col-12 justify-content-center">
 
                     <h3 class="heading">
                         < body>
@@ -124,7 +129,8 @@
 
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab"
-                                    role="tab" aria-controls="skills"><i class="fas fa-share-alt"></i> I'm proficient
+                                    role="tab" aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
+                                    proficient
                                     in...</a>
                             </li>
                             <li class="nav-item">
@@ -252,8 +258,11 @@
                 </div>
 
 
-
             </div>
+        </div>
+
+        <div class="jumbotron profile-jumbo">
+
 
             <div class="row">
 
@@ -308,17 +317,17 @@
 
 
             </div>
+        </div>
 
-            <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn"
-                value="publish">Publish
-                your Profile</button>
+        <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="publish">Publish
+            your Profile</button>
 
         </form>
 
 
 
     </div>
-   
+
 
 
     {% endblock %}

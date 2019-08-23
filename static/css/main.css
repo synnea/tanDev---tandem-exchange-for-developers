@@ -1055,6 +1055,7 @@ ul ul a {
 
 .welcome-row {
   height: 20vh;
+  margin-top: 25vh;
 }
 
 #account-dropdown {
@@ -1074,5 +1075,9 @@ ul ul a {
 
 .profile-skill-column {
   padding: 0.3rem !important;
+}
+
+.profile-jumbo {
+  margin-top: 5vh;
 }
 /*# sourceMappingURL=main.css.map */
