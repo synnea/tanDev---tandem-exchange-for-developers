@@ -31,16 +31,15 @@
                 <h3>Skills</h3>
 
             </div>
-            
+
 
 
             <div class="col-10">
 
+                {% for skill in user.skills %}
+                    {{ skill }}
 
-                    {{user.skills}}
-
-
-
+                {% endfor %}
 
             </div>
         </div>

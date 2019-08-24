@@ -191,11 +191,6 @@ def user_details(username):
 
     user = db.profile.find_one({"username": username})
 
-    # skills = db.profile.aggregate( [ { "$match" : { "username": username } }, {"$project": {convertedSkills: { "$toString": "$skills" }} }] )
-
-    print(type(skills))
-
-
     return render_template("pages/user_details.html", user=user, loggedIn=loggedIn)
 
 if __name__ == '__main__':
