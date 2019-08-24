@@ -191,12 +191,12 @@ def user_details(username):
     user = db.profile.find_one({"username": username})
     # skills = db.profile.aggregation( [ { "$unwind": "$skills" } ] )
 
+    db.profile.aggregate( [ { "$project": { skills: { "$objectToArray:" "$skills" } } }])
+    skill_list = list(db.profile.aggregate( [ { "$match" : { "username": username } }, { "$unwind": "$skills" } ] ))
 
-    skills = list(db.profile.aggregate( [ { "$match" : { "username": username } }, { "$unwind": "$skills" } ] ))
 
 
-
-    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn, skills=skills)
+    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn, skills=skill_list)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
