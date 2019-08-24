@@ -39,7 +39,7 @@ def index():
     loggedIn = True if 'username' in session else False
 
 
-    carousel = db.profile.aggregate( [{ "$match" : { "display" : True } }, { "$sample": { "size": 6 } } ])
+    carousel = db.profile.aggregate( [ { "$match" : { "display" : True } }, { "$sample": { "size": 6 } } ])
     carousel = list(carousel)
     return render_template("pages/index.html", active="index", carousel=carousel, loggedIn=loggedIn)
 
@@ -189,8 +189,14 @@ def user_details(username):
     loggedIn = True if 'username' in session else False
 
     user = db.profile.find_one({"username": username})
+    # skills = db.profile.aggregation( [ { "$unwind": "$skills" } ] )
 
-    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn)
+
+    skills = list(db.profile.aggregate( [ { "$match" : { "username": username } }, { "$unwind": "$skills" } ] ))
+
+
+
+    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn, skills=skills)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")

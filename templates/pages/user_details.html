@@ -35,7 +35,14 @@
 
 
             <div class="col-10">
-                <span class="tags">{{user.skills}}</span>
+
+                    {% for skill in skills %}
+
+                    {{user.skills}}
+
+                    {% endfor %}
+
+
             </div>
         </div>
 
