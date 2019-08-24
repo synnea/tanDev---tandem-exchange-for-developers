@@ -31,6 +31,7 @@ commstyles = list(["Text", "Video", "In person"])
 other = list(["Project Work", "For Hire", "Looking for Co-Founder"])
 
 # Begin creating routes
+# Index page
 @app.route('/', methods=['GET'])
 def index():
     """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the index.html carousel. """
@@ -178,13 +179,15 @@ def logout():
     return redirect(url_for('index'))
 
 
-# My profile page
+# User details page
 @app.route('/user/<username>', methods = ['GET', 'POST'])
-def user_detail(username):
+def user_details(username):
 
     loggedIn = True if 'username' in session else False
 
-    return render_template("pages/user_detail.html", username=username, loggedIn=loggedIn)
+    user = db.profile.find_one({"username": username})
+
+    return render_template("pages/user_details.html", username=user, loggedIn=loggedIn)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
