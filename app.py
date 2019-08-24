@@ -182,12 +182,15 @@ def logout():
 # User details page
 @app.route('/user/<username>', methods = ['GET', 'POST'])
 def user_details(username):
+    """ Checks if the user is logged in to display the correct navbar configuation.
+    Accepts the username variable, looks it up in the database, and passes it on to
+    the html page with full user details. """
 
     loggedIn = True if 'username' in session else False
 
     user = db.profile.find_one({"username": username})
 
-    return render_template("pages/user_details.html", username=user, loggedIn=loggedIn)
+    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")

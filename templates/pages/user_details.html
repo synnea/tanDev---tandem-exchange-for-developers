@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<!-- I used the following code snippet as a starting point for designing the user details page: https://bootsnipp.com/snippets/D0A6A-->
+
+<div class="container user-wrapper">
+
+    <div class="user-content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="user-image">
+                            <img src="{{user.imgUrl}}" class="profile-pic" alt="profile-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="user-description">
+                    <h1> {{user.username}}</h1>
+                    <h6>{{user.shortDescription}}</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-2">
+                <i class="fa fa-code"></i>
+                <h3>Skills</h3>
+
+            </div>
+            
+
+
+            <div class="col-10">
+                <span class="tags">{{user.skills}}</span>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+{% endblock %}
