@@ -30,6 +30,7 @@ commstyles = list(["Text", "Video", "In person"])
 
 other = list(["Project Work", "For Hire", "Looking for Co-Founder"])
 
+
 # Begin creating routes
 # Index page
 @app.route('/', methods=['GET'])
@@ -116,7 +117,7 @@ def register():
             "description": "",
             "experience": "",
             "communicationStyle": [],
-            "skills": [],
+            "skills": "",
             "desiredSkills": [],
             "otherDetails": [],
             "contact": SON([("github", ""), ("linkedin", ""), ("twitter", "") 
@@ -189,14 +190,13 @@ def user_details(username):
     loggedIn = True if 'username' in session else False
 
     user = db.profile.find_one({"username": username})
-    # skills = db.profile.aggregation( [ { "$unwind": "$skills" } ] )
 
-    db.profile.aggregate( [ { "$project": { skills: { "$objectToArray:" "$skills" } } }])
-    skill_list = list(db.profile.aggregate( [ { "$match" : { "username": username } }, { "$unwind": "$skills" } ] ))
+    # skills = db.profile.aggregate( [ { "$match" : { "username": username } }, {"$project": {convertedSkills: { "$toString": "$skills" }} }] )
+
+    print(type(skills))
 
 
-
-    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn, skills=skill_list)
+    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
