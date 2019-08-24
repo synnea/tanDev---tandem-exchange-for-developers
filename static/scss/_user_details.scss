@@ -12,13 +12,15 @@
 
 .user-image{
     text-align:center;
+    height: 50vh;
 }
+
 .user-image img{
     border-radius:50%;
     height: auto;
     width: auto;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%;
+    max-height: 80%;
 }
 .user-description {
     text-align:left;
@@ -26,4 +28,9 @@
 .user-description p{
     font-weight:600;
     font-size:30px;
+}
+
+.tags {
+
+    margin-left: 2rem;
 }
