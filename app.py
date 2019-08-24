@@ -117,7 +117,7 @@ def register():
             "description": "",
             "experience": "",
             "communicationStyle": [],
-            "skills": "",
+            "skills": [],
             "desiredSkills": [],
             "otherDetails": [],
             "contact": SON([("github", ""), ("linkedin", ""), ("twitter", "") 
