@@ -45,8 +45,7 @@
 
     <link rel="stylesheet" type="text/css"
         href="{{url_for('static', filename='css/awesome-bootstrap-checkbox.css')}}" />
-        <link rel="stylesheet" type="text/css"
-        href="{{url_for('static', filename='css/starability-checkmark-min.css')}}" />  
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/starability-checkmark-min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}" />
 </head>
 
@@ -88,7 +87,7 @@
     <!-- Special navbar behavior, with two distinct styles for desktop and mobile. Applicable for index and about pages. -->
 
     {% if active == 'index' or active == 'about' %}
-    <script src="{{url_for('static', filename='js/nav.js')}}"></script>
+    <script src="{{url_for('static', filename='js/flex-nav.js')}}"></script>
     <script src="{{url_for('static', filename='js/index.js')}}"></script>
 
     {% endif %}
@@ -107,9 +106,11 @@
     <script src="{{url_for('static', filename='js/about.js')}}"></script>
 
 
+
+
     <!-- Alternative navbar styling for pages other than index and about.-->
 
-    {% elif active == 'search' or active == 'logreg' or active == 'myprofile' %}
+    {% elif active == 'search' or active == 'logreg' or active == 'myprofile' or active == 'user_details' %}
 
     <style>
         #navbar.bg-light {
@@ -120,6 +121,8 @@
             color: #2581B0 !important;
         }
     </style>
+
+    <script src="{{url_for('static', filename='js/static-nav.js')}}"></script>
 
     {% endif %}
 

@@ -191,7 +191,7 @@ def user_details(username):
 
     user = db.profile.find_one({"username": username})
 
-    return render_template("pages/user_details.html", user=user, loggedIn=loggedIn)
+    return render_template("pages/user_details.html", user=user, active="user_details", loggedIn=loggedIn)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
