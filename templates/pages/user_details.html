@@ -6,7 +6,19 @@
 
 <div class="container user-wrapper">
 
+    {% if preview == True %}
+
+    <!-- Preview bar shows when user has created a new activity and have not yet chosen to publish it -->
+
+    <div id="preview" class="pt-2">
+        <h1>Preview</h1>
+        <p>This is a preview of how your listing will look on tanDev. It is not published yet.</p>
+        <strong>Click the "Publish" button on the bottom of the page to make your profile public.</strong>
+    </div>
+    {% endif %}
+
     <div class="user-content">
+
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
@@ -155,15 +167,15 @@
             </div>
 
             <div class="col-10 sm-logo-col justify-content-center d-flex">
-                <a href="{{user.contact.github}}"><img src="/static/img/logos/github-logo.svg" target="_blank"
+                <a href="{{user.github}}"><img src="/static/img/logos/github-logo.svg" target="_blank"
                         class="sm-logo hvr-bounce-in" alt="github-logo"></a>
 
 
-                <a href="{{user.contact.linkedin}}"><img src="/static/img/logos/linkedin.svg" target="_blank"
+                <a href="{{user.linkedin}}"><img src="/static/img/logos/linkedin.svg" target="_blank"
                         class="sm-logo hvr-bounce-in" alt="linkedin-logo"></a>
 
 
-                <a href="{{user.contact.twitter}}"><img src="/static/img/logos/twitter.svg" target="_blank"
+                <a href="{{user.twitter}}"><img src="/static/img/logos/twitter.svg" target="_blank"
                         class="sm-logo hvr-bounce-in" alt="twitter-logo"></a>
             </div>
 
@@ -192,6 +204,21 @@
 
 
 
+{% if preview == True %}
+
+<div class="row justify-content-center">
+
+    <div class="col-12 d-flex justify-content-center">
+
+        <button type="submit" class="btn btn-primary btn-large pubdisc-btn" name="btn" value="publish">Publish on
+            tanDev</button>
+
+        <button type="submit" class="btn btn-primary btn-large pubdisc-btn" name="btn" value="discard">Discard
+            changes</button>
+
+    </div>
+</div>
+{% endif %}
 
 </div>
 

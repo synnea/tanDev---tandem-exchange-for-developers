@@ -1,7 +1,7 @@
 .user-wrapper {
     padding: 6%;
     text-align: center;
-    height: 150vh;
+    height: 180vh;
 }
 
 .user-content {
@@ -95,4 +95,21 @@ display: flex;
     17.5% {
         font-size: 0;
     }
+}
+
+#preview {
+    margin-bottom: 5vh !important;
+}
+
+// Publish and discard changes buttons
+
+.pubdisc-btn {
+
+    @include custom-btn;
+    margin: 0 3rem 3rem 3rem;
+
+}
+
+.pubdisc-btn:hover {
+    @include custom-btn-hover;
 }

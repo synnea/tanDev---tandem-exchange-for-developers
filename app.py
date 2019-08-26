@@ -6,7 +6,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
-from bson.son import SON
 import json
 
 app = Flask(__name__)
@@ -120,8 +119,9 @@ def register():
             "skills": [],
             "desiredSkills": [],
             "otherDetails": [],
-            "contact": SON([("github", ""), ("linkedin", ""), ("twitter", "") 
-            ]),
+            "github": "",
+            "linkedin": "",
+            "twitter": "",
             "registered": datetime.now().strftime("%d-%M-%Y"),
             "published": "",
             "display": False
@@ -157,13 +157,13 @@ def myprofile(username):
                 "communicationStyle": request.form.getlist("communicationStyle"),
                 "otherDetails": request.form.getlist("other"),
                 "published": datetime.now().strftime("%d-%M-%Y"),
-                "contact.github": request.form.get('github'),
-                "contact.linkedin": request.form.get('linkedin'),
-                "contact.twitter": request.form.get('twitter')
+                "github": request.form.get('github'),
+                "linkedin": request.form.get('linkedin'),
+                "twitter": request.form.get('twitter')
 
             }})
 
-            return redirect(url_for('preview'))
+            return redirect(url_for('preview', username = session['username']))
 
         else:
             flash("Please select at least one acquired and one desired skill", "error")
@@ -175,13 +175,14 @@ def myprofile(username):
 
 
 # Preview
-app.route('/preview', methods = ['GET', 'POST'])
-def preview():
+@app.route('/preview/<username>', methods = ['GET', 'POST'])
+def preview(username):
 
     loggedIn = True if 'username' in session else False
 
-    return render_template("pages/preview.html", active="preview", loggedIn=loggedIn)
+    user = session['username']
 
+    return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
 
 
 
