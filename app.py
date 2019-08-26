@@ -143,7 +143,7 @@ def myprofile(username):
     loggedIn = True if 'username' in session else False
 
 
-    if request.method == 'POST' and request.form['btn'] == 'publish':
+    if request.method == 'POST' and request.form['btn'] == 'preview':
         
         if request.form.getlist("skills") and request.form.getlist("desiredSkills") != "":
 
@@ -163,12 +163,26 @@ def myprofile(username):
 
             }})
 
+            return redirect(url_for('preview'))
         else:
             flash("Please select at least one acquired and one desired skill", "error")
             return redirect(url_for('myprofile', username = session['username'])) 
 
     return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills,
     commstyles=commstyles, other=other)
+
+
+
+# Preview
+app.route('/preview/<username>', methods = ['GET', 'POST'])
+def preview():
+
+    loggedIn = True if 'username' in session else False
+
+
+    return render_template("pages/preview.html", active="preview", loggedIn=loggedIn)
+
+
 
 
 # Logout
