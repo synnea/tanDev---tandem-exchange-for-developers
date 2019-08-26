@@ -193,7 +193,7 @@ def preview(username):
 
     if request.method == 'POST' and request.form['btn'] == 'discard':
             db.profile.update_many( {'username': username},
-            { "$unset": {
+            { "$set": {
                 'shortDescription': "",
                 "imgURL": "",
                 "district": "",
