@@ -7,6 +7,12 @@
         <div class="row welcome-row justify-content-center align-items-center">
             <div class="col-12">
                 <h1>Welcome, {{username}}</h1>
+
+
+                {% if discarded == True %}
+
+                <p>Your changes have been undone. </p>
+                {% endif %}
             </div>
         </div>
 

@@ -191,6 +191,27 @@ def preview(username):
         return redirect(url_for('user_details', username=session['username'], newProfile=True ))
 
 
+    if request.method == 'POST' and request.form['btn'] == 'discard':
+            db.profile.update_many( {'username': username},
+            { "$unset": {
+                'shortDescription': "",
+                "imgURL": "",
+                "district": "",
+                "skills": [],
+                "desiredSkills": [],
+                "communicationStyle": [],
+                "otherDetails": [],
+                "published": "",
+                "github": "",
+                "linkedin": "",
+                "twitter": ""
+
+            }})
+
+            return redirect(url_for('myprofile', username = session['username'], discarded=True))
+
+
+
     return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
 
 
