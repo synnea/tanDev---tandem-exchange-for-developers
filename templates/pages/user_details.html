@@ -126,7 +126,7 @@
 
                 {% if other == "availableForProjectWork" %}
 
-                <i class="far fa-lightbulb"></i> Available for Project availableForProjectWork
+                <i class="far fa-lightbulb"></i> Available for Projects
                 {% endif %}
 
                 {% endfor %}
@@ -134,8 +134,57 @@
 
         </div>
 
+        {% if loggedIn == False %}
+
+        <div class="row justify-content-center">
+            Log in to see contact details!
+            <div class="col-12">
+
+            </div>
+        </div>
+
+        {% elif loggedIn == True %}
+
+
+        <div class="row">
+
+            <div class="col-2">
+                <i class="fas fa-plug fa-lg"></i>
+                <h5>Contact</h5>
+
+            </div>
+
+            <div class="col-10 sm-logo-col justify-content-center d-flex">
+                <a href="{{user.contact.github}}"><img src="/static/img/logos/github-logo.svg" target="_blank"
+                        class="sm-logo hvr-bounce-in" alt="github-logo"></a>
+
+
+                <a href="{{user.contact.linkedin}}"><img src="/static/img/logos/linkedin.svg" target="_blank"
+                        class="sm-logo hvr-bounce-in" alt="linkedin-logo"></a>
+
+
+                <a href="{{user.contact.twitter}}"><img src="/static/img/logos/twitter.svg" target="_blank"
+                        class="sm-logo hvr-bounce-in" alt="twitter-logo"></a>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            Published on: {{user.published}}
+        </div>
+
+        <div class="row heart-row justify-content-center">
+
+                <input id="heart" type="checkbox" method="POST" />
+                <label for="heart"><i class="fas fa-heart"></i></label>
+        </div>
+
 
     </div>
+
+    {% endif %}
+</div>
 
 
 

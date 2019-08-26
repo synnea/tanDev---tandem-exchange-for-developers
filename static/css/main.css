@@ -1119,4 +1119,76 @@ ul ul a {
 .tags {
   margin-left: 2rem;
 }
+
+.sm-logo {
+  max-height: 5vh;
+  max-width: 5vh;
+  margin-left: 5vw;
+}
+
+.sm-logo-col {
+  fill: #2581B0;
+}
+
+.heart-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[id="heart"] {
+  position: absolute;
+  left: -100vw;
+}
+
+[for="heart"] {
+  color: #B0C3D2 !important;
+  cursor: pointer;
+  font-size: 6em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+[for="heart"]:hover {
+  color: grey !important;
+}
+
+[for="heart"]::-moz-selection {
+  color: none;
+  background: transparent;
+}
+
+[for="heart"]::selection {
+  color: none;
+  background: transparent;
+}
+
+[for="heart"]::moz-selection {
+  color: none;
+  background: transparent;
+}
+
+[id="heart"]:checked + label {
+  color: #ee4266 !important;
+  will-change: font-size;
+  -webkit-animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+          animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+@-webkit-keyframes heart {
+  0%,
+  17.5% {
+    font-size: 0;
+  }
+}
+
+@keyframes heart {
+  0%,
+  17.5% {
+    font-size: 0;
+  }
+}
 /*# sourceMappingURL=main.css.map */

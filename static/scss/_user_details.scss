@@ -1,36 +1,98 @@
-.user-wrapper{
-    padding:6%;
-    text-align:center;
+.user-wrapper {
+    padding: 6%;
+    text-align: center;
     height: 150vh;
 }
 
-.user-content{
+.user-content {
     padding: 5%;
-    background:#fff;
+    background: #fff;
     box-shadow: 0px 0px 4px 0px #b0b3b7;
 }
 
-.user-image{
-    text-align:center;
+.user-image {
+    text-align: center;
     height: 50vh;
 }
 
-.user-image img{
-    border-radius:50%;
+.user-image img {
+    border-radius: 50%;
     height: auto;
     width: auto;
     max-width: 80%;
     max-height: 80%;
 }
+
 .user-description {
-    text-align:left;
+    text-align: left;
 }
-.user-description p{
-    font-weight:600;
-    font-size:30px;
+
+.user-description p {
+    font-weight: 600;
+    font-size: 30px;
 }
 
 .tags {
 
     margin-left: 2rem;
+}
+
+
+.sm-logo {
+    max-height: 5vh;
+    max-width: 5vh;
+    margin-left: 5vw;
+
+}
+
+.sm-logo-col {
+    fill: $brightmidblue;
+}
+
+.heart-row {
+display: flex;
+
+
+}
+[id="heart"] {
+    position: absolute;
+    left: -100vw;
+}
+
+[for="heart"] {
+    color: $lightblue !important;
+    cursor: pointer;
+    font-size: 6em;
+    align-self: center;
+    transition: color 0.2s ease-in-out;
+}
+
+[for="heart"]:hover {
+    color: grey !important;
+}
+
+[for="heart"]::selection {
+    color: none;
+    background: transparent;
+}
+
+[for="heart"]::moz-selection {
+    color: none;
+    background: transparent;
+}
+
+[id="heart"]:checked+label {
+    color: $pink !important;
+    will-change: font-size;
+    animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
+}
+
+
+
+@keyframes heart {
+
+    0%,
+    17.5% {
+        font-size: 0;
+    }
 }
