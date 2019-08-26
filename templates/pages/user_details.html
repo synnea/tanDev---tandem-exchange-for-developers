@@ -17,6 +17,19 @@
     </div>
     {% endif %}
 
+    <!-- Checks if the profile is newly published, if so it lets the user know that they have been successfully published on the website. -->
+
+    {% if newProfile == True %}
+
+    <div id="preview" class="pt-2">
+            <h1>Success!</h1>
+            <p>You have been published on tanDev. You will now show up in search results. To edit or disable your publication, visit your profile page.</p>
+
+        </div>
+        {% endif %}
+
+    {% endif %}
+
     <div class="user-content">
 
         <div class="row">

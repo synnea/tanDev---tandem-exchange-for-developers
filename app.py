@@ -177,6 +177,9 @@ def myprofile(username):
 # Preview
 @app.route('/preview/<username>', methods = ['GET', 'POST'])
 def preview(username):
+    """ Grab the details of the user and display them in the user_details template.
+    If the user pushes the 'publish' button, the display variable is set to True, so
+    that the user can now be found in searches or show up on the carousel on index.html. """
 
     loggedIn = True if 'username' in session else False
 
@@ -188,8 +191,6 @@ def preview(username):
         return redirect(url_for('user_details', username=session['username'], newProfile=True ))
 
 
-
-
     return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
 
 
@@ -198,6 +199,7 @@ def preview(username):
 # Logout
 @app.route('/logout', methods = ['GET'])
 def logout():
+    """ Logs the user out of their session. """
 
     session.clear()
 
