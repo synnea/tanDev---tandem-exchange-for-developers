@@ -180,9 +180,18 @@ def preview(username):
 
     loggedIn = True if 'username' in session else False
 
-    user = session['username']
+    user = db.profile.find_one({"username": username})
+
+    if request.method == 'POST' and request.form['btn'] == 'publish':
+        db.profile.find_one_and_update({"username": username}, {"$set": {"display": True}})
+
+        return redirect(url_for('user_details', username=session['username'], newProfile=True ))
+
+
+
 
     return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
+
 
 
 
