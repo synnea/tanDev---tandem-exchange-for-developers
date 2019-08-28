@@ -1088,7 +1088,6 @@ ul ul a {
 }
 
 .user-content {
-  padding: 5%;
   background: #fff;
   -webkit-box-shadow: 0px 0px 4px 0px #b0b3b7;
           box-shadow: 0px 0px 4px 0px #b0b3b7;
@@ -1105,6 +1104,7 @@ ul ul a {
   width: auto;
   max-width: 80%;
   max-height: 80%;
+  margin-top: 5vh;
 }
 
 .user-description {
@@ -1230,6 +1230,56 @@ ul ul a {
   left: 0;
   font-weight: 700;
   color: #1C2541;
+  -webkit-animation: textshadow 8s infinite alternate;
+          animation: textshadow 8s infinite alternate;
+}
+
+@-webkit-keyframes textshadow {
+  0% {
+    text-shadow: 1px 1px 0px #333;
+  }
+  10% {
+    text-shadow: 3px 3px 2px #333;
+  }
+  20% {
+    text-shadow: 9px 10px 6px #999;
+  }
+  40% {
+    text-shadow: 10px 15px 6px #ccc;
+  }
+  60% {
+    text-shadow: 0px 10px 4px #ccc;
+  }
+  80% {
+    text-shadow: -10px 8px 3px #ccc;
+  }
+  100% {
+    text-shadow: 1px 5px 1px #eee;
+  }
+}
+
+@keyframes textshadow {
+  0% {
+    text-shadow: 1px 1px 0px #333;
+  }
+  10% {
+    text-shadow: 3px 3px 2px #333;
+  }
+  20% {
+    text-shadow: 9px 10px 6px #999;
+  }
+  40% {
+    text-shadow: 10px 15px 6px #ccc;
+  }
+  60% {
+    text-shadow: 0px 10px 4px #ccc;
+  }
+  80% {
+    text-shadow: -10px 8px 3px #ccc;
+  }
+  100% {
+    text-shadow: 1px 5px 1px #eee;
+  }
 }
 
 .district {
@@ -1238,5 +1288,42 @@ ul ul a {
 
 .user-description {
   font-family: Roboto, sans-serif;
+}
+
+.profile-row {
+  padding: 2rem;
+  color: white;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.skill-row {
+  background-color: #0B132B;
+}
+
+.des-skill-row {
+  background-color: #2581B0;
+}
+
+.skill-tags {
+  background-color: #2581B0;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.des-skills-row {
+  padding: 2rem;
+  background-color: #0B132B;
+  color: white;
+}
+
+.des-skill-tags {
+  background-color: #0B132B;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  display: inline-block;
 }
 /*# sourceMappingURL=main.css.map */
