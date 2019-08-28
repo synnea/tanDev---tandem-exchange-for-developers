@@ -113,3 +113,20 @@ display: flex;
 .pubdisc-btn:hover {
     @include custom-btn-hover;
 }
+
+.username {
+    position: absolute;
+top: 0;
+margin-top: 5vh;
+left: 0;
+font-weight: 700;
+color: $teal;
+}
+
+.district {
+margin-top: 10vh;
+}
+
+.user-description {
+    font-family: Roboto, sans-serif;
+}
