@@ -122,9 +122,9 @@ h3.heading {
 }
 
 footer {
-  height: 15vh;
+  height: 15vh !important;
+  width: 100% !important;
   background-color: #0B132B;
-  position: bottom fixed;
   color: #2581B0;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -133,6 +133,8 @@ footer {
 }
 
 footer-container {
+  position: absolute;
+  bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -280,9 +282,9 @@ h3.heading {
 }
 
 footer {
-  height: 15vh;
+  height: 15vh !important;
+  width: 100% !important;
   background-color: #0B132B;
-  position: bottom fixed;
   color: #2581B0;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -291,6 +293,8 @@ footer {
 }
 
 footer-container {
+  position: absolute;
+  bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -669,9 +673,9 @@ h3.heading {
 }
 
 footer {
-  height: 15vh;
+  height: 15vh !important;
+  width: 100% !important;
   background-color: #0B132B;
-  position: bottom fixed;
   color: #2581B0;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -680,6 +684,8 @@ footer {
 }
 
 footer-container {
+  position: absolute;
+  bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -1084,13 +1090,20 @@ ul ul a {
 .user-wrapper {
   padding: 6%;
   text-align: center;
-  height: 180vh;
+  height: auto;
+  position: relative;
 }
 
 .user-content {
   background: #fff;
   -webkit-box-shadow: 0px 0px 4px 0px #b0b3b7;
           box-shadow: 0px 0px 4px 0px #b0b3b7;
+}
+
+@media (max-width: 768px) {
+  .user-content {
+    height: 200vh;
+  }
 }
 
 .user-image {
@@ -1322,12 +1335,15 @@ ul ul a {
   background-color: #2581B0;
 }
 
-.skill-tags {
-  background-color: #2581B0;
+.tags {
   margin-left: 1rem;
   margin-top: 1rem;
   padding: 0.5rem;
   display: inline-block;
+}
+
+.skill-tags {
+  background-color: #2581B0;
 }
 
 .des-skills-row {
@@ -1338,9 +1354,31 @@ ul ul a {
 
 .des-skill-tags {
   background-color: #0B132B;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  display: inline-block;
+}
+
+.comm-row {
+  background-color: #0B132B;
+}
+
+.comm-tags {
+  background-color: #2581B0;
+  display: block;
+  width: auto;
+}
+
+.other-row {
+  background-color: #2581B0;
+}
+
+.other-tags {
+  background-color: #0B132B;
+}
+
+.contact-row {
+  color: black;
+}
+
+.published-row {
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */

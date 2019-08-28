@@ -136,9 +136,10 @@ h3.heading {
 // Footer
 
 footer {
-    height: 15vh;
+    height: 15vh !important;
+    width: 100% !important;
     background-color: $darkblue;
-    position: bottom fixed;
+
     color: $brightmidblue;
     text-transform: uppercase;
     font-size: 0.8em;
@@ -147,6 +148,8 @@ footer {
 }
 
 footer-container {
+    position: absolute;
+    bottom: 0;
     margin-bottom: 0;
     padding-bottom: 0;
 

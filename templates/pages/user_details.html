@@ -21,12 +21,13 @@
 
     {% if newProfile == True %}
 
-    <div id="preview" class="pt-2">
-            <h1>Success!</h1>
-            <p>You have been published on tanDev. You will now show up in search results. To edit or disable your publication, visit your profile page.</p>
+    <div id="published" class="pt-2">
+        <h1>Success!</h1>
+        <p>You have been published on tanDev. You will now show up in search results. To edit or disable your
+            publication, visit your profile page.</p>
 
-        </div>
-        {% endif %}
+    </div>
+    {% endif %}
 
 
     <div class="user-content">
@@ -44,7 +45,7 @@
             <div class="col-md-6 d-flex header-col justify-content-center">
                 <div class="user-description">
                     <h1 class="username"> {{user.username}}</h1>
-                    <h6>{{user.shortDescription}}</h6>
+                    <h5>{{user.shortDescription}}</h5>
                     <h6 class="district"><i class="fas fa-map-marker-alt"></i> District: {{user.district}}</h6>
                 </div>
             </div>
@@ -62,7 +63,7 @@
             <div class="col-9">
 
                 {% for skill in user.skills %}
-                <span class="skill-tags">{{ skill }}</span>
+                <span class="tags skill-tags">{{ skill }}</span>
 
                 {% endfor %}
 
@@ -80,40 +81,40 @@
             <div class="col-9">
 
                 {% for skill in user.desiredSkills %}
-                <span class="des-skill-tags">{{ skill }}</span>
+                <span class="tags des-skill-tags">{{ skill }}</span>
 
                 {% endfor %}
 
             </div>
         </div>
 
-        <div class="row profile-row">
+        <div class="row comm-row profile-row">
 
-            <div class="col-2">
+            <div class="col-3">
                 <i class="fas fa-at"></i>
-                <h5>Communication Style</h5>
+                <h5 class="d-inline">Communication</h5>
 
             </div>
 
 
-            <div class="col-10">
+            <div class="col-9">
                 {% for comm in user.communicationStyle %}
 
                 {% if comm == "inperson" %}
 
-                <i class="far fa-comments"></i> In person
+                <span class="tags comm-tags"><i class="far fa-comments"></i> In person</span>
 
                 {% endif %}
 
                 {% if comm == "text" %}
 
-                <i class="fas fa-envelope-square"></i> Text
+                <span class="tags comm-tags"><i class="fas fa-envelope-square"></i> Text</span>
 
                 {% endif %}
 
                 {% if comm == "video" %}
 
-                <i class="fas fa-video"></i> Video
+                <span class="tags comm-tags"><i class="fas fa-video"></i> Video</span>
 
                 {% endif %}
 
@@ -122,33 +123,33 @@
 
         </div>
 
-        <div class="row">
+        <div class="row profile-row other-row">
 
-            <div class="col-2">
+            <div class="col-3">
                 <i class="fas fa-at fa-lg"></i>
-                <h5>Other Details</h5>
+                <h5 class="d-inline">Other Details</h5>
 
             </div>
 
 
-            <div class="col-10">
+            <div class="col-9">
                 {% for other in user.otherDetails %}
 
                 {% if other == "lookingForCoFounder" %}
 
-                <i class="fas fa-briefcase fa-lg"></i> Looking for Co-Founder
+                <span class="tags other-tags"><i class="fas fa-briefcase fa-lg"></i> Looking for Co-Founder</span>
 
                 {% endif %}
 
                 {% if other == "availableForHire" %}
 
-                <i class="fas fa-money-bill"></i> Available for Hire
+                <span class="tags other-tags"><i class="fas fa-money-bill"></i> Available for Hire</span>
 
                 {% endif %}
 
                 {% if other == "availableForProjectWork" %}
 
-                <i class="far fa-lightbulb"></i> Available for Projects
+                <span class="tags other-tags"><i class="far fa-lightbulb"></i> Available for Projects</span>
                 {% endif %}
 
                 {% endfor %}
@@ -168,32 +169,25 @@
         {% elif loggedIn == True %}
 
 
-        <div class="row">
+        <div class="row profile-row contact-row">
 
-            <div class="col-2">
+            <div class="col-3">
                 <i class="fas fa-plug fa-lg"></i>
-                <h5>Contact</h5>
+                <h5 class="d-inline">Contact</h5>
 
             </div>
 
-            <div class="col-10 sm-logo-col justify-content-center d-flex">
+            <div class="col-9 sm-logo-col justify-content-center d-flex">
                 <a href="{{user.github}}"><img src="/static/img/logos/github-logo.svg" target="_blank"
                         class="sm-logo hvr-bounce-in" alt="github-logo"></a>
 
-
-                <a href="{{user.linkedin}}"><img src="/static/img/logos/linkedin.svg" target="_blank"
-                        class="sm-logo hvr-bounce-in" alt="linkedin-logo"></a>
-
-
-                <a href="{{user.twitter}}"><img src="/static/img/logos/twitter.svg" target="_blank"
-                        class="sm-logo hvr-bounce-in" alt="twitter-logo"></a>
             </div>
 
         </div>
 
-        <div class="row">
+        <div class="row profile-row published-row">
 
-            Published on: {{user.published}}
+            <h6>Published on: {{user.published}}</h6>
         </div>
 
         <div class="row heart-row justify-content-center">
@@ -207,34 +201,37 @@
         </div>
 
 
+
+
+        {% endif %}
+
+
+
+
+        {% if preview == True %}
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 d-flex justify-content-center">
+
+                <form id="pubdisc-form" method="POST">
+                    <button type="submit" class="btn btn-primary btn-large pubdisc-btn" name="btn"
+                        value="publish">Publish
+                        on
+                        tanDev</button>
+
+                    <button type="submit" class="btn btn-primary btn-large pubdisc-btn" name="btn"
+                        value="discard">Discard
+                        changes</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+
     </div>
 
-    {% endif %}
-</div>
-
-
-
-{% if preview == True %}
-
-<div class="row justify-content-center">
-
-    <div class="col-12 d-flex justify-content-center">
-
-        <form id="pubdisc-form" method="POST">
-            <button type="submit" class="btn btn-primary btn-large pubdisc-btn" name="btn" value="publish">Publish on
-                tanDev</button>
-
-            <button type="submit" class="btn btn-primary btn-large pubdisc-btn" name="btn" value="discard">Discard
-                changes</button>
-        </form>
-    </div>
-</div>
-{% endif %}
 
 </div>
-
-
-
 
 
 {% endblock %}
