@@ -23,13 +23,12 @@
     margin-top: 5vh;
 }
 
-.user-description {
-    text-align: left;
-}
+.header-col {
 
-.user-description p {
-    font-weight: 600;
-    font-size: 30px;
+
+    @media (min-width: $bp-mobile) {
+    align-items: center;
+    }
 }
 
 .tags {
@@ -122,6 +121,12 @@ left: 0;
 font-weight: 700;
 color: $teal;
 animation: textshadow 8s infinite alternate; 
+
+@media (max-width: $bp-mobile) {
+position: relative;
+display: flex;
+margin-top: 0;
+}
 }
 
 @keyframes textshadow {
@@ -141,6 +146,12 @@ margin-top: 10vh;
 
 .user-description {
     font-family: Roboto, sans-serif;
+    text-align: left;;
+
+    @media (max-width: $bp-mobile) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    }
 }
 
 .profile-row {
