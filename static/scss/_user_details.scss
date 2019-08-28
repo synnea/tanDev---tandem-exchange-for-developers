@@ -197,12 +197,12 @@ margin-top: 10vh;
 
 .comm-row {
     background-color: $darkblue;
+    flex-wrap: wrap;
 }
 
 .comm-tags {
     background-color: $brightmidblue;
-    display: block;
-    width: auto;
+
 }
 
 .other-row {

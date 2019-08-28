@@ -1358,12 +1358,12 @@ ul ul a {
 
 .comm-row {
   background-color: #0B132B;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .comm-tags {
   background-color: #2581B0;
-  display: block;
-  width: auto;
 }
 
 .other-row {
