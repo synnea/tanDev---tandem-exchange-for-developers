@@ -50,7 +50,7 @@
                         Short Description
                     </label>
                     <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
-                    value="{{username.shortDescription}}">
+                        value="{{username.shortDescription}}">
                 </div>
 
 
@@ -126,8 +126,8 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab"
-                                role="tab" aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
+                            <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
+                                aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
                                 proficient
                                 in...</a>
                         </li>
@@ -160,7 +160,7 @@
 
                                 <span class="d-block"> <i class="fa fa-code"></i> {{skill}} </span>
 
-         
+
                                 {% endfor %}
                             </div>
 
@@ -185,104 +185,114 @@
 
                             <span class="d-block"> <i class="fas fa-search"></i> {{skill}} </span>
 
-     
+
                             {% endfor %}
                         </div>
 
 
-                        </div>
-                        <!-- End "Looking for..." desired skills tab -->
                     </div>
-
-
+                    <!-- End "Looking for..." desired skills tab -->
                 </div>
 
-            </div>
-        </div>
 
-
-        <!-- COMMUNICATION STYLE SECTION -->
-
-        <div class="row">
-
-
-            <div class="col-6">
-                <label class="profile-label" for="profile-commstyle">
-                    Communication Style
-                </label>
-
-
-             {% for commstyle in commstyle %}
-
-             {% if commstyle == username.communicationStyle }
-
-             {{commstyle}}
-
-             {% endif %}
-             {% endfor %}
-            </div>
-
-
-
-
-            <!-- OTHER SECTION -->
-
-            <div class="col-6">
-                <label class="profile-label" for="profile-other">
-                    Other
-                </label>
-
-
-                {% for other in other %}
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="other" value="{{other}}" id="other-box">
-                    <label class="form-check-label" for="other-box">
-                        {{other}}
-                    </label>
-                </div>
-                {% endfor %}
-            </div>
-
-
-        </div>
-    </div>
-
-    <div class="jumbotron profile-jumbo">
-
-
-        <div class="row">
-
-            <div class="col-12">
-                <h3 class="heading">
-                    < footer>
-
-                </h3>
-            </div>
-
-            <div class="col-12">
-                <label class="contact-label" for="contact">
-                    Contact
-                </label>
-            </div>
-
-            <div class="col-12">
-
-
-
-                <label class="contact" for="profile-contact">
-                    Github
-                </label>
-                <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                    placeholder="www.github.com/myawesomerepo">
             </div>
 
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="preview">Preview your Profile</button>
 
-    </form>
+    <!-- COMMUNICATION STYLE SECTION -->
+
+    <div class="row">
+
+
+        <div class="col-6">
+            <label class="profile-label" for="profile-commstyle">
+                Communication Style
+            </label>
+
+
+            {% for comm in commstyles %}
+
+            {% if comm in username.communicationStyle %}
+
+            <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
+
+            {% else %}
+
+            <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
+            {% endif %}
+
+            {% endfor %}
+
+
+        </div>
+
+
+
+
+        <!-- OTHER SECTION -->
+
+        <div class="col-6">
+            <label class="profile-label" for="profile-other">
+                Other
+            </label>
+
+
+            {% for other in other %}
+
+            {% if other in username.otherDetails %}
+
+            <span class="d-block"><i class="fas fa-check"></i> {{other}} </span>
+
+            {% else %}
+
+            <span class="d-block"><i class="fas fa-times"></i> {{other}} </span>
+            {% endif %}
+
+            {% endfor %}
+        </div>
+
+
+    </div>
+</div>
+
+<div class="jumbotron profile-jumbo">
+
+
+    <div class="row">
+
+        <div class="col-12">
+            <h3 class="heading">
+                < footer>
+
+            </h3>
+        </div>
+
+        <div class="col-12">
+            <label class="contact-label" for="contact">
+                Contact
+            </label>
+        </div>
+
+        <div class="col-12">
+
+
+
+            <label class="contact" for="profile-contact">
+                Github
+            </label>
+            <input id="github" class="form-control" type="text" name="github" maxlength="50"
+                value="{{username.github}}">
+        </div>
+
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="preview">Preview your
+    Profile</button>
+
+</form>
 
 
 

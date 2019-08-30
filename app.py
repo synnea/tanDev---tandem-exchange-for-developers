@@ -30,6 +30,7 @@ commstyles = list(["Text", "Video", "In person"])
 other = list(["Project Work", "For Hire", "Looking for Co-Founder"])
 
 
+
 # Begin creating routes
 # Index page
 @app.route('/', methods=['GET'])
@@ -173,13 +174,15 @@ def newprofile(username):
     commstyles=commstyles, other=other)
 
 
+# Profile page
 @app.route('/myprofile/<username>', methods = ['GET', 'POST'])
 def profile(username):
     loggedIn = True if 'username' in session else False
 
     username = db.profile.find_one({"username": username})
 
-    return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles)
+
+    return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
 
 
 # Preview
