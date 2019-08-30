@@ -164,6 +164,8 @@ def newprofile(username):
 
             }})
 
+            flash("Changes saved successfully. Scroll down to preview or edit.")
+
             return redirect(url_for('profile', username = session['username']))
 
         else:

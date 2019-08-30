@@ -6,13 +6,11 @@
 
     <div class="row welcome-row justify-content-center align-items-center">
         <div class="col-12">
-            <h1>Welcome, {{username.username}}</h1>
+            <h1>Welcome back, {{username.username}}</h1>
+
+            {% include 'components/message.html' %} 
 
 
-            {% if discarded == True %}
-
-            <p>Your changes have been undone. </p>
-            {% endif %}
         </div>
     </div>
 
@@ -28,7 +26,6 @@
 
         <!-- Display flashed messages. -->
 
-        {% include 'components/message.html' %}
 
         <form id="profile-form" method="POST">
 
@@ -197,107 +194,110 @@
 
             </div>
 
-        </div>
-    </div>
-
-
-    <!-- COMMUNICATION STYLE SECTION -->
-
-    <div class="row">
-
-
-        <div class="col-6">
-            <label class="profile-label" for="profile-commstyle">
-                Communication Style
-            </label>
-
-
-            {% for comm in commstyles %}
-
-            {% if comm in username.communicationStyle %}
-
-            <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
-
-            {% else %}
-
-            <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
-            {% endif %}
-
-            {% endfor %}
-
-
-        </div>
 
 
 
+            <!-- COMMUNICATION STYLE SECTION -->
 
-        <!-- OTHER SECTION -->
-
-        <div class="col-6">
-            <label class="profile-label" for="profile-other">
-                Other
-            </label>
+            <div class="row">
 
 
-            {% for other in other %}
-
-            {% if other in username.otherDetails %}
-
-            <span class="d-block"><i class="fas fa-check"></i> {{other}} </span>
-
-            {% else %}
-
-            <span class="d-block"><i class="fas fa-times"></i> {{other}} </span>
-            {% endif %}
-
-            {% endfor %}
-        </div>
+                <div class="col-6">
+                    <label class="profile-label" for="profile-commstyle">
+                        Communication Style
+                    </label>
 
 
-    </div>
-</div>
+                    {% for comm in commstyles %}
 
-<div class="jumbotron profile-jumbo">
+                    {% if comm in username.communicationStyle %}
+
+                    <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
+
+                    {% else %}
+
+                    <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
+                    {% endif %}
+
+                    {% endfor %}
 
 
-    <div class="row">
-
-        <div class="col-12">
-            <h3 class="heading">
-                < footer>
-
-            </h3>
-        </div>
-
-        <div class="col-12">
-            <label class="contact-label" for="contact">
-                Contact
-            </label>
-        </div>
-
-        <div class="col-12">
+                </div>
 
 
 
-            <label class="contact" for="profile-contact">
-                Github
-            </label>
-            <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                value="{{username.github}}">
+
+                <!-- OTHER SECTION -->
+
+                <div class="col-6">
+                    <label class="profile-label" for="profile-other">
+                        Other
+                    </label>
+
+
+                    {% for other in other %}
+
+                    {% if other in username.otherDetails %}
+
+                    <span class="d-block"><i class="fas fa-check"></i> {{other}} </span>
+
+                    {% else %}
+
+                    <span class="d-block"><i class="fas fa-times"></i> {{other}} </span>
+                    {% endif %}
+
+                    {% endfor %}
+                </div>
+
+
+            </div>
         </div>
 
     </div>
+
+
+    <div class="jumbotron profile-jumbo">
+
+
+        <div class="row">
+
+            <div class="col-12">
+                <h3 class="heading">
+                    < footer>
+
+                </h3>
+            </div>
+
+            <div class="col-12">
+                <label class="contact-label" for="contact">
+                    Contact
+                </label>
+            </div>
+
+            <div class="col-12">
+
+
+
+                <label class="contact" for="profile-contact">
+                    Github
+                </label>
+                <input id="github" class="form-control" type="text" name="github" maxlength="50"
+                    value="{{username.github}}">
+            </div>
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="preview">Preview Profile</button>
+
+    <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="edit">Edit</button>
+
+
+    </form>
+
+
+
 </div>
-
-<button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="preview">Preview your
-    Profile</button>
-
-</form>
-
-
-
-</div>
-
 
 
 {% endblock %}
