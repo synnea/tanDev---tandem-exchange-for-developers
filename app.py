@@ -179,8 +179,7 @@ def profile(username):
 
     username = db.profile.find_one({"username": username})
 
-    return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, skills=skills,
-    commstyles=commstyles, other=other)
+    return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles)
 
 
 # Preview

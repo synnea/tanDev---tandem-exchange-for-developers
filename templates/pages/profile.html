@@ -81,7 +81,10 @@
 
                     <div class="col-12">
 
-                        <select class="form-control" name="district" id="profileSelect" value={{username.district}}>
+                        <select class="form-control" name="district" id="profileSelect">
+                            <option value selected="{{username.district}}">{{username.district}}</option>
+
+                        </select>
 
                         </select>
                     </div>
@@ -150,21 +153,14 @@
                         aria-labelledby="skills-tab">
                         <div class="skill-column">
                             <div class="col-12">
-                                {% for skill in skills %}
+                                {% for skill in username.skills %}
 
 
-                                {% if skill == username.skills %}
 
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
-                                        id="skill-box" selected>
-                                    <label class="form-check-label" for="skill-box">
-                                        {{skill}}
-                                    </label>
-                                </div>
+                                <span class="d-block"> <i class="fa fa-code"></i> {{skill}} </span>
 
-                                {% endif %}
+         
                                 {% endfor %}
                             </div>
 
@@ -182,21 +178,16 @@
 
                         <div class="skill-column">
 
-                            <div class="col-12">
-                                {% for skill in skills %}
+                            {% for skill in username.desiredSkills %}
 
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="desiredSkills"
-                                        value="{{skill}}" id="skill-box">
-                                    <label class="form-check-label" for="skill-box">
-                                        {{skill}}
-                                    </label>
-                                </div>
 
 
-                                {% endfor %}
-                            </div>
+                            <span class="d-block"> <i class="fas fa-search"></i> {{skill}} </span>
+
+     
+                            {% endfor %}
+                        </div>
 
 
                         </div>
@@ -221,16 +212,14 @@
                 </label>
 
 
-                {% for commstyle in commstyles %}
+             {% for commstyle in commstyle %}
 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="communicationStyle" value="{{commstyle}}"
-                        id="comm-box">
-                    <label class="form-check-label" for="comm-box">
-                        {{commstyle}}
-                    </label>
-                </div>
-                {% endfor %}
+             {% if commstyle == username.communicationStyle }
+
+             {{commstyle}}
+
+             {% endif %}
+             {% endfor %}
             </div>
 
 
@@ -277,7 +266,7 @@
                 </label>
             </div>
 
-            <div class="col-xs-6 col-md-4">
+            <div class="col-12">
 
 
 
@@ -287,32 +276,6 @@
                 <input id="github" class="form-control" type="text" name="github" maxlength="50"
                     placeholder="www.github.com/myawesomerepo">
             </div>
-
-
-
-            <div class="col-xs-6 col-md-4">
-
-
-                <label class="profile-label" for="profile-contact">
-                    LinkedIn
-                </label>
-                <input id="linkedin" class="form-control" type="text" name="linkedin" maxlength="50"
-                    placeholder="http://linkedin.com/srs_business_profile">
-
-            </div>
-
-            <div class="col-xs-6 col-md-4">
-
-
-                <label class="profile-label" for="profile-contact">
-                    Twitter
-                </label>
-                <input id="twitter" class="form-control" type="text" name="twitter" maxlength="50"
-                    placeholder="http://www.twitter.com/tweetweet">
-
-            </div>
-
-
 
         </div>
     </div>
