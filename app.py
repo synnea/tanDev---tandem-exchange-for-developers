@@ -82,7 +82,7 @@ def login():
         if check_password_hash(existing_user["password"], 
         request.form.get("password")):
             session['username'] = request.form.get('username')
-            return redirect(url_for('myprofile', username = session['username']))
+            return redirect(url_for('profile', username = session['username']))
         else:
             flash("Uh-oh! Username and password combo doesn't match.", "error")
             return redirect(url_for('login'))
@@ -128,14 +128,14 @@ def register():
         }
         db.profile.insert_one(register)
         session['username'] = request.form.get('username')
-        return redirect(url_for('myprofile', username = session['username']))
+        return redirect(url_for('newprofile', username = session['username']))
 
     return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn)
 
 
-# My profile page
-@app.route('/myprofile/<username>', methods = ['GET', 'POST'])
-def myprofile(username):
+# New profile
+@app.route('/newprofile/<username>', methods = ['GET', 'POST'])
+def newprofile(username):
     """ Check if the user selected at least skill and one desired skill.
     If they haven't, display an error message.
     Else, if all requirements are met, add the new data to the user's database document """
@@ -163,15 +163,24 @@ def myprofile(username):
 
             }})
 
-            return redirect(url_for('preview', username = session['username']))
+            return redirect(url_for('profile', username = session['username']))
 
         else:
             flash("Please select at least one acquired and one desired skill", "error")
-            return redirect(url_for('myprofile', username = session['username'])) 
+            return redirect(url_for('newprofile', username = session['username'])) 
 
-    return render_template("pages/myprofile.html", username=username, active="myprofile", loggedIn=loggedIn, skills=skills,
+    return render_template("pages/newprofile.html", username=username, active="profile", loggedIn=loggedIn, skills=skills,
     commstyles=commstyles, other=other)
 
+
+@app.route('/myprofile/<username>', methods = ['GET', 'POST'])
+def profile(username):
+    loggedIn = True if 'username' in session else False
+
+    username = db.profile.find_one({"username": username})
+
+    return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, skills=skills,
+    commstyles=commstyles, other=other)
 
 
 # Preview
