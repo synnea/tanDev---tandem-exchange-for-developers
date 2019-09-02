@@ -111,7 +111,7 @@ def register():
             "username": request.form.get('username'),
             "email": "",
             "password": generate_password_hash(request.form.get('password')),
-            "imgUrl": "",
+            "imgURL": "",
             "district": "",
             "shortDescription": "",
             "description": "",
