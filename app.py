@@ -195,6 +195,7 @@ def profile(username):
         return redirect(url_for('preview', loggedIn=loggedIn, username=username))
 
     if request.method == 'POST' and request.form['btn'] == 'edit':
+        username=session['username']
         return redirect(url_for('edit', loggedIn=loggedIn, username=username))
 
 
