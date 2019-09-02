@@ -258,6 +258,8 @@
 
                     {% for commstyle in commstyles %}
 
+                    {% if commstyle not in username.communicationStyle %}
+
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="communicationStyle" value="{{commstyle}}"
                             id="comm-box">
@@ -265,6 +267,19 @@
                             {{commstyle}}
                         </label>
                     </div>
+
+                    {% endif %}
+
+                    {% if commstyle in username.communicationStyle %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="communicationStyle" value="{{commstyle}}"
+                            id="comm-box" checked>
+                        <label class="form-check-label" for="comm-box">
+                            {{commstyle}}
+                        </label>
+                    </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
 
@@ -281,12 +296,27 @@
 
                     {% for other in other %}
 
+                    {% if other not in username.otherDetails %}
+
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="other" value="{{other}}" id="other-box">
                         <label class="form-check-label" for="other-box">
                             {{other}}
                         </label>
                     </div>
+
+                    {% endif %}
+
+                    {% if other in username.otherDetails %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="{{other}}" id="other-box"
+                            checked>
+                        <label class="form-check-label" for="other-box">
+                            {{other}}
+                        </label>
+                    </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
 
@@ -320,34 +350,8 @@
                         Github
                     </label>
                     <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                        placeholder="www.github.com/myawesomerepo">
+                        value="{{username.github}}">{{username.github}}
                 </div>
-
-
-
-                <div class="col-xs-6 col-md-4">
-
-
-                    <label class="profile-label" for="profile-contact">
-                        LinkedIn
-                    </label>
-                    <input id="linkedin" class="form-control" type="text" name="linkedin" maxlength="50"
-                        placeholder="http://linkedin.com/srs_business_profile">
-
-                </div>
-
-                <div class="col-xs-6 col-md-4">
-
-
-                    <label class="profile-label" for="profile-contact">
-                        Twitter
-                    </label>
-                    <input id="twitter" class="form-control" type="text" name="twitter" maxlength="50"
-                        placeholder="http://www.twitter.com/tweetweet">
-
-                </div>
-
-
 
             </div>
         </div>

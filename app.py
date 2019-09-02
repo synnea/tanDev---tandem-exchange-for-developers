@@ -121,8 +121,6 @@ def register():
             "desiredSkills": [],
             "otherDetails": [],
             "github": "",
-            "linkedin": "",
-            "twitter": "",
             "registered": datetime.now().strftime("%d-%M-%Y"),
             "published": "",
             "display": False
@@ -162,8 +160,6 @@ def newprofile(username):
                 "otherDetails": request.form.getlist("other"),
                 "published": datetime.now().strftime("%d-%M-%Y"),
                 "github": request.form.get('github'),
-                "linkedin": request.form.get('linkedin'),
-                "twitter": request.form.get('twitter')
 
             }})
 
@@ -234,8 +230,6 @@ def preview(username):
                 "otherDetails": [],
                 "published": "",
                 "github": "",
-                "linkedin": "",
-                "twitter": ""
 
             }})
             username = session['username']
@@ -262,8 +256,15 @@ def edit(username):
         'shortDescription': request.form.get('shortDescription'),
         "imgURL": request.form.get('imgURL'),
         "district": request.form.get('district'),
+        "skills": request.form.getlist("skills"),
+        "desiredSkills": request.form.getlist("desiredSkills"),
+        "communicationStyle": request.form.getlist("communicationStyle"),
+        "otherDetails": request.form.getlist("other"),
+        "github": request.form.get('github'),
 
         }})
+
+        flash("Edits saved successfully. Scroll down to preview and publish.")
 
         return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
 
