@@ -8,294 +8,327 @@
         <div class="col-12">
             <h1>Welcome back, {{username.username}}</h1>
 
-            {% include 'components/message.html' %} 
-
+            {% include 'components/message.html' %}
 
         </div>
-    </div>
+        {% if username.display == True %}
 
-    <div class="jumbotron profile-jumbo">
+        <div class="col-10">
 
-        <div class="col-12">
-            <h3 class="heading text-center">My Profile</h3>
-            <div class="heading-ul"></div>
+
+
+
+            <h4>Your profile is currently public</h4>
+
         </div>
 
+        <form id="unpublish-btn" method="POST">
 
+            <div class="col-2">
 
-
-        <!-- Display flashed messages. -->
-
-
-        <form id="profile-form" method="POST">
-
-
-
-            <div class="row">
-
-                <div class="col-12 justify-content-center">
-                    <h3 class="heading">
-                        < header>
-
-                    </h3>
-                </div>
-                <div class="col-6">
-
-
-
-                    <label class="profile-label" for="profile-shortDesc">
-                        Short Description
-                    </label>
-                    <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text" maxlength="200"
-                        value="{{username.shortDescription}}" readonly>
-                </div>
-
-
-
-                <div class="col-6">
-
-
-                    <label class="profile-label" for="profile-img">
-                        Profile Image.
-                    </label>
-                    <small>Please enter the URL of your profile image</small>
-                    <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
-                        placeholder="http://www.picturehost.com/mypic.jpg" value="{{username.imgURL}}" readonly>
-
-                </div>
+                <button type="submit" class="btn btn-danger btn-large" name="btn" value="unpublish">Unpublish
+                    Profile</button>
             </div>
+        </form>
 
 
+    </div>
+    {% endif %}
 
-            <div class="form-group">
-                <div class="row">
+    {% if username.display == False %}
 
-                    <div class="col-12">
-                        <label class="profile-label" for="profile-district">
-                            District
-                        </label>
-                    </div>
+    <div class="col-12">
 
-                    <div class="col-12">
-
-                        <select class="form-control" name="district" id="profileSelect" readonly>
-                            <option value selected="{{username.district}}">{{username.district}}</option>
-
-                        </select>
-
-                        </select>
-                    </div>
-
-
-
-                </div>
-            </div>
+        <h4>Your profile is currently not published.</h4>
     </div>
 
-    <div class="jumbotron profile-jumbo">
-        <div class="form-group">
+    {% endif %}
+
+</div>
+
+<div class="jumbotron profile-jumbo">
+
+    <div class="col-12">
+        <h3 class="heading text-center">My Profile</h3>
+        <div class="heading-ul"></div>
+    </div>
 
 
+
+
+    <!-- Display flashed messages. -->
+
+
+    <form id="profile-form" method="POST">
+
+
+
+        <div class="row">
 
             <div class="col-12 justify-content-center">
-
                 <h3 class="heading">
-                    < body>
-                        </header>
+                    < header>
+
                 </h3>
-
             </div>
+            <div class="col-6">
 
-            <!-- MY SKILLS SECTION -->
 
-            <div class="col-12">
-                <label class="profile-label" for="profile-skills">
-                    My skills
+
+                <label class="profile-label" for="profile-shortDesc">
+                    Short Description
                 </label>
+                <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text" maxlength="200"
+                    value="{{username.shortDescription}}" readonly>
             </div>
 
-            <!-- The Tabs -->
-
-            <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
-            <div class="row">
-                <nav>
-                    <ul class="nav nav-tabs">
 
 
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
-                                aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
-                                proficient
-                                in...</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkills-tab"
-                                role="tab" aria-controls="desiredSkills"><i class="fas fa-search"></i> Looking
-                                for...</a>
-                        </li>
+            <div class="col-6">
 
-                    </ul>
-                </nav>
+
+                <label class="profile-label" for="profile-img">
+                    Profile Image.
+                </label>
+                <small>Please enter the URL of your profile image</small>
+                <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
+                    placeholder="http://www.picturehost.com/mypic.jpg" value="{{username.imgURL}}" readonly>
+
             </div>
-            <!-- Tab Contents -->
+        </div>
 
+
+
+        <div class="form-group">
             <div class="row">
 
-                <div class="tab-content">
+                <div class="col-12">
+                    <label class="profile-label" for="profile-district">
+                        District
+                    </label>
+                </div>
+
+                <div class="col-12">
+
+                    <select class="form-control" name="district" id="profileSelect" readonly>
+                        <option value selected="{{username.district}}">{{username.district}}</option>
+
+                    </select>
+
+                    </select>
+                </div>
 
 
 
-                    <!-- Begin "I'm proficient in..." Skills Tab -->
-                    <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
-                        aria-labelledby="skills-tab">
-                        <div class="skill-column">
-                            <div class="col-12">
-                                {% for skill in username.skills %}
+            </div>
+        </div>
+</div>
+
+<div class="jumbotron profile-jumbo">
+    <div class="form-group">
+
+
+
+        <div class="col-12 justify-content-center">
+
+            <h3 class="heading">
+                < body>
+                    </header>
+            </h3>
+
+        </div>
+
+        <!-- MY SKILLS SECTION -->
+
+        <div class="col-12">
+            <label class="profile-label" for="profile-skills">
+                My skills
+            </label>
+        </div>
+
+        <!-- The Tabs -->
+
+        <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
+        <div class="row">
+            <nav>
+                <ul class="nav nav-tabs">
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
+                            aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
+                            proficient
+                            in...</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkills-tab" role="tab"
+                            aria-controls="desiredSkills"><i class="fas fa-search"></i> Looking
+                            for...</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <!-- Tab Contents -->
+
+        <div class="row">
+
+            <div class="tab-content">
+
+
+
+                <!-- Begin "I'm proficient in..." Skills Tab -->
+                <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
+                    aria-labelledby="skills-tab">
+                    <div class="skill-column">
+                        <div class="col-12">
+                            {% for skill in username.skills %}
 
 
 
 
-                                <span class="d-block"> <i class="fa fa-code"></i> {{skill}} </span>
-
-
-                                {% endfor %}
-                            </div>
-
-                        </div>
-
-                        <!-- End "I'm proficient in..." Skills Tab -->
-                    </div>
-
-
-                    <!-- Begin "Looking for..." desired skills tab -->
-
-
-                    <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
-                        aria-labelledby="desiredSkills-tab">
-
-                        <div class="skill-column">
-
-                            {% for skill in username.desiredSkills %}
-
-
-
-
-                            <span class="d-block"> <i class="fas fa-search"></i> {{skill}} </span>
+                            <span class="d-block"> <i class="fa fa-code"></i> {{skill}} </span>
 
 
                             {% endfor %}
                         </div>
 
-
                     </div>
-                    <!-- End "Looking for..." desired skills tab -->
+
+                    <!-- End "I'm proficient in..." Skills Tab -->
                 </div>
 
 
+                <!-- Begin "Looking for..." desired skills tab -->
+
+
+                <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
+                    aria-labelledby="desiredSkills-tab">
+
+                    <div class="skill-column">
+
+                        {% for skill in username.desiredSkills %}
+
+
+
+
+                        <span class="d-block"> <i class="fas fa-search"></i> {{skill}} </span>
+
+
+                        {% endfor %}
+                    </div>
+
+
+                </div>
+                <!-- End "Looking for..." desired skills tab -->
             </div>
 
 
-
-
-            <!-- COMMUNICATION STYLE SECTION -->
-
-            <div class="row">
-
-
-                <div class="col-6">
-                    <label class="profile-label" for="profile-commstyle">
-                        Communication Style
-                    </label>
-
-
-                    {% for comm in commstyles %}
-
-                    {% if comm in username.communicationStyle %}
-
-                    <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
-
-                    {% else %}
-
-                    <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
-                    {% endif %}
-
-                    {% endfor %}
-
-
-                </div>
-
-
-
-
-                <!-- OTHER SECTION -->
-
-                <div class="col-6">
-                    <label class="profile-label" for="profile-other">
-                        Other
-                    </label>
-
-
-                    {% for other in other %}
-
-                    {% if other in username.otherDetails %}
-
-                    <span class="d-block"><i class="fas fa-check"></i> {{other}} </span>
-
-                    {% else %}
-
-                    <span class="d-block"><i class="fas fa-times"></i> {{other}} </span>
-                    {% endif %}
-
-                    {% endfor %}
-                </div>
-
-
-            </div>
         </div>
 
-    </div>
 
 
-    <div class="jumbotron profile-jumbo">
 
+        <!-- COMMUNICATION STYLE SECTION -->
 
         <div class="row">
 
-            <div class="col-12">
-                <h3 class="heading">
-                    < footer>
 
-                </h3>
-            </div>
-
-            <div class="col-12">
-                <label class="contact-label" for="contact">
-                    Contact
+            <div class="col-6">
+                <label class="profile-label" for="profile-commstyle">
+                    Communication Style
                 </label>
+
+
+                {% for comm in commstyles %}
+
+                {% if comm in username.communicationStyle %}
+
+                <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
+
+                {% else %}
+
+                <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
+                {% endif %}
+
+                {% endfor %}
+
+
             </div>
 
-            <div class="col-12">
 
 
 
-                <label class="contact" for="profile-contact">
-                    Github
+            <!-- OTHER SECTION -->
+
+            <div class="col-6">
+                <label class="profile-label" for="profile-other">
+                    Other
                 </label>
-                <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                    value="{{username.github}}" readonly>
+
+
+                {% for other in other %}
+
+                {% if other in username.otherDetails %}
+
+                <span class="d-block"><i class="fas fa-check"></i> {{other}} </span>
+
+                {% else %}
+
+                <span class="d-block"><i class="fas fa-times"></i> {{other}} </span>
+                {% endif %}
+
+                {% endfor %}
             </div>
+
 
         </div>
     </div>
 
-    <div class="row justify-content-center">
+</div>
 
-    <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn" value="preview">Preview Profile</button>
+
+<div class="jumbotron profile-jumbo">
+
+
+    <div class="row">
+
+        <div class="col-12">
+            <h3 class="heading">
+                < footer>
+
+            </h3>
+        </div>
+
+        <div class="col-12">
+            <label class="contact-label" for="contact">
+                Contact
+            </label>
+        </div>
+
+        <div class="col-12">
+
+
+
+            <label class="contact" for="profile-contact">
+                Github
+            </label>
+            <input id="github" class="form-control" type="text" name="github" maxlength="50" value="{{username.github}}"
+                readonly>
+        </div>
+
+    </div>
+</div>
+
+<div class="row justify-content-center">
+
+    <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn" value="preview">Preview
+        Profile</button>
 
     <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn" value="edit">Edit</button>
 </div>
 
-    </form>
+</form>
 
 
 
