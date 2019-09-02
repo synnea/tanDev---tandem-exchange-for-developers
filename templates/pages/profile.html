@@ -47,7 +47,7 @@
                         Short Description
                     </label>
                     <input id="profile-shortDesc" name="shortDescription" class="form-control" type="text"
-                        value="{{username.shortDescription}}">
+                        value="{{username.shortDescription}}" readonly>
                 </div>
 
 
@@ -60,7 +60,7 @@
                     </label>
                     <small>Please enter the URL of your profile image</small>
                     <input id="profileImg" name="imgURL" class="form-control" type="text" maxlength="200"
-                        placeholder="http://www.picturehost.com/mypic.jpg" value="{{username.imgURL}}">
+                        placeholder="http://www.picturehost.com/mypic.jpg" value="{{username.imgURL}}" readonly>
 
                 </div>
             </div>
@@ -78,7 +78,7 @@
 
                     <div class="col-12">
 
-                        <select class="form-control" name="district" id="profileSelect">
+                        <select class="form-control" name="district" id="profileSelect" readonly>
                             <option value selected="{{username.district}}">{{username.district}}</option>
 
                         </select>
@@ -282,7 +282,7 @@
                     Github
                 </label>
                 <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                    value="{{username.github}}">
+                    value="{{username.github}}" readonly>
             </div>
 
         </div>
