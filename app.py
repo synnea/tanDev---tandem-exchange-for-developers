@@ -183,6 +183,11 @@ def profile(username):
 
     username = db.profile.find_one({"username": username})
 
+    if request.method == 'POST' and request.form['btn'] == 'preview':
+
+        username=session['username']
+        return redirect(url_for('preview', loggedIn=loggedIn, username=username))
+
 
     return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
 

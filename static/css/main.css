@@ -776,7 +776,7 @@ ul {
   margin: 0 auto;
 }
 
-.jumbotron {
+.features-jumbotron {
   margin-bottom: 0 !important;
   padding-bottom: 5rem;
   padding-top: 0 !important;
@@ -1208,7 +1208,7 @@ ul ul a {
   margin-bottom: 5vh !important;
 }
 
-.pubdisc-btn {
+.userarea-btn {
   background-color: #11375f !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#74abe6", endColorstr="#10365f");
@@ -1222,7 +1222,7 @@ ul ul a {
   margin: 0 3rem 3rem 3rem;
 }
 
-.pubdisc-btn:hover {
+.userarea-btn:hover {
   background-color: #05081f !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b2eab", endColorstr="#04081e");

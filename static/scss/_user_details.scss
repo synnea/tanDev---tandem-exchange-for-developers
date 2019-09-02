@@ -107,14 +107,14 @@ display: flex;
 
 // Publish and discard changes buttons
 
-.pubdisc-btn {
+.userarea-btn {
 
     @include custom-btn;
     margin: 0 3rem 3rem 3rem;
 
 }
 
-.pubdisc-btn:hover {
+.userarea-btn:hover {
     @include custom-btn-hover;
 }
 
