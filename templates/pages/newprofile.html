@@ -8,6 +8,9 @@
             <div class="col-12">
                 <h1>Welcome, {{username}}</h1>
 
+                <!-- Display flashed messages. -->
+
+                {% include 'components/message.html' %}
 
                 {% if discarded == True %}
 
@@ -26,9 +29,7 @@
 
 
 
-            <!-- Display flashed messages. -->
 
-            {% include 'components/message.html' %}
 
             <form id="profile-form" method="POST">
 
@@ -325,7 +326,8 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="save">Save Changes</button>
+        <button type="submit" class="btn btn-primary btn-large logreg-btn mt-5 mb-5" name="btn" value="save">Save
+            Changes</button>
 
         </form>
 

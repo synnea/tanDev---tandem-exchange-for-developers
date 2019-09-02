@@ -188,6 +188,9 @@ def profile(username):
         username=session['username']
         return redirect(url_for('preview', loggedIn=loggedIn, username=username))
 
+    if request.method == 'POST' and request.form['btn'] == 'edit':
+        return redirect(url_for('edit', loggedIn=loggedIn, username=username))
+
 
     return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
 
@@ -234,6 +237,13 @@ def preview(username):
     return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
 
 
+# Edit
+@app.route('/edit/<username>', methods = ['GET', 'POST'])
+def edit(username):
+
+    loggedIn = True if 'username' in session else False
+    
+    return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username)
 
 
 # Logout
