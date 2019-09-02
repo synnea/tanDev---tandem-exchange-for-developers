@@ -225,9 +225,10 @@ def preview(username):
                 "twitter": ""
 
             }})
-
-            return redirect(url_for('myprofile', username = session['username'], discarded=True))
-
+            username = session['username']
+            flash("Your changes have been discarded.")
+            return redirect(url_for('newprofile', username = username, discarded=True, skills=skills,
+    commstyles=commstyles, other=other))
 
 
     return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
