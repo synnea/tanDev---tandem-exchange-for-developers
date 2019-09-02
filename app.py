@@ -143,6 +143,9 @@ def newprofile(username):
 
     loggedIn = True if 'username' in session else False
 
+    if loggedIn == False:
+        return redirect(url_for('forbidden'))
+
 
     if request.method == 'POST':
         
@@ -181,6 +184,9 @@ def newprofile(username):
 def profile(username):
     loggedIn = True if 'username' in session else False
 
+    if loggedIn == False:
+        return redirect(url_for('forbidden'))
+
     username = db.profile.find_one({"username": username})
 
     if request.method == 'POST' and request.form['btn'] == 'preview':
@@ -203,6 +209,9 @@ def preview(username):
     that the user can now be found in searches or show up on the carousel on index.html. """
 
     loggedIn = True if 'username' in session else False
+
+    if loggedIn == False:
+        return redirect(url_for('forbidden'))
 
     user = db.profile.find_one({"username": username})
 
@@ -242,7 +251,10 @@ def preview(username):
 def edit(username):
 
     loggedIn = True if 'username' in session else False
-    
+
+    if loggedIn == False:
+        return redirect(url_for('forbidden'))
+
     return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username)
 
 
@@ -268,6 +280,15 @@ def user_details(username):
     user = db.profile.find_one({"username": username})
 
     return render_template("pages/user_details.html", user=user, active="user_details", loggedIn=loggedIn)
+
+
+# Custom 403 page
+@app.route('/denied')
+def forbidden():
+    """ If a user tries to access a part of the website that for which they need
+    need to be logged in, but aren't, they get redirected to the custom permission denied page. """
+
+    return render_template("pages/forbidden.html")
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP'), port=(os.getenv('PORT')), debug="True")
