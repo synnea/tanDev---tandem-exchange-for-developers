@@ -197,10 +197,8 @@ def profile(username):
     if request.method == 'POST' and request.form['btn'] == 'unpublish':
 
         db.profile.find_one_and_update({"username": session['username']}, {"$set": {"display": False}})
-        flash("Your profile has been unpublished and will no longer show up in search results.", "success")
-
-        username = db.profile.find_one({"username": username})
-        return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
+        username = session['username']
+        return redirect(url_for('profile', loggedIn=loggedIn, username=username))
 
 
     return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
