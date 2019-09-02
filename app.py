@@ -264,7 +264,7 @@ def edit(username):
 
         }})
 
-        flash("Edits saved successfully. Scroll down to preview and publish.")
+        flash("Edits saved successfully. Scroll down to preview and publish.", "success")
 
         return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
 
