@@ -167,7 +167,7 @@ def newprofile(username):
 
             }})
 
-            flash("Changes saved successfully. Scroll down to preview or edit.")
+            flash("Changes saved successfully. Scroll down to preview or edit.", "success")
 
             return redirect(url_for('profile', username = session['username']))
 
@@ -239,7 +239,7 @@ def preview(username):
 
             }})
             username = session['username']
-            flash("Your changes have been discarded.")
+            flash("Your changes have been discarded.", "success")
             return redirect(url_for('newprofile', username = username, discarded=True, skills=skills,
     commstyles=commstyles, other=other))
 
@@ -253,10 +253,12 @@ def edit(username):
 
     loggedIn = True if 'username' in session else False
 
+    username = db.profile.find_one({"username": username})
+
     if loggedIn == False:
         return redirect(url_for('forbidden'))
 
-    return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username)
+    return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username, active="profile")
 
 
 # Logout

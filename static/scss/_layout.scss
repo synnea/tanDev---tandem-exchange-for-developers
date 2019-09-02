@@ -170,6 +170,12 @@ ul {
     font-weight: 700;
 }
 
+.success > .message {
+    color: $green;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
 .flashes {
     margin-right: 1em;
     margin-top: 1em;

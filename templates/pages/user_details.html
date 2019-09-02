@@ -100,19 +100,19 @@
             <div class="col-9">
                 {% for comm in user.communicationStyle %}
 
-                {% if comm == "inperson" %}
+                {% if comm == "In person" %}
 
                 <span class="tags comm-tags"><i class="far fa-comments"></i> In person</span>
 
                 {% endif %}
 
-                {% if comm == "text" %}
+                {% if comm == "Text" %}
 
                 <span class="tags comm-tags"><i class="fas fa-envelope-square"></i> Text</span>
 
                 {% endif %}
 
-                {% if comm == "video" %}
+                {% if comm == "Video" %}
 
                 <span class="tags comm-tags"><i class="fas fa-video"></i> Video</span>
 
@@ -135,19 +135,19 @@
             <div class="col-9">
                 {% for other in user.otherDetails %}
 
-                {% if other == "lookingForCoFounder" %}
+                {% if other == "Looking for Co-Founder" %}
 
                 <span class="tags other-tags"><i class="fas fa-briefcase fa-lg"></i> Looking for Co-Founder</span>
 
                 {% endif %}
 
-                {% if other == "availableForHire" %}
+                {% if other == "For Hire" %}
 
                 <span class="tags other-tags"><i class="fas fa-money-bill"></i> Available for Hire</span>
 
                 {% endif %}
 
-                {% if other == "availableForProjectWork" %}
+                {% if other == "Project Work" %}
 
                 <span class="tags other-tags"><i class="far fa-lightbulb"></i> Available for Projects</span>
                 {% endif %}
