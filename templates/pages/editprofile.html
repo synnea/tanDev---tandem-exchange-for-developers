@@ -158,11 +158,14 @@
                         <!-- Begin "I'm proficient in..." Skills Tab -->
                         <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
                             aria-labelledby="skills-tab">
-                            <div class="skill-column">
+
+                            {% for skill in skills %}
+
+
+                            <div class="profile-skill-column">
                                 <div class="col-12">
-                                    {% for skill in skills %}
 
-
+                                    {% if skill not in username.skills %}
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
                                             id="skill-box">
@@ -170,12 +173,26 @@
                                             {{skill}}
                                         </label>
                                     </div>
+                                    {% endif %}
 
+                                    {% if skill in username.skills %}
 
-                                    {% endfor %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
+                                            id="skill-box" checked>
+                                        <label class="form-check-label" for="skill-box">
+                                            {{skill}}
+                                        </label>
+                                    </div>
+
+                                    {% endif %}
                                 </div>
 
                             </div>
+
+
+                            {% endfor %}
+
 
                             <!-- End "I'm proficient in..." Skills Tab -->
                         </div>
@@ -187,11 +204,12 @@
                         <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
                             aria-labelledby="desiredSkills-tab">
 
-                            <div class="skill-column">
+                            {% for skill in skills %}
+                            <div class="profile-skill-column">
 
                                 <div class="col-12">
-                                    {% for skill in skills %}
 
+                                    {% if skill not in username.desiredSkills %}
 
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="desiredSkills"
@@ -200,14 +218,24 @@
                                             {{skill}}
                                         </label>
                                     </div>
+                                    {% endif %}
 
+                                    {% if skill in username.desiredSkills %}
 
-                                    {% endfor %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="desiredSkills"
+                                            value="{{skill}}" id="skill-box" checked>
+                                        <label class="form-check-label" for="skill-box">
+                                            {{skill}}
+                                        </label>
+                                    </div>
+                                    {% endif %}
+
                                 </div>
-
 
                             </div>
                             <!-- End "Looking for..." desired skills tab -->
+                            {% endfor %}
                         </div>
 
 

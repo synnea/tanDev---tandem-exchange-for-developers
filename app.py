@@ -247,7 +247,7 @@ def preview(username):
     return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
 
 
-# Edit
+# Edit Profile
 @app.route('/edit/<username>', methods = ['GET', 'POST'])
 def edit(username):
 
@@ -257,22 +257,21 @@ def edit(username):
         return redirect(url_for('forbidden'))
 
     if request.method == 'POST' and request.form['btn'] == 'save':
-        print('saving is happening')
         db.profile.update_many( {'username': session['username']},
         { "$set": {
         'shortDescription': request.form.get('shortDescription'),
         "imgURL": request.form.get('imgURL'),
+        "district": request.form.get('district'),
 
         }})
-        print('and this')
 
         return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
 
 
-
     username = db.profile.find_one({"username": username})
 
-    return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username, active="profile")
+    return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username, active="profile", skills=skills,
+    commstyles=commstyles, other=other)
 
 
 # Logout
