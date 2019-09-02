@@ -305,7 +305,7 @@ def settings():
 
     username = db.profile.find_one({"username": session['username']})
 
-    return render_template('/pages/settings.html', loggedIn=loggedIn, username=username)
+    return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile")
 
 
 # Logout
