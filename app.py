@@ -253,10 +253,25 @@ def edit(username):
 
     loggedIn = True if 'username' in session else False
 
-    username = db.profile.find_one({"username": username})
-
     if loggedIn == False:
         return redirect(url_for('forbidden'))
+
+    username = db.profile.find_one({"username": username})
+
+    if request.method == 'POST':
+        print('saving is happening')
+        db.profile.update_many( {'username': username},
+            { "$set": {
+                'shortDescription': request.form.get('shortDescription'),
+                "imgURL": request.form.get('imgURL')
+
+        }})
+
+        return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
+
+
+
+
 
     return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username, active="profile")
 
@@ -282,7 +297,7 @@ def user_details(username):
 
     user = db.profile.find_one({"username": username})
 
-    return render_template("pages/user_details.html", user=user, active="user_details", loggedIn=loggedIn)
+    return render_template("pages/user_details.html", user=user, active="profile", loggedIn=loggedIn)
 
 
 # Custom 403 page
