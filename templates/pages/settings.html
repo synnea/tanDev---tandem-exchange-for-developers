@@ -1,0 +1,45 @@
+<div class="container-fluid settings-wrapper">
+
+
+    <div class="row form-row justify-content-center align-items-center">
+
+        <!-- Create centered jumbotron -->
+
+        <div class="jumbotron form-jumbo">
+            <div class="col-12 jumbo-content mx-auto">
+
+
+                <!-- Settings Form -->
+
+                <form id="settingsform" method="POST">
+
+                    <div class="form-group">
+                        <label class="settings-label" for="settingsUsername">Username</label><small>Username cannot be
+                            changed.</small>
+                        <input type="text" class="form-control" id="loginUsername" name="username" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="settings-label" for="settingsPassword">Password</label>
+                        <input type="password" class="form-control" name="password" id="settingsPassword"
+                            value="{{username.password}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="settings-label" for="Email">E-Mail</label>
+                        <input type="email" class="form-control" name="email" id="settingsEmail"
+                            placeholder="myemail@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            title="email addresses must follow standard email pattern" value="{{username.email}}">
+                    </div>
+
+                    <!-- Edit Button  -->
+
+                    <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
+                        value="edit">Edit Settings</button>
+
+                    <button type="submit" class="btn btn-danger btn-large my-auto" name="btn" value="delete">Delete
+                        Account</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

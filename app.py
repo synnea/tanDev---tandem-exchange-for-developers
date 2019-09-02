@@ -49,6 +49,8 @@ def index():
 #About page
 @app.route('/about', methods=['GET'])
 def about():
+    """ Checks if the user is logged in in order to show the correct navbar items.
+    Render the About page. """
 
     loggedIn = True if 'username' in session else False
 
@@ -59,6 +61,8 @@ def about():
 # Search page
 @app.route('/search', methods=['GET', 'POST'])
 def search():
+    """ Checks if the user is logged in in order to show the correct navbar items.
+    Render the Search page. """
 
     loggedIn = True if 'username' in session else False
 
@@ -109,7 +113,7 @@ def register():
             return redirect(url_for('register', _anchor = 'register-tab'))
         register = {
             "username": request.form.get('username'),
-            "email": "",
+            "email": request.form.get('email'),
             "password": generate_password_hash(request.form.get('password')),
             "imgURL": "",
             "district": "",
@@ -178,6 +182,11 @@ def newprofile(username):
 # Profile page
 @app.route('/myprofile/<username>', methods = ['GET', 'POST'])
 def profile(username):
+    """ Checks in if the user is logged in. If they are not, redirect to custom forbidden page.
+    If they are, continue. If the 'preview' button was clicked, redirect to the 'preview' function.
+    If the 'edit' button was clicked, redirect to the 'edit' function.
+    If the 'unpublish', find the user in the database, and set 'display' to False, and reload the page.    
+    """
     loggedIn = True if 'username' in session else False
 
     if loggedIn == False:
@@ -250,6 +259,10 @@ def preview(username):
 # Edit Profile
 @app.route('/edit/<username>', methods = ['GET', 'POST'])
 def edit(username):
+    """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
+    If the 'save' button was clicked, update the corresponding database fields with their
+    new values before redirecting to the profile page.
+    """
 
     loggedIn = True if 'username' in session else False
 
@@ -279,6 +292,20 @@ def edit(username):
 
     return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username, active="profile", skills=skills,
     commstyles=commstyles, other=other)
+
+
+# Settings
+@app.route('/settings/', methods = ['GET', 'POST'])
+def settings():
+
+    loggedIn = True if 'username' in session else False
+
+    if loggedIn == False:
+        return redirect(url_for('forbidden'))
+
+    username = db.profile.find_one({"username": session['username']})
+
+    return render_template('/pages/settings.html', loggedIn=loggedIn, username=username)
 
 
 # Logout
