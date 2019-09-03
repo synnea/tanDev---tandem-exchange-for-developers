@@ -306,6 +306,10 @@ def settings():
     if request.method == 'POST' and request.form['btn'] == 'edit':
         return redirect(url_for('edit_settings'))
 
+    if request.method == 'POST' and request.form['btn'] == 'delete':
+        db.profile.remove({'username': session['username']})
+        return redirect(url_for('index'))
+
     username = db.profile.find_one({"username": session['username']})
 
     return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile")

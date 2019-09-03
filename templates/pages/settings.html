@@ -29,14 +29,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="settings-label" for="settingsPassword">{% if edit == True %} New {% endif %} Password*</label>
+                        <label class="settings-label" for="settingsPassword">{% if edit == True %} New {% endif %}
+                            Password*</label>
                         <input type="password" class="form-control" name="password" id="settingsPassword"
-                            {% if edit != True %} placeholder="password" {% endif %}
-                            
-                            {% if edit == True %} placeholder="new password" {% endif %} 
-                            {% if edit != True %} readonly {% endif %}>
+                            {% if edit != True %} placeholder="password" {% endif %} {% if edit == True %}
+                            placeholder="new password" {% endif %} {% if edit != True %} readonly {% endif %}>
                         <input type="checkbox" class="mt-1 mb-1" onclick="showPW()">Show Password
-                        {% if edit != True %} <small class="d-block">* tanDev does not show your current password for security reasons.</small>{% endif %}
+                        {% if edit != True %} <small class="d-block">* tanDev does not show your current password for
+                            security reasons.</small>{% endif %}
                     </div>
                     <div class="form-group">
                         <label class="settings-label" for="Email">E-Mail</label>
@@ -47,26 +47,32 @@
                     </div>
 
                     <!-- Edit Button  -->
-                    <div class="row">
+                    <div class="row justify-content-center">
 
 
                         {% if edit == True %}
 
-                        <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
-                            value="save">Save Changes</button>
+                        <div class="col-12 d-flex justify-content-center">
 
+                            <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
+                                value="save">Save Changes</button>
+
+                        </div>
                         {% endif %}
 
                         {% if edit != True %}
 
-                        <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
-                            value="edit">Edit Settings</button>
+                        <div class="col-12 justify-content-center">
 
-                        {% endif %}
+                            <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
+                                value="edit">Edit Settings</button>
 
-                        <button type="submit" class="btn btn-danger btn-large my-auto" name="btn" value="delete">Delete
-                            Account</button>
+                            <button type="button" class="btn btn-danger btn-large my-auto" name="btn"
+                                data-toggle="modal" data-target="#deleteModal">Delete
+                                Account</button>
+                            {% endif %}
 
+                        </div>
                     </div>
                 </form>
 
@@ -75,6 +81,33 @@
     </div>
 </div>
 
+<!-- The Modal -->
+<div class="modal" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Are you sure you want to delete your account?</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <form method="POST">
+                    <button type="submit" class="btn btn-primary" name="btn" value="delete">Yes, delete my
+                        account.</button>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No, don't delete my account.</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Function that shows and hides the password upon clicking the checkbox. -->
 <script>
     function showPW() {
         var x = document.getElementById("settingsPassword");
