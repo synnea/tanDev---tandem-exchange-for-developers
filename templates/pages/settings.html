@@ -31,23 +31,38 @@
                     <div class="form-group">
                         <label class="settings-label" for="settingsPassword">Password</label>
                         <input type="password" class="form-control" name="password" id="settingsPassword"
-                            value="{{username.password}}" readonly>
+                            value="{{username.password}}" {% if edit != True %} readonly {% endif %}>
                     </div>
                     <div class="form-group">
                         <label class="settings-label" for="Email">E-Mail</label>
                         <input type="email" class="form-control" name="email" id="settingsEmail"
                             placeholder="myemail@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                             title="email addresses must follow standard email pattern" value="{{username.email}}"
-                            readonly>
+                            {% if edit != True %} readonly {% endif %}>
                     </div>
 
                     <!-- Edit Button  -->
+                    <div class="row">
 
-                    <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
-                        value="edit">Edit Settings</button>
 
-                    <button type="submit" class="btn btn-danger btn-large my-auto" name="btn" value="delete">Delete
-                        Account</button>
+                        {% if edit == True %}
+
+                        <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
+                            value="save">Save Changes</button>
+
+                        {% endif %}
+
+                        {% if edit != True %}
+
+                        <button type="submit" class="btn btn-primary btn-large userarea-btn my-auto" name="btn"
+                            value="edit">Edit Settings</button>
+
+                        {% endif %}
+
+                        <button type="submit" class="btn btn-danger btn-large my-auto" name="btn" value="delete">Delete
+                            Account</button>
+
+                    </div>
                 </form>
 
             </div>

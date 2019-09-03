@@ -303,9 +303,26 @@ def settings():
     if loggedIn == False:
         return redirect(url_for('forbidden'))
 
+    if request.method == 'POST' and request.form['btn'] == 'edit':
+        return redirect(url_for('edit_settings'))
+
     username = db.profile.find_one({"username": session['username']})
 
     return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile")
+
+
+# Edit Settings
+@app.route('/settings/edit', methods = ['GET', 'POST'])
+def edit_settings():
+
+    loggedIn = True if 'username' in session else False
+
+    if loggedIn == False:
+        return redirect(url_for('forbidden'))
+
+    username = db.profile.find_one({"username": session['username']})
+
+    return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile", edit=True)
 
 
 # Logout
