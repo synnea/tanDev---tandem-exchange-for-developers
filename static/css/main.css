@@ -444,8 +444,8 @@ ul {
   }
 }
 
-#hero-btn {
-  margin-top: 5vh;
+.hero-btn {
+  margin-top: 8vh;
   padding: 2vh 2vw;
   background-color: #11375f !important;
   background-repeat: repeat-x;
@@ -460,12 +460,12 @@ ul {
 }
 
 @media (min-width: 1024px) {
-  #hero-btn {
+  .hero-btn {
     font-size: 1.5rem;
   }
 }
 
-#hero-btn:hover {
+.hero-btn:hover {
   background-color: #05081f !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b2eab", endColorstr="#04081e");
@@ -1103,13 +1103,6 @@ ul ul a {
 
 .profile-jumbo {
   margin-top: 5vh;
-}
-
-#password + .glyphicon {
-  cursor: pointer;
-  pointer-events: all;
-  height: 10px;
-  width: 10px;
 }
 
 .user-wrapper {

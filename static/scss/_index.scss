@@ -99,9 +99,9 @@
     }
 }
 
-#hero-btn {
+.hero-btn {
 
-    margin-top: 5vh;
+    margin-top: 8vh;
     padding: 2vh 2vw;
 
 
@@ -115,7 +115,7 @@
 }
 
 
-#hero-btn:hover {
+.hero-btn:hover {
     @include custom-btn-hover;
 }
 
