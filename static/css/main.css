@@ -1090,7 +1090,8 @@ ul ul a {
 }
 
 .profile-jumbo {
-  margin-top: 5vh;
+  max-width: 80%;
+  margin: 5vh auto;
 }
 
 .user-wrapper {
@@ -1104,11 +1105,14 @@ ul ul a {
   background: #fff;
   -webkit-box-shadow: 0px 0px 4px 0px #b0b3b7;
           box-shadow: 0px 0px 4px 0px #b0b3b7;
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .user-content {
     height: 200vh;
+    max-width: 80%;
   }
 }
 
@@ -1245,7 +1249,8 @@ ul ul a {
   position: absolute;
   top: 0;
   margin-top: 5vh;
-  left: 0;
+  left: 20;
+  margin-bottom: 5vh;
   font-weight: 700;
   color: #1C2541;
   -webkit-animation: textshadow 8s infinite alternate;

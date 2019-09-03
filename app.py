@@ -230,7 +230,9 @@ def preview(username):
     if request.method == 'POST' and request.form['btn'] == 'publish':
         db.profile.find_one_and_update({"username": username}, {"$set": {"display": True}})
 
-        return redirect(url_for('user_details', username=session['username'], newProfile=True ))
+        flash("You have been published on tanDev. You will now show up in search results.", "success")
+
+        return redirect(url_for('user_details', username=session['username'] ))
 
 
     if request.method == 'POST' and request.form['btn'] == 'discard':
@@ -253,7 +255,7 @@ def preview(username):
     commstyles=commstyles, other=other))
 
 
-    return render_template("pages/user_details.html", active="preview", user=user, loggedIn = loggedIn, preview=True)
+    return render_template("pages/user_details.html", active="profile", user=user, loggedIn = loggedIn, preview=True)
 
 
 # Edit Profile
