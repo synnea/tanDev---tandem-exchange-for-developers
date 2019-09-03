@@ -23,16 +23,20 @@
 
                     <div class="form-group">
                         <label class="settings-label" for="settingsUsername">Username*</label>
-                        <input type="text" class="form-control" id="settingsUsername" name="username"
+                        <input type="text" class="form-control" id="Username" name="username"
                             value="{{username.username}}" readonly>
-                        *<small> (Username cannot be changed.)</small>
+                        *<small> Username cannot be changed.</small>
                     </div>
 
                     <div class="form-group">
-                        <label class="settings-label" for="settingsPassword">Password</label>
+                        <label class="settings-label" for="settingsPassword">{% if edit == True %} New {% endif %} Password*</label>
                         <input type="password" class="form-control" name="password" id="settingsPassword"
-                            value="{{username.password}}" {% if edit != True %} readonly {% endif %}>
+                            {% if edit != True %} placeholder="password" {% endif %}
+                            
+                            {% if edit == True %} placeholder="new password" {% endif %} 
+                            {% if edit != True %} readonly {% endif %}>
                         <input type="checkbox" class="mt-1 mb-1" onclick="showPW()">Show Password
+                        {% if edit != True %} <small class="d-block">* tanDev does not show your current password for security reasons.</small>{% endif %}
                     </div>
                     <div class="form-group">
                         <label class="settings-label" for="Email">E-Mail</label>
