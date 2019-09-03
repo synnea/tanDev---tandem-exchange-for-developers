@@ -296,7 +296,12 @@ def edit(username):
 
 # Settings
 @app.route('/settings/', methods = ['GET', 'POST'])
-def settings():
+def settings(): 
+    """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
+    If the user clicked the 'edit' button, redirect them to the 'edit_settings' route.
+    If they clicked the 'delete account' button, find the user in the database and remove them,
+    clear the session, and redirect to the index page.
+    """
 
     loggedIn = True if 'username' in session else False
 
@@ -307,7 +312,8 @@ def settings():
         return redirect(url_for('edit_settings'))
 
     if request.method == 'POST' and request.form['btn'] == 'delete':
-        db.profile.remove({'username': session['username']})
+        db.profile.delete_one({'username': session['username']})
+        session.clear()
         return redirect(url_for('index'))
 
     username = db.profile.find_one({"username": session['username']})
@@ -318,6 +324,10 @@ def settings():
 # Edit Settings
 @app.route('/settings/edit', methods = ['GET', 'POST'])
 def edit_settings():
+    """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
+    If the user clicked on the 'save changes' button, update the relevant fields, and redirect to 
+    the settings route.
+    """
 
     loggedIn = True if 'username' in session else False
 
