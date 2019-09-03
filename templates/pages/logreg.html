@@ -101,7 +101,8 @@
                                 <input type="password" class="form-control" name="password" id="newPassword"
                                     placeholder="Password" pattern="[a-zA-Z0-9\-]{6,}"
                                     title="allow passwords with minimum 6 characters" required>
-                                <p><small>* Passwords must not contain special characters other than hyphens. Please
+                                    <input type="checkbox" class="mt-1 mb-1" onclick="showPW()">Show Password
+                                <p class="d-block"><small>* Passwords must not contain special characters other than hyphens. Please
                                         choose a password that is at least 6 characters long.</small></p>
                             </div>
 
@@ -126,5 +127,15 @@
 
 </div>
 
+<script>
+        function showPW() {
+            var x = document.getElementById("newPassword");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 
 {% endblock %}
