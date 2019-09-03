@@ -4,49 +4,59 @@
 
 
 
-<section id="hero">
+<section id="hero" class="align-items-center justify-content-center d-flex">
 
     <div class="img-overlay-index">&nbsp;</div>
 
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid align-items-center mt-5">
 
-            <div class="col-12 d-flex justify-content-center align-items-center d-block" id="hero-content">
+        <div class="div" class="hero-content">
+            <div class="row justify-content-center">
+
+                <div class="col-12 d-flex justify-content-center align-items-center d-block">
 
 
-                <div class="h-text text-center">
-                    <img src="/static/img/logos/tandev_v1_darkblue.svg" class="img-fluid main-logo"
-                        alt="tandev-logo-gradient">
-                    <h2 id="lead">exchange your skills with other developers and designers!</h2>
+                    <div class="h-text text-center">
+                        <img src="/static/img/logos/tandev_v1_darkblue.svg" class="img-fluid main-logo"
+                            alt="tandev-logo-gradient">
+                        <h2 id="lead">exchange your skills with other developers and designers!</h2>
+
+                    </div>
 
                 </div>
+            </div>
+            <div class="row">
+
+
+
+                {% if loggedIn != True %}
+                <div class="col-12 d-block d-flex justify-content-center" id="btn-div">
+
+                    <a href="{{url_for('register', _anchor = 'register-tab')}}"
+                        class="btn btn-primary btn-large hero-btn" id="hero-btn">Sign up!</a>
+
+                </div>
+                {% endif %}
+
+                {% if loggedIn == True %}
+
+                <div class="col-12 d-block d-flex justify-content-center" id="btn-div">
+
+                    <a href="{{url_for('profile', username=session['username'])}}"
+                        class="btn btn-primary btn-large hero-btn" id="hero-btn">My Account</a>
+
+                </div>
+
+                {% endif %}
             </div>
 
             <!-- If the user is logged in they see a prominently placed "Sign up!" button.
             If they are not logged in, the button text is replaced by "My Account". -->
 
-            {% if loggedIn != True %}
-            <div class="col-12 d-block" id="btn-div">
-
-                <a href="{{url_for('register', _anchor = 'register-tab')}}" class="btn btn-primary btn-large hero-btn"
-                    id="hero-btn">Sign up!</a>
-
-            </div>
-            {% endif %}
-
-            {% if loggedIn == True %}
-
-            <div class="col-12 d-block" id="btn-div">
-
-                <a href="{{url_for('profile', username=session['username'])}}" class="btn btn-primary btn-large hero-btn"
-                    id="hero-btn">My Account</a>
-
-            </div>
-
-            {% endif %}
-
 
         </div>
+
+    </div>
 
 
     </div>

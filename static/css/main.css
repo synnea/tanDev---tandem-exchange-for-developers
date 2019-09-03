@@ -432,18 +432,6 @@ ul {
   }
 }
 
-#btn-div {
-  position: absolute;
-  top: 60%;
-  left: 37%;
-}
-
-@media (min-width: 768px) {
-  #btn-div {
-    left: 46%;
-  }
-}
-
 .hero-btn {
   margin-top: 8vh;
   padding: 2vh 2vw;
