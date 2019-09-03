@@ -320,6 +320,18 @@ def edit_settings():
     if loggedIn == False:
         return redirect(url_for('forbidden'))
 
+    if request.method == 'POST' and request.form['btn'] == 'save':
+        db.profile.update_many( {'username': session['username']},
+        { "$set": {
+        'email': request.form.get('email'),
+        "password": generate_password_hash(request.form.get('password')),
+        }})
+
+        flash("Your settings have been updated.", "success")
+
+        return redirect(url_for('settings'))
+        
+
     username = db.profile.find_one({"username": session['username']})
 
     return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile", edit=True)

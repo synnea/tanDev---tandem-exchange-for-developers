@@ -23,7 +23,7 @@
 
                     <div class="form-group">
                         <label class="settings-label" for="settingsUsername">Username*</label>
-                        <input type="text" class="form-control" id="loginUsername" name="username"
+                        <input type="text" class="form-control" id="settingsUsername" name="username"
                             value="{{username.username}}" readonly>
                         *<small> (Username cannot be changed.)</small>
                     </div>
@@ -32,6 +32,7 @@
                         <label class="settings-label" for="settingsPassword">Password</label>
                         <input type="password" class="form-control" name="password" id="settingsPassword"
                             value="{{username.password}}" {% if edit != True %} readonly {% endif %}>
+                        <input type="checkbox" class="mt-1 mb-1" onclick="showPW()">Show Password
                     </div>
                     <div class="form-group">
                         <label class="settings-label" for="Email">E-Mail</label>
@@ -69,5 +70,16 @@
         </div>
     </div>
 </div>
+
+<script>
+    function showPW() {
+        var x = document.getElementById("settingsPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 {% endblock %}

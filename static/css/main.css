@@ -1105,6 +1105,13 @@ ul ul a {
   margin-top: 5vh;
 }
 
+#password + .glyphicon {
+  cursor: pointer;
+  pointer-events: all;
+  height: 10px;
+  width: 10px;
+}
+
 .user-wrapper {
   padding: 6%;
   text-align: center;

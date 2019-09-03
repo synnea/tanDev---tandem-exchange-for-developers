@@ -18,9 +18,11 @@ $(document).ready(function () {
             let clicked = $(this).next(".skill-options")
             $(clicked).slideToggle("slow");
 
-            return false; 
+            return false;
         });
-    
+
     });
+
+
 
 });
