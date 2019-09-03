@@ -1089,9 +1089,18 @@ ul ul a {
   padding: 0.3rem !important;
 }
 
+.profile-heading {
+  font-size: 1.6rem;
+  font-family: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 5vh;
+}
+
 .profile-jumbo {
   max-width: 80%;
   margin: 5vh auto;
+  border-radius: 25px;
 }
 
 .user-wrapper {
