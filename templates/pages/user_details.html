@@ -19,7 +19,7 @@
 
     <!-- Checks if the profile is newly published, if so it lets the user know that they have been successfully published on the website. -->
 
-    {% if user.display == True %}
+    {% if user.display == True and preview != True %}
 
     <div id="published" class="pt-2">
         <h1>Success!</h1>
