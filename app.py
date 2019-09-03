@@ -129,7 +129,7 @@ def register():
             "published": "",
             "display": False
         }
-        db.profile.insert_one({register}, { writeConcern: { w: "1" }})
+        db.profile.insert_one(register)
         session['username'] = request.form.get('username')
         return redirect(url_for('newprofile', username = session['username']))
 
