@@ -13,7 +13,7 @@
     min-height: 100vh;
 
     @media (min-width: $bp-mobile) {
-        width: 60vw;
+        width: 100%;
     }
 
     @media (min-width: $bp-desktop) {
@@ -161,6 +161,22 @@ ul ul a {
     margin-left: 1em;
 }
 
-.search-btn-wrap {
-    height: 20vh;
+.search-btn {
+
+    @include custom-btn-hover;
+
+}
+
+.search-btn:hover {
+    @include custom-btn;
+}
+
+#content {
+    width: 50vw;
+    height: 100vh;
+}
+
+.search-row {
+    height: 50vh;
+    width: 50vw;
 }

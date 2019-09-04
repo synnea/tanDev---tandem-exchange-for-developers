@@ -66,7 +66,11 @@ def search():
 
     loggedIn = True if 'username' in session else False
 
-    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills)
+    profiles = db.profile.find( { "display": True } )
+
+    print(profiles)
+
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles)
 
 
 # Login
