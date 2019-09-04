@@ -2,9 +2,13 @@ $(document).ready(function () {
 
     // Activate sidebar toggle functionality
 
+
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active', 500);
     });
+
+    if ($(window).width() < 800) {
+    }
 
 
     // Activate the custom multiple select dropdown picker.

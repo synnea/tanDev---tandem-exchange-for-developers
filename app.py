@@ -68,9 +68,9 @@ def search():
 
     profiles = db.profile.find( { "display": True } )
 
-    print(profiles)
+    profile_count = profiles.count() if profiles else ""
 
-    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles)
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles, profile_count=profile_count)
 
 
 # Login

@@ -808,6 +808,11 @@ ul {
 }
 
 #sidebar {
+  background: #2581B0;
+  color: #fff;
+  padding-top: 2rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
   width: 80vw;
   min-height: 100vh;
   overflow-y: auto;
@@ -816,7 +821,7 @@ ul {
 
 @media (min-width: 768px) {
   #sidebar {
-    width: 100%;
+    width: 60vw;
   }
 }
 
@@ -846,26 +851,18 @@ ul {
 
 @media (min-width: 768px) {
   #sidebar.active {
-    width: -60vw;
+    margin-left: -60vw;
   }
 }
 
 @media (min-width: 1200px) {
   #sidebar.active {
-    width: -35vw;
+    margin-left: -35vw;
   }
 }
 
 a[data-toggle="collapse"] {
   position: relative;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-}
-
-#sidebar {
-  background: #2581B0;
-  color: #fff;
-  padding-top: 2rem;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
@@ -987,13 +984,37 @@ ul ul a {
 }
 
 #content {
-  width: 50vw;
+  width: 80%;
   height: 100vh;
 }
 
 .search-row {
   height: 50vh;
   width: 50vw;
+}
+
+@media (max-width: 768px) {
+  .search-overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+/* display .overlay when it has the .active class */
+.search-overlay.active {
+  display: block;
+  opacity: 1;
 }
 
 .logreg-wrapper {

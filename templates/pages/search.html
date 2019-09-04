@@ -219,20 +219,23 @@
 
     <div id="content">
 
+         <h5>{{ profile_count }} Profiles Found.</h5>
+
         <div class="card-deck">
+       
 
             <div class="row search-row justify-content-center">
                 
                 {% for profile in profiles %}
                 {% if loop.index % 2 == 1 %}
-                <div class="col-12 col-md-6 d-none d-md-block">
+                <div class="col-12 col-md-6 d-none d-md-block justify-content-center">
                     {% include 'components/profile_card.html' %}
                 </div>
 
                 {% endif %}
 
                 {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 justify-content-center">
                     {% include 'components/profile_card.html' %}
                 </div>
                 {% endif %}
@@ -246,6 +249,9 @@
     </div>
 
     <!-- End Content -->
+
+        <!-- Dark Overlay element -->
+        <div class="search-overlay"></div>
 
 
 </div>
