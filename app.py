@@ -66,7 +66,7 @@ def search():
 
     loggedIn = True if 'username' in session else False
 
-    return render_template("pages/search.html", active="search", loggedIn=loggedIn)
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills)
 
 
 # Login

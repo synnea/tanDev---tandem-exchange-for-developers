@@ -18,10 +18,45 @@
             <h4>Search Users</h4>
         </div>
 
-        <h5 class="filter-header"><i class="fas fa-location-arrow"></i> Skills</h5>
+        <h5 class="filter-header"><i class="fas fa-code"></i> Skills</h5>
 
-        {% for skill in skills %}
+        <div class="row skill-column">
+            {% for skill in skills %}
 
+            {% if loop.index % 2 == 1 %}
+
+            <div class="col-6">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" id="skill-box">
+                    <label class="form-check-label" for="skill-box">
+                        {{skill}}
+                    </label>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+            {% if loop.index % 2 == 0 %}
+
+            <div class="col-6">
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" id="skill-box">
+                    <label class="form-check-label" for="skill-box">
+                        {{skill}}
+                    </label>
+                </div>
+
+            </div>
+            {% endif %}
+
+            {% endfor %}
+
+
+
+        </div>
 
         <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
 
