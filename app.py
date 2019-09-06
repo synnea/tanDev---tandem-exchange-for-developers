@@ -66,7 +66,19 @@ def search():
 
     loggedIn = True if 'username' in session else False
 
-    profiles = db.profile.find( { "display": True } )
+    skill_arg = request.form.get("skill")
+
+    print(skill_arg)
+
+    skill_param = skill_arg if skill_arg else ""
+
+    print(skill_param)
+
+    profiles = db.profile.find( { "$and": [ { "display": True }, { "skills": skill_param } ] } )
+
+
+
+
 
     profile_count = profiles.count() if profiles else ""
 
