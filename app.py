@@ -66,7 +66,34 @@ def search():
 
     loggedIn = True if 'username' in session else False
 
-    profiles = db.profile.find( { "display": True } )
+    # db.profile.createIndex(
+    #     {"skills": "text"})
+
+    # arg variables
+    args = request.form.get
+    # args_list = request.args.getlist
+
+    skill_args = args(str(
+        "skill")) if args(
+            "skill") else ""
+    # district_args = args(str(
+    #     "district")) if args(str(
+    #         "district")) else ""
+    # comm_args = args_list(str(
+    #     "skill")) if args_list(str(
+    #         "skill")) else []
+
+    # other_args = args_list(str(
+    #     "other")) if args_list(str(
+    #         "other")) else []
+    
+    search_skills = (
+        skill_args if skill_args is not None else "")
+
+    new_search = (
+        '"' + '" "'.join(search_skills))
+
+    profiles = db.profile.find( { "skills": search_skills})
 
     profile_count = profiles.count() if profiles else ""
 
