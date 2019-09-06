@@ -14,6 +14,7 @@
 
     <nav id="sidebar">
 
+<<<<<<< HEAD
         <form id="search-form" method="POST">
 
             <div class="sidebar-header d-flex justify-content-center">
@@ -57,9 +58,47 @@
                 {% endfor %}
 
 
+=======
+        <form id="search-" <div class="sidebar-header d-flex justify-content-center">
+            <h4>Search Users</h4>
 
-            </div>
 
+            <h5 class="filter-header"> <i class="fa fa-code"></i> Skills</h5>
+
+            <div class="row skill-column">
+                {% for skill in skills %}
+
+                {% if loop.index % 2 == 1 %}
+
+                <div class="col-6">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" id="skill-box">
+                        <label class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+
+                </div>
+
+                {% endif %}
+
+                {% if loop.index % 2 == 0 %}
+
+                <div class="col-6">
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" id="skill-box">
+                        <label class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+
+                </div>
+                {% endif %}
+
+<<<<<<< HEAD
             <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
 
             <div class="row top-filter-row">
@@ -75,6 +114,28 @@
 
                 <!-- District filter options -->
 
+=======
+                {% endfor %}
+
+
+
+            </div>
+            <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
+
+            <div class="row top-filter-row">
+
+
+                <!-- District filter option header -->
+
+                <div class="col-12 col-md-6">
+
+                    <h5 class="filter-header"><i class="fas fa-location-arrow"></i> District</h5>
+
+                </div>
+
+                <!-- District filter options -->
+
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                 <div class="col-12 col-md-6">
 
 
@@ -122,7 +183,11 @@
                     <div class="col-12 col-md-3 filtercol">
 
                         <div class="form-check abc-checkbox ">
+<<<<<<< HEAD
                             <input class="form-check-input" name="commstyle" id="text" type="checkbox">
+=======
+                            <input class="form-check-input" name="text" id="text" type="checkbox">
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                             <label class="form-check-label" for="text">
                                 Text
                             </label>
@@ -134,13 +199,18 @@
                 <div class="row">
                     <div class="col-12 col-md-3 filtercol">
                         <div class="form-check abc-checkbox ">
+<<<<<<< HEAD
                             <input class="form-check-input" name="commstyle" id="video" type="checkbox">
+=======
+                            <input class="form-check-input" name="video" id="video" type="checkbox">
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                             <label class="form-check-label" for="video">
                                 Video
                             </label>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <div class="row">
                     <div class="col-12 col-md-3 filtercol">
@@ -151,6 +221,18 @@
                             </label>
                         </div>
 
+=======
+
+                <div class="row">
+                    <div class="col-12 col-md-3 filtercol">
+                        <div class="form-check abc-checkbox">
+                            <input class="form-check-input" name="inperson" id="inperson" type="checkbox">
+                            <label class="form-check-label" for="inperson">
+                                In person
+                            </label>
+                        </div>
+
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                     </div>
                 </div>
 
@@ -178,7 +260,11 @@
                     <div class="col-12 filtercol">
 
                         <div class="form-check abc-checkbox ">
+<<<<<<< HEAD
                             <input class="form-check-input" name="other" id="lookingForCoFounder"
+=======
+                            <input class="form-check-input" name="lookingForCoFounder" id="lookingForCoFounder"
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                                 type="checkbox">
                             <label class="form-check-label" for="lookingForCoFounder">
                                 Looking for Co-Founder
@@ -187,7 +273,11 @@
 
 
                         <div class="form-check abc-checkbox ">
+<<<<<<< HEAD
                             <input class="form-check-input" name="other" id="availableForHir" type="checkbox">
+=======
+                            <input class="form-check-input" name="availableForHir" id="availableForHir" type="checkbox">
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                             <label class="form-check-label" for="availableForHir">
                                 Available for Hire
                             </label>
@@ -195,7 +285,11 @@
 
 
                         <div class="form-check abc-checkbox ">
+<<<<<<< HEAD
                             <input class="form-check-input" name="other" id="availableForProjects"
+=======
+                            <input class="form-check-input" name="availableForProjects" id="availableForProjects"
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
                                 type="checkbox">
                             <label class="form-check-label" for="availableForProjects">
                                 Available for Projects
@@ -206,19 +300,28 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div class="row justify-content-center">
             <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn" value="search">Search Now</button>
         </div>
         </form>
+=======
+
+            <button type="submit" class="btn btn-primary btn-large userarea-btn" name="btn" value="discard">Discard
+
+                changes</button>
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
 
     </nav>
+</div>
 
-    <!-- End Sidebar -->
 
-    <!-- Begin Content -->
 
-    <div id="content">
 
+
+<!-- End Sidebar -->
+
+<<<<<<< HEAD
          <h5>{{ profile_count }} Profiles Found.</h5>
 
         <div class="card-deck">
@@ -247,8 +350,15 @@
 
 
     </div>
+=======
+<!-- Begin Content -->
 
-    <!-- End Content -->
+<div id="content">
+
+</div>
+>>>>>>> 057b0da8a70bb71650fdd41f8ea5a513d64cb59a
+
+<!-- End Content -->
 
         <!-- Dark Overlay element -->
         <div class="search-overlay"></div>
