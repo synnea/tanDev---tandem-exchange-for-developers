@@ -14,6 +14,7 @@
 
     <nav id="sidebar">
 
+
         <form id="search-form" method="POST">
 
             <div class="sidebar-header d-flex justify-content-center">
@@ -46,6 +47,10 @@
 
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" id="skill-box">
+
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -53,12 +58,6 @@
 
                 </div>
                 {% endif %}
-
-                {% endfor %}
-
-
-
-            </div>
 
             <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
 
@@ -122,7 +121,7 @@
                     <div class="col-12 col-md-3 filtercol">
 
                         <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="text" id="text" type="checkbox">
+                            <input class="form-check-input" name="commstyle" id="text" type="checkbox">
                             <label class="form-check-label" for="text">
                                 Text
                             </label>
@@ -134,7 +133,7 @@
                 <div class="row">
                     <div class="col-12 col-md-3 filtercol">
                         <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="video" id="video" type="checkbox">
+                            <input class="form-check-input" name="commstyle" id="video" type="checkbox">
                             <label class="form-check-label" for="video">
                                 Video
                             </label>
@@ -145,7 +144,7 @@
                 <div class="row">
                     <div class="col-12 col-md-3 filtercol">
                         <div class="form-check abc-checkbox">
-                            <input class="form-check-input" name="inperson" id="inperson" type="checkbox">
+                            <input class="form-check-input" name="commstyle" id="inperson" type="checkbox">
                             <label class="form-check-label" for="inperson">
                                 In person
                             </label>
@@ -178,7 +177,7 @@
                     <div class="col-12 filtercol">
 
                         <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="lookingForCoFounder" id="lookingForCoFounder"
+                            <input class="form-check-input" name="other" id="lookingForCoFounder"
                                 type="checkbox">
                             <label class="form-check-label" for="lookingForCoFounder">
                                 Looking for Co-Founder
@@ -187,7 +186,7 @@
 
 
                         <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="availableForHir" id="availableForHir" type="checkbox">
+                            <input class="form-check-input" name="other" id="availableForHir" type="checkbox">
                             <label class="form-check-label" for="availableForHir">
                                 Available for Hire
                             </label>
@@ -195,7 +194,7 @@
 
 
                         <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="availableForProjects" id="availableForProjects"
+                            <input class="form-check-input" name="other" id="availableForProjects"
                                 type="checkbox">
                             <label class="form-check-label" for="availableForProjects">
                                 Available for Projects
@@ -212,12 +211,13 @@
         </form>
 
     </nav>
+</div>
 
-    <!-- End Sidebar -->
 
-    <!-- Begin Content -->
 
-    <div id="content">
+
+
+<!-- End Sidebar -->
 
          <h5>{{ profile_count }} Profiles Found.</h5>
 
@@ -248,7 +248,7 @@
 
     </div>
 
-    <!-- End Content -->
+<!-- End Content -->
 
         <!-- Dark Overlay element -->
         <div class="search-overlay"></div>
