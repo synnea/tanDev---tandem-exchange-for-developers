@@ -64,27 +64,40 @@ def search():
     """ Checks if the user is logged in in order to show the correct navbar items.
     Render the Search page. """
 
-    loggedIn = True if 'username' in session else False
-
-    skill_arg = request.form.getlist("skill")
+    loggedIn = True if 'username' in session else False   
 
     db.profile.create_index([('skills', 'text')])
 
-    print(skill_arg)
+    profiles = db.profile.find({ "display": True})
 
-    skill_param = str(skill_arg) if str(skill_arg) else ""
-
-    print(skill_param)
-
-    profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_param} }] } )
+    if request.method == 'POST':
 
 
+        return redirect(url_for('result', skill_arg=request.form.getlist("skill")))
 
 
-
-    profile_count = profiles.count() if profiles else ""
+    profile_count = profiles.count() 
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles, profile_count=profile_count)
+
+
+# Return Results
+@app.route('/search/result', methods=['GET', 'POST'])
+def result(skill_arg):
+
+    loggedIn = True if 'username' in session else False 
+
+    str_skill_arg = str(skill_arg)
+    skill_param = str_skill_arg if str_skill_arg else ""
+
+    profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_param }} ] } )
+
+    profile_count = profiles.count() 
+
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skill_param=skill_param, skills=skills, profiles=profiles, profile_count=profile_count)
+
+
+
 
 
 # Login
