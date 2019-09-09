@@ -47,6 +47,7 @@
 
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -54,201 +55,201 @@
 
                 </div>
                 {% endif %}
+
                 {% endfor %}
 
-            <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
+                <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
 
-            <div class="row top-filter-row">
+                <div class="row top-filter-row">
 
 
-                <!-- District filter option header -->
+                    <!-- District filter option header -->
 
-                <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6">
 
-                    <h5 class="filter-header"><i class="fas fa-location-arrow"></i> District</h5>
+                        <h5 class="filter-header"><i class="fas fa-location-arrow"></i> District</h5>
+
+                    </div>
+
+                    <!-- District filter options -->
+
+                    <div class="col-12 col-md-6">
+
+
+
+
+                        <select class="selectpicker districtSelect" id="districtSelect" multiple
+                            data-selected-text-format="count">
+                            <option value="Mitte">Mitte</option>
+                            <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                            <option value="Pankow">Pankow</option>
+                            <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                            <option value="Spandau">Spandau</option>
+                            <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                            <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                            <option value="Neukölln">Neukölln</option>
+                            <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                            <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                            <option value="Lichtenberg">Lichtenberg</option>
+                            <option value="Reinickendorf">Reinickendorf</option>
+                        </select>
+
+
+                        <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
+                    </div>
 
                 </div>
 
-                <!-- District filter options -->
+                <!-- Communication filter option header -->
 
-                <div class="col-12 col-md-6">
+                <div class="div filter-row">
 
+                    <div class="row">
 
+                        <div class="col-12">
 
+                            <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5>
 
-                    <select class="selectpicker districtSelect" id="districtSelect" multiple
-                        data-selected-text-format="count">
-                        <option value="Mitte">Mitte</option>
-                        <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-                        <option value="Pankow">Pankow</option>
-                        <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
-                        <option value="Spandau">Spandau</option>
-                        <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-                        <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-                        <option value="Neukölln">Neukölln</option>
-                        <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-                        <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-                        <option value="Lichtenberg">Lichtenberg</option>
-                        <option value="Reinickendorf">Reinickendorf</option>
-                    </select>
+                        </div>
+                    </div>
 
+                    <!-- Communication filter options -->
 
-                    <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
+                    <div class="row">
+
+                        <div class="col-12 col-md-3 filtercol">
+
+                            <div class="form-check abc-checkbox ">
+                                <input class="form-check-input" name="commstyle" id="text" type="checkbox">
+                                <label class="form-check-label" for="text">
+                                    Text
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-3 filtercol">
+                            <div class="form-check abc-checkbox ">
+                                <input class="form-check-input" name="commstyle" id="video" type="checkbox">
+                                <label class="form-check-label" for="video">
+                                    Video
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-3 filtercol">
+                            <div class="form-check abc-checkbox">
+                                <input class="form-check-input" name="commstyle" id="inperson" type="checkbox">
+                                <label class="form-check-label" for="inperson">
+                                    In person
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
+                <!-- Other filter option header -->
 
-            <!-- Communication filter option header -->
+                <div class="div filter-row">
 
-            <div class="div filter-row">
+                    <div class="row">
 
-                <div class="row">
 
-                    <div class="col-12">
 
-                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5>
+                        <div class="col-12">
 
+
+                            <h5 class="filter-header"><i class="fas fa-question"></i> Other</h5>
+
+                        </div>
+                    </div>
+
+                    <!-- Other filter options -->
+
+                    <div class="row">
+                        <div class="col-12 filtercol">
+
+                            <div class="form-check abc-checkbox ">
+                                <input class="form-check-input" name="other" id="lookingForCoFounder" type="checkbox">
+                                <label class="form-check-label" for="lookingForCoFounder">
+                                    Looking for Co-Founder
+                                </label>
+                            </div>
+
+
+                            <div class="form-check abc-checkbox ">
+                                <input class="form-check-input" name="other" id="availableForHir" type="checkbox">
+                                <label class="form-check-label" for="availableForHir">
+                                    Available for Hire
+                                </label>
+                            </div>
+
+
+                            <div class="form-check abc-checkbox ">
+                                <input class="form-check-input" name="other" id="availableForProjects" type="checkbox">
+                                <label class="form-check-label" for="availableForProjects">
+                                    Available for Projects
+                                </label>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
-                <!-- Communication filter options -->
-
-                <div class="row">
-
-                    <div class="col-12 col-md-3 filtercol">
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="commstyle" id="text" type="checkbox">
-                            <label class="form-check-label" for="text">
-                                Text
-                            </label>
-                        </div>
-
-                    </div>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn"
+                        value="search">Search Now</button>
                 </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-3 filtercol">
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="commstyle" id="video" type="checkbox">
-                            <label class="form-check-label" for="video">
-                                Video
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-3 filtercol">
-                        <div class="form-check abc-checkbox">
-                            <input class="form-check-input" name="commstyle" id="inperson" type="checkbox">
-                            <label class="form-check-label" for="inperson">
-                                In person
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Other filter option header -->
-
-            <div class="div filter-row">
-
-                <div class="row">
-
-
-
-                    <div class="col-12">
-
-
-                        <h5 class="filter-header"><i class="fas fa-question"></i> Other</h5>
-
-                    </div>
-                </div>
-
-                <!-- Other filter options -->
-
-                <div class="row">
-                    <div class="col-12 filtercol">
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="other" id="lookingForCoFounder"
-                                type="checkbox">
-                            <label class="form-check-label" for="lookingForCoFounder">
-                                Looking for Co-Founder
-                            </label>
-                        </div>
-
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="other" id="availableForHir" type="checkbox">
-                            <label class="form-check-label" for="availableForHir">
-                                Available for Hire
-                            </label>
-                        </div>
-
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="other" id="availableForProjects"
-                                type="checkbox">
-                            <label class="form-check-label" for="availableForProjects">
-                                Available for Projects
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-            <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn" value="search">Search Now</button>
-        </div>
         </form>
 
     </nav>
-</div>
 
 
 
 
 
-<!-- End Sidebar -->
 
-         <h5>{{ profile_count }} Profiles Found.</h5>
+    <!-- End Sidebar -->
 
-        <div class="card-deck">
-       
+    <h5>{{ profile_count }} Profiles Found.</h5>
 
-            <div class="row search-row justify-content-center">
-                
-                {% for profile in profiles %}
-                {% if loop.index % 2 == 1 %}
-                <div class="col-12 col-md-6 d-none d-md-block justify-content-center">
-                    {% include 'components/profile_card.html' %}
-                </div>
+    <div class="card-deck">
 
-                {% endif %}
 
-                {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6 justify-content-center">
-                    {% include 'components/profile_card.html' %}
-                </div>
-                {% endif %}
-                {% endfor %}
+        <div class="row search-row justify-content-center">
+
+            {% for profile in profiles %}
+            {% if loop.index % 2 == 1 %}
+            <div class="col-12 col-md-6 d-none d-md-block justify-content-center">
+                {% include 'components/profile_card.html' %}
             </div>
 
+            {% endif %}
+
+            {% if loop.index % 2 == 0 %}
+            <div class="col-12 col-md-6 justify-content-center">
+                {% include 'components/profile_card.html' %}
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
-
-
 
     </div>
 
+
+
+</div>
+
 <!-- End Content -->
 
-        <!-- Dark Overlay element -->
-        <div class="search-overlay"></div>
+<!-- Dark Overlay element -->
+<div class="search-overlay"></div>
 
 
 </div>
