@@ -74,10 +74,14 @@ def search():
 
     print(skill_arg)
 
+    # the following gives the ERROR: instance of PyMongo has no TEXT member
+    
     db.profile.create_index({
         "skills", mongo.TEXT
         }
-    )
+    )   
+    
+
 
     profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": search_skill }} ] } )
 
