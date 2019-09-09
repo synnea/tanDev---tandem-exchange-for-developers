@@ -109,7 +109,8 @@ def search():
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
 
-    profile_count = profiles.count() if profiles else ""
+    profile_count = profiles.count() 
+
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 

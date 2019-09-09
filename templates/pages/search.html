@@ -14,6 +14,7 @@
 
     <nav id="sidebar">
 
+
         <form id="search-form" method="POST">
 
             <div class="sidebar-header d-flex justify-content-center">
@@ -46,6 +47,7 @@
 
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -56,29 +58,41 @@
 
                 {% endfor %}
 
+                <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
+
+                <div class="row top-filter-row">
 
 
-            </div>
+                    <!-- District filter option header -->
 
-            <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
+                    <div class="col-12 col-md-6">
 
-            <div class="row top-filter-row">
+                        <h5 class="filter-header"><i class="fas fa-location-arrow"></i> District</h5>
 
+                    </div>
 
-                <!-- District filter option header -->
+                    <!-- District filter options -->
 
-                <div class="col-12 col-md-6">
-
-                    <h5 class="filter-header"><i class="fas fa-location-arrow"></i> District</h5>
-
-                </div>
-
-                <!-- District filter options -->
-
-                <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6">
 
 
 
+
+                        <select class="selectpicker districtSelect" id="districtSelect" multiple
+                            data-selected-text-format="count">
+                            <option value="Mitte">Mitte</option>
+                            <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+                            <option value="Pankow">Pankow</option>
+                            <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                            <option value="Spandau">Spandau</option>
+                            <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+                            <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+                            <option value="Neukölln">Neukölln</option>
+                            <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+                            <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+                            <option value="Lichtenberg">Lichtenberg</option>
+                            <option value="Reinickendorf">Reinickendorf</option>
+                        </select>
 
                     <select class="selectpicker districtSelect" id="districtSelect" name="district" multiple
                         data-selected-text-format="count">
@@ -96,28 +110,27 @@
                         <option value="Reinickendorf">Reinickendorf</option>
                     </select>
 
+                        <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
+                    </div>
 
-                    <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
                 </div>
 
-            </div>
+                <!-- Communication filter option header -->
 
-            <!-- Communication filter option header -->
+                <div class="div filter-row">
 
-            <div class="div filter-row">
+                    <div class="row">
 
-                <div class="row">
-
-                    <div class="col-12">
+                        <div class="col-12">
 
                         <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small> tanDev will display users open to all the styles selected.</small>
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- Communication filter options -->
+                    <!-- Communication filter options -->
 
-                <div class="row">
+                    <div class="row">
 
                     {% for commstyle in commstyles %}
 
@@ -132,7 +145,7 @@
                 </div>
 
 
-            </div>
+                </div>
 
             <div class="row justify-content-center">
                 <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn"
@@ -176,23 +189,36 @@
                     {% include 'components/profile_card.html' %}
                 </div>
 
-                {% endif %}
+    <h5>{{ profile_count }} Profiles Found.</h5>
 
-                {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6 justify-content-center">
-                    {% include 'components/profile_card.html' %}
-                </div>
-                {% endif %}
-                {% endfor %}
+    <div class="card-deck">
+
+
+        <div class="row search-row justify-content-center">
+
+            {% for profile in profiles %}
+            {% if loop.index % 2 == 1 %}
+            <div class="col-12 col-md-6 d-none d-md-block justify-content-center">
+                {% include 'components/profile_card.html' %}
             </div>
 
+            {% endif %}
+
+            {% if loop.index % 2 == 0 %}
+            <div class="col-12 col-md-6 justify-content-center">
+                {% include 'components/profile_card.html' %}
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
-
-
 
     </div>
 
-    <!-- End Content -->
+
+
+</div>
+
+<!-- End Content -->
 
     <!-- Dark Overlay element -->
     <div class="search-overlay"></div>
