@@ -66,15 +66,20 @@ def search():
 
     loggedIn = True if 'username' in session else False
 
-    skill_arg = request.form.get("skill")
+    skill_arg = request.values.getlist("skill") if request.values.getlist(
+            "skill") else []
+
+    search_skill = (
+        skill_arg if skill_arg != [] else "")
 
     print(skill_arg)
 
-    skill_param = skill_arg if skill_arg else ""
+    db.profile.create_index({
+        "skills", mongo.TEXT
+        }
+    )
 
-    print(skill_param)
-
-    profiles = db.profile.find( { "$and": [ { "display": True }, { "skills": skill_param } ] } )
+    profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": search_skill }} ] } )
 
 
 
