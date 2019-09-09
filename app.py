@@ -72,7 +72,7 @@ def search():
 
     print(comm_arg)
 
-    profiles = db.profile.find( {  "display": True } ).limit(4)
+    profiles = db.profile.find( {  "display": True } ).skip(1)
 
     db.profile.create_index([('skills', 'text')])
 
