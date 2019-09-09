@@ -20,7 +20,7 @@
                 <h4>Search Users</h4>
             </div>
 
-            <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5>
+            <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5> <small>tanDev will display users who know at least one skill selected.</small>
 
             <div class="row skill-column">
                 {% for skill in skills %}
@@ -110,7 +110,7 @@
 
                     <div class="col-12">
 
-                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5>
+                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small> tanDev will display users open to all the styles selected.</small>
 
                     </div>
                 </div>
@@ -119,96 +119,25 @@
 
                 <div class="row">
 
-                    <div class="col-12 col-md-3 filtercol">
+                    {% for commstyle in commstyles %}
 
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="text" id="text" type="checkbox">
-                            <label class="form-check-label" for="text">
-                                Text
-                            </label>
-                        </div>
-
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
+                            id="comm-box">
+                        <label class="form-check-label" for="skill-box">
+                            {{commstyle}}
+                        </label>
                     </div>
+                    {% endfor %}
                 </div>
 
-                <div class="row">
-                    <div class="col-12 col-md-3 filtercol">
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="video" id="video" type="checkbox">
-                            <label class="form-check-label" for="video">
-                                Video
-                            </label>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12 col-md-3 filtercol">
-                        <div class="form-check abc-checkbox">
-                            <input class="form-check-input" name="inperson" id="inperson" type="checkbox">
-                            <label class="form-check-label" for="inperson">
-                                In person
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Other filter option header -->
-
-            <div class="div filter-row">
-
-                <div class="row">
-
-
-
-                    <div class="col-12">
-
-
-                        <h5 class="filter-header"><i class="fas fa-question"></i> Other</h5>
-
-                    </div>
-                </div>
-
-                <!-- Other filter options -->
-
-                <div class="row">
-                    <div class="col-12 filtercol">
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="lookingForCoFounder" id="lookingForCoFounder"
-                                type="checkbox">
-                            <label class="form-check-label" for="lookingForCoFounder">
-                                Looking for Co-Founder
-                            </label>
-                        </div>
-
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="availableForHir" id="availableForHir" type="checkbox">
-                            <label class="form-check-label" for="availableForHir">
-                                Available for Hire
-                            </label>
-                        </div>
-
-
-                        <div class="form-check abc-checkbox ">
-                            <input class="form-check-input" name="availableForProjects" id="availableForProjects"
-                                type="checkbox">
-                            <label class="form-check-label" for="availableForProjects">
-                                Available for Projects
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
             </div>
 
             <div class="row justify-content-center">
-            <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn" value="search">Search Now</button>
-        </div>
+                <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn"
+                    value="search">Search Now</button>
+            </div>
         </form>
 
     </nav>
@@ -219,13 +148,28 @@
 
     <div id="content">
 
-         <h5>{{ profile_count }} Profiles Found.</h5>
+        {% if profile_count == 0 %}
+
+        <h5> No profiles of {{ all_profile_count }} found.</h5>
+
+        {% endif %}
+
+        {% if profile_count == 1 %}
+
+        <h5> 1 profile of  {{ all_profile_count }} found.</h5>
+        {% endif %}
+
+        {% if profile_count > 1 %}
+
+        <h5>{{ profile_count }} profiles of {{ all_profile_count }} found.</h5>
+
+        {% endif %}
 
         <div class="card-deck">
-       
+
 
             <div class="row search-row justify-content-center">
-                
+
                 {% for profile in profiles %}
                 {% if loop.index % 2 == 1 %}
                 <div class="col-12 col-md-6 d-none d-md-block justify-content-center">
@@ -250,8 +194,8 @@
 
     <!-- End Content -->
 
-        <!-- Dark Overlay element -->
-        <div class="search-overlay"></div>
+    <!-- Dark Overlay element -->
+    <div class="search-overlay"></div>
 
 
 </div>

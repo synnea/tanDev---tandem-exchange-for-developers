@@ -25,9 +25,9 @@ db = client.tandev
 skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",  "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
 "Java", "Rust", "Go", "Swift", "Kotlin", "Perl" ])
 
-commstyles = list(["Text", "Video", "In person"])
+commstyles = list(["text", "video", "inperson"])
 
-other = list(["Project Work", "For Hire", "Looking for Co-Founder"])
+other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
 
 
 
@@ -68,37 +68,50 @@ def search():
 
     skill_arg = str(request.form.getlist("skill"))
     district_arg = request.form.get("district")
+    comm_arg = request.form.getlist("commstyle")
 
-    print(district_arg)
+    print(comm_arg)
 
-    print(skill_arg)
-
-    profiles = db.profile.find( {  "display": True } )
+    profiles = db.profile.find( {  "display": True } ).limit(4)
 
     db.profile.create_index([('skills', 'text')])
 
-    print(skill_arg)
-
     
+    if skill_arg != "[]" and district_arg is not None and comm_arg != []:
+        print("skill yes district yes comm yes")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
 
-    if skill_arg != "[]" and district_arg is None:
-        print("skill yes district no")
+    if skill_arg == "[]" and district_arg is not None and comm_arg != []:
+        print("skill no district yes comm yes")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
+
+    if skill_arg != "[]" and district_arg is None and comm_arg == []:
+        print("skill yes district no comm no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
         
-
-    if skill_arg != "[]" and district_arg is not None:
-        print("skill yes district yes")
+    if skill_arg != "[]" and district_arg is not None and comm_arg == []:
+        print("skill yes district yes comm no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
 
-    if district_arg is not None and skill_arg == "[]":
-        print("district yes skill no")
+    if skill_arg != "[]" and district_arg is None and comm_arg != []:
+        print("skill yes district no comm yes")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
+
+    if district_arg is not None and skill_arg == "[]" and comm_arg == []:
+        print("skill no district yes comm no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg} ] } )
 
+    if skill_arg == "[]" and district_arg is None and comm_arg != []:
+        print("skill no district no comm yes")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
+
+    all_profiles = db.profile.find( {  "display": True } )
+    all_profile_count = all_profiles.count()
 
     profile_count = profiles.count() if profiles else ""
 
-    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles, profile_count=profile_count)
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 # Login
