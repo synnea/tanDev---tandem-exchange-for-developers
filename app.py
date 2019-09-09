@@ -67,7 +67,9 @@ def search():
     loggedIn = True if 'username' in session else False
 
     skill_arg = str(request.form.getlist("skill"))
-    district_arg = str(request.form.get("district"))
+    district_arg = request.form.get("district")
+
+    print(district_arg)
 
     print(skill_arg)
 
@@ -79,10 +81,18 @@ def search():
 
     
 
-    if skill_arg != "[]":
-        print("is this happening?")
+    if skill_arg != "[]" and district_arg is None:
+        print("skill yes district no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
         
+
+    if skill_arg != "[]" and district_arg is not None:
+        print("skill yes district yes")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
+
+    if district_arg is not None and skill_arg == "[]":
+        print("district yes skill no")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg} ] } )
 
 
 
