@@ -6,7 +6,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
-from flask_paginate import Pagination, get_page_args
+from custom_flask_paginate import *
 import json
 
 
@@ -113,6 +113,7 @@ def search():
     # Pagination
 
     # Function to return profiles with offsets
+
     def get_profiles(offset=0, per_page=4):
         return profiles[offset: offset + per_page]
 
