@@ -7,8 +7,7 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active', 500);
     });
 
-    if ($(window).width() < 800) {
-    }
+    if ($(window).width() < 800) {}
 
 
     // Activate the custom multiple select dropdown picker.
@@ -17,7 +16,7 @@ $(document).ready(function () {
         $('select').selectpicker();
     });
 
-    
+
     // Clear the selected items in the dropdown menus on the search page.
 
     $(function () {
@@ -30,6 +29,20 @@ $(document).ready(function () {
             $('#districtSelect').selectpicker('refresh');
         })
 
+    });
+
+    if ($(window).width() <= 800) {
+        $(".search-card").addClass("d-none");
+    }
+
+    // Call the same functions upon window resize.
+
+    $(window).on('resize', function () {
+
+        if ($(window).width() <= 800) {
+
+            $(".search-card").addClass("d-none");
+        }
     });
 
 

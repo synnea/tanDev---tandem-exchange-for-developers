@@ -17,6 +17,7 @@
 
     width: 80vw;
     min-height: 100vh;
+    max-height: 160vh;
 
     @media (min-width: $bp-mobile) {
         width: 60vw;
@@ -169,7 +170,7 @@ ul ul a {
 
 #content {
     width: 80%;
-    height: 100vh;
+    height: 160vh;
 }
 
 .search-row {

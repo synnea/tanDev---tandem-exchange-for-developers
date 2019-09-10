@@ -815,6 +815,7 @@ ul {
   transition: all 1s ease;
   width: 80vw;
   min-height: 100vh;
+  max-height: 160vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -985,7 +986,7 @@ ul ul a {
 
 #content {
   width: 80%;
-  height: 100vh;
+  height: 160vh;
 }
 
 .search-row {
@@ -1015,6 +1016,23 @@ ul ul a {
 .search-overlay.active {
   display: block;
   opacity: 1;
+}
+
+.pagination-page-info {
+  padding: .6em;
+  padding-left: 0;
+  width: 40em;
+  margin: .5em;
+  margin-left: 0;
+  font-size: 12px;
+}
+
+.pagination-page-info b {
+  color: black;
+  background: #6aa6ed;
+  padding-left: 2px;
+  padding: .1em .25em;
+  font-size: 150%;
 }
 
 .logreg-wrapper {

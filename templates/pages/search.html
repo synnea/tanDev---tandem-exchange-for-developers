@@ -31,7 +31,7 @@
                 <div class="col-6">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -46,7 +46,7 @@
                 <div class="col-6">
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -163,12 +163,11 @@
 
         {% if profile_count > 1 %}
 
-        <h5>{{ profile_count }} profiles of {{ all_profile_count }} found.</h5>
+        <h5><span class="search-matches">{{ profile_count }}</span> matches found, displaying <span class="search-matches">{{ per_page * page - 3 }} -  {{ per_page * page }}</span></h5>
 
         {% endif %}
 
         <div class="card-deck">
-
 
             <div class="row search-row justify-content-center">
 
@@ -180,17 +179,16 @@
 
                 {% for profile in profiles %}
 
-                <!-- {{ loop.index + (page - 1) * per_page }} -->
 
                 {% if loop.index % 2 == 1 %}
-                <div class="col-12 col-md-6 d-none d-md-block justify-content-center">
+                <div class="col-12 col-md-6 d-none d-md-block justify-content-center mt-3">
                     {% include 'components/profile_card.html' %}
                 </div>
 
                 {% endif %}
 
                 {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6 justify-content-center">
+                <div class="col-12 col-md-6 justify-content-center mt-3">
                     {% include 'components/profile_card.html' %}
                 </div>
                 {% endif %}
