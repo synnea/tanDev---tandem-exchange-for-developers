@@ -6,12 +6,14 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
+from flask_paginate import Pagination, get_page_args
 import json
+
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'tandev'
-app.config['MONGO_URI']= os.environ.get("MONGO_URI")
+app.config['MONGO_URI'] = os.environ.get("MONGO_URI")
 
 # Assign a randomized secret key
 app.secret_key = os.urandom(24)
@@ -22,8 +24,9 @@ client = MongoClient(app.config['MONGO_URI'])
 db = client.tandev
 
 #Helper Lists
-skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",  "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
-"Java", "Rust", "Go", "Swift", "Kotlin", "Perl" ])
+skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",
+               "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
+               "Java", "Rust", "Go", "Swift", "Kotlin", "Perl"])
 
 commstyles = list(["text", "video", "inperson"])
 
@@ -35,12 +38,14 @@ other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"]
 # Index page
 @app.route('/', methods=['GET'])
 def index():
-    """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the index.html carousel. """
+    """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the
+    index.html carousel. """
 
     loggedIn = True if 'username' in session else False
 
 
-    carousel = db.profile.aggregate( [ { "$match" : { "display" : True } }, { "$sample": { "size": 6 } } ])
+    carousel = db.profile.aggregate([{"$match" : {"display" : True}},
+                                     {"$sample": {"size": 6}}])
     carousel = list(carousel)
     return render_template("pages/index.html", active="index", carousel=carousel, loggedIn=loggedIn)
 
@@ -63,6 +68,8 @@ def about():
 def search():
     """ Checks if the user is logged in in order to show the correct navbar items.
     Collect user feedback in arguments. Display all profiles by default.
+    Check which fields the user selected, and assign the appropriate MongoDB
+    search arguments to the 'profiles' variable.
     Render the Search page. """
 
     loggedIn = True if 'username' in session else False
@@ -71,39 +78,30 @@ def search():
     district_arg = request.form.get("district")
     comm_arg = request.form.getlist("commstyle")
 
-    print(comm_arg)
-
-    profiles = db.profile.find( {  "display": True } ).limit(4)
+    profiles = db.profile.find({"display": True}).limit(4)
 
     db.profile.create_index([('skills', 'text')])
 
-    
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
-        print("skill yes district yes comm yes")
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
+        profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
+                                             {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        print("skill no district yes comm yes")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
 
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
-        print("skill yes district no comm no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
         
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
-        print("skill yes district yes comm no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
 
     if skill_arg != "[]" and district_arg is None and comm_arg != []:
-        print("skill yes district no comm yes")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
 
     if district_arg is not None and skill_arg == "[]" and comm_arg == []:
-        print("skill no district yes comm no")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg} ] } )
 
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
-        print("skill no district no comm yes")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
 
@@ -112,7 +110,25 @@ def search():
 
     profile_count = profiles.count() if profiles else ""
 
-    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, profiles=profiles, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+    # Pagination
+    # Method taken and edited from https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+
+    def get_profiles(offset=0, per_page=4):
+        return profiles[offset: offset + per_page]
+
+    page, per_page, offset = get_page_args(page_parameter='page',
+        per_page_parameter='per_page')
+
+    total = all_profile_count
+
+    profiles = get_profiles(offset=offset, per_page=per_page)
+
+    pagination = Pagination(page=page, per_page=per_page, total=total,
+        css_framework='bootstrap4')
+
+    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
+                            profiles=profiles, commstyles=commstyles, page=page, per_page=per_page,
+                            pagination=pagination, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 # Login
@@ -282,8 +298,8 @@ def preview(username):
 
 
     if request.method == 'POST' and request.form['btn'] == 'discard':
-            db.profile.update_many( {'username': username},
-            { "$set": {
+        db.profile.update_many( {'username': username},
+        { "$set": {
                 'shortDescription': "",
                 "imgURL": "",
                 "district": "",
@@ -294,11 +310,11 @@ def preview(username):
                 "published": "",
                 "github": "",
 
-            }})
-            username = session['username']
-            flash("Your changes have been discarded.", "success")
-            return redirect(url_for('newprofile', username = username, discarded=True, skills=skills,
-    commstyles=commstyles, other=other))
+        }})
+        username = session['username']
+        flash("Your changes have been discarded.", "success")
+        return redirect(url_for('newprofile', username = username, discarded=True, skills=skills,
+        commstyles=commstyles, other=other))
 
 
     return render_template("pages/user_details.html", active="profile", user=user, loggedIn = loggedIn, preview=True)
