@@ -111,11 +111,12 @@ def search():
     profile_count = profiles.count() if profiles else ""
 
     # Pagination
-    # Method taken and edited from https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
 
+    # Function to return profiles with offsets
     def get_profiles(offset=0, per_page=4):
         return profiles[offset: offset + per_page]
 
+    # Define pagination args
     page, per_page, offset = get_page_args(page_parameter='page',
         per_page_parameter='per_page')
 
