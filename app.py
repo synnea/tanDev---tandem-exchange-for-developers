@@ -120,7 +120,9 @@ def search():
 
     offset = (page_number - 1) * limit
 
-    starting_id = profiles.sort('_id', pymongo.DESCENDING).limit(limit)
+    # starting_id = profiles.sort('_id', pymongo.DESCENDING).limit(limit)
+
+    # next_url = 
 
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
