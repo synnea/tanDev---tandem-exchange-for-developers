@@ -1,12 +1,12 @@
 
 import os
 from flask import Flask, render_template, url_for, redirect, request, session, flash
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
-from flask_paginate import Pagination, get_page_args
+import math
 import json
 
 
@@ -78,7 +78,7 @@ def search():
     district_arg = request.form.get("district")
     comm_arg = request.form.getlist("commstyle")
 
-    profiles = db.profile.find({"display": True}).limit(4)
+    profiles = db.profile.find({"display": True})
 
     db.profile.create_index([('skills', 'text')])
 
@@ -112,24 +112,22 @@ def search():
 
     # Pagination
 
-    # Function to return profiles with offsets
-    def get_profiles(offset=0, per_page=4):
-        return profiles[offset: offset + per_page]
+    limit = 4
 
-    # Define pagination args
-    page, per_page, offset = get_page_args(page_parameter='page',
-        per_page_parameter='per_page')
+    page_number = math.ceil(profile_count / limit)
 
-    total = all_profile_count
+    print(page_number)
 
-    profiles = get_profiles(offset=offset, per_page=per_page)
+    offset = (page_number - 1) * limit
 
-    pagination = Pagination(page=page, per_page=per_page, total=total,
-        css_framework='bootstrap4')
+    starting_id = profiles.sort('_id', pymongo.DESCENDING).limit(limit)
+
+    all_profiles = db.profile.find( {  "display": True } )
+    all_profile_count = all_profiles.count()
+
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, commstyles=commstyles, page=page, per_page=per_page,
-                            pagination=pagination, profile_count=profile_count, all_profile_count=all_profile_count)
+                            profiles=profiles, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 # Login

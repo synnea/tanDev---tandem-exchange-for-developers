@@ -163,7 +163,7 @@
 
         {% if profile_count > 1 %}
 
-        <h5><span class="search-matches">{{ profile_count }}</span> matches found, displaying <span class="search-matches">{{ per_page * page - 3 }} -  {{ per_page * page }}</span></h5>
+        <h5><span class="search-matches">{{ profile_count }}</span> of {{ all_profile_count}} found.</span></h5>
 
         {% endif %}
 
@@ -173,7 +173,6 @@
 
                 <div class="col-12">
 
-                    {{ pagination.links }}
                 </div>
 
 
