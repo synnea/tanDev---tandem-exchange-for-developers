@@ -66,8 +66,8 @@ def about():
 
 
 # Search page
-@app.route('/search/<page_number>', methods=['GET', 'POST'])
-def search(page_number):
+@app.route('/search/<page_number>/<search_param>', methods=['GET', 'POST'])
+def search(page_number, search_param):
     """ Checks if the user is logged in in order to show the correct navbar items.
     Collect user feedback in arguments. Display all profiles by default.
     Check which fields the user selected, and assign the appropriate MongoDB
@@ -96,11 +96,15 @@ def search(page_number):
         profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
                                               {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
+    # if district and communication style is selected.  
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
 
+    # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
+        print("only skill selected")
+        # search_param_start = { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] }
+        search_param =  { "display": True }, {"$text": {"$search": skill_arg }}
         
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
@@ -139,6 +143,7 @@ def search(page_number):
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+
 
 
 # Login
