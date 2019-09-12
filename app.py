@@ -32,6 +32,8 @@ commstyles = list(["text", "video", "inperson"])
 
 other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
 
+page_number = 1
+
 
 
 # Begin creating routes
@@ -64,8 +66,8 @@ def about():
 
 
 # Search page
-@app.route('/search', methods=['GET', 'POST'])
-def search():
+@app.route('/search/<page_number>', methods=['GET', 'POST'])
+def search(page_number):
     """ Checks if the user is logged in in order to show the correct navbar items.
     Collect user feedback in arguments. Display all profiles by default.
     Check which fields the user selected, and assign the appropriate MongoDB
@@ -78,7 +80,7 @@ def search():
     district_arg = request.form.get("district")
     comm_arg = request.form.getlist("commstyle")
 
-    profiles = db.profile.find({"display": True})
+    search_param = {"display": True}
 
     db.profile.create_index([('skills', 'text')])
 
@@ -104,32 +106,50 @@ def search():
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
+    # Profile Counts
 
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
 
-    profile_count = profiles.count() if profiles else ""
+    
+
+
 
     # Pagination
 
+    page_number = int(page_number)  
     limit = 4
+    offset = (page_number - 1) * limit
+    
+    
 
-    page_number = math.ceil(profile_count / limit)
+    starting_id = db.profile.find(search_param).sort('_id', pymongo.ASCENDING)
+    last_id = starting_id[offset]["_id"]
+
+    profiles = db.profile.find( {"$and": [ search_param, {'_id' : {'$gte': last_id}}]}).sort('_id', pymongo.ASCENDING).limit(limit)
+
+    profile_count = profiles.count() if profiles else ""
+
+
+    
+    last_page = math.ceil(profile_count / limit)
 
     print(page_number)
 
-    offset = (page_number - 1) * limit
 
-    # starting_id = profiles.sort('_id', pymongo.DESCENDING).limit(limit)
 
-    # next_url = 
+    
+
+    next_url = url_for('search', page_number=page_number + 1)
+    # **** Page number should be 1 at the minimum
+    prev_url = url_for('search', page_number=page_number - 1)
 
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
 
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+                            profiles=profiles, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 # Login
