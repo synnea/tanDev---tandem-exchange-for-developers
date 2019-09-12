@@ -84,15 +84,24 @@ def search(page_number):
 
     db.profile.create_index([('skills', 'text')])
 
+    # reset page number to 1 upon hitting search
+    if request.method == 'POST':
+        page_number == int(1)
+
+    # if parameters from all fields are selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
                                              {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
+    # if district and communication style is selected.  
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
 
+    # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
+        print("only skill selected")
+        search_param_start = { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] }
+        search_param =  { "display": True }, {"$text": {"$search": skill_arg }}
         
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
@@ -120,13 +129,14 @@ def search(page_number):
     page_number = int(page_number)  
     limit = 4
     offset = (page_number - 1) * limit
-    
-    
 
-    starting_id = db.profile.find(search_param).sort('_id', pymongo.ASCENDING)
+    if skill_arg == "[]" and district_arg is None and comm_arg == [] and page_number == 1: 
+        search_param_start = {"display": True}
+
+    starting_id = db.profile.find(search_param_start).sort('_id', pymongo.ASCENDING)
     last_id = starting_id[offset]["_id"]
 
-    profiles = db.profile.find( {"$and": [ search_param, {'_id' : {'$gte': last_id}}]}).sort('_id', pymongo.ASCENDING).limit(limit)
+    profiles = db.profile.find( {"$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {'_id' : {'$gte': last_id}}]}).sort('_id', pymongo.ASCENDING).limit(limit)
 
     profile_count = profiles.count() if profiles else ""
 
@@ -150,6 +160,7 @@ def search(page_number):
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+
 
 
 # Login
