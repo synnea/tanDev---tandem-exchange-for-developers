@@ -66,8 +66,8 @@ def about():
 
 
 # Search page
-@app.route('/search/<page_number>/<search_param>', methods=['GET', 'POST'])
-def search(page_number, search_param):
+@app.route('/search/<page_number>', methods=['GET', 'POST'])
+def search(page_number):
     """ Checks if the user is logged in in order to show the correct navbar items.
     Collect user feedback in arguments. Display all profiles by default.
     Check which fields the user selected, and assign the appropriate MongoDB
@@ -118,7 +118,7 @@ def search(page_number, search_param):
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
     # Return to the first page with every new search
-    if request.method == POST:
+    if request.method == "POST":
         page_number = 1
 
 
@@ -130,7 +130,7 @@ def search(page_number, search_param):
 
 
     # Assign profiles with skip and limit
-    profiles = profiles.skip(skips).limit(limit)
+    profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
 
     # Set previous and next buttons 
     next_url = url_for('search', page_number=page_number + 1)
