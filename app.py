@@ -80,13 +80,17 @@ def search(page_number):
     district_arg = request.form.get("district")
     comm_arg = request.form.getlist("commstyle")
 
-    search_param = {"display": True}
+    page_number = int(page_number)  
+    limit = 4
+    skips = limit * (page_number - 1)
 
     db.profile.create_index([('skills', 'text')])
 
+    profiles = db.profile.find({"display": True})
+
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
-                                             {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
+                                              {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
@@ -106,6 +110,11 @@ def search(page_number):
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
+
+if request.method == POST:
+    page_number = 1
+
+
     # Profile Counts
 
     all_profiles = db.profile.find( {  "display": True } )
@@ -117,28 +126,14 @@ def search(page_number):
 
     # Pagination
 
-    page_number = int(page_number)  
-    limit = 4
-    offset = (page_number - 1) * limit
-    
-    
-
-    starting_id = db.profile.find(search_param).sort('_id', pymongo.ASCENDING)
-    last_id = starting_id[offset]["_id"]
-
-    profiles = db.profile.find( {"$and": [ search_param, {'_id' : {'$gte': last_id}}]}).sort('_id', pymongo.ASCENDING).limit(limit)
 
     profile_count = profiles.count() if profiles else ""
 
+    profiles = profiles.skip(skips).limit(limit)
 
-    
-    last_page = math.ceil(profile_count / limit)
+
 
     print(page_number)
-
-
-
-    
 
     next_url = url_for('search', page_number=page_number + 1)
     # **** Page number should be 1 at the minimum
