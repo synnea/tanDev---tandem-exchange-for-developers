@@ -103,8 +103,7 @@ def search(page_number, search_param):
     # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
         print("only skill selected")
-        # search_param_start = { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] }
-        search_param =  { "display": True }, {"$text": {"$search": skill_arg }}
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
         
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
