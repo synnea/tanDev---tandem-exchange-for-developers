@@ -76,18 +76,22 @@ def search(page_number):
 
     loggedIn = True if 'username' in session else False
 
+    # Set form variables
     skill_arg = str(request.form.getlist("skill"))
     district_arg = request.form.get("district")
     comm_arg = request.form.getlist("commstyle")
 
+    # Set pagination variables
     page_number = int(page_number)  
     limit = 4
     skips = limit * (page_number - 1)
 
     db.profile.create_index([('skills', 'text')])
 
+    # By default, display all published profiles.
     profiles = db.profile.find({"display": True})
 
+    # Go through all the possible combinations of variable entry.   
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
                                               {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
@@ -110,33 +114,23 @@ def search(page_number):
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
-
-if request.method == POST:
-    page_number = 1
+    # Return to the first page with every new search
+    if request.method == POST:
+        page_number = 1
 
 
     # Profile Counts
 
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
-
-    
-
-
-
-    # Pagination
-
-
     profile_count = profiles.count() if profiles else ""
 
+
+    # Assign profiles with skip and limit
     profiles = profiles.skip(skips).limit(limit)
 
-
-
-    print(page_number)
-
+    # Set previous and next buttons 
     next_url = url_for('search', page_number=page_number + 1)
-    # **** Page number should be 1 at the minimum
     prev_url = url_for('search', page_number=page_number - 1)
 
     all_profiles = db.profile.find( {  "display": True } )
