@@ -134,17 +134,20 @@ def search(page_number):
 
     # if district and communication style is selected.  
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
+        profiles = db.profile.find({"$and": [{"display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
     # if skills and communication style is selected.
     if skill_arg != "[]" and district_arg is None and comm_arg != []:
-        print("skill and commstyle selected")
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"communicationStyle": {"$all": comm_arg}}  ] } )
+        profiles = db.profile.find( { "$and": [  {"$text": {"$search": skill_arg }}, { "display": True},  {"communicationStyle": {"$all": comm_arg}} ] } )
 
+        def printprofiles():
+            for profile in profiles:
+                print(profile)
+
+        printprofiles()
 
     # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
-        print("only skill selected")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
     
     # if skills and district were selected.
@@ -152,7 +155,7 @@ def search(page_number):
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
 
     # if district and communication style were selected.    
-    if skill_arg != "[]" and district_arg is None and comm_arg != []:
+    if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
 
     # if only district was selected.
@@ -171,6 +174,8 @@ def search(page_number):
     all_profile_count = all_profiles.count()
     profile_count = profiles.count() if profiles else ""
 
+    print(profile_count)
+
     # Calculate the number of total pages per search result.
     total_pages = math.ceil(profile_count / limit)
 
@@ -181,7 +186,7 @@ def search(page_number):
 
     else:
         last_profile = (page_number * limit)
-        
+
     first_profile = (page_number * limit) - (limit - 1)
 
 
@@ -194,7 +199,6 @@ def search(page_number):
 
     print(skill_arg)
     print(comm_arg)
-    print(profiles)
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
