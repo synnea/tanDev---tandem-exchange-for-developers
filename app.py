@@ -77,9 +77,29 @@ def search(page_number):
     loggedIn = True if 'username' in session else False
 
     # Set form variables
-    skill_arg = str(request.form.getlist("skill"))
-    district_arg = request.form.get("district")
-    comm_arg = request.form.getlist("commstyle")
+    # Checks if the variables already exist in the cookies.
+
+    if 'skill_arg' in session:
+        print('skill_arg in session detected')
+        skill_arg = session['skill_arg']
+
+    elif 'skill_arg' not in session:
+        print('normal loading of skill_arg')
+        skill_arg = str(request.form.getlist("skill"))
+
+    if 'district_arg' in session:
+        print('district_arg in session detected')
+        district_arg = session['district_arg']
+
+    elif 'district_arg' not in session:
+        district_arg = request.form.get("district") 
+
+    if 'comm_arg' in session:
+        print('comm_arg in session detected')
+        comm_arg = session['comm_arg']
+
+    elif 'comm_arg' not in session:
+        comm_arg = request.form.getlist("commstyle")
 
     # Set pagination variables
     page_number = int(page_number)  
@@ -91,7 +111,8 @@ def search(page_number):
     # By default, display all published profiles.
     profiles = db.profile.find({"display": True})
 
-    # Go through all the possible combinations of variable entry.   
+    # Go through all the possible combinations of variable entry.
+    # if all possible variables have been selected.   
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
                                               {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
@@ -104,22 +125,39 @@ def search(page_number):
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
         print("only skill selected")
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
-        
+    
+    # if skills and district were selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
 
+    # if district and communication style were selected.    
     if skill_arg != "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
 
+    # if only district was selected.
     if district_arg is not None and skill_arg == "[]" and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg} ] } )
 
+    # if only communication style was selected.
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
     # Return to the first page with every new search
     if request.method == "POST":
-        page_number = 1
+        page_number = int(1)
+        session['skill_arg'] = str(request.form.getlist('skill'))
+        session['district_arg'] = request.form.get("district")
+        session['comm_arg'] = request.form.getlist('commstyle')
+        print(session['skill_arg'])
+        print(session['district_arg'])
+        print(session['comm_arg'])
+
+    if request.method == "POST" and request.form['btn'] == 'clear':
+        session.pop('skill_arg', None)
+        session.pop('district_arg', None)
+        session.pop('comm_arg', None)
+        return redirect(url_for('search', page_number=1))
+
 
 
     # Profile Counts
@@ -138,6 +176,7 @@ def search(page_number):
 
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
+
 
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 

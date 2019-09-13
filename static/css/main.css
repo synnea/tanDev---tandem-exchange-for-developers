@@ -971,6 +971,10 @@ ul ul a {
   -webkit-font-smoothing: antialiased;
 }
 
+#clear-btn {
+  background-color: #ee4266;
+}
+
 .search-btn:hover {
   background-color: #11375f !important;
   background-repeat: repeat-x;
