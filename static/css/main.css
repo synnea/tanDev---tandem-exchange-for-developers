@@ -844,6 +844,10 @@ ul {
   }
 }
 
+#sidebarCollapse:hover {
+  background-color: #75424B;
+}
+
 #sidebar.active {
   margin-left: -80vw;
   -webkit-transition: all 1s ease;
@@ -973,6 +977,16 @@ ul ul a {
 
 #clear-btn {
   background-color: #ee4266;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  margin-left: 5vw;
+}
+
+#clear-btn:hover {
+  background-color: #75424B;
 }
 
 .search-btn:hover {

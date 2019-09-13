@@ -80,26 +80,44 @@ def search(page_number):
     # Checks if the variables already exist in the cookies.
 
     if 'skill_arg' in session:
-        print('skill_arg in session detected')
         skill_arg = session['skill_arg']
 
     elif 'skill_arg' not in session:
-        print('normal loading of skill_arg')
         skill_arg = str(request.form.getlist("skill"))
 
     if 'district_arg' in session:
-        print('district_arg in session detected')
         district_arg = session['district_arg']
 
     elif 'district_arg' not in session:
         district_arg = request.form.get("district") 
 
     if 'comm_arg' in session:
-        print('comm_arg in session detected')
         comm_arg = session['comm_arg']
 
     elif 'comm_arg' not in session:
         comm_arg = request.form.getlist("commstyle")
+
+    print(skill_arg)
+
+        # Return to the first page with every new search
+    if request.method == "POST":
+        session.clear()
+        session['skill_arg'] = str(request.form.getlist('skill'))
+        session['district_arg'] = request.form.get("district")
+        session['comm_arg'] = request.form.getlist('commstyle')
+        print(session['skill_arg'])
+        print(session['district_arg'])
+        print(session['comm_arg'])
+        return redirect(url_for('search', page_number=1))
+
+    if request.method == "POST" and request.form['btn'] == 'clear':
+        page_number = int(1)
+        session.pop('skill_arg', None)
+        session.pop('district_arg', None)
+        session.pop('comm_arg', None)
+        return redirect(url_for('search', page_number=1))
+
+    print(skill_arg)
 
     # Set pagination variables
     page_number = int(page_number)  
@@ -142,22 +160,6 @@ def search(page_number):
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
-    # Return to the first page with every new search
-    if request.method == "POST":
-        page_number = int(1)
-        session['skill_arg'] = str(request.form.getlist('skill'))
-        session['district_arg'] = request.form.get("district")
-        session['comm_arg'] = request.form.getlist('commstyle')
-        print(session['skill_arg'])
-        print(session['district_arg'])
-        print(session['comm_arg'])
-
-    if request.method == "POST" and request.form['btn'] == 'clear':
-        session.pop('skill_arg', None)
-        session.pop('district_arg', None)
-        session.pop('comm_arg', None)
-        return redirect(url_for('search', page_number=1))
-
 
 
     # Profile Counts
@@ -177,7 +179,7 @@ def search(page_number):
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
 
-
+    print(skill_arg)
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
