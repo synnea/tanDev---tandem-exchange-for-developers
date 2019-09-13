@@ -80,9 +80,11 @@ def search(page_number):
     # Checks if the variables already exist in the cookies.
 
     if 'skill_arg' in session:
+        print('skill cookie detected')
         skill_arg = session['skill_arg']
 
     elif 'skill_arg' not in session:
+        print('skill read from form')
         skill_arg = str(request.form.getlist("skill"))
 
     if 'district_arg' in session:
@@ -92,9 +94,11 @@ def search(page_number):
         district_arg = request.form.get("district") 
 
     if 'comm_arg' in session:
+        print('comm cookie detected')
         comm_arg = session['comm_arg']
 
     elif 'comm_arg' not in session:
+        print('comm read from form')
         comm_arg = request.form.getlist("commstyle")
 
 
@@ -132,6 +136,12 @@ def search(page_number):
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
 
+    # if skills and communication style is selected.
+    if skill_arg != "[]" and district_arg is None and comm_arg != []:
+        print("skill and commstyle selected")
+        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"communicationStyle": {"$all": comm_arg}}  ] } )
+
+
     # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
         print("only skill selected")
@@ -165,7 +175,13 @@ def search(page_number):
     total_pages = math.ceil(profile_count / limit)
 
     # Calculate the numbers of the first and last profile on each page.
-    last_profile = (page_number * limit)
+
+    if page_number == total_pages:
+        last_profile = profile_count
+
+    else:
+        last_profile = (page_number * limit)
+        
     first_profile = (page_number * limit) - (limit - 1)
 
 
@@ -175,6 +191,10 @@ def search(page_number):
     # Set previous and next buttons 
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
+
+    print(skill_arg)
+    print(comm_arg)
+    print(profiles)
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
