@@ -160,12 +160,14 @@
 
         {% if profile_count == 1 %}
 
-        <h5> 1 profile of {{ all_profile_count }} found.</h5>
+        <h5> 1 profile of found, displaying match 1 - 1</h5>
         {% endif %}
 
         {% if profile_count > 1 %}
 
-        <h5><span class="search-matches">{{ profile_count }}</span> of {{ all_profile_count}} found.</span></h5>
+        <h5><span class="search-matches">{{ profile_count }}</span> matches found, displaying {{first_profile}} - {{last_profile}}</h5>
+            
+         <h6> Page {{page_number}} of {{total_pages}}.</h6>
 
         {% endif %}
 

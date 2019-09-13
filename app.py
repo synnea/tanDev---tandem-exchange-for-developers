@@ -97,27 +97,20 @@ def search(page_number):
     elif 'comm_arg' not in session:
         comm_arg = request.form.getlist("commstyle")
 
-    print(skill_arg)
 
-        # Return to the first page with every new search
+    # Upon hitting search, save the arguments in sessions. 
     if request.method == "POST":
-        session.clear()
         session['skill_arg'] = str(request.form.getlist('skill'))
         session['district_arg'] = request.form.get("district")
         session['comm_arg'] = request.form.getlist('commstyle')
-        print(session['skill_arg'])
-        print(session['district_arg'])
-        print(session['comm_arg'])
         return redirect(url_for('search', page_number=1))
 
+    # Clear the search arguments upon hitting the 'clear' button.
     if request.method == "POST" and request.form['btn'] == 'clear':
-        page_number = int(1)
         session.pop('skill_arg', None)
         session.pop('district_arg', None)
         session.pop('comm_arg', None)
         return redirect(url_for('search', page_number=1))
-
-    print(skill_arg)
 
     # Set pagination variables
     page_number = int(page_number)  
@@ -168,6 +161,13 @@ def search(page_number):
     all_profile_count = all_profiles.count()
     profile_count = profiles.count() if profiles else ""
 
+    # Calculate the number of total pages per search result.
+    total_pages = math.ceil(profile_count / limit)
+
+    # Calculate the numbers of the first and last profile on each page.
+    last_profile = (page_number * limit)
+    first_profile = (page_number * limit) - (limit - 1)
+
 
     # Assign profiles with skip and limit
     profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
@@ -176,13 +176,8 @@ def search(page_number):
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 
-    all_profiles = db.profile.find( {  "display": True } )
-    all_profile_count = all_profiles.count()
-
-    print(skill_arg)
-
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+                            profiles=profiles, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 
