@@ -152,6 +152,8 @@
 
                         {% for commstyle in commstyles %}
 
+                        {% if commstyle not in comm_arg %}
+
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
                                 id="comm-box">
@@ -159,6 +161,15 @@
                                 {{commstyle}}
                             </label>
                         </div>
+                        {% elif commstyle in comm_arg %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
+                                id="comm-box" checked>
+                            <label class="form-check-label" for="skill-box">
+                                {{commstyle}}
+                            </label>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
