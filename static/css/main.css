@@ -1083,6 +1083,10 @@ ul ul a {
   margin-left: 1vw;
 }
 
+.districtSelect {
+  max-width: 15vw;
+}
+
 .logreg-wrapper {
   height: 140vh;
   background: url("/static/img/logreg-bg.jpg") center center no-repeat;

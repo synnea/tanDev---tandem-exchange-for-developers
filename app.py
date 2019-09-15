@@ -77,14 +77,12 @@ def search(page_number):
     loggedIn = True if 'username' in session else False
 
     # Set form variables
-    # Checks if the variables already exist in the cookies.
+    # Checks if the variables already exist in the session cookies.
 
     if 'skill_arg' in session:
-        print('skill cookie detected')
         skill_arg = session['skill_arg']
 
     elif 'skill_arg' not in session:
-        print('skill read from form')
         skill_arg = str(request.form.getlist("skill"))
 
     if 'district_arg' in session:
@@ -94,13 +92,14 @@ def search(page_number):
         district_arg = request.form.get("district") 
 
     if 'comm_arg' in session:
-        print('comm cookie detected')
         comm_arg = session['comm_arg']
 
     elif 'comm_arg' not in session:
-        print('comm read from form')
         comm_arg = request.form.getlist("commstyle")
 
+# if 'all' was selected for district, remove the district argument from the search variables.
+    if district_arg == 'all':
+        district_arg = None
 
     # Upon hitting search, save the arguments in sessions. 
     if request.method == "POST":
