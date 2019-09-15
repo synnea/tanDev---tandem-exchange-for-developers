@@ -22,7 +22,7 @@
 
 
             <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5>
-            <small class="skill-desc">tanDev will display users who know at least one skill selected.</small>
+            <div class="skill-desc"><small>tanDev will display users who know at least one skill selected.</small></div>
 
 
             <div class="row skill-column">
@@ -60,11 +60,8 @@
 
                 {% endif %}
                 {% endif %}
-
-
                 {% if loop.index % 2 == 0 %}
 
-                {% if skill not in skill_arg %}
 
                 <div class="col-6">
 
@@ -77,22 +74,6 @@
                     </div>
 
                 </div>
-
-                {% elif skill in skill_arg %}
-
-                <div class="col-6">
-
-                    <div class="form-check">
-                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
-                            id="skill-box" checked>
-                        <label class="form-check-label" for="skill-box">
-                            {{skill}}
-                        </label>
-                    </div>
-
-                </div>
-
-                {% endif %}
                 {% endif %}
 
                 {% endfor %}
@@ -117,19 +98,31 @@
                 <!-- District filter options -->
 
                 <div class="col-12 col-md-6">
+
+
+
+
                     <select class="selectpicker districtSelect" id="districtSelect" name="district">
                         {% for district in districts %}
 
                         {% if district_arg == None %}
+
                         <option value="{{district}}">{{district}}</option>
 
                         {% endif %}
+                        {% endfor %}
 
                         {% if district_arg != None %}
 
+                        {% for district in districts %}
+
+                        <option value="{{district}}">{{district}}</option>
+
+                        {% endfor %}
+
                         <option value="{{district_arg}}" selected>{{district_arg}}</option>
                         {% endif %}
-                        {% endfor %}
+
                     </select>
 
                 </div>
@@ -144,9 +137,9 @@
 
                     <div class="col-12">
 
-                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small
-                            class="comm-desc"> tanDev will
-                            display users open to all the styles selected.</small>
+                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> 
+                        <div class="comm-desc"><small> tanDev will
+                            display users open to all the styles selected.</small></div>
 
                     </div>
                 </div>
@@ -159,6 +152,8 @@
 
                         {% for commstyle in commstyles %}
 
+                        {% if commstyle not in comm_arg %}
+
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
                                 id="comm-box">
@@ -166,6 +161,15 @@
                                 {{commstyle}}
                             </label>
                         </div>
+                        {% elif commstyle in comm_arg %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
+                                id="comm-box" checked>
+                            <label class="form-check-label" for="skill-box">
+                                {{commstyle}}
+                            </label>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
@@ -212,7 +216,7 @@
 
             {% endif %}
         </div>
-        <div class="card-deck">
+        <div class="card-deck" id="search-deck">
 
             <div class="row search-row justify-content-center">
 
@@ -244,14 +248,14 @@
 
 
                 {% if loop.index % 2 == 1 %}
-                <div class="col-12 col-md-6 d-none d-md-block justify-content-center mt-3">
+                <div class="col-6 justify-content-center mt-3">
                     {% include 'components/profile_card.html' %}
                 </div>
 
                 {% endif %}
 
                 {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6 justify-content-center mt-3">
+                <div class="col-6 justify-content-center mt-3">
                     {% include 'components/profile_card.html' %}
                 </div>
                 {% endif %}
@@ -264,9 +268,6 @@
     </div>
 
     <!-- End Content -->
-
-    <!-- Dark Overlay element -->
-    <div class="search-overlay"></div>
 
 
 </div>
