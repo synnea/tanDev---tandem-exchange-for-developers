@@ -338,7 +338,7 @@ def profile(username):
 
     if request.method == 'POST' and request.form['btn'] == 'edit':
         username=session['username']
-        return redirect(url_for('edit', loggedIn=loggedIn, username=username))
+        return redirect(url_for('edit', username=username))
 
     if request.method == 'POST' and request.form['btn'] == 'unpublish':
 
@@ -415,6 +415,7 @@ def edit(username):
         "imgURL": request.form.get('imgURL'),
         "district": request.form.get('district'),
         "skills": request.form.getlist("skills"),
+        "description": request.form.get('description'),
         "desiredSkills": request.form.getlist("desiredSkills"),
         "communicationStyle": request.form.getlist("communicationStyle"),
         "otherDetails": request.form.getlist("other"),
@@ -424,7 +425,7 @@ def edit(username):
 
         flash("Edits saved successfully. Scroll down to preview and publish.", "success")
 
-        return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
+        return redirect(url_for('profile', username=session['username']))
 
 
     username = db.profile.find_one({"username": username})
