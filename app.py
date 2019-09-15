@@ -32,7 +32,7 @@ commstyles = list(["text", "video", "inperson"])
 
 other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
 
-district=list(["All", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
+districts=list(["All", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
 "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
 
 page_number = 1
@@ -200,7 +200,7 @@ def search(page_number):
     print(comm_arg)
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, district=district, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+                            profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 

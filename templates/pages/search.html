@@ -60,8 +60,11 @@
 
                 {% endif %}
                 {% endif %}
+
+
                 {% if loop.index % 2 == 0 %}
 
+                {% if skill not in skill_arg %}
 
                 <div class="col-6">
 
@@ -74,6 +77,22 @@
                     </div>
 
                 </div>
+
+                {% elif skill in skill_arg %}
+
+                <div class="col-6">
+
+                    <div class="form-check">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
+                            id="skill-box" checked>
+                        <label class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+
+                </div>
+
+                {% endif %}
                 {% endif %}
 
                 {% endfor %}
@@ -103,19 +122,10 @@
 
 
                     <select class="selectpicker districtSelect" id="districtSelect" name="district">
-                        <option value="all" selected>All</option>
-                        <option value="Mitte">Mitte</option>
-                        <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-                        <option value="Pankow">Pankow</option>
-                        <option value="Charlottenburg">Charlottenburg-Wilmersdorf</option>
-                        <option value="Spandau">Spandau</option>
-                        <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-                        <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-                        <option value="Neukölln">Neukölln</option>
-                        <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-                        <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-                        <option value="Lichtenberg">Lichtenberg</option>
-                        <option value="Reinickendorf">Reinickendorf</option>
+                        {% for district in districts %}
+                        <option value="{{district}}" >{{district}}</option>
+
+                        {% endfor %}
                     </select>
 
                 </div>
