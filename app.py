@@ -32,9 +32,6 @@ commstyles = list(["text", "video", "inperson"])
 
 other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
 
-districts=list(["All", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
-"Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
-
 page_number = 1
 
 
@@ -172,8 +169,6 @@ def search(page_number):
     all_profile_count = all_profiles.count()
     profile_count = profiles.count() if profiles else ""
 
-    print(profile_count)
-
     # Calculate the number of total pages per search result.
     total_pages = math.ceil(profile_count / limit)
 
@@ -196,8 +191,14 @@ def search(page_number):
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 
-    print(skill_arg)
-    print(comm_arg)
+    districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
+        "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
+
+    if district_arg is not None:
+        print("remove activated")
+        districts.remove(district_arg)
+
+
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
@@ -299,6 +300,7 @@ def newprofile(username):
                 "otherDetails": request.form.getlist("other"),
                 "published": datetime.now().strftime("%d-%M-%Y"),
                 "github": request.form.get('github'),
+                "description": request.form.get('description')
 
             }})
 
@@ -336,7 +338,7 @@ def profile(username):
 
     if request.method == 'POST' and request.form['btn'] == 'edit':
         username=session['username']
-        return redirect(url_for('edit', loggedIn=loggedIn, username=username))
+        return redirect(url_for('edit', username=username))
 
     if request.method == 'POST' and request.form['btn'] == 'unpublish':
 
@@ -413,6 +415,7 @@ def edit(username):
         "imgURL": request.form.get('imgURL'),
         "district": request.form.get('district'),
         "skills": request.form.getlist("skills"),
+        "description": request.form.get('description'),
         "desiredSkills": request.form.getlist("desiredSkills"),
         "communicationStyle": request.form.getlist("communicationStyle"),
         "otherDetails": request.form.getlist("other"),
@@ -422,7 +425,7 @@ def edit(username):
 
         flash("Edits saved successfully. Scroll down to preview and publish.", "success")
 
-        return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
+        return redirect(url_for('profile', username=session['username']))
 
 
     username = db.profile.find_one({"username": username})
