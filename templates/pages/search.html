@@ -20,8 +20,10 @@
                 <h4>Search Users</h4>
             </div>
 
-            <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5> <small>tanDev will display
-                users who know at least one skill selected.</small>
+
+            <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5>
+            <small class="skill-desc">tanDev will display users who know at least one skill selected.</small>
+
 
             <div class="row skill-column">
                 {% for skill in skills %}
@@ -113,7 +115,7 @@
 
                     <div class="col-12">
 
-                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small> tanDev will
+                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small class="comm-desc"> tanDev will
                             display users open to all the styles selected.</small>
 
                     </div>
@@ -121,20 +123,22 @@
 
                 <!-- Communication filter options -->
 
-                <div class="row">
+                <div class="row search-comm">
 
-                    {% for commstyle in commstyles %}
+                    <div class="col-12">
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
-                            id="comm-box">
-                        <label class="form-check-label" for="skill-box">
-                            {{commstyle}}
-                        </label>
+                        {% for commstyle in commstyles %}
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
+                                id="comm-box">
+                            <label class="form-check-label" for="skill-box">
+                                {{commstyle}}
+                            </label>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
-
 
             </div>
 
@@ -164,15 +168,17 @@
 
             {% if profile_count == 1 %}
 
-            <h5> <span class="matches">1</span> profile of found, displaying match <span class="matches">1 - 1</span></h5>
+            <h5> <span class="matches">1</span> profile of found, displaying match <span class="matches">1 - 1</span>
+            </h5>
             {% endif %}
 
             {% if profile_count > 1 %}
 
-            <h5><span class="matches">{{ profile_count }}</span> matches found, displaying <span class="matches">{{first_profile}} -
-                {{last_profile}}</span></h5>
+            <h5><span class="matches">{{ profile_count }}</span> matches found, displaying <span
+                    class="matches">{{first_profile}} -
+                    {{last_profile}}</span></h5>
 
-            <h6> Page {{page_number}} of {{total_pages}}.</h6>
+            <h6 class="paging"> Page {{page_number}} of {{total_pages}}.</h6>
 
             {% endif %}
         </div>

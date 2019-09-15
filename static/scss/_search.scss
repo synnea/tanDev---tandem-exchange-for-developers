@@ -17,7 +17,7 @@
 
     width: 80vw;
     min-height: 100vh;
-    max-height: 160vh;
+    max-height: 180vh;
 
     @media (min-width: $bp-mobile) {
         width: 60vw;
@@ -117,8 +117,11 @@ ul ul a {
     @media (min-width: $bp-mobile) {
         padding: 2rem;
     }
+    }
 
 
+.search-comm {
+    padding: 1rem;
 }
 
 .abc-checkbox {
@@ -188,7 +191,7 @@ ul ul a {
 
 #content {
     width: 80%;
-    height: 160vh;
+    height: 200vh;
 }
 
 .search-row {
@@ -250,4 +253,16 @@ ul ul a {
 
 .results {
     margin: 4rem;
+}
+
+.paging {
+    margin-top: 3vh;
+}
+
+.skill-desc {
+    margin-left: 2vw;
+}
+
+.comm-desc {
+    margin-left: 1vw;
 }
