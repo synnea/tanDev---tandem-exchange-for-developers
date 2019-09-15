@@ -1,12 +1,12 @@
 
 import os
 from flask import Flask, render_template, url_for, redirect, request, session, flash
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime
-from flask_paginate import Pagination, get_page_args
+import math
 import json
 
 
@@ -31,6 +31,8 @@ skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",
 commstyles = list(["text", "video", "inperson"])
 
 other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
+
+page_number = 1
 
 
 
@@ -64,8 +66,8 @@ def about():
 
 
 # Search page
-@app.route('/search', methods=['GET', 'POST'])
-def search():
+@app.route('/search/<page_number>', methods=['GET', 'POST'])
+def search(page_number):
     """ Checks if the user is logged in in order to show the correct navbar items.
     Collect user feedback in arguments. Display all profiles by default.
     Check which fields the user selected, and assign the appropriate MongoDB
@@ -74,62 +76,133 @@ def search():
 
     loggedIn = True if 'username' in session else False
 
-    skill_arg = str(request.form.getlist("skill"))
-    district_arg = request.form.get("district")
-    comm_arg = request.form.getlist("commstyle")
+    # Set form variables
+    # Checks if the variables already exist in the session cookies.
 
-    profiles = db.profile.find({"display": True}).limit(4)
+    if 'skill_arg' in session:
+        skill_arg = session['skill_arg']
 
+    elif 'skill_arg' not in session:
+        skill_arg = str(request.form.getlist("skill"))
+
+    if 'district_arg' in session:
+        district_arg = session['district_arg']
+
+    elif 'district_arg' not in session:
+        district_arg = request.form.get("district") 
+
+    if 'comm_arg' in session:
+        comm_arg = session['comm_arg']
+
+    elif 'comm_arg' not in session:
+        comm_arg = request.form.getlist("commstyle")
+
+# if 'all' was selected for district, remove the district argument from the search variables.
+    if district_arg == 'all':
+        district_arg = None
+
+    # Upon hitting search, save the arguments in sessions. 
+    if request.method == "POST":
+        session['skill_arg'] = str(request.form.getlist('skill'))
+        session['district_arg'] = request.form.get("district")
+        session['comm_arg'] = request.form.getlist('commstyle')
+        return redirect(url_for('search', page_number=1))
+
+    # Clear the search arguments upon hitting the 'clear' button.
+    if request.method == "POST" and request.form['btn'] == 'clear':
+        session.pop('skill_arg', None)
+        session.pop('district_arg', None)
+        session.pop('comm_arg', None)
+        return redirect(url_for('search', page_number=1))
+
+    # Set pagination variables
+    page_number = int(page_number)  
+    limit = 4
+    skips = limit * (page_number - 1)
+
+    # Create text search index
     db.profile.create_index([('skills', 'text')])
 
+    # By default, display all published profiles.
+    profiles = db.profile.find({"display": True})
+
+    # Go through all the possible combinations of variable entry.
+    # if all possible variables have been selected.   
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
-                                             {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
+                                              {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
+    # if district and communication style is selected.  
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}  ] } )
+        profiles = db.profile.find({"$and": [{"display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
 
+    # if skills and communication style is selected.
+    if skill_arg != "[]" and district_arg is None and comm_arg != []:
+        print("skill and comm selected")
+        profiles = db.profile.find( { "$and": [  {"$text": {"$search": skill_arg }}, { "display": True},  {"communicationStyle": {"$all": comm_arg}} ] } )
+
+    # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
-        
+    
+    # if skills and district were selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
 
-    if skill_arg != "[]" and district_arg is None and comm_arg != []:
+    # if district and communication style were selected.    
+    if skill_arg == "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
 
+    # if only district was selected.
     if district_arg is not None and skill_arg == "[]" and comm_arg == []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg} ] } )
 
+    # if only communication style was selected.
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
 
 
+
+    # Profile Counts
+
     all_profiles = db.profile.find( {  "display": True } )
     all_profile_count = all_profiles.count()
-
     profile_count = profiles.count() if profiles else ""
 
-    # Pagination
+    # Calculate the number of total pages per search result.
+    total_pages = math.ceil(profile_count / limit)
 
-    # Function to return profiles with offsets
-    def get_profiles(offset=0, per_page=4):
-        return profiles[offset: offset + per_page]
+    # Calculate the numbers of the first and last profile on each page.
 
-    # Define pagination args
-    page, per_page, offset = get_page_args(page_parameter='page',
-        per_page_parameter='per_page')
+    if page_number == total_pages:
+        last_profile = profile_count
 
-    total = all_profile_count
+    else:
+        last_profile = (page_number * limit)
 
-    profiles = get_profiles(offset=offset, per_page=per_page)
+    first_profile = (page_number * limit) - (limit - 1)
 
-    pagination = Pagination(page=page, per_page=per_page, total=total,
-        css_framework='bootstrap4')
+
+    # Assign profiles with skip and limit
+    profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
+
+    # Set previous and next buttons 
+
+    next_url = url_for('search', page_number=page_number + 1)
+    prev_url = url_for('search', page_number=page_number - 1)
+
+    districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
+        "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
+
+    if district_arg is not None:
+        print("remove activated")
+        districts.remove(district_arg)
+
+
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, commstyles=commstyles, page=page, per_page=per_page,
-                            pagination=pagination, profile_count=profile_count, all_profile_count=all_profile_count)
+                            profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+
 
 
 # Login
@@ -227,6 +300,7 @@ def newprofile(username):
                 "otherDetails": request.form.getlist("other"),
                 "published": datetime.now().strftime("%d-%M-%Y"),
                 "github": request.form.get('github'),
+                "description": request.form.get('description')
 
             }})
 
@@ -264,7 +338,7 @@ def profile(username):
 
     if request.method == 'POST' and request.form['btn'] == 'edit':
         username=session['username']
-        return redirect(url_for('edit', loggedIn=loggedIn, username=username))
+        return redirect(url_for('edit', username=username))
 
     if request.method == 'POST' and request.form['btn'] == 'unpublish':
 
@@ -341,6 +415,7 @@ def edit(username):
         "imgURL": request.form.get('imgURL'),
         "district": request.form.get('district'),
         "skills": request.form.getlist("skills"),
+        "description": request.form.get('description'),
         "desiredSkills": request.form.getlist("desiredSkills"),
         "communicationStyle": request.form.getlist("communicationStyle"),
         "otherDetails": request.form.getlist("other"),
@@ -350,7 +425,7 @@ def edit(username):
 
         flash("Edits saved successfully. Scroll down to preview and publish.", "success")
 
-        return redirect(url_for('profile', loggedIn=loggedIn, username=session['username']))
+        return redirect(url_for('profile', username=session['username']))
 
 
     username = db.profile.find_one({"username": username})
