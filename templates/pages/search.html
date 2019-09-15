@@ -30,6 +30,8 @@
 
                 {% if loop.index % 2 == 1 %}
 
+                {% if skill not in skill_arg %}
+
                 <div class="col-6">
 
                     <div class="form-check">
@@ -42,9 +44,24 @@
 
                 </div>
 
-                {% endif %}
+                {% elif skill in skill_arg %}
 
+                <div class="col-6">
+
+                    <div class="form-check">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
+                            id="skill-box" checked>
+                        <label class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+
+                </div>
+
+                {% endif %}
+                {% endif %}
                 {% if loop.index % 2 == 0 %}
+
 
                 <div class="col-6">
 
@@ -113,7 +130,8 @@
 
                     <div class="col-12">
 
-                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small class="comm-desc"> tanDev will
+                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small
+                            class="comm-desc"> tanDev will
                             display users open to all the styles selected.</small>
 
                     </div>
