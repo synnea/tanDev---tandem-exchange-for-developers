@@ -1255,6 +1255,12 @@ ul ul a {
   border-radius: 25px;
 }
 
+#profile-description {
+  min-height: 15vh;
+  height: auto;
+  margin-bottom: 5vh;
+}
+
 .user-wrapper {
   padding: 6%;
   text-align: center;

@@ -215,7 +215,8 @@
                     Full Description
                 </label>
                 <textarea class="form-control" id="profile-description" name="description" rows="3" maxlength="500"
-                    rows="3" placeholder="Tell us about yourself! The more details you provide, the higher the chance that someone suitable will find you."></textarea>
+                    rows="3"
+                    placeholder="Tell us about yourself! The more details you provide, the higher the chance that someone suitable will find you."></textarea>
             </div>
 
             <!-- COMMUNICATION STYLE SECTION -->
@@ -252,15 +253,32 @@
                     </label>
 
 
-                    {% for other in other %}
+
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="other" value="{{other}}" id="other-box">
+                        <input class="form-check-input" type="checkbox" name="other" value="lookingforCoFounder"
+                            id="other-box">
                         <label class="form-check-label" for="other-box">
-                            {{other}}
+                            Looking for Co-Founder
                         </label>
                     </div>
-                    {% endfor %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="availableForProjects"
+                            id="other-box">
+                        <label class="form-check-label" for="other-box">
+                            Available for Projects
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="availableForHire"
+                            id="other-box">
+                        <label class="form-check-label" for="other-box">
+                            Available for Hire
+                        </label>
+                    </div>
+
                 </div>
 
 
@@ -285,7 +303,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-6 col-md-4">
+                <div class="col-12">
 
 
 
@@ -293,7 +311,7 @@
                         Github
                     </label>
                     <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                        placeholder="www.github.com/myawesomerepo">
+                        placeholder="http://github.com/mycodestuffz" readonly>
                 </div>
 
             </div>
