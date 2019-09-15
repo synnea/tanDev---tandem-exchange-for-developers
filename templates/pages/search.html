@@ -117,14 +117,18 @@
                 <!-- District filter options -->
 
                 <div class="col-12 col-md-6">
-
-
-
-
                     <select class="selectpicker districtSelect" id="districtSelect" name="district">
                         {% for district in districts %}
-                        <option value="{{district}}" >{{district}}</option>
 
+                        {% if district_arg == None %}
+                        <option value="{{district}}">{{district}}</option>
+
+                        {% endif %}
+
+                        {% if district_arg != None %}
+
+                        <option value="{{district_arg}}" selected>{{district_arg}}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
 
