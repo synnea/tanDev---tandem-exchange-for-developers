@@ -21,7 +21,7 @@ $(document).ready(function () {
             }
 
 
-            $(window).on('resize', function () {
+            $(window).on('resize', function() {
 
                 if ($(window).width() <= 800) {
                     $("#sidebar").removeClass("active");
