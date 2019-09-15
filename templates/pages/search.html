@@ -175,13 +175,26 @@
 
             <div class="row search-row justify-content-center">
 
-                <div class="col-12">
+                <div class="col-12 d-flex justify-content-left">
 
-                    <a href={{ prev_url }}> Previous  </a>
+                    {% if page_number == 1 %}
 
+                    <p class="disabled d-inline page-buttons ml-3"><i class="fas fa-backward"></i> Previous  </p>
 
-                    <a href={{ next_url }}> Next </a>
-                    
+                    {% elif page_number != 1 %}
+
+                    <a href="{{prev_url}}" class="page-buttons ml-3"><i class="fas fa-backward"></i> Previous </a>
+
+                    {% endif %}
+
+{% if page_number == total_pages %}
+
+                    <p class="disabled d-inline page-buttons ml-3">Next <i class="fas fa-forward"></i></p>
+
+                    {% elif page_number != total_pages %}
+                    <a href="{{next_url}}" class="page-buttons ml-3">Next <i class="fas fa-forward"></i> </a>
+
+                    {% endif %}
                 
                 </div>
 

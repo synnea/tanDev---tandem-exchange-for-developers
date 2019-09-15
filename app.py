@@ -190,6 +190,7 @@ def search(page_number):
     profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
 
     # Set previous and next buttons 
+
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 

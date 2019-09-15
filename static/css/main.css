@@ -1053,6 +1053,10 @@ ul ul a {
   font-size: 150%;
 }
 
+.disabled {
+  color: gray;
+}
+
 .logreg-wrapper {
   height: 140vh;
   background: url("/static/img/logreg-bg.jpg") center center no-repeat;
