@@ -20,6 +20,10 @@
 .user-image {
     text-align: center;
     height: 50vh;
+
+    @media (max-width: $bp-mobile) {
+        height: 40vh;
+    }
 }
 
 .user-image img {
@@ -81,11 +85,9 @@ display: flex;
 }
 
 .username {
-    position: absolute;
-top: 0;
 margin-top: 5vh;
-left: 20;
 margin-bottom: 5vh;
+max-width: 20vw;
 font-weight: 700;
 color: $teal;
 animation: textshadow 8s infinite alternate; 
@@ -93,7 +95,7 @@ animation: textshadow 8s infinite alternate;
 @media (max-width: $bp-mobile) {
 position: relative;
 display: flex;
-margin-top: 0;
+margin-top: 0 !important;
 }
 }
 
