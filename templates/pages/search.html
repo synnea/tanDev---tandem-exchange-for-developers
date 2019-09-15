@@ -20,18 +20,37 @@
                 <h4>Search Users</h4>
             </div>
 
-            <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5> <small>tanDev will display
-                users who know at least one skill selected.</small>
+
+            <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5>
+            <div class="skill-desc"><small>tanDev will display users who know at least one skill selected.</small></div>
+
 
             <div class="row skill-column">
                 {% for skill in skills %}
 
                 {% if loop.index % 2 == 1 %}
 
+                {% if skill not in skill_arg %}
+
                 <div class="col-6">
 
                     <div class="form-check">
-                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
+                            id="skill-box">
+                        <label class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+
+                </div>
+
+                {% elif skill in skill_arg %}
+
+                <div class="col-6">
+
+                    <div class="form-check">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
+                            id="skill-box" checked>
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -40,13 +59,15 @@
                 </div>
 
                 {% endif %}
-
+                {% endif %}
                 {% if loop.index % 2 == 0 %}
+
 
                 <div class="col-6">
 
                     <div class="form-check">
-                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}" id="skill-box">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
+                            id="skill-box">
                         <label class="form-check-label" for="skill-box">
                             {{skill}}
                         </label>
@@ -81,24 +102,29 @@
 
 
 
-                    <select class="selectpicker districtSelect" id="districtSelect" name="district" multiple
-                        data-selected-text-format="count">
-                        <option value="Mitte">Mitte</option>
-                        <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-                        <option value="Pankow">Pankow</option>
-                        <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
-                        <option value="Spandau">Spandau</option>
-                        <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-                        <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-                        <option value="Neukölln">Neukölln</option>
-                        <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-                        <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-                        <option value="Lichtenberg">Lichtenberg</option>
-                        <option value="Reinickendorf">Reinickendorf</option>
+                    <select class="selectpicker districtSelect" id="districtSelect" name="district">
+                        {% for district in districts %}
+
+                        {% if district_arg == None %}
+
+                        <option value="{{district}}">{{district}}</option>
+
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if district_arg != None %}
+
+                        {% for district in districts %}
+
+                        <option value="{{district}}">{{district}}</option>
+
+                        {% endfor %}
+
+                        <option value="{{district_arg}}" selected>{{district_arg}}</option>
+                        {% endif %}
+
                     </select>
 
-
-                    <button class="refresh" id="districtRefresh"><i class="fas fa-times"></i></button>
                 </div>
 
             </div>
@@ -111,34 +137,50 @@
 
                     <div class="col-12">
 
-                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> <small> tanDev will
-                            display users open to all the styles selected.</small>
+                        <h5 class="filter-header"><i class="fas fa-comments"></i> Communication</h5> 
+                        <div class="comm-desc"><small> tanDev will
+                            display users open to all the styles selected.</small></div>
 
                     </div>
                 </div>
 
                 <!-- Communication filter options -->
 
-                <div class="row">
+                <div class="row search-comm">
 
-                    {% for commstyle in commstyles %}
+                    <div class="col-12">
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
-                            id="comm-box">
-                        <label class="form-check-label" for="skill-box">
-                            {{commstyle}}
-                        </label>
+                        {% for commstyle in commstyles %}
+
+                        {% if commstyle not in comm_arg %}
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
+                                id="comm-box">
+                            <label class="form-check-label" for="skill-box">
+                                {{commstyle}}
+                            </label>
+                        </div>
+                        {% elif commstyle in comm_arg %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
+                                id="comm-box" checked>
+                            <label class="form-check-label" for="skill-box">
+                                {{commstyle}}
+                            </label>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
-
 
             </div>
 
             <div class="row justify-content-center">
+
                 <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn"
                     value="search">Search Now</button>
+
             </div>
         </form>
 
@@ -150,30 +192,55 @@
 
     <div id="content">
 
-        {% if profile_count == 0 %}
+        <div class="results">
 
-        <h5> No profiles of {{ all_profile_count }} found.</h5>
+            {% if profile_count == 0 %}
 
-        {% endif %}
+            <h5> No profiles of {{ all_profile_count }} found.</h5>
 
-        {% if profile_count == 1 %}
+            {% endif %}
 
-        <h5> 1 profile of {{ all_profile_count }} found.</h5>
-        {% endif %}
+            {% if profile_count == 1 %}
 
-        {% if profile_count > 1 %}
+            <h5> <span class="matches">1</span> profile of found, displaying match <span class="matches">1 - 1</span>
+            </h5>
+            {% endif %}
 
-        <h5><span class="search-matches">{{ profile_count }}</span> matches found, displaying <span class="search-matches">{{ per_page * page - 3 }} -  {{ per_page * page }}</span></h5>
+            {% if profile_count > 1 %}
 
-        {% endif %}
+            <h5><span class="matches">{{ profile_count }}</span> matches found, displaying <span
+                    class="matches">{{first_profile}} -
+                    {{last_profile}}</span></h5>
 
-        <div class="card-deck">
+            <h6 class="paging"> Page {{page_number}} of {{total_pages}}.</h6>
+
+            {% endif %}
+        </div>
+        <div class="card-deck" id="search-deck">
 
             <div class="row search-row justify-content-center">
 
-                <div class="col-12">
+                <div class="col-12 d-flex justify-content-left">
 
-                    {{ pagination.links }}
+                    {% if page_number == 1 %}
+
+                    <p class="disabled d-inline page-buttons ml-3"><i class="fas fa-backward"></i> Previous </p>
+
+                    {% elif page_number != 1 %}
+
+                    <a href="{{prev_url}}" class="page-buttons ml-3"><i class="fas fa-backward"></i> Previous </a>
+
+                    {% endif %}
+
+                    {% if page_number == total_pages %}
+
+                    <p class="disabled d-inline page-buttons ml-3">Next <i class="fas fa-forward"></i></p>
+
+                    {% elif page_number != total_pages %}
+                    <a href="{{next_url}}" class="page-buttons ml-3">Next <i class="fas fa-forward"></i> </a>
+
+                    {% endif %}
+
                 </div>
 
 
@@ -181,14 +248,14 @@
 
 
                 {% if loop.index % 2 == 1 %}
-                <div class="col-12 col-md-6 d-none d-md-block justify-content-center mt-3">
+                <div class="col-6 justify-content-center mt-3">
                     {% include 'components/profile_card.html' %}
                 </div>
 
                 {% endif %}
 
                 {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6 justify-content-center mt-3">
+                <div class="col-6 justify-content-center mt-3">
                     {% include 'components/profile_card.html' %}
                 </div>
                 {% endif %}
@@ -201,9 +268,6 @@
     </div>
 
     <!-- End Content -->
-
-    <!-- Dark Overlay element -->
-    <div class="search-overlay"></div>
 
 
 </div>
