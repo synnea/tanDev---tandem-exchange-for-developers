@@ -813,7 +813,7 @@ ul {
   padding-top: 2rem;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  width: 80vw;
+  width: 0;
   min-height: 100vh;
   max-height: 180vh;
   margin-left: 0;
@@ -831,6 +831,7 @@ ul {
 @media (min-width: 1200px) {
   #sidebar {
     width: 35vw;
+    margin-left: 0;
   }
 }
 
@@ -851,20 +852,21 @@ ul {
 }
 
 #sidebar.active {
-  margin-left: -80vw;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   #sidebar.active {
-    margin-left: -60vw;
+    margin-left: 0;
+    width: 40%;
   }
 }
 
 @media (min-width: 1200px) {
   #sidebar.active {
-    margin-left: -35vw;
+    margin-left: 0;
   }
 }
 
@@ -1013,6 +1015,12 @@ ul ul a {
   height: 200vh;
 }
 
+@media (min-width: 521px) {
+  #content {
+    margin-left: 10vw;
+  }
+}
+
 .content-visibility {
   display: none;
 }
@@ -1097,6 +1105,7 @@ ul ul a {
 
 .districtSelect {
   max-width: 15vw;
+  margin-top: 2vh;
 }
 
 #search-deck {
