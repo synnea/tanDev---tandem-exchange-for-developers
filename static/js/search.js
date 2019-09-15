@@ -2,24 +2,32 @@ $(document).ready(function () {
 
     // Activate sidebar toggle functionality
 
-
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active', 500);
-    });
-
+    
     if ($(window).width() <= 800) {
-        $(".search-card").addClass("d-none");
+        $("#sidebar").addClass("active");
+
+        $('#sidebarCollapse').on('click', function() {
+        $('#sidebar').toggleClass('active', 500);
+        $('#content').toggleClass('content-visibility');
+        });
+    };
+
+
+    if ($(window).width() > 800) {
+        $("#sidebar").removeClass("active");
+
     }
 
-    // Call the same functions upon window resize.
 
-    $(window).on('resize', function () {
+  $(window).on('resize', function () {
 
         if ($(window).width() <= 800) {
-
-            $(".search-card").addClass("d-none");
+            $("#sidebar").removeClass("active");
+            $('#sidebar').toggleClass('active', 500);
+            $('#content').toggleClass('content-visibility');
         }
     });
+
 
 
 });

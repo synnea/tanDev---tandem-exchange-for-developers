@@ -816,6 +816,7 @@ ul {
   width: 80vw;
   min-height: 100vh;
   max-height: 180vh;
+  margin-left: 0;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -823,6 +824,7 @@ ul {
 @media (min-width: 768px) {
   #sidebar {
     width: 60vw;
+    margin-left: 0;
   }
 }
 
@@ -1011,9 +1013,19 @@ ul ul a {
   height: 200vh;
 }
 
+.content-visibility {
+  display: none;
+}
+
 .search-row {
   height: 50vh;
-  width: 50vw;
+  width: 100vw;
+}
+
+@media (min-width: 768px) {
+  .search-row {
+    width: 50vw;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1085,6 +1097,14 @@ ul ul a {
 
 .districtSelect {
   max-width: 15vw;
+}
+
+#search-deck {
+  margin-top: 10vh;
+}
+
+.deck-margin {
+  margin-left: 15vw;
 }
 
 .logreg-wrapper {
