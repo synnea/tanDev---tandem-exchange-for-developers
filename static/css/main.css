@@ -1057,6 +1057,16 @@ ul ul a {
   color: gray;
 }
 
+.matches {
+  background-color: #2581B0;
+  color: white;
+  padding: 0.5rem;
+}
+
+.results {
+  margin: 4rem;
+}
+
 .logreg-wrapper {
   height: 140vh;
   background: url("/static/img/logreg-bg.jpg") center center no-repeat;
