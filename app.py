@@ -191,10 +191,6 @@ def search(page_number):
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 
-    print(district_arg)
-
-    modified_district = []
-
     districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
         "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
 
@@ -202,7 +198,6 @@ def search(page_number):
         print("remove activated")
         districts.remove(district_arg)
 
-    print(districts)
 
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
@@ -305,6 +300,7 @@ def newprofile(username):
                 "otherDetails": request.form.getlist("other"),
                 "published": datetime.now().strftime("%d-%M-%Y"),
                 "github": request.form.get('github'),
+                "description": request.form.get('description')
 
             }})
 
