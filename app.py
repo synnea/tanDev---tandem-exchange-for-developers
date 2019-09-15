@@ -121,6 +121,7 @@ def search(page_number):
     limit = 4
     skips = limit * (page_number - 1)
 
+    # Create text search index
     db.profile.create_index([('skills', 'text')])
 
     # By default, display all published profiles.
@@ -138,13 +139,8 @@ def search(page_number):
 
     # if skills and communication style is selected.
     if skill_arg != "[]" and district_arg is None and comm_arg != []:
+        print("skill and comm selected")
         profiles = db.profile.find( { "$and": [  {"$text": {"$search": skill_arg }}, { "display": True},  {"communicationStyle": {"$all": comm_arg}} ] } )
-
-        def printprofiles():
-            for profile in profiles:
-                print(profile)
-
-        printprofiles()
 
     # if only skills are selected   
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
@@ -155,7 +151,7 @@ def search(page_number):
         profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
 
     # if district and communication style were selected.    
-    if skill_arg == "[]" and district_arg is None and comm_arg != []:
+    if skill_arg == "[]" and district_arg is not None and comm_arg != []:
         profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
 
     # if only district was selected.
