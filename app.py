@@ -32,9 +32,6 @@ commstyles = list(["text", "video", "inperson"])
 
 other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
 
-districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
-"Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
-
 page_number = 1
 
 
@@ -172,8 +169,6 @@ def search(page_number):
     all_profile_count = all_profiles.count()
     profile_count = profiles.count() if profiles else ""
 
-    print(profile_count)
-
     # Calculate the number of total pages per search result.
     total_pages = math.ceil(profile_count / limit)
 
@@ -196,11 +191,22 @@ def search(page_number):
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 
-    print(skill_arg)
-    print(comm_arg)
+    print(district_arg)
+
+    modified_district = []
+
+    districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
+        "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
+
+    if district_arg is not None:
+        print("remove activated")
+        districts.remove(district_arg)
+
+    print(districts)
+
 
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+                            profiles=profiles, modified_district=modified_district, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 

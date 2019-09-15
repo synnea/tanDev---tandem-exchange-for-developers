@@ -104,10 +104,25 @@
 
                     <select class="selectpicker districtSelect" id="districtSelect" name="district">
                         {% for district in districts %}
-                        
+
+                        {% if district_arg == None %}
+
+                        <option value="{{district}}">{{district}}</option>
+
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if district_arg != None %}
+
+                        {% for district in districts %}
+
                         <option value="{{district}}">{{district}}</option>
 
                         {% endfor %}
+
+                        <option value="{{district_arg}}" selected>{{district_arg}}</option>
+                        {% endif %}
+
                     </select>
 
                 </div>
