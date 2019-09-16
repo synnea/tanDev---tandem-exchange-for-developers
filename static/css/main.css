@@ -1275,6 +1275,11 @@ ul ul a {
   margin-top: 2vh;
 }
 
+.profile-nav {
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
+}
+
 .user-wrapper {
   padding: 6%;
   text-align: center;

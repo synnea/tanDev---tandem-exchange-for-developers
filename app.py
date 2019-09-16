@@ -269,7 +269,7 @@ def register():
         session['username'] = request.form.get('username')
         return redirect(url_for('newprofile', username = session['username']))
 
-    return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn)
+    return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn, _anchor='register-tab')
 
 
 # New profile
