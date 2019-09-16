@@ -1278,6 +1278,14 @@ ul ul a {
 .profile-nav {
   text-transform: uppercase;
   font-family: 'Share Tech Mono', monospace;
+  margin-left: 10vw;
+}
+
+.profile-parts {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 20vh;
 }
 
 .user-wrapper {
