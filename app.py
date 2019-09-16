@@ -344,7 +344,8 @@ def profile(username):
 
         db.profile.find_one_and_update({"username": session['username']}, {"$set": {"display": False}})
         username = session['username']
-        return redirect(url_for('profile', loggedIn=loggedIn, username=username))
+        flash("Your profile has been unpublished.", "success")
+        return redirect(url_for('profile', username=username))
 
 
     return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)

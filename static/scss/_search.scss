@@ -6,6 +6,10 @@
 .wrapper {
     display: flex;
     align-items: stretch;
+
+    @media (max-width: $bp-mobile) {
+        height: 350vh;
+    }
 }
 
 #sidebar {
@@ -201,10 +205,6 @@ ul ul a {
         margin-left: 10vw;
     }
 
-    @media (max-width: 691px ) {
-        min-height: 500vh;
-        height: auto;
-    }
 }
 
 .content-visibility {
