@@ -1286,6 +1286,7 @@ ul ul a {
   max-width: 100%;
   height: auto;
   max-height: 20vh;
+  margin: 2rem 0;
 }
 
 .user-wrapper {
