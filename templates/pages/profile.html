@@ -6,7 +6,7 @@
 
     <div class="row welcome-row justify-content-center align-items-center">
         <div class="col-12">
-            <h1>Welcome back, {{username.username}}</h1>
+            <h1 class="profile-nav">Welcome back, {{username.username}}</h1>
 
             {% include 'components/message.html' %}
 
@@ -15,10 +15,7 @@
 
         <div class="col-10">
 
-
-
-
-            <h4>Your profile is currently public</h4>
+            <h4 class="profile-subnav">Your profile is currently public</h4>
 
         </div>
 
@@ -39,7 +36,7 @@
 
         <div class="col-12">
 
-            <h4>Your profile is currently not published.</h4>
+            <h4 class="profile-subnav mb-3">Your profile is currently not published.</h4>
         </div>
 
         {% endif %}
@@ -57,9 +54,9 @@
 
                 <div class="col-12 justify-content-center">
 
-                    <img src="{{"
+                        <img class="profile-parts" src="/static/img/header.png" />
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-md-6">
 
 
 
@@ -72,7 +69,7 @@
 
 
 
-                <div class="col-6">
+                <div class="col-12 col-md-6">
 
 
                     <label class="profile-label" for="profile-img">
@@ -120,7 +117,7 @@
             <div class="col-12 justify-content-center">
 
                 <h3 class="profile-heading">
-                    < body>
+                        <img class="profile-parts" src="/static/img/body.png" />
                         </header>
                 </h3>
 
@@ -217,13 +214,16 @@
             <!-- DESCRIPTION SECTION -->
 
             <div class="row">
+
+                <div class="col-12">
                     <label class="profile-label" for="profile-description">
                         Full Description
                     </label>
                     <input class="form-control" type="textarea" id="profile-description" name="description" rows="3" maxlength="500"
                         rows="3"
                         value="{{username.description}}" readonly></input>
-                </div>
+                    </div>
+            </div>
 
 
             <!-- COMMUNICATION STYLE SECTION -->
@@ -315,8 +315,8 @@
         <div class="row">
 
             <div class="col-12">
-                <h3 class="profile-heading">
-                    < footer>
+                <h3 class="profile-heading justify-content-center">
+                        <img class="profile-parts" src="/static/img/footer.png" />
 
                 </h3>
             </div>

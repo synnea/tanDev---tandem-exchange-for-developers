@@ -61,10 +61,21 @@ padding: 0.3rem !important;
     margin-left: 10vw;
 }
 
+.profile-subnav {
+    font-family: 'Share Tech Mono', monospace;
+    margin-left: 10vw;
+
+    @media (max-width: $bp-mobile) {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
 .profile-parts {
     width: auto;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
-    max-height: 20vh;
-    margin: 2rem 0;
+    max-height: 15vh;
+    margin: 2rem auto;
+
 }
