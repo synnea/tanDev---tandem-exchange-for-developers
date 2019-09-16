@@ -17,22 +17,17 @@
     color: #fff;
 
     padding-top: 2rem;
-    // transition: all 1s ease;
+    transition: all 1s ease;
 
     width: 0;
     min-height: 100vh;
     max-height: 180vh;
-margin-left: 0;
 
     @media (min-width: $bp-mobile) {
-        width: 60vw;
+        width: 800px !important;
         margin-left: 0;
     }
 
-    @media (min-width: $bp-desktop) {
-        width: 50vw;
-        margin-left:0;
-    }
 
 
     overflow-y: auto;
@@ -199,12 +194,13 @@ ul ul a {
 }
 
 #content {
-    width: 100%;
+    width: 0;
     height: 200vh;
 
-    @media (min-width: 521px) {
-        margin-left: 10vw;
+    @media (min-width: $bp-mobile) {
+        width: 70%;
     }
+
 
 }
 
@@ -263,6 +259,7 @@ ul ul a {
 
 .results {
     margin: 4rem;
+    width: 70vw;
 }
 
 .paging {

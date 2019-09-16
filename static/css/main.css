@@ -839,24 +839,18 @@ ul {
   background: #2581B0;
   color: #fff;
   padding-top: 2rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
   width: 0;
   min-height: 100vh;
   max-height: 180vh;
-  margin-left: 0;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 @media (min-width: 768px) {
   #sidebar {
-    width: 60vw;
-    margin-left: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  #sidebar {
-    width: 50vw;
+    width: 800px !important;
     margin-left: 0;
   }
 }
@@ -1032,13 +1026,13 @@ ul ul a {
 }
 
 #content {
-  width: 100%;
+  width: 0;
   height: 200vh;
 }
 
-@media (min-width: 521px) {
+@media (min-width: 768px) {
   #content {
-    margin-left: 10vw;
+    width: 70%;
   }
 }
 
@@ -1099,6 +1093,7 @@ ul ul a {
 
 .results {
   margin: 4rem;
+  width: 70vw;
 }
 
 .paging {
