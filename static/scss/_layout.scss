@@ -136,9 +136,12 @@ h3.heading {
 // Footer
 
 footer {
+    position: relative;
     height: 15vh !important;
     width: 100% !important;
     background-color: $darkblue;
+    display: block;
+
 
     color: $brightmidblue;
     text-transform: uppercase;
@@ -147,11 +150,14 @@ footer {
     text-align: center !important;
 }
 
-footer-container {
+.footer {
     position: absolute;
     bottom: 0;
+    left: 0;
+    display: block;
     margin-bottom: 0;
     padding-bottom: 0;
+    z-index: 999;
 
 
 }

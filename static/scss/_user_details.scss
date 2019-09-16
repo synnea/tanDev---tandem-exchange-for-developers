@@ -3,17 +3,19 @@
     text-align: center;
     height: auto;
     position: relative;
+    margin-bottom: 10vh;
 }
 
 .user-content {
     background: #fff;
     box-shadow: 0px 0px 4px 0px #b0b3b7;
     max-width: 70%;
+    max-height: 100%;
     margin: 0 auto;
 
     @media (max-width: $bp-mobile) {
-        height: 200vh;
-        max-width: 80%;
+        min-height: 240vh;
+        max-width: 100%;
     }
 }
 
@@ -41,6 +43,10 @@
     @media (min-width: $bp-mobile) {
     align-items: center;
     }
+}
+
+.ud-col {
+    max-width: 100%;
 }
 
 .tags {
@@ -112,6 +118,7 @@ margin-top: 0 !important;
 
 .district {
 margin-top: 10vh;
+margin-bottom: 5vh;
 }
 
 .user-description {
@@ -126,6 +133,7 @@ margin-top: 10vh;
 
 .profile-row {
     padding: 2rem;
+    height: auto;
     color: white;
     margin-left: 0;
     margin-right: 0;
@@ -135,6 +143,11 @@ margin-top: 10vh;
     color: black !important;
     min-height: 30vh;
     max-height: auto;
+}
+
+.description-box {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .skill-row {

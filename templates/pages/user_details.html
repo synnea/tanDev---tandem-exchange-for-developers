@@ -41,7 +41,7 @@
         </div>
 
         <div class="row skill-row profile-row">
-            <div class="col-3">
+            <div class="col-12 col-md-3 ud-col">
                 <i class="fa fa-code"></i>
                 <h5 class="d-inline">Skills</h5>
 
@@ -49,7 +49,7 @@
 
 
 
-            <div class="col-9">
+            <div class="col-12 col-md-9 ud-col">
 
                 {% for skill in user.skills %}
                 <span class="tags skill-tags">{{ skill }}</span>
@@ -61,13 +61,13 @@
 
 
         <div class="row des-skill-row profile-row">
-            <div class="col-3">
+            <div class="col-12 col-md-3 ud-col">
                 <i class="fas fa-search"></i>
                 <h5 class="d-inline">Desired skills</h5>
 
             </div>
 
-            <div class="col-9">
+            <div class="col-12 col-md-9 ud-col">
 
                 {% for skill in user.desiredSkills %}
                 <span class="tags des-skill-tags">{{ skill }}</span>
@@ -78,28 +78,28 @@
         </div>
 
         <div class="row profile-row description-row justify-content-center align-items-center">
-            <div class="col-3">
+            <div class="col-12 col-md-3 ud-col">
                 <h5 class="d-inline">Description</h5>
 
             </div>
 
-            <div class="col-9">
+            <div class="col-12 col-md-9 ud-col">
 
-                {{user.description}}
+                <div class="description-box">{{user.description}}</div>
 
             </div>
         </div>
 
         <div class="row comm-row profile-row">
 
-            <div class="col-3">
+            <div class="col-12 col-md-3 ud-col">
                 <i class="fas fa-at"></i>
                 <h5 class="d-inline">Communication</h5>
 
             </div>
 
 
-            <div class="col-9">
+            <div class="col-12 col-md-9">
                 {% for comm in user.communicationStyle %}
 
                 {% if comm == "inperson" %}
@@ -127,14 +127,14 @@
 
         <div class="row profile-row other-row">
 
-            <div class="col-3">
+            <div class="col12 col-md-3 ud-col">
                 <i class="fas fa-at fa-lg"></i>
                 <h5 class="d-inline">Other Details</h5>
 
             </div>
 
 
-            <div class="col-9">
+            <div class="col-12 col-md-9 ud-col">
                 {% for other in user.otherDetails %}
 
                 {% if other == "lookingForCoFounder" %}
@@ -173,13 +173,13 @@
 
         <div class="row profile-row contact-row">
 
-            <div class="col-3">
+            <div class="col-12 col-md-3 ud-col">
                 <i class="fas fa-plug fa-lg"></i>
                 <h5 class="d-inline">Contact</h5>
 
             </div>
 
-            <div class="col-9 sm-logo-col justify-content-center d-flex">
+            <div class="col-12 col-md-9 ud-col sm-logo-col justify-content-center d-flex">
                 <a href="{{user.github}}"><img src="/static/img/logos/github-logo.svg" target="_blank"
                         class="sm-logo hvr-bounce-in" alt="github-logo"></a>
 

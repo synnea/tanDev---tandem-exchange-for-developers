@@ -122,9 +122,11 @@ h3.heading {
 }
 
 footer {
+  position: relative;
   height: 15vh !important;
   width: 100% !important;
   background-color: #0B132B;
+  display: block;
   color: #2581B0;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -132,11 +134,14 @@ footer {
   text-align: center !important;
 }
 
-footer-container {
+.footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  display: block;
   margin-bottom: 0;
   padding-bottom: 0;
+  z-index: 999;
 }
 
 col-4 {
@@ -288,9 +293,11 @@ h3.heading {
 }
 
 footer {
+  position: relative;
   height: 15vh !important;
   width: 100% !important;
   background-color: #0B132B;
+  display: block;
   color: #2581B0;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -298,11 +305,14 @@ footer {
   text-align: center !important;
 }
 
-footer-container {
+.footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  display: block;
   margin-bottom: 0;
   padding-bottom: 0;
+  z-index: 999;
 }
 
 col-4 {
@@ -674,9 +684,11 @@ h3.heading {
 }
 
 footer {
+  position: relative;
   height: 15vh !important;
   width: 100% !important;
   background-color: #0B132B;
+  display: block;
   color: #2581B0;
   text-transform: uppercase;
   font-size: 0.8em;
@@ -684,11 +696,14 @@ footer {
   text-align: center !important;
 }
 
-footer-container {
+.footer {
   position: absolute;
   bottom: 0;
+  left: 0;
+  display: block;
   margin-bottom: 0;
   padding-bottom: 0;
+  z-index: 999;
 }
 
 col-4 {
@@ -1306,6 +1321,7 @@ ul ul a {
   text-align: center;
   height: auto;
   position: relative;
+  margin-bottom: 10vh;
 }
 
 .user-content {
@@ -1313,13 +1329,14 @@ ul ul a {
   -webkit-box-shadow: 0px 0px 4px 0px #b0b3b7;
           box-shadow: 0px 0px 4px 0px #b0b3b7;
   max-width: 70%;
+  max-height: 100%;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .user-content {
-    height: 200vh;
-    max-width: 80%;
+    min-height: 240vh;
+    max-width: 100%;
   }
 }
 
@@ -1349,6 +1366,10 @@ ul ul a {
         -ms-flex-align: center;
             align-items: center;
   }
+}
+
+.ud-col {
+  max-width: 100%;
 }
 
 .tags {
@@ -1472,6 +1493,7 @@ ul ul a {
 
 .district {
   margin-top: 10vh;
+  margin-bottom: 5vh;
 }
 
 .user-description {
@@ -1488,6 +1510,7 @@ ul ul a {
 
 .profile-row {
   padding: 2rem;
+  height: auto;
   color: white;
   margin-left: 0;
   margin-right: 0;
@@ -1497,6 +1520,11 @@ ul ul a {
   color: black !important;
   min-height: 30vh;
   max-height: auto;
+}
+
+.description-box {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .skill-row {
