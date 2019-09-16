@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
             if ($(window).width() > 800) {
-                $("#sidebar").addClass("active");
+                $("#sidebar").removeClass("active");
                 $('#content').removeClass('content-visibility');
 
             }
