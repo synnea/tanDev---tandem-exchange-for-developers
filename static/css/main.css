@@ -547,6 +547,7 @@ ul {
 
 .indicator-wrapper {
   margin: 10vh 0;
+  display: block;
 }
 
 html {
