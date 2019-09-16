@@ -270,11 +270,35 @@
 
                     {% if other in username.otherDetails %}
 
-                    <span class="d-block"><i class="fas fa-check"></i> {{other}} </span>
+                        {% if other == 'lookingforCoFounder' %}
 
-                    {% else %}
+                    <span class="d-block"><i class="fas fa-check"></i> Looking for Co-Founder </span>
 
-                    <span class="d-block"><i class="fas fa-times"></i> {{other}} </span>
+
+                        {% elif other == 'availableForProjects' %}
+
+                        <span class="d-block"><i class="fas fa-check"></i> Available for Projects </span>
+
+                        {% elif other == 'availableForHire' %}
+
+                        <span class="d-block"><i class="fas fa-check"></i> Available for Hire </span>
+
+                        {% endif %}
+                    {% elif other != username.otherDetails %}
+
+                    {% if other == 'lookingforCoFounder' %}
+
+                    <span class="d-block"><i class="fas fa-times"></i> Looking for Co-Founder </span>
+
+                    {% elif other == 'availableForProjects' %}
+
+                    <span class="d-block"><i class="fas fa-times"></i> Available for Projects </span>
+
+                    {% elif other == 'availableForHire' %}
+
+                    <span class="d-block"><i class="fas fa-times"></i> Available for Hire </span>
+
+                    {% endif %}
                     {% endif %}
 
                     {% endfor %}
