@@ -521,8 +521,20 @@ ul {
   color: #2581B0;
 }
 
+.card-text {
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+}
+
 .card-body {
   height: 30vh;
+}
+
+@media (max-width: 768px) {
+  .card-body {
+    height: 60vh;
+  }
 }
 
 .card-footer {
@@ -986,6 +998,12 @@ ul ul a {
   margin-left: 1em;
 }
 
+@media (max-width: 691px) {
+  .bootstrap-select > .dropdown-toggle {
+    width: 60vw;
+  }
+}
+
 .search-btn {
   background-color: #05081f !important;
   background-repeat: repeat-x;
@@ -1034,6 +1052,13 @@ ul ul a {
 @media (min-width: 521px) {
   #content {
     margin-left: 10vw;
+  }
+}
+
+@media (max-width: 691px) {
+  #content {
+    min-height: 500vh;
+    height: auto;
   }
 }
 
@@ -1129,6 +1154,12 @@ ul ul a {
 .districtSelect {
   max-width: 15vw;
   margin-top: 2vh;
+}
+
+@media (max-width: 768px) {
+  bootstrap-select > .dropdown-toggle {
+    width: 80vw !important;
+  }
 }
 
 #search-deck {

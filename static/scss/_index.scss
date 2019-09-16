@@ -162,8 +162,19 @@
     color: $brightmidblue;
 }
 
+.card-text {
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
+}
+
+
 .card-body {
     height: 30vh;
+
+    @media (max-width: $bp-mobile) {
+    height: 60vh;
+    }
 }
 
 .card-footer {

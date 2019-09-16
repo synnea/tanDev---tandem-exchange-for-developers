@@ -200,6 +200,11 @@ ul ul a {
     @media (min-width: 521px) {
         margin-left: 10vw;
     }
+
+    @media (max-width: 691px ) {
+        min-height: 500vh;
+        height: auto;
+    }
 }
 
 .content-visibility {
@@ -291,6 +296,13 @@ ul ul a {
 .districtSelect {
     max-width: 15vw;
     margin-top: 2vh;
+
+}
+
+bootstrap-select > .dropdown-toggle {
+    @media (max-width: $bp-mobile) {
+        width: 80vw !important;
+    }
 }
 
 #search-deck {
