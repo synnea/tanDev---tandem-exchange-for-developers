@@ -261,7 +261,7 @@ def register():
             "desiredSkills": [],
             "otherDetails": [],
             "github": "",
-            "registered": datetime.now().strftime("%d-%M-%Y"),
+            "registered": datetime.now().strftime("%d-%b-%Y"),
             "published": "",
             "display": False
         }
@@ -298,7 +298,7 @@ def newprofile(username):
                 "desiredSkills": request.form.getlist("desiredSkills"),
                 "communicationStyle": request.form.getlist("communicationStyle"),
                 "otherDetails": request.form.getlist("other"),
-                "published": datetime.now().strftime("%d-%M-%Y"),
+                "published": datetime.now().strftime("%d-%b-%Y"),
                 "github": request.form.get('github'),
                 "description": request.form.get('description')
 

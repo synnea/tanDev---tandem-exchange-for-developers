@@ -39,7 +39,7 @@ padding: 0.3rem !important;
 
 .profile-jumbo {
     max-width: 80%;
-    margin: 5vh auto;
+    margin: 0 auto;
     border-radius: 25px;
 
     @media (max-width: $bp-mobile) {
@@ -86,4 +86,23 @@ padding: 0.3rem !important;
     max-height: 15vh;
     margin: 2rem auto;
 
+}
+
+.d-none {
+    display: none;
+}
+
+.userarea-btn {
+
+    @include custom-btn;
+    margin: 0 3rem;
+
+}
+
+.userarea-btn:hover {
+    @include custom-btn-hover;
+}
+
+#mobile-unpublish {
+    margin-bottom: 10vh;
 }

@@ -1274,7 +1274,7 @@ ul ul a {
 
 .profile-jumbo {
   max-width: 80%;
-  margin: 5vh auto;
+  margin: 0 auto;
   border-radius: 25px;
 }
 
@@ -1324,6 +1324,41 @@ ul ul a {
   height: auto;
   max-height: 15vh;
   margin: 2rem auto;
+}
+
+.d-none {
+  display: none;
+}
+
+.userarea-btn {
+  background-color: #11375f !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#74abe6", endColorstr="#10365f");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#74abe6), to(#10365f));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#74abe6), to(#10365f));
+  background-image: linear-gradient(#74abe6, #10365f);
+  border-color: #10365f #10365f #081a2e;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+  -webkit-font-smoothing: antialiased;
+  margin: 0 3rem;
+}
+
+.userarea-btn:hover {
+  background-color: #05081f !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b2eab", endColorstr="#04081e");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#1b2eab), to(#04081e));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1b2eab), to(#04081e));
+  background-image: linear-gradient(#1b2eab, #04081e);
+  border-color: #04081e #04081e black;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
+  -webkit-font-smoothing: antialiased;
+}
+
+#mobile-unpublish {
+  margin-bottom: 10vh;
 }
 
 .user-wrapper {
@@ -1410,33 +1445,6 @@ ul ul a {
 
 #preview {
   margin-bottom: 5vh !important;
-}
-
-.userarea-btn {
-  background-color: #11375f !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#74abe6", endColorstr="#10365f");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#74abe6), to(#10365f));
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#74abe6), to(#10365f));
-  background-image: linear-gradient(#74abe6, #10365f);
-  border-color: #10365f #10365f #081a2e;
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
-  -webkit-font-smoothing: antialiased;
-  margin: 0 3rem 3rem 3rem;
-}
-
-.userarea-btn:hover {
-  background-color: #05081f !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b2eab", endColorstr="#04081e");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#1b2eab), to(#04081e));
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1b2eab), to(#04081e));
-  background-image: linear-gradient(#1b2eab, #04081e);
-  border-color: #04081e #04081e black;
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.52);
-  -webkit-font-smoothing: antialiased;
 }
 
 .username {

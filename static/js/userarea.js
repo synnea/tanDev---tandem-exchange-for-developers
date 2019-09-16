@@ -24,5 +24,35 @@ $(document).ready(function () {
     });
 
 
+    // change the display classes of the unpublish button in the user area.
+    // This button appears in two different locations depending on screen width.
+
+    $(function () {
+        if ($(window).width() < 1000) {
+            $("#desktop-unpublish").addClass("d-none");
+            $("#mobile-unpublish").removeClass("d-none");
+        } else {
+
+            $("#desktop-unpublish").removeClass("d-none");
+            $("#mobile-unpublish").addClass("d-none");
+
+        }
+    });
+
+    // Call the same functions upon window resize.
+    $(function () {
+        $(window).on('resize', function () {
+
+            if ($(window).width() < 1000) {
+                $("#desktop-unpublish").addClass("d-none");
+                $("#mobile-unpublish").removeClass("d-none");
+            } else {
+
+                $("#desktop-unpublish").removeClass("d-none");
+                $("#mobile-unpublish").addClass("d-none");
+
+            }
+        });
+    });
 
 });
