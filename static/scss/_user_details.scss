@@ -13,9 +13,14 @@
     max-height: 100%;
     margin: 0 auto;
 
-    @media (max-width: $bp-mobile) {
-        min-height: 240vh;
+    @media (max-width: $bp-mini) {
+        min-height: 150vh;
         max-width: 100%;
+
+    }
+
+    @media (min-width: $bp-mini + 1) and (max-width: $bp-mobile) {
+        min-height: 240vh;
     }
 }
 

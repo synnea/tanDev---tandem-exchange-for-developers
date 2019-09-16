@@ -3,43 +3,43 @@
 {% block content %}
 
 <div class="container myprofile-wrapper">
+    <div class="profile-messages"> {% include 'components/message.html' %}</div>
+    <div class="container">
+        <div class="row welcome-row justify-content-center mt-5 align-items-center">
+            <div class="col-12">
+                <h1 class="profile-nav">Welcome back, {{username.username}}</h1>
 
-    <div class="row welcome-row justify-content-center align-items-center">
-        <div class="col-12">
-            <h1 class="profile-nav">Welcome back, {{username.username}}</h1>
-
-            {% include 'components/message.html' %}
-
-        </div>
-        {% if username.display == True %}
-
-        <div class="col-10">
-
-            <h4 class="profile-subnav">Your profile is currently public</h4>
-
-        </div>
-
-        <form id="unpublish-btn" method="POST">
-
-            <div class="col-2">
-
-                <button type="submit" class="btn btn-danger btn-large" name="btn" value="unpublish">Unpublish
-                    Profile</button>
             </div>
-        </form>
+            {% if username.display == True %}
+
+            <div class="col-10">
+
+                <h4 class="profile-subnav">Your profile is currently public</h4>
+
+            </div>
+
+            <form id="unpublish-btn" method="POST">
+
+                <div class="col-2">
+
+                    <button type="submit" class="btn btn-danger btn-large" name="btn" value="unpublish">Unpublish
+                        Profile</button>
+                </div>
+            </form>
 
 
 
-        {% endif %}
+            {% endif %}
 
-        {% if username.display == False %}
+            {% if username.display == False %}
 
-        <div class="col-12">
+            <div class="col-12 d-block">
 
-            <h4 class="profile-subnav mb-3">Your profile is currently not published.</h4>
+                <h4 class="profile-subnav mb-3">Your profile is currently not published.</h4>
+            </div>
+
+            {% endif %}
         </div>
-
-        {% endif %}
 
     </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="col-12 justify-content-center">
 
-                        <img class="profile-parts" src="/static/img/header.png" />
+                    <img class="profile-parts" src="/static/img/header.png" />
                 </div>
                 <div class="col-12 col-md-6">
 
@@ -117,8 +117,8 @@
             <div class="col-12 justify-content-center">
 
                 <h3 class="profile-heading">
-                        <img class="profile-parts" src="/static/img/body.png" />
-                        </header>
+                    <img class="profile-parts" src="/static/img/body.png" />
+                    </header>
                 </h3>
 
             </div>
@@ -136,7 +136,7 @@
             <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
             <div class="row">
                 <nav>
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs ml-2">
 
 
                         <li class="nav-item">
@@ -219,10 +219,9 @@
                     <label class="profile-label" for="profile-description">
                         Full Description
                     </label>
-                    <input class="form-control" type="textarea" id="profile-description" name="description" rows="3" maxlength="500"
-                        rows="3"
-                        value="{{username.description}}" readonly></input>
-                    </div>
+                    <input class="form-control" type="textarea" id="profile-description" name="description" rows="3"
+                        maxlength="500" rows="3" value="{{username.description}}" readonly></input>
+                </div>
             </div>
 
 
@@ -268,20 +267,20 @@
 
                     {% if other in username.otherDetails %}
 
-                        {% if other == 'lookingforCoFounder' %}
+                    {% if other == 'lookingforCoFounder' %}
 
                     <span class="d-block"><i class="fas fa-check"></i> Looking for Co-Founder </span>
 
 
-                        {% elif other == 'availableForProjects' %}
+                    {% elif other == 'availableForProjects' %}
 
-                        <span class="d-block"><i class="fas fa-check"></i> Available for Projects </span>
+                    <span class="d-block"><i class="fas fa-check"></i> Available for Projects </span>
 
-                        {% elif other == 'availableForHire' %}
+                    {% elif other == 'availableForHire' %}
 
-                        <span class="d-block"><i class="fas fa-check"></i> Available for Hire </span>
+                    <span class="d-block"><i class="fas fa-check"></i> Available for Hire </span>
 
-                        {% endif %}
+                    {% endif %}
                     {% elif other != username.otherDetails %}
 
                     {% if other == 'lookingforCoFounder' %}
@@ -316,38 +315,34 @@
 
             <div class="col-12">
                 <h3 class="profile-heading justify-content-center">
-                        <img class="profile-parts" src="/static/img/footer.png" />
+                    <img class="profile-parts" src="/static/img/footer.png" />
 
                 </h3>
             </div>
 
-            </div>
-
-            <div class="col-12">
-
-
-
-                <label class="contact" for="profile-contact">
-                    Github
-                </label>
-                <input id="github" class="form-control" type="text" name="github" maxlength="50"
-                    value="{{username.github}}" readonly>
-            </div>
-
         </div>
+
+        <div class="col-12">
+
+            <label class="contact" for="profile-contact">
+                Github
+            </label>
+            <input id="github" class="form-control" type="text" name="github" maxlength="50" value="{{username.github}}"
+                readonly>
+        </div>
+
     </div>
+</div>
 
-    <div class="row justify-content-center">
+<div class="row justify-content-center">
 
-        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn"
-            value="preview">Preview
-            Profile</button>
+    <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn" value="preview">Preview
+        Profile</button>
 
-        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn"
-            value="edit">Edit</button>
-    </div>
+    <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn" value="edit">Edit</button>
+</div>
 
-    </form>
+</form>
 
 
 

@@ -1278,12 +1278,21 @@ ul ul a {
   border-radius: 25px;
 }
 
+@media (max-width: 768px) {
+  .profile-jumbo {
+    margin-top: 15vh;
+  }
+}
+
 #profile-description {
   min-height: 15vh;
   height: auto;
   margin-bottom: 5vh;
-  margin-left: 2vw;
-  margin-right: 2vw;
+}
+
+.profile-messages {
+  display: block;
+  margin-top: 5vh;
 }
 
 .profile-label {
@@ -1299,6 +1308,7 @@ ul ul a {
 .profile-subnav {
   font-family: 'Share Tech Mono', monospace;
   margin-left: 10vw;
+  min-height: 10vh;
 }
 
 @media (max-width: 768px) {
@@ -1333,10 +1343,16 @@ ul ul a {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+  .user-content {
+    min-height: 150vh;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
   .user-content {
     min-height: 240vh;
-    max-width: 100%;
   }
 }
 
