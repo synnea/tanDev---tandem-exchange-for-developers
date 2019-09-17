@@ -64,6 +64,10 @@ a:hover {
   }
 }
 
+.navbar-toggler {
+  background-color: white;
+}
+
 .nav-link.scrolled {
   color: white !important;
 }
@@ -122,16 +126,23 @@ h3.heading {
 }
 
 footer {
+  height: 10vh;
   position: relative;
-  height: 15vh !important;
   width: 100% !important;
   background-color: #0B132B;
   display: block;
   color: #2581B0;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: 35vh;
+    font-size: 0.7em;
+  }
 }
 
 .footer {
@@ -142,6 +153,16 @@ footer {
   margin-bottom: 0;
   padding-bottom: 0;
   z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    margin-bottom: 1rem;
+  }
+}
+
+.copyright {
+  padding-bottom: 2rem;
 }
 
 col-4 {
@@ -235,6 +256,10 @@ a:hover {
   }
 }
 
+.navbar-toggler {
+  background-color: white;
+}
+
 .nav-link.scrolled {
   color: white !important;
 }
@@ -293,16 +318,23 @@ h3.heading {
 }
 
 footer {
+  height: 10vh;
   position: relative;
-  height: 15vh !important;
   width: 100% !important;
   background-color: #0B132B;
   display: block;
   color: #2581B0;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: 35vh;
+    font-size: 0.7em;
+  }
 }
 
 .footer {
@@ -313,6 +345,16 @@ footer {
   margin-bottom: 0;
   padding-bottom: 0;
   z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    margin-bottom: 1rem;
+  }
+}
+
+.copyright {
+  padding-bottom: 2rem;
 }
 
 col-4 {
@@ -563,7 +605,6 @@ ul {
 
 .indicator-wrapper {
   margin: 10vh 0;
-  display: block;
 }
 
 html {
@@ -632,6 +673,10 @@ a:hover {
   }
 }
 
+.navbar-toggler {
+  background-color: white;
+}
+
 .nav-link.scrolled {
   color: white !important;
 }
@@ -690,16 +735,23 @@ h3.heading {
 }
 
 footer {
+  height: 10vh;
   position: relative;
-  height: 15vh !important;
   width: 100% !important;
   background-color: #0B132B;
   display: block;
   color: #2581B0;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: 35vh;
+    font-size: 0.7em;
+  }
 }
 
 .footer {
@@ -710,6 +762,16 @@ footer {
   margin-bottom: 0;
   padding-bottom: 0;
   z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .footer-col {
+    margin-bottom: 1rem;
+  }
+}
+
+.copyright {
+  padding-bottom: 2rem;
 }
 
 col-4 {

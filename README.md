@@ -2,7 +2,7 @@
 
 ### Milestone Project 3: Data-Centric Development
 
-
+[!indexpage](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/amiresponsive_index.PNG)
 
 [tanDev](https://tandev.herokuapp.com/index) is a skill exchange platform created by Carina Pöll to connect developers and designers with each other who wish to exchange their skills.
 
@@ -11,7 +11,6 @@ The term 'tandem' is taken from the language learning community, in which it mea
 "*Tandem language learning is a method of language learning based on mutual language exchange between tandem partners, where ideally each learner is a native speaker in the language the other party wants to learn...*"
 
 The tandem exchange concept is taken to connect developers and designers skilled in some languages or areas of development who wish to improve their skills in others.
-
 
 ## UX
 
