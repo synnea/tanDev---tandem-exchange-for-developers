@@ -2,17 +2,20 @@
 
 ### Milestone Project 3: Data-Centric Development
 
+[tanDev](https://tandev.herokuapp.com/index) is a skill exchange platform created by Carina Pöll to connect developers and designers with each other who wish to exchange their skills.
+
+The term 'tandem' is taken from the language learning community, in which it means:
 
 "*Tandem language learning is a method of language learning based on mutual language exchange between tandem partners, where ideally each learner is a native speaker in the language the other party wants to learn...*"
 
-tanDev is about this... but for developers.
-
-Conceived as a platform to connect developers and designers who wish to learn from each other and work together, the project features a Python backend and a MongoDB database.
-
-The current deployed version can be accessed at: https://tandev.herokuapp.com/index.
+The tandem exchange concept is taken to connect developers and designers skilled in some languages or areas of development who wish to improve their skills in others.
 
 
 ## UX
+
+The website's target audience are developers and designers. For developers based in Berlin, the option to search for users by district is useful; for all others, tanDev also seeks to connect individuals who wish to exchange their skills via text or video.
+
+The website features a multi-page design. Three pages - index, about, and search - are accessible to non-members. For registered users, there is also a user area, where users may write, edit, publish and delete their profiles.
 
 
 
