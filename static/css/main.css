@@ -124,22 +124,22 @@ h3.heading {
 }
 
 footer {
-  height: 15vh;
+  height: 30vh;
   position: relative;
   width: 100% !important;
   background-color: #0B132B;
   display: block;
   color: #2581B0;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.7em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   footer {
-    height: 35vh;
-    font-size: 0.7em;
+    height: 18vh;
+    font-size: 1.3em;
   }
 }
 
@@ -160,6 +160,8 @@ footer {
 @media (max-width: 768px) {
   .footer-col {
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -318,22 +320,22 @@ h3.heading {
 }
 
 footer {
-  height: 15vh;
+  height: 30vh;
   position: relative;
   width: 100% !important;
   background-color: #0B132B;
   display: block;
   color: #2581B0;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.7em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   footer {
-    height: 35vh;
-    font-size: 0.7em;
+    height: 18vh;
+    font-size: 1.3em;
   }
 }
 
@@ -354,6 +356,8 @@ footer {
 @media (max-width: 768px) {
   .footer-col {
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
@@ -737,22 +741,22 @@ h3.heading {
 }
 
 footer {
-  height: 15vh;
+  height: 30vh;
   position: relative;
   width: 100% !important;
   background-color: #0B132B;
   display: block;
   color: #2581B0;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.7em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   footer {
-    height: 35vh;
-    font-size: 0.7em;
+    height: 18vh;
+    font-size: 1.3em;
   }
 }
 
@@ -773,6 +777,8 @@ footer {
 @media (max-width: 768px) {
   .footer-col {
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 

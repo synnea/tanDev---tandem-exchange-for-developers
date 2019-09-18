@@ -139,24 +139,22 @@ h3.heading {
 
 footer {
 
-    height: 15vh;
+    height: 30vh;
     position: relative;
     width: 100% !important;
     background-color: $darkblue;
     display: block;
- 
-
-
     color: $brightmidblue;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 0.7em;
+
     font-family: 'Montserrat', sans-serif;
     text-align: center !important;
 
-    @media (max-width: $bp-mobile) {
-        height: 35vh;
-        font-size: 0.7em;
-    }
+    @media (min-width: $bp-mobile) {
+        height: 18vh;
+        font-size: 1.3em;    }
+
 }
 
 .row {
@@ -179,6 +177,8 @@ margin-right: 0;
 .footer-col {
     @media (max-width: $bp-mobile) {
         margin-bottom: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
