@@ -62,23 +62,37 @@
                 {% endif %}
                 {% if loop.index % 2 == 0 %}
 
+                {% if skill not in skill_arg %}
 
                 <div class="col-6">
 
                     <div class="form-check">
                         <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
-                            id="skill-box">
-                        <label class="form-check-label" for="skill-box">
+                            id="{{skill}}">
+                        <label class="form-check-label" for="{{skill}}">
                             {{skill}}
                         </label>
                     </div>
 
                 </div>
+
+                {% elif skill in skill_arg %}
+
+                <div class="col-6">
+
+                    <div class="form-check">
+                        <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
+                            id="{{skill}}" checked>
+                        <label for="{{skill}}" class="form-check-label" for="skill-box">
+                            {{skill}}
+                        </label>
+                    </div>
+
+                </div>
+
                 {% endif %}
-
+                {% endif %}
                 {% endfor %}
-
-
 
             </div>
 
