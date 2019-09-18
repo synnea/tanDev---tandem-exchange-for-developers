@@ -124,7 +124,7 @@ h3.heading {
 }
 
 footer {
-  height: 30vh;
+  height: 28vh;
   position: relative;
   width: 100% !important;
   background-color: #0B132B;
@@ -139,7 +139,7 @@ footer {
 @media (min-width: 768px) {
   footer {
     height: 18vh;
-    font-size: 1.3em;
+    font-size: 0.8em;
   }
 }
 
@@ -157,11 +157,9 @@ footer {
   z-index: 999;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-col {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
   }
 }
 
@@ -320,7 +318,7 @@ h3.heading {
 }
 
 footer {
-  height: 30vh;
+  height: 28vh;
   position: relative;
   width: 100% !important;
   background-color: #0B132B;
@@ -335,7 +333,7 @@ footer {
 @media (min-width: 768px) {
   footer {
     height: 18vh;
-    font-size: 1.3em;
+    font-size: 0.8em;
   }
 }
 
@@ -353,11 +351,9 @@ footer {
   z-index: 999;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-col {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
   }
 }
 
@@ -741,7 +737,7 @@ h3.heading {
 }
 
 footer {
-  height: 30vh;
+  height: 28vh;
   position: relative;
   width: 100% !important;
   background-color: #0B132B;
@@ -756,7 +752,7 @@ footer {
 @media (min-width: 768px) {
   footer {
     height: 18vh;
-    font-size: 1.3em;
+    font-size: 0.8em;
   }
 }
 
@@ -774,11 +770,9 @@ footer {
   z-index: 999;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-col {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
   }
 }
 

@@ -139,7 +139,7 @@ h3.heading {
 
 footer {
 
-    height: 30vh;
+    height: 28vh;
     position: relative;
     width: 100% !important;
     background-color: $darkblue;
@@ -153,7 +153,7 @@ footer {
 
     @media (min-width: $bp-mobile) {
         height: 18vh;
-        font-size: 1.3em;    }
+        font-size: 0.8em;    }
 
 }
 
@@ -175,10 +175,8 @@ margin-right: 0;
 }
 
 .footer-col {
-    @media (max-width: $bp-mobile) {
-        margin-bottom: 1rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
+    @media (max-width: $bp-mobile - 1) {
+margin: 1rem;
     }
 }
 
