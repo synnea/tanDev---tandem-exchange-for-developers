@@ -41,30 +41,61 @@ The following user stories were used to design the website:
 
 Extensive wireframes with Balsamiq were created for the project. As an example, here is a wireframe for the index page:
 
+![index-wire](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/wireframe_index.jpg)
+
 
 The wireframes for every page on the website are available in .pdf format on this github respository: [DESKTOP VERSION](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/schemas/wireframes/wireframes%20desktop.pdf) and [MOBILE VERSION](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/schemas/wireframes/wireframes%20for%20mobile.pdf).
 
 A color palette was created early on, using the colors found in the background image as the basic point of reference. The palette was created using https://coolors.co/. The decision was taken early on that the website would feature a blue color scheme.
 
+For the most part, the wireframes are similar to the finished product. However, some features were taken out due to time restraints: originally, the skill levels were supposed to be illustrated in a star rating on the search page, user details page as well as the profile page. However due to complexity of the dataset, this was later taken out.
 
+An initially envisioned option to favorite other users was also removed, and has been added to the 'future features' wishlist.
 
+### Data Schema
 
+tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is 
 
-
-
-
-
+|   |   |   |   |   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
 
 ## Features
 
 ### Current Features
 
+#### Feature 1 - Carousel
+The index page features a carousel of user profiles who have been published on tanDev.
+
+#### Feature 2 - Animation on Scroll
+The 'about' page features animation on scroll achieved through the [AOS library](https://michalsnik.github.io/aos/).
+
+#### Feature 3 - Search function
+The search page of tanDev allows the users to search the database for other users who have published their profiles. Searches can be executed according to desired skills, location (Berlin districts), communication styles, and other details. The search page also features pagination.
+
+#### Feature 4 - Toggleable Sidebar
+The search page also features a sidebar, which is fixed on desktop view, but toggleable on mobile, with a smooth transition animation.
+
+#### Feature 5 - Eye-Catching Animated Usernames
+In the user details view, the username is animated with an infinite text shadow keyframe.
+
+#### Feature 6 - Preview Option
+After successfully saving his or her details, the user may preview what their information would look like in a profile view.
+
+#### Feature 7 - Flexible Navbar design
+On the search and about pages, the navbar is transparent and pops into view upon scroll. On the other pages, and on mobile view, the navbar is dark and fixed.
 
 
 
 ### Features Left to Implement
 
+#### Messaging 
+Currently, there is no way for users to connect with other users on tanDev. A messaging function of some sort is needed.
 
+#### Favoriting
+The option to favorite users and save them in a 'my favorites' tab of the my account dropdown is also a feature that is missing and which would add a lot of value to the website's UX.
 
 ## Technologies Used
 
@@ -86,7 +117,7 @@ A color palette was created early on, using the colors found in the background i
 [Bootstrap](https://getbootstrap.com/)
     - The project uses **Bootstrap**, a CSS3 and JavaScript framework.
 
-[Fask](https://flask.palletsprojects.com/en/1.0.x/)
+[Flask](https://flask.palletsprojects.com/en/1.0.x/)
     - The project uses *Flask**, a Python framework.
 
 ### Libraries
@@ -94,8 +125,8 @@ A color palette was created early on, using the colors found in the background i
 [jQuery.js, version 3.4.1](https://jquery.com/)
     - The project uses **jQuery.js**, a JavaScript library used for event handling.
 
-....
-
+[AOS](https://michalsnik.github.io/aos/)
+    - The project uses **Animate on Scroll**.
 
 ### Other
 
