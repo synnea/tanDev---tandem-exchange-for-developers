@@ -32,8 +32,6 @@ commstyles = list(["text", "video", "inperson"])
 other = list(["availableForProjects", "availableForHire",
               "lookingforCoFounder"])
 
-page_number = 1
-
 
 # Begin creating routes
 # Index page
@@ -171,7 +169,6 @@ def search(page_number):
         profiles = db.profile.find({"$and": [{"display": True},
                                              {"communicationStyle": {"$all": comm_arg}}]})
 
-
     # Profile Counts
 
     all_profiles = db.profile.find({"display": True})
@@ -190,7 +187,6 @@ def search(page_number):
 
     first_profile = (page_number * limit) - (limit - 1)
 
-
     # Assign profiles with skip and limit
     profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
 
@@ -207,11 +203,8 @@ def search(page_number):
         print("remove activated")
         districts.remove(district_arg)
 
-
-
     return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
                             profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
-
 
 
 # Login
@@ -310,7 +303,6 @@ def newprofile(username):
                 "published": datetime.now().strftime("%d-%b-%Y"),
                 "github": request.form.get('github'),
                 "description": request.form.get('description')
-
             }})
 
             flash("Changes saved successfully. Scroll down to preview or edit.", "success")
@@ -356,7 +348,6 @@ def profile(username):
         flash("Your profile has been unpublished.", "success")
         return redirect(url_for('profile', username=username))
 
-
     return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
 
 
@@ -394,13 +385,11 @@ def preview(username):
                 "otherDetails": [],
                 "published": "",
                 "github": "",
-
         }})
         username = session['username']
         flash("Your changes have been discarded.", "success")
         return redirect(url_for('newprofile', username = username, discarded=True, skills=skills,
         commstyles=commstyles, other=other))
-
 
     return render_template("pages/user_details.html", active="profile", user=user, loggedIn = loggedIn, preview=True)
 
@@ -436,7 +425,6 @@ def edit(username):
         flash("Edits saved successfully. Scroll down to preview and publish.", "success")
 
         return redirect(url_for('profile', username=session['username']))
-
 
     username = db.profile.find_one({"username": username})
 
@@ -494,7 +482,6 @@ def edit_settings():
         flash("Your settings have been updated.", "success")
 
         return redirect(url_for('settings'))
-        
 
     username = db.profile.find_one({"username": session['username']})
 
