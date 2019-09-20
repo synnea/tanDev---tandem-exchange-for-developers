@@ -2,7 +2,7 @@
 
 ### Milestone Project 3: Data-Centric Development
 
-[!indexpage](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/amiresponsive_index.PNG)
+![indexpage](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/amiresponsive_index.PNG)
 
 [tanDev](https://tandev.herokuapp.com/index) is a skill exchange platform created by Carina Pöll to connect developers and designers with each other who wish to exchange their skills.
 
