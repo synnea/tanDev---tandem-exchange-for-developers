@@ -337,21 +337,25 @@
 
 <div class="row justify-content-center">
 
-    <div class="row-12">
+    <div class="col-12 d-flex justify-content-center">
 
-        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn"
+        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5 d-block" name="btn"
             value="preview">Preview
             Profile</button>
 
-        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5" name="btn"
+        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5 d-block" name="btn"
             value="edit">Edit</button>
     </div>
+
+    {% if username.display == True %}
 
     <div class="col-12 d-flex justify-content-center mb-2">
             <button type="submit" class="btn btn-danger btn-large" id="mobile-unpublish" name="btn"
             value="unpublish">Unpublish
             Profile</button>
     </div>
+
+    {% endif %}
 </div>
 
 </form>

@@ -850,6 +850,12 @@ ul {
   }
 }
 
+@media (max-width: 1023px) {
+  .overlay-open {
+    top: 23.5vh !important;
+  }
+}
+
 .about-text {
   width: 75%;
   line-height: 2em;
@@ -1330,7 +1336,7 @@ ul ul a {
 
 .profile-jumbo {
   max-width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto;
   border-radius: 25px;
 }
 
@@ -1398,6 +1404,7 @@ ul ul a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
   -webkit-font-smoothing: antialiased;
   margin: 0 3rem;
+  width: 6rem;
 }
 
 .userarea-btn:hover {

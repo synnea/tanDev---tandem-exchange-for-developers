@@ -52,6 +52,12 @@
 
 }
 
+.overlay-open {
+    @media (max-width: $bp-ipadpro - 1) {
+        top: 23.5vh !important;
+    }
+}
+
 .about-text {
 
     width:75%;
