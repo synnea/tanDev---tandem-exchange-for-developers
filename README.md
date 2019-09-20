@@ -54,7 +54,7 @@ An initially envisioned option to favorite other users was also removed, and has
 
 ### Data Schema
 
-tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is 
+tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is the data schema used for individual documents in this collection:
 
 | Key               | Value           |
 | -------------     |:-------------:| 
@@ -175,6 +175,8 @@ The HTML was validated using the [HTML Validator](https://www.freeformatter.com/
 The CSS was validated using the [CSS Validator](https://jigsaw.w3.org/css-validator/validator). 
 
 The JavaScript was tested using [JSHint.com](https://jshint.com/). 
+
+The Python was tested using [PEP8Online](http://pep8online.com/).
 
 ### User Story Testing
 

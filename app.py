@@ -1,4 +1,3 @@
-
 import os
 from flask import Flask, render_template, url_for, redirect, request, session, flash
 from flask_pymongo import PyMongo, pymongo
@@ -23,37 +22,36 @@ mongo = PyMongo(app)
 client = MongoClient(app.config['MONGO_URI'])
 db = client.tandev
 
-#Helper Lists
+# Helper Lists
 skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",
                "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
                "Java", "Rust", "Go", "Swift", "Kotlin", "Perl"])
 
 commstyles = list(["text", "video", "inperson"])
 
-other = list(["availableForProjects", "availableForHire", "lookingforCoFounder"])
+other = list(["availableForProjects", "availableForHire",
+              "lookingforCoFounder"])
 
 page_number = 1
-
 
 
 # Begin creating routes
 # Index page
 @app.route('/', methods=['GET'])
 def index():
-    """ Create a list of 6 random profiles whose display key is set to 'True' to be used in the
-    index.html carousel. """
+    """ Create a list of 6 random profiles whose display key is set to 'True'
+    to be used in the index.html carousel. """
 
     loggedIn = True if 'username' in session else False
 
-
-    carousel = db.profile.aggregate([{"$match" : {"display" : True}},
+    carousel = db.profile.aggregate([{"$match": {"display": True}},
                                      {"$sample": {"size": 6}}])
     carousel = list(carousel)
-    return render_template("pages/index.html", active="index", carousel=carousel, loggedIn=loggedIn)
+    return render_template("pages/index.html", active="index",
+                           carousel=carousel, loggedIn=loggedIn)
 
 
-
-#About page
+# About page
 @app.route('/about', methods=['GET'])
 def about():
     """ Checks if the user is logged in in order to show the correct navbar items.
@@ -61,8 +59,8 @@ def about():
 
     loggedIn = True if 'username' in session else False
 
-    return render_template("pages/about.html", active="about", loggedIn=loggedIn)
-
+    return render_template("pages/about.html", active="about",
+                           loggedIn=loggedIn)
 
 
 # Search page
@@ -89,7 +87,7 @@ def search(page_number):
         district_arg = session['district_arg']
 
     elif 'district_arg' not in session:
-        district_arg = request.form.get("district") 
+        district_arg = request.form.get("district")
 
     if 'comm_arg' in session:
         comm_arg = session['comm_arg']
@@ -97,11 +95,12 @@ def search(page_number):
     elif 'comm_arg' not in session:
         comm_arg = request.form.getlist("commstyle")
 
-# if 'all' was selected for district, remove the district argument from the search variables.
+# if 'all' was selected for district, remove the district argument from the
+#  search variables.
     if district_arg == 'all':
         district_arg = None
 
-    # Upon hitting search, save the arguments in sessions. 
+    # Upon hitting search, save the arguments in sessions.
     if request.method == "POST":
         session['skill_arg'] = str(request.form.getlist('skill'))
         session['district_arg'] = request.form.get("district")
@@ -116,7 +115,7 @@ def search(page_number):
         return redirect(url_for('search', page_number=1))
 
     # Set pagination variables
-    page_number = int(page_number)  
+    page_number = int(page_number)
     limit = 4
     skips = limit * (page_number - 1)
 
@@ -127,45 +126,55 @@ def search(page_number):
     profiles = db.profile.find({"display": True})
 
     # Go through all the possible combinations of variable entry.
-    # if all possible variables have been selected.   
+    # if all possible variables have been selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find({"$and": [{"display": True}, {"$text":{"$search": skill_arg}},
-                                              {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
+        profiles = db.profile.find({"$and": [{"display": True}, {"$text":
+                                             {"$search": skill_arg}},
+                                             {"district": district_arg},
+                                             {"communicationStyle": {"$all":
+                                              comm_arg}}]})
 
-    # if district and communication style is selected.  
+    # if district and communication style is selected.
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find({"$and": [{"display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}}]})
+        profiles = db.profile.find({"$and": [{"display": True},
+                                             {"district": district_arg},
+                                             {"communicationStyle": {"$all": comm_arg}}]})
 
     # if skills and communication style is selected.
     if skill_arg != "[]" and district_arg is None and comm_arg != []:
         print("skill and comm selected")
-        profiles = db.profile.find( { "$and": [  {"$text": {"$search": skill_arg }}, { "display": True},  {"communicationStyle": {"$all": comm_arg}} ] } )
+        profiles = db.profile.find({"$and":[{"$text": {"$search": skill_arg}}, {"display": True},
+                                            {"communicationStyle": {"$all": comm_arg}}]})
 
-    # if only skills are selected   
+    # if only skills are selected
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }} ] } )
-    
+        profiles = db.profile.find({"$and": [{"display": True},
+                                             {"$text": {"$search": skill_arg}}]})
+
     # if skills and district were selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"$text": {"$search": skill_arg }}, {"district": district_arg} ] } )
+        profiles = db.profile.find({"$and": [{"display": True},
+                                             {"$text": {"$search": skill_arg}},
+                                             {"district": district_arg}]})
 
-    # if district and communication style were selected.    
+    # if district and communication style were selected.
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg}, {"communicationStyle": {"$all": comm_arg}} ] } )
+        profiles = db.profile.find({"$and": [{"display": True}, {"district": district_arg},
+                                             {"communicationStyle": {"$all": comm_arg}}]})
 
     # if only district was selected.
     if district_arg is not None and skill_arg == "[]" and comm_arg == []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"district": district_arg} ] } )
+        profiles = db.profile.find({"$and": [{"display": True}, {"district": district_arg}]})
 
     # if only communication style was selected.
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
-        profiles = db.profile.find( { "$and": [ { "display": True }, {"communicationStyle": {"$all": comm_arg}} ] } )
-
+        profiles = db.profile.find({"$and": [{"display": True},
+                                             {"communicationStyle": {"$all": comm_arg}}]})
 
 
     # Profile Counts
 
-    all_profiles = db.profile.find( {  "display": True } )
+    all_profiles = db.profile.find({"display": True})
     all_profile_count = all_profiles.count()
     profile_count = profiles.count() if profiles else ""
 
@@ -173,7 +182,6 @@ def search(page_number):
     total_pages = math.ceil(profile_count / limit)
 
     # Calculate the numbers of the first and last profile on each page.
-
     if page_number == total_pages:
         last_profile = profile_count
 
@@ -186,13 +194,14 @@ def search(page_number):
     # Assign profiles with skip and limit
     profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
 
-    # Set previous and next buttons 
+    # Set previous and next buttons
 
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 
-    districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf",
-        "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
+    districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf",
+                    "Spandau", "Steglitz-Zehlendorf", "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick",
+                    "Marzahn-Hellersdorf","Lichtenberg", "Reinickendorf"])
 
     if district_arg is not None:
         print("remove activated")
