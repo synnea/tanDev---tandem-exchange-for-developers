@@ -56,6 +56,8 @@ An initially envisioned option to favorite other users was also removed, and has
 
 tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is 
 
+| Key               | Value           |
+| -------------     |:-------------:| 
 | _id               | < integer > | 
 | username          | < string >  |  
 | imgUrl            |  < string > | 
