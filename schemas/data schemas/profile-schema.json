@@ -10,5 +10,6 @@
     "desiredSkills": [],
     "github": "<string>",
     "published": "datetime",
-    "otherDetails": []
+    "otherDetails": [],
+    "display": "<boolean"
 }

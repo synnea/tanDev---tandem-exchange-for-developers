@@ -56,11 +56,21 @@ An initially envisioned option to favorite other users was also removed, and has
 
 tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is 
 
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| _id               | < integer > | 
+| username          | < string >  |  
+| imgUrl            |  < string > | 
+| district          | < string >  |  
+| shortDescription  | < string >  | 
+| communicationStyle| < array >   |  
+| skills            | < array >   | 
+| desiredSkills     | < array >   |  
+| otherDetails      | < array >   | 
+| github            | < string >  |
+| published         | < datetime >| 
+| display           | < boolean > |  
+
+The database was populated early on with 13 original profiles. 
+
 
 ## Features
 
