@@ -16,15 +16,42 @@ The tandem exchange concept is taken to connect developers and designers skilled
 
 The website's target audience are developers and designers. For developers based in Berlin, the option to search for users by district is useful; for all others, tanDev also seeks to connect individuals who wish to exchange their skills via text or video.
 
+To appeal to the target audience, tanDev features a modern design. A blue color scheme was chosen, as blue is a color closely associatied with technology.
+
+The main hero image featured on tanDev is one of two puzzle pieces being put together. This symbolizes the main mission of the website: to bring together people whose skills complement one another.
+
 The website features a multi-page design. Three pages - index, about, and search - are accessible to non-members. For registered users, there is also a user area, where users may write, edit, publish and delete their profiles.
 
+The design features a static navbar which is transparent and appears upon scroll for desktop users on some pages (mainly index and search). The navbar is fixed for mobile users and inside the user area of the tanDev.
 
+FontAwesome icons are provided throughout the website to aid intuitive information input.
 
 ### User Stories
 
+The following user stories were used to design the website:
+
+- I am a developer or designer based in Berlin. I heard about tanDev and have an idea what it's about. I am interested in finding out if there are other developers in the city with whom I could exchange my skills with.
+- I am a developer or designer based in Berlin. I stumble upon tanDev without knowing what it is.
+- I am a developer or designer not based in Berlin. 
+- I am a tech recruiter interested in contacting available talent.
+- I am a startup entrepreneur interested in finding a co-founder with complementary skills.
 
 
 ### Wireframes
+
+Extensive wireframes with Balsamiq were created for the project. As an example, here is a wireframe for the index page:
+
+
+The wireframes for every page on the website are available in .pdf format on this github respository: [DESKTOP VERSION](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/schemas/wireframes/wireframes%20desktop.pdf) and [MOBILE VERSION](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/schemas/wireframes/wireframes%20for%20mobile.pdf).
+
+A color palette was created early on, using the colors found in the background image as the basic point of reference. The palette was created using https://coolors.co/. The decision was taken early on that the website would feature a blue color scheme.
+
+
+
+
+
+
+
 
 
 
