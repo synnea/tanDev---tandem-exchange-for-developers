@@ -143,6 +143,28 @@ footer {
   }
 }
 
+@media (min-width: 992px) {
+  footer {
+    height: 13vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    height: 18vh;
+  }
+}
+
+.fa-github {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.fa-github:hover {
+  color: #2581B0;
+}
+
 .row {
   margin-right: 0;
 }
@@ -164,7 +186,10 @@ footer {
 }
 
 .copyright {
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 col-4 {
@@ -337,6 +362,28 @@ footer {
   }
 }
 
+@media (min-width: 992px) {
+  footer {
+    height: 13vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    height: 18vh;
+  }
+}
+
+.fa-github {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.fa-github:hover {
+  color: #2581B0;
+}
+
 .row {
   margin-right: 0;
 }
@@ -358,7 +405,10 @@ footer {
 }
 
 .copyright {
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 col-4 {
@@ -756,6 +806,28 @@ footer {
   }
 }
 
+@media (min-width: 992px) {
+  footer {
+    height: 13vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    height: 18vh;
+  }
+}
+
+.fa-github {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.fa-github:hover {
+  color: #2581B0;
+}
+
 .row {
   margin-right: 0;
 }
@@ -777,7 +849,10 @@ footer {
 }
 
 .copyright {
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 col-4 {

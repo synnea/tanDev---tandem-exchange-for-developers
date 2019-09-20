@@ -155,6 +155,24 @@ footer {
         height: 18vh;
         font-size: 0.8em;    }
 
+    @media (min-width: $bp-tablet) {
+        height: 13vh;
+    }
+
+    @media (min-width: $bp-desktop) {
+        height: 18vh;
+    }
+
+}
+
+.fa-github {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.fa-github:hover {
+    color: $brightmidblue;
 }
 
 .row {
@@ -182,7 +200,10 @@ margin: 1rem;
 
 
 .copyright {
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
 
 }
 
