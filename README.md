@@ -166,6 +166,10 @@ The responsiveness of the website was tested on Responsinator.
 * iPad portrait
 * iPad landscape
 
+I collected the results in a responsiveness matrix:
+
+
+The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/tests/responsiveness_test_matrix.xls).
 
 ### Code Testing
 
