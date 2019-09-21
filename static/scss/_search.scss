@@ -10,6 +10,10 @@
     @media (max-width: $bp-mobile) {
         height: 350vh;
     }
+
+    @media screen and (orientation: landscape) {
+        height: 500vh;
+    }
 }
 
 #sidebar {
@@ -28,6 +32,9 @@
         margin-left: 0;
     }
 
+    @media screen and (orientation: landscape) {
+        width: 50%;
+    }
 
 
     overflow-y: auto;
@@ -201,6 +208,10 @@ ul ul a {
         width: 70%;
     }
 
+    @media screen and (orientation: landscape) {
+        width: 50%;
+    }
+
 
 }
 
@@ -260,6 +271,10 @@ ul ul a {
 .results {
     margin: 4rem;
     width: 70vw;
+
+    @media screen and (orientation: landscape) {
+        margin-left: 1rem !important;
+    }
 }
 
 .paging {
@@ -288,6 +303,10 @@ bootstrap-select > .dropdown-toggle {
 
 #search-deck {
     margin-top: 10vh;
+
+    @media screen and (orientation: landscape) {
+        margin-left: 3.5rem;
+    }
 }
 
 .deck-margin {

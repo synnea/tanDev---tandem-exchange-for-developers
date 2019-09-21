@@ -1065,6 +1065,12 @@ ul {
   }
 }
 
+@media screen and (orientation: landscape) {
+  .wrapper {
+    height: 500vh;
+  }
+}
+
 #sidebar {
   background: #2581B0;
   color: #fff;
@@ -1082,6 +1088,12 @@ ul {
   #sidebar {
     width: 800px !important;
     margin-left: 0;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #sidebar {
+    width: 50%;
   }
 }
 
@@ -1266,6 +1278,12 @@ ul ul a {
   }
 }
 
+@media screen and (orientation: landscape) {
+  #content {
+    width: 50%;
+  }
+}
+
 .content-visibility {
   display: none;
 }
@@ -1326,6 +1344,12 @@ ul ul a {
   width: 70vw;
 }
 
+@media screen and (orientation: landscape) {
+  .results {
+    margin-left: 1rem !important;
+  }
+}
+
 .paging {
   margin-top: 3vh;
 }
@@ -1351,6 +1375,12 @@ ul ul a {
 
 #search-deck {
   margin-top: 10vh;
+}
+
+@media screen and (orientation: landscape) {
+  #search-deck {
+    margin-left: 3.5rem;
+  }
 }
 
 .deck-margin {
