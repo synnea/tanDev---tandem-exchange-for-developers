@@ -9,6 +9,10 @@
 @mixin height-scaling {
     height: 60vh;
 
+    @media (orientation: landscape) {
+        height: 100vh;
+    }
+
     @media (min-width: $bp-tablet) {
         height: 70vh;
     }

@@ -446,6 +446,12 @@ ul {
   height: 60vh;
 }
 
+@media (orientation: landscape) {
+  #hero {
+    height: 100vh;
+  }
+}
+
 @media (min-width: 992px) {
   #hero {
     height: 70vh;
@@ -489,6 +495,12 @@ ul {
 
 #hero-content {
   height: 60vh;
+}
+
+@media (orientation: landscape) {
+  #hero-content {
+    height: 100vh;
+  }
 }
 
 @media (min-width: 992px) {
