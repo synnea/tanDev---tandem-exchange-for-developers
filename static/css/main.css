@@ -207,7 +207,7 @@ footer {
 
 @media (max-width: 576px) {
   .footer-col > h6 {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
   }
 }
 
@@ -452,7 +452,7 @@ footer {
 
 @media (max-width: 576px) {
   .footer-col > h6 {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
   }
 }
 
@@ -947,7 +947,7 @@ footer {
 
 @media (max-width: 576px) {
   .footer-col > h6 {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
   }
 }
 
@@ -1009,28 +1009,6 @@ ul {
 @media (min-width: 1024px) {
   .page-header-box {
     height: 80vh;
-  }
-}
-
-.img-overlay-about {
-  position: absolute;
-  top: 10vh;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  height: 50vh;
-}
-
-@media (min-width: 1024px) {
-  .img-overlay-about {
-    height: 80vh;
-    top: 0;
-  }
-}
-
-@media (max-width: 1023px) {
-  .overlay-open {
-    top: 23.5vh !important;
   }
 }
 
