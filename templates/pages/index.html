@@ -2,111 +2,92 @@
 
 {% block content %}
 
-
+<!-- BEGIN LANDING PAGE -->
 
 <section id="hero" class="align-items-center justify-content-center d-flex">
+
+    <!-- Add overlay -->
 
     <div class="img-overlay-index">&nbsp;</div>
 
     <div class="container-fluid align-items-center mt-5">
 
-        <div class="div" class="hero-content">
+        <div class="div hero-content">
             <div class="row justify-content-center">
 
                 <div class="col-12 d-flex justify-content-center align-items-center d-block">
-
 
                     <div class="h-text text-center">
                         <img src="/static/img/logos/tandev_v1_darkblue.svg" class="img-fluid main-logo"
                             alt="tandev-logo-gradient">
                         <h2 id="lead">exchange your skills with other developers and designers!</h2>
-
                     </div>
-
                 </div>
             </div>
+
             <div class="row">
-
-
+                <!-- If the user is logged in, display 'My Account' button, which takes the user to their profiles. 
+                    Else, display 'Sign up' button, which takes the user to the register page. -->
 
                 {% if loggedIn != True %}
-                <div class="col-12 d-block d-flex justify-content-center" id="btn-div">
-
+                <div class="col-12 d-block d-flex justify-content-center">
                     <a href="{{url_for('register', _anchor='register-tab')}}"
-                        class="btn btn-primary btn-large hero-btn" id="hero-btn">Sign up!</a>
-
+                        class="btn btn-primary btn-large hero-btn">Sign up!</a>
                 </div>
                 {% endif %}
 
                 {% if loggedIn == True %}
 
-                <div class="col-12 d-block d-flex justify-content-center" id="btn-div">
-
+                <div class="col-12 d-block d-flex justify-content-center">
                     <a href="{{url_for('profile', username=session['username'])}}"
-                        class="btn btn-primary btn-large hero-btn" id="hero-btn">My Account</a>
-
+                        class="btn btn-primary btn-large hero-btn">My Account</a>
                 </div>
 
                 {% endif %}
             </div>
-
-            <!-- If the user is logged in they see a prominently placed "Sign up!" button.
-            If they are not logged in, the button text is replaced by "My Account". -->
-
-
         </div>
-
     </div>
 
-
-    </div>
-
+    <!-- END LANDING PAGE -->
 
 </section>
 
+<!-- BEGIN CAROUSEL SECTION -->
+
 <section id="carousel-section">
 
-    <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
+    <!-- The carousel cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
 
     <div class="col-12">
         <h3 class="heading text-center">See our users
         </h3>
-
         <div class="heading-ul"></div>
     </div>
 
     <div class="container">
-        <!-- The carousel on the index page, which cycles through a total of 6 random profiles in slides of two Bootstrap each. -->
+
         <!-- Much of the carousel code on this section was taking from Anna Greaves' index.html page for her FamilyHub project. Link: https://github.com/Code-Institute-Submissions/familyhub/blob/master/templates/pages/index.html -->
 
         <div class="carousel slide carousel-multi-item" data-ride="carousel" id="index-carousel">
 
-
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
-
-                <!--carousel slide-->
 
                 {% for profile in carousel %}
 
                 {% if loop.index % 2 == 1 %}
                 <div class="carousel-item">
-
                     <div class="card-deck">
-
                         <div class="row justify-content-center">
                             <div class="col-12 col-sm-6 d-none d-sm-block">
                                 {% include 'components/profile_card.html' %}
                             </div>
-
                             {% endif %}
-
                             {% if loop.index % 2 == 0 %}
                             <div class="col-12 col-sm-6">
                                 {% include 'components/profile_card.html' %}
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -115,6 +96,9 @@
 
                 <!-- End inner carousel -->
             </div>
+
+            <!-- Carousel indicators -->
+            
             <div class="row indicator-wrapper">
                 <ol class="carousel-indicators">
                     <li data-target="#index-carousel" data-slide-to="0" class="active"></li>
@@ -127,12 +111,10 @@
 
         </div>
 
-        <!-- End container -->
-
     </div>
 
+    <!-- END CAROUSEL SECTION -->
+
 </section>
-
-
 
 {% endblock %}
