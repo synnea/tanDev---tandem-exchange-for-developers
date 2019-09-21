@@ -30,11 +30,10 @@ FontAwesome icons are provided throughout the website to aid intuitive informati
 
 The following user stories were used to design the website:
 
-- I am a developer or designer based in Berlin. I heard about tanDev and have an idea what it's about. I am interested in finding out if there are other developers in the city with whom I could exchange my skills with.
-- I am a developer or designer based in Berlin. I stumble upon tanDev without knowing what it is.
-- I am a developer or designer not based in Berlin. 
+- I am a developer or designer. I heard about tanDev and have an idea what it's about. I am interested in finding out if there are other developers in the city with whom I could exchange my skills with.
+- I am a developer or designer. I stumble upon tanDev without knowing what it is. 
 - I am a tech recruiter interested in contacting available talent.
-- I am a startup entrepreneur interested in finding a co-founder with complementary skills.
+- I am a startup entrepreneur interested in finding a co-founder. I am a designer and need a programmer with strong backend skills to bring my product to life.
 
 
 ### Wireframes
@@ -168,6 +167,7 @@ The responsiveness of the website was tested on Responsinator.
 
 I collected the results in a responsiveness matrix:
 
+![responsiveness matrix](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/responsiveness_screenshot.JPG)
 
 The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/tests/responsiveness_test_matrix.xls).
 
@@ -189,6 +189,33 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
 
 ### User Story Testing
 
+Here are the results for the user story tests:
+
+**Story 1**
+
+- I am a developer or designer. I heard about tanDev and have an idea what it's about. I am interested in finding out if there are other developers in the city with whom I could exchange my skills with.
+
+Solution: upon landing on the main page, the background picture of the puzzle pieces and the slogan 'exchange your skills with other developers and designers' confirms that I've come to the right place. I click on 'sign up' and am taken to the registration route.
+
+
+**Story 2**
+
+- I am a developer or designer. I stumble upon tanDev without knowing what it is.
+
+Solution: upon landing on the main page, the imagry and slogan give me an idea about what tanDev is about. Scrolling down the page and seeing the profiles in the carousel gives a further idea. Finally, clicking on the 'about' page clarifies all doubts. Navigating back to the main page, I click on the 'sign up' button and follow the same journey as user story 1 from there on out.
+
+**Story 3**
+
+- I am a tech recruiter interested in contacting available talent.
+
+Solution: upon landing on the main page, the imagry and slogan quickly give me an idea that I've come to a place where I can find relevant tech talent. The 'search' button seems most relevant to me, so I click on it. There, among the search options, I find the 'available for Hire' checkbox. I select it, and search the database for developers and designers who are open to new opportunities.
+
+**Story 4**
+
+- I am a startup entrepreneur interested in finding a co-founder. I am a designer and need a programmer with strong backend skills to bring my product to life.
+
+Solution: upon landing on the main page, the imagry and slogan quickly give me an idea that I've come to a place where I can find someone to help me. The 'search' button seems most relevant to me, so I click on it. There, among the search options, I find the 'looking for Co-Founder' checkbox. I select it, and then select several backend languages in the skills menu. This gives me a list of people who have the skills I need, and who are open to being approached about co-founding opportunities. I decide to send one or several of them a message. The last point is not achieved yet, as tanDev at present does not feature a messaging function.
+
 
 ### Known Bugs
 
@@ -196,7 +223,23 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
 
 ## Deployment
 
+To deploy tanDev on heroku, I took the following steps:
 
+1. I created a requirements.txt file using the terminal command pip freeze > requirements.txt.
+
+2. I created a Procfile with the terminal command echo web: python app.py > Procfile.
+
+3. I staged and committed the requirements.txt and Procfile to my project repository. 
+
+4. I went to heroku.com, logged in, and clicked on the "New" button in the dashboard to create a new app. I named it 'tanDev' and set its region to Europe.
+
+5. In the heroku dashboard for the application, I clicked on "Settings" > "Reveal Config Vars". Then, I set the Port, IP, MongoURI and Secret Key variables.
+
+6. From my terminal window, I logged into heroku using "heroku login --interactive." After entering my credentials, I registered heroku as a remote destination for my project with "heroku git remote." I then pushed my project to heroku with "git push heroku."
+
+7. To get the app to run and scale the dynos, I used the command "heroku ps:scale web=1" in my terminal.
+
+8. The app is now successfully deployed!
 
 ## Content
 
