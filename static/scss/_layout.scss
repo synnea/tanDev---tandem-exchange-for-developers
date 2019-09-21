@@ -152,7 +152,7 @@ footer {
     text-align: center !important;
 
     @media screen and (orientation: landscape) {
-        font-size: 0.6em;
+        margin: 0;
     }
 
     @media (min-width: $bp-mobile) {
