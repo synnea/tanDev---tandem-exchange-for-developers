@@ -146,6 +146,11 @@
     margin-top: 40vh;
     margin-bottom: 35vh;
 
+    @media screen and (orientation: landscape) {
+        height: 80vh;
+        margin-top: 10vh;
+    }
+
     @media (min-width: $bp-mobile) {
         margin-top: 0;
         margin-bottom: 0;

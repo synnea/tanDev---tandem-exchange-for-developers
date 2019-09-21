@@ -623,6 +623,13 @@ ul {
   margin-bottom: 35vh;
 }
 
+@media screen and (orientation: landscape) {
+  .card-deck {
+    height: 80vh;
+    margin-top: 10vh;
+  }
+}
+
 @media (min-width: 768px) {
   .card-deck {
     margin-top: 0;
