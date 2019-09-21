@@ -181,8 +181,12 @@
 .card-body {
     height: 30vh;
 
+    @media (width: $bp-ipadpro) and (orientation: landscape) {
+        height: 30vh;
+    }
+
     @media screen and (orientation: landscape) {
-        max-height: 55vh;
+        height: 55vh;
     }
 }
 

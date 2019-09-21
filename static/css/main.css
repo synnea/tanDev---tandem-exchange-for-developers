@@ -698,9 +698,15 @@ ul {
   height: 30vh;
 }
 
+@media (width: 1024px) and (orientation: landscape) {
+  .card-body {
+    height: 30vh;
+  }
+}
+
 @media screen and (orientation: landscape) {
   .card-body {
-    max-height: 55vh;
+    height: 55vh;
   }
 }
 
