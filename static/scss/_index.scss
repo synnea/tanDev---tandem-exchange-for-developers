@@ -145,6 +145,7 @@
     justify-content: center;
     margin-top: 40vh;
     margin-bottom: 35vh;
+    margin-left: 2rem;
 
     @media screen and (orientation: landscape) {
         height: 80vh;
@@ -181,7 +182,7 @@
 .card-body {
     height: 30vh;
 
-    @media (width: $bp-ipadpro) and (orientation: landscape) {
+    @media (width: 1024px) and (orientation: landscape) {
         height: 30vh;
     }
 

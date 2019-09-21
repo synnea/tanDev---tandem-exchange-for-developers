@@ -659,6 +659,7 @@ ul {
           justify-content: center;
   margin-top: 40vh;
   margin-bottom: 35vh;
+  margin-left: 2rem;
 }
 
 @media screen and (orientation: landscape) {
