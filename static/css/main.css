@@ -698,6 +698,12 @@ ul {
   height: 30vh;
 }
 
+@media screen and (orientation: landscape) {
+  .card-body {
+    max-height: 55vh;
+  }
+}
+
 .card-footer {
   background-color: #2581B0;
   font-family: 'Roboto', sans-serif;
