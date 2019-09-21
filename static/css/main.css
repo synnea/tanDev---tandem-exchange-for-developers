@@ -1059,9 +1059,21 @@ ul {
           align-items: stretch;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .wrapper {
     height: 350vh;
+  }
+}
+
+@media (width: 768px) {
+  .wrapper {
+    height: 200vh;
+  }
+}
+
+@media (width: 1024px) {
+  .wrapper {
+    height: 160vh;
   }
 }
 
@@ -1093,7 +1105,8 @@ ul {
 
 @media screen and (orientation: landscape) {
   #sidebar {
-    width: 50%;
+    width: 40%;
+    overflow-y: hidden;
   }
 }
 
@@ -1280,7 +1293,7 @@ ul ul a {
 
 @media screen and (orientation: landscape) {
   #content {
-    width: 50%;
+    width: 60%;
   }
 }
 

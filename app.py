@@ -25,7 +25,7 @@ db = client.tandev
 # Helper Lists
 skills = list(["CSS", "JavaScript", "React", "Vue", "Angular",
                "UX", "Web Design", "SQL", "Python", "PHP", "Ruby", "C++", "C#",
-               "Java", "Rust", "Go", "Swift", "Kotlin", "Perl"])
+               "Rust", "Go", "Swift", "Kotlin", "Perl"])
 
 commstyles = list(["text", "video", "inperson"])
 

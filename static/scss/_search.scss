@@ -7,13 +7,22 @@
     display: flex;
     align-items: stretch;
 
-    @media (max-width: $bp-mobile) {
+    @media (max-width: 767px) {
         height: 350vh;
+    }
+
+    @media (width: $bp-mobile) {
+        height: 200vh;
+    }
+
+    @media (width: $bp-ipadpro) {
+        height: 160vh;
     }
 
     @media screen and (orientation: landscape) {
         height: 500vh;
     }
+
 }
 
 #sidebar {
@@ -33,7 +42,8 @@
     }
 
     @media screen and (orientation: landscape) {
-        width: 50%;
+        width: 40%;
+        overflow-y: hidden;
     }
 
 
@@ -209,7 +219,7 @@ ul ul a {
     }
 
     @media screen and (orientation: landscape) {
-        width: 50%;
+        width: 60%;
     }
 
 
