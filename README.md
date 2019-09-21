@@ -178,6 +178,8 @@ The JavaScript was tested using [JSHint.com](https://jshint.com/).
 
 The Python was tested using [PEP8Online](http://pep8online.com/).
 
+At the time of writing this readme, the Python code in this project contains a total of 10 lines which exceed the recommended max length of 79 characters. I chose to leave them in because breaking them up resulted in less readability. The PEP8 guide states that its guidelines could be bent on an individual basis when doing so raised readability, hence I chose to do so here. Apart from those 10 lines, the code is fully PEP8-compliant.
+
 ### User Story Testing
 
 

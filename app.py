@@ -472,7 +472,6 @@ def edit(username):
                 "communicationStyle": request.form.getlist("communicationStyle"),
                 "otherDetails": request.form.getlist("other"),
                 "github": request.form.get('github'),
-
             }})
 
         flash(
@@ -490,17 +489,20 @@ def edit(username):
 
 
 # Settings
-@app.route('/settings/', methods = ['GET', 'POST'])
-def settings(): 
-    """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
-    If the user clicked the 'edit' button, redirect them to the 'edit_settings' route.
-    If they clicked the 'delete account' button, find the user in the database and remove them,
+@app.route('/settings/', methods=['GET', 'POST'])
+def settings():
+    """ Checks if the user is logged in, if they are not,
+    redirect to custom forbidden page.
+    If the user clicked the 'edit' button,
+    redirect them to the 'edit_settings' route.
+    If they clicked the 'delete account' button,
+    find the user in the database and remove them,
     clear the session, and redirect to the index page.
     """
 
     loggedIn = True if 'username' in session else False
 
-    if loggedIn == False:
+    if loggedIn is False:
         return redirect(url_for('forbidden'))
 
     if request.method == 'POST' and request.form['btn'] == 'edit':
@@ -513,28 +515,33 @@ def settings():
 
     username = db.profile.find_one({"username": session['username']})
 
-    return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile")
+    return render_template(
+        '/pages/settings.html', loggedIn=loggedIn,
+        username=username, active="profile")
 
 
 # Edit Settings
-@app.route('/settings/edit', methods = ['GET', 'POST'])
+@app.route('/settings/edit', methods=['GET', 'POST'])
 def edit_settings():
-    """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
-    If the user clicked on the 'save changes' button, update the relevant fields, and redirect to
+    """ Checks if the user is logged in, if they are not,
+    redirect to custom forbidden page.
+    If the user clicked on the 'save changes' button,
+    update the relevant fields, and redirect to
     the settings route.
     """
 
     loggedIn = True if 'username' in session else False
 
-    if loggedIn == False:
+    if loggedIn is False:
         return redirect(url_for('forbidden'))
 
     if request.method == 'POST' and request.form['btn'] == 'save':
-        db.profile.update_many( {'username': session['username']},
-        { "$set": {
-        'email': request.form.get('email'),
-        "password": generate_password_hash(request.form.get('password')),
-        }})
+        db.profile.update_many(
+            {'username': session['username']},
+            {"$set": {
+               'email': request.form.get('email'),
+               "password": generate_password_hash(request.form.get('password')),
+            }})
 
         flash("Your settings have been updated.", "success")
 
@@ -542,11 +549,13 @@ def edit_settings():
 
     username = db.profile.find_one({"username": session['username']})
 
-    return render_template('/pages/settings.html', loggedIn=loggedIn, username=username, active="profile", edit=True)
+    return render_template(
+        '/pages/settings.html', loggedIn=loggedIn, username=username,
+        active="profile", edit=True)
 
 
 # Logout
-@app.route('/logout', methods = ['GET'])
+@app.route('/logout', methods=['GET'])
 def logout():
     """ Logs the user out of their session. """
 
@@ -556,24 +565,27 @@ def logout():
 
 
 # User details page
-@app.route('/user/<username>', methods = ['GET', 'POST'])
+@app.route('/user/<username>', methods=['GET', 'POST'])
 def user_details(username):
     """ Checks if the user is logged in to display the correct navbar configuation.
-    Accepts the username variable, looks it up in the database, and passes it on to
-    the html page with full user details. """
+    Accepts the username variable, looks it up in the database, and passes
+    it on to the html page with full user details. """
 
     loggedIn = True if 'username' in session else False
 
     user = db.profile.find_one({"username": username})
 
-    return render_template("pages/user_details.html", user=user, active="profile", loggedIn=loggedIn)
+    return render_template(
+        "pages/user_details.html", user=user, active="profile",
+        loggedIn=loggedIn)
 
 
 # Custom 403 page
 @app.route('/denied')
 def forbidden():
     """ If a user tries to access a part of the website that for which they need
-    need to be logged in, but aren't, they get redirected to the custom permission denied page. """
+    need to be logged in, but aren't, they get redirected to the custom
+    permission denied page. """
 
     return render_template("pages/forbidden.html")
 
