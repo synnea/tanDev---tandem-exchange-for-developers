@@ -2,15 +2,11 @@
 
 {% block content %}
 
-
-
-
 <div class="wrapper">
 
     <!-- The following code for a responsive, collapsible bootstrap sidebar was taken from https://bootstrapious.com/p/bootstrap-sidebar and edited. -->
 
-
-    <!-- Begin Sidebar -->
+    <!-- BEGIN SIDEBAR -->
 
     <nav id="sidebar">
 
@@ -20,12 +16,14 @@
                 <h4>Search Users</h4>
             </div>
 
-
             <h5 class="filter-header skills-header"><i class="fas fa-code"></i> Skills</h5>
             <div class="skill-desc"><small>tanDev will display users who know at least one skill selected.</small></div>
 
-
             <div class="row skill-column">
+
+                <!-- Loop through the skills in the list. Sort them into 2 columns by dividing them by loop index.
+                Determine if they have been selected in a previous search. If they have, display the checkbox as selected. -->
+
                 {% for skill in skills %}
 
                 {% if loop.index % 2 == 1 %}
@@ -96,12 +94,9 @@
 
             </div>
 
-            <!-- The following select classes rely on the bootstrap-select library: https://developer.snapappointments.com/bootstrap-select/ -->
-
             <div class="row top-filter-row">
 
-
-                <!-- District filter option header -->
+                <!-- District Filters -->
 
                 <div class="col-12 col-md-6">
 
@@ -109,14 +104,15 @@
 
                 </div>
 
-                <!-- District filter options -->
+                <!-- District Filter Options -->
 
                 <div class="col-12 col-md-6">
 
-
-
-
                     <select class="selectpicker districtSelect" id="districtSelect" name="district">
+
+                        <!-- Loop through all the district in the list. If the value has been selected -- meaning, it has been saved in the user's 
+                        cookies as a value to district_arg -- then show it as selected. -->
+
                         {% for district in districts %}
 
                         {% if district_arg == None %}
@@ -143,7 +139,7 @@
 
             </div>
 
-            <!-- Communication filter option header -->
+            <!-- Communication Filters -->
 
             <div class="div filter-row">
 
@@ -158,11 +154,13 @@
                     </div>
                 </div>
 
-                <!-- Communication filter options -->
+                <!-- Communication Filter Options -->
 
                 <div class="row search-comm">
 
                     <div class="col-12">
+
+                        <!-- Similarly to the district, loop through the communication style list and match against the selected arguments. -->
 
                         {% for commstyle in commstyles %}
 
@@ -192,6 +190,8 @@
 
             <div class="row justify-content-center">
 
+                <!-- Search button -->
+
                 <button type="submit" class="btn btn-primary btn-large search-btn mt-5 mb-5" name="btn"
                     value="search">Search Now</button>
 
@@ -200,13 +200,15 @@
 
     </nav>
 
-    <!-- End Sidebar -->
+    <!-- END SIDEBAR -->
 
-    <!-- Begin Content -->
+    <!-- BEGIN CONTENT -->
 
     <div id="content">
 
         <div class="results">
+
+            <!-- If no profiles are returned in the search, display that none have been returned. -->
 
             {% if profile_count == 0 %}
 
@@ -214,11 +216,15 @@
 
             {% endif %}
 
+            <!-- If one profile has been returned, display this. -->
+
             {% if profile_count == 1 %}
 
             <h5> <span class="matches">1</span> profile of found, displaying match <span class="matches">1 - 1</span>
             </h5>
             {% endif %}
+
+            <!-- If more than one profile has been returned, run the following. -->
 
             {% if profile_count > 1 %}
 
@@ -230,11 +236,16 @@
 
             {% endif %}
         </div>
+
+        <!-- BEGIN CARD DECK -->
+
         <div class="card-deck" id="search-deck">
 
             <div class="row search-row justify-content-center">
 
                 <div class="col-12 d-flex justify-content-left">
+
+                    <!-- Display 'previous' button. Disable if the page number is one, add a link if it isn't. -->
 
                     {% if page_number == 1 %}
 
@@ -245,6 +256,8 @@
                     <a href="{{prev_url}}" class="page-buttons ml-3"><i class="fas fa-backward"></i> Previous </a>
 
                     {% endif %}
+
+                    <!-- Display 'next' button. Disable if the user is on the last page of the total search result, add a link if they aren't. -->
 
                     {% if page_number == total_pages %}
 
@@ -257,9 +270,9 @@
 
                 </div>
 
+                <!-- Add the profile cards. -->
 
                 {% for profile in profiles %}
-
 
                 {% if loop.index % 2 == 1 %}
                 <div class="col-12 col-md-6 justify-content-center mt-3">
@@ -275,16 +288,14 @@
                 {% endif %}
                 {% endfor %}
             </div>
+
+            <!-- END CARD DECK -->
         </div>
-
-
 
     </div>
 
-    <!-- End Content -->
-
+    <!-- END CONTENT -->
 
 </div>
-
 
 {% endblock %}
