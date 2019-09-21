@@ -241,21 +241,17 @@ To deploy tanDev on heroku, I took the following steps:
 
 8. The app is now successfully deployed!
 
-## Content
-
-
-
 ## Credits
 
-### Content Source
+Credit for the tanDev logo design goes to my friend Devin Palmer. 
 
+Many thanks to [Tim Nelson](https://github.com/TravelTimN), whose patience helped me to get started on the sever-side development.
 
-### Bugs
-
+Most of the images used on tanDev have been sourced from [Adobe Stock](https://stock.adobe.com/).
 
 ### Inspiration & Acknowledgements
 
-Many thanks to [Tim Nelson](https://github.com/TravelTimN), who took an incredible amount of time out of his day to teach me the ropes of backend development.
+Many thanks to , who took an incredible amount of time out of his day to teach me the ropes of backend development.
 
 
 
