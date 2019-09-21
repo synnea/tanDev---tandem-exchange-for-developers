@@ -153,6 +153,7 @@ footer {
 
     @media screen and (orientation: landscape) {
         margin: 0;
+        font-size: 0.7em !important;
     }
 
     @media (min-width: $bp-mobile) {

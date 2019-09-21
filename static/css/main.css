@@ -139,6 +139,7 @@ footer {
 @media screen and (orientation: landscape) {
   footer {
     margin: 0;
+    font-size: 0.7em !important;
   }
 }
 
@@ -364,6 +365,7 @@ footer {
 @media screen and (orientation: landscape) {
   footer {
     margin: 0;
+    font-size: 0.7em !important;
   }
 }
 
@@ -826,6 +828,7 @@ footer {
 @media screen and (orientation: landscape) {
   footer {
     margin: 0;
+    font-size: 0.7em !important;
   }
 }
 
