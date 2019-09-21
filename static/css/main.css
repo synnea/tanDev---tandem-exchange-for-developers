@@ -1090,6 +1090,12 @@ ul {
   }
 }
 
+@media (min-width: 1200px) {
+  .wrapper {
+    height: 240vh;
+  }
+}
+
 #sidebar {
   background: #2581B0;
   color: #fff;

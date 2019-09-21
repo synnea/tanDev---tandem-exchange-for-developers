@@ -23,6 +23,10 @@
         height: 230vh;
     }
 
+    @media (min-width: $bp-desktop) {
+        height: 240vh;
+    }
+
 }
 
 #sidebar {
