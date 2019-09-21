@@ -698,12 +698,6 @@ ul {
   height: 30vh;
 }
 
-@media screen and (orientation: landscape) {
-  .card-body {
-    height: 55vh;
-  }
-}
-
 .card-footer {
   background-color: #2581B0;
   font-family: 'Roboto', sans-serif;
@@ -1375,7 +1369,7 @@ ul ul a {
 }
 
 .districtSelect {
-  max-width: 15vw;
+  width: 15vw;
   margin-top: 2vh;
 }
 
