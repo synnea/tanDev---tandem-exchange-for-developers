@@ -192,6 +192,13 @@ footer {
   }
 }
 
+@media screen and (orientation: landscape) {
+  .footer-col {
+    margin: 0 !important;
+    font-size: 0.7em !important;
+  }
+}
+
 .copyright {
   padding-bottom: 0.5rem;
   width: 100%;
@@ -415,6 +422,13 @@ footer {
 @media (max-width: 767px) {
   .footer-col {
     margin: 1rem;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .footer-col {
+    margin: 0 !important;
+    font-size: 0.7em !important;
   }
 }
 
@@ -660,6 +674,12 @@ ul {
   height: 30vh;
 }
 
+@media screen and (orientation: landscape) {
+  .card-body {
+    height: 55vh;
+  }
+}
+
 .card-footer {
   background-color: #2581B0;
   font-family: 'Roboto', sans-serif;
@@ -885,6 +905,13 @@ footer {
 @media (max-width: 767px) {
   .footer-col {
     margin: 1rem;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .footer-col {
+    margin: 0 !important;
+    font-size: 0.7em !important;
   }
 }
 

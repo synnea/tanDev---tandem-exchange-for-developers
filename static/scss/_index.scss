@@ -181,6 +181,9 @@
 .card-body {
     height: 30vh;
 
+    @media screen and (orientation: landscape) {
+        height: 55vh;
+    }
 }
 
 .card-footer {
