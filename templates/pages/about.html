@@ -2,44 +2,38 @@
 
 {% block content %}
 
+<!-- BEGIN ABOUT BANNER -->
+
 <section id="about">
 
     <div class="container-fluid about-wrapper">
-
         <div class="about-banner">
-
             <div class="row">
-
                 <div class="col-12 page-header-box d-flex justify-content-center align-items-center d-block">
                     <h1 class="page-header">About</h1>
                 </div>
             </div>
         </div>
-
-
     </div>
 
+    <!-- END ABOUT BANNER -->
 
 </section>
 
+<!-- BEGIN ABOUT DESCRIPTION -->
+
 <section id="about-text">
-
-
-
     <div class="col-12">
-
         <h3 class="heading text-center">Our Mission
         </h3>
-
         <div class="heading-ul"></div>
     </div>
 
+    <!-- Add Animate on Scroll functionality, taken from https://michalsnik.github.io/aos/. -->
+
     <div data-aos="fade-up" data-aos-duration="1500">
-
         <div class="container-fluid about-text-wrapper text-center">
-
             <div class="col-12 d-flex about-text">
-
                 <p>What do you think when you hear the word 'tandem'? </br>
                     You might think of the tandem bicycle, popular in the 19th century, which allowed two people to ride
                     a
@@ -59,14 +53,16 @@
                     over
                     text, voice or in person.*</br>
                     <small>* tanDev's zipcode search currently only works for Berlin.</small></br>
-
-
                 </p>
             </div>
-
         </div>
     </div>
+
+    <!-- END ABOUT DESCRIPTION -->
+
 </section>
+
+<!-- BEGIN FEATURES SECTION -->
 
 <section id="features">
 
@@ -79,16 +75,14 @@
 
             <div class="features">
                 <div class="col-12">
-
                     <h3 class="heading text-center">Features
                     </h3>
-
                     <div class="heading-ul"></div>
                 </div>
 
+                <!-- Feature 1 -->
 
                 <div class="row text-center">
-
                     <div class="col-md-4">
                         <div class="feature">
                             <i class="fas fa-search fa-3x feature-icon" data-fa-transform="shrink-3 up-5"></i>
@@ -101,6 +95,8 @@
                                 preferred communication style.</p>
                         </div>
                     </div>
+
+                    <!-- Feature 2 -->
 
                     <div class="col-md-4">
                         <div class="feature">
@@ -115,9 +111,11 @@
                         </div>
                     </div>
 
+                    <!-- Feature 3 -->
+
                     <div class="col-md-4">
                         <div class="feature">
-                                <i class="fas fa-plug fa-3x feature-icon" data-fa-transform="shrink-3 up-5"></i>
+                            <i class="fas fa-plug fa-3x feature-icon" data-fa-transform="shrink-3 up-5"></i>
                             <h3 class="feature-header">Connect</h3>
                             <p>Found your perfect match, or perhaps -- we are modern, after all -- several of them? Add
                                 them
@@ -125,20 +123,16 @@
                                 your favorites list, and send them a message at your own convenience.</p>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
 
-        </div>
+            <!-- End Jumbotron -->
 
+        </div>
     </div>
 
-    <!-- End Jumbotron -->
-
+<!-- END FEATURES SECTION -->
 
 </section>
-
 
 {% endblock %}
