@@ -1071,15 +1071,15 @@ ul {
   }
 }
 
-@media (width: 1024px) {
-  .wrapper {
-    height: 120vh;
-  }
-}
-
 @media screen and (orientation: landscape) {
   .wrapper {
     height: 550vh;
+  }
+}
+
+@media (width: 1024px) and (orientation: landscape) {
+  .wrapper {
+    height: 200vh;
   }
 }
 
