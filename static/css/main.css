@@ -446,7 +446,7 @@ ul {
   height: 60vh;
 }
 
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) {
   #hero {
     height: 100vh;
   }
@@ -497,7 +497,7 @@ ul {
   height: 60vh;
 }
 
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) {
   #hero-content {
     height: 100vh;
   }

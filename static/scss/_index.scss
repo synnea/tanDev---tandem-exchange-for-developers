@@ -9,7 +9,7 @@
 @mixin height-scaling {
     height: 60vh;
 
-    @media (orientation: landscape) {
+    @media screen and (orientation: landscape) {
         height: 100vh;
     }
 
