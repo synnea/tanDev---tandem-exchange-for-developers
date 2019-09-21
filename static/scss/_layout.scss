@@ -151,6 +151,10 @@ footer {
     font-family: 'Montserrat', sans-serif;
     text-align: center !important;
 
+    @media screen and (orientation: landscape) {
+        font-size: 0.6em;
+    }
+
     @media (min-width: $bp-mobile) {
         height: 18vh;
         font-size: 0.8em;    }

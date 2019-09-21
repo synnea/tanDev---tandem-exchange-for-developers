@@ -136,6 +136,12 @@ footer {
   text-align: center !important;
 }
 
+@media screen and (orientation: landscape) {
+  footer {
+    font-size: 0.6em;
+  }
+}
+
 @media (min-width: 768px) {
   footer {
     height: 18vh;
@@ -353,6 +359,12 @@ footer {
   font-size: 0.7em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
+}
+
+@media screen and (orientation: landscape) {
+  footer {
+    font-size: 0.6em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -809,6 +821,12 @@ footer {
   font-size: 0.7em;
   font-family: 'Montserrat', sans-serif;
   text-align: center !important;
+}
+
+@media screen and (orientation: landscape) {
+  footer {
+    font-size: 0.6em;
+  }
 }
 
 @media (min-width: 768px) {
