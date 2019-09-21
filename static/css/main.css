@@ -1073,13 +1073,13 @@ ul {
 
 @media (width: 1024px) {
   .wrapper {
-    height: 160vh;
+    height: 120vh;
   }
 }
 
 @media screen and (orientation: landscape) {
   .wrapper {
-    height: 500vh;
+    height: 550vh;
   }
 }
 
@@ -1106,7 +1106,6 @@ ul {
 @media screen and (orientation: landscape) {
   #sidebar {
     width: 40%;
-    overflow-y: hidden;
   }
 }
 

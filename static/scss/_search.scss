@@ -16,11 +16,11 @@
     }
 
     @media (width: $bp-ipadpro) {
-        height: 160vh;
+        height: 120vh;
     }
 
     @media screen and (orientation: landscape) {
-        height: 500vh;
+        height: 550vh;
     }
 
 }
@@ -43,7 +43,6 @@
 
     @media screen and (orientation: landscape) {
         width: 40%;
-        overflow-y: hidden;
     }
 
 
