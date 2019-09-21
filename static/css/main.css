@@ -199,6 +199,12 @@ footer {
   }
 }
 
+@media screen and (orientation: landscape) {
+  .footer-col > h6 {
+    font-size: 0.7em !important;
+  }
+}
+
 .copyright {
   padding-bottom: 0.5rem;
   width: 100%;
@@ -428,6 +434,12 @@ footer {
 @media screen and (orientation: landscape) {
   .footer-col {
     margin: 0 !important;
+    font-size: 0.7em !important;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .footer-col > h6 {
     font-size: 0.7em !important;
   }
 }
@@ -911,6 +923,12 @@ footer {
 @media screen and (orientation: landscape) {
   .footer-col {
     margin: 0 !important;
+    font-size: 0.7em !important;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .footer-col > h6 {
     font-size: 0.7em !important;
   }
 }

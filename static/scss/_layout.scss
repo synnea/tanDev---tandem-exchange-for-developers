@@ -208,6 +208,12 @@ margin: 1rem;
     }
 }
 
+.footer-col > h6 {
+    @media screen and (orientation: landscape) {
+        font-size: 0.7em !important;
+    }
+}
+
 
 .copyright {
     padding-bottom: 0.5rem;
