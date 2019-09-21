@@ -201,7 +201,13 @@ footer {
 
 @media screen and (orientation: landscape) {
   .footer-col > h6 {
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col > h6 {
+    font-size: 0.8em;
   }
 }
 
@@ -440,7 +446,13 @@ footer {
 
 @media screen and (orientation: landscape) {
   .footer-col > h6 {
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col > h6 {
+    font-size: 0.8em;
   }
 }
 
@@ -929,7 +941,13 @@ footer {
 
 @media screen and (orientation: landscape) {
   .footer-col > h6 {
-    font-size: 0.7em !important;
+    font-size: 0.8em !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-col > h6 {
+    font-size: 0.8em;
   }
 }
 

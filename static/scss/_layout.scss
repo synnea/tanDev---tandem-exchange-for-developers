@@ -210,7 +210,11 @@ margin: 1rem;
 
 .footer-col > h6 {
     @media screen and (orientation: landscape) {
-        font-size: 0.7em !important;
+        font-size: 0.8em !important;
+    }
+
+    @media (max-width: $bp-mini) {
+        font-size: 0.8em;
     }
 }
 
