@@ -1,12 +1,12 @@
 import os
-from flask import Flask, render_template, url_for, redirect, request, session, flash
+from flask import (
+        Flask, render_template, url_for,
+        redirect, request, session, flash)
 from flask_pymongo import PyMongo, pymongo
 from werkzeug.security import check_password_hash, generate_password_hash
 from pymongo import MongoClient
-from bson.objectid import ObjectId
 from datetime import datetime
 import math
-import json
 
 
 app = Flask(__name__)
@@ -45,6 +45,7 @@ def index():
     carousel = db.profile.aggregate([{"$match": {"display": True}},
                                      {"$sample": {"size": 6}}])
     carousel = list(carousel)
+
     return render_template("pages/index.html", active="index",
                            carousel=carousel, loggedIn=loggedIn)
 
@@ -93,12 +94,12 @@ def search(page_number):
     elif 'comm_arg' not in session:
         comm_arg = request.form.getlist("commstyle")
 
-# if 'all' was selected for district, remove the district argument from the
-#  search variables.
+    # if 'all' was selected for district, remove the district argument from the
+    #  search variables.
     if district_arg == 'all':
         district_arg = None
 
-    # Upon hitting search, save the arguments in sessions.
+    # Upon hitting search, save the arguments in session cookies.
     if request.method == "POST":
         session['skill_arg'] = str(request.form.getlist('skill'))
         session['district_arg'] = request.form.get("district")
@@ -126,51 +127,59 @@ def search(page_number):
     # Go through all the possible combinations of variable entry.
     # if all possible variables have been selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find({"$and": [{"display": True}, {"$text":
-                                             {"$search": skill_arg}},
-                                             {"district": district_arg},
-                                             {"communicationStyle": {"$all":
-                                              comm_arg}}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True}, {"$text": {"$search": skill_arg}},
+                      {"district": district_arg},
+                      {"communicationStyle": {"$all": comm_arg}}]})
 
     # if district and communication style is selected.
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find({"$and": [{"display": True},
-                                             {"district": district_arg},
-                                             {"communicationStyle": {"$all": comm_arg}}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True},
+                      {"district": district_arg},
+                      {"communicationStyle": {"$all": comm_arg}}]})
 
     # if skills and communication style is selected.
     if skill_arg != "[]" and district_arg is None and comm_arg != []:
         print("skill and comm selected")
-        profiles = db.profile.find({"$and":[{"$text": {"$search": skill_arg}}, {"display": True},
-                                            {"communicationStyle": {"$all": comm_arg}}]})
+        profiles = db.profile.find(
+            {"$and": [{"$text": {"$search": skill_arg}},
+                      {"display": True},
+                      {"communicationStyle": {"$all": comm_arg}}]})
 
     # if only skills are selected
     if skill_arg != "[]" and district_arg is None and comm_arg == []:
-        profiles = db.profile.find({"$and": [{"display": True},
-                                             {"$text": {"$search": skill_arg}}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True},
+                      {"$text": {"$search": skill_arg}}]})
 
     # if skills and district were selected.
     if skill_arg != "[]" and district_arg is not None and comm_arg == []:
-        profiles = db.profile.find({"$and": [{"display": True},
-                                             {"$text": {"$search": skill_arg}},
-                                             {"district": district_arg}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True},
+                      {"$text": {"$search": skill_arg}},
+                      {"district": district_arg}]})
 
     # if district and communication style were selected.
     if skill_arg == "[]" and district_arg is not None and comm_arg != []:
-        profiles = db.profile.find({"$and": [{"display": True}, {"district": district_arg},
-                                             {"communicationStyle": {"$all": comm_arg}}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True},
+                      {"district": district_arg},
+                      {"communicationStyle": {"$all": comm_arg}}]})
 
     # if only district was selected.
     if district_arg is not None and skill_arg == "[]" and comm_arg == []:
-        profiles = db.profile.find({"$and": [{"display": True}, {"district": district_arg}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True},
+                      {"district": district_arg}]})
 
     # if only communication style was selected.
     if skill_arg == "[]" and district_arg is None and comm_arg != []:
-        profiles = db.profile.find({"$and": [{"display": True},
-                                             {"communicationStyle": {"$all": comm_arg}}]})
+        profiles = db.profile.find(
+            {"$and": [{"display": True},
+                      {"communicationStyle": {"$all": comm_arg}}]})
 
     # Profile Counts
-
     all_profiles = db.profile.find({"display": True})
     all_profile_count = all_profiles.count()
     profile_count = profiles.count() if profiles else ""
@@ -181,7 +190,6 @@ def search(page_number):
     # Calculate the numbers of the first and last profile on each page.
     if page_number == total_pages:
         last_profile = profile_count
-
     else:
         last_profile = (page_number * limit)
 
@@ -191,65 +199,82 @@ def search(page_number):
     profiles = profiles.sort("_id", pymongo.ASCENDING).skip(skips).limit(limit)
 
     # Set previous and next buttons
-
     next_url = url_for('search', page_number=page_number + 1)
     prev_url = url_for('search', page_number=page_number - 1)
 
-    districts=list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf",
-                    "Spandau", "Steglitz-Zehlendorf", "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick",
-                    "Marzahn-Hellersdorf","Lichtenberg", "Reinickendorf"])
+    # Set the district list.
+    districts = list(["all", "Mitte", "Friedrichshain-Kreuzberg", "Pankow",
+                      "Charlottenburg-Wilmersdorf", "Spandau",
+                      "Steglitz-Zehlendorf", "Tempelhof-Schöneberg",
+                      "Neukölln", "Treptow-Köpenick",
+                      "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"])
 
+    # If a district argument has been reacted, remove that value from the list,
+    # so that it does not appear twice in the dropdown.
     if district_arg is not None:
-        print("remove activated")
         districts.remove(district_arg)
 
-    return render_template("pages/search.html", active="search", loggedIn=loggedIn, skills=skills, 
-                            profiles=profiles, skill_arg=skill_arg, district_arg=district_arg, comm_arg=comm_arg, districts=districts, last_profile=last_profile, first_profile=first_profile, total_pages=total_pages, page_number=page_number, next_url=next_url, prev_url=prev_url, commstyles=commstyles, profile_count=profile_count, all_profile_count=all_profile_count)
+    return render_template(
+        "pages/search.html", active="search", loggedIn=loggedIn, skills=skills,
+        profiles=profiles, skill_arg=skill_arg, district_arg=district_arg,
+        comm_arg=comm_arg, districts=districts, last_profile=last_profile,
+        first_profile=first_profile, total_pages=total_pages,
+        page_number=page_number,
+        next_url=next_url, prev_url=prev_url, commstyles=commstyles,
+        profile_count=profile_count, all_profile_count=all_profile_count)
 
 
 # Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    """ Checks if the user already exists in the database. If they don't exist, the user is notified of this. 
-    If the username does exist, the password is matched against it. If it matches, the user is logged in.
-    Otherwise, the user is notified that his username and password combination didn't match. """
+    """ Checks if the user already exists in the database. If they don't exist,
+    the user is notified of this.
+    If the username does exist, the password is matched against it.
+    If it matches, the user is logged in.
+    Otherwise, the user is notified that his username and password combination
+    didn't match. """
 
     loggedIn = True if 'username' in session else False
 
     if request.method == 'POST' and request.form['btn'] == 'login':
-        existing_user = db.profile.find_one({'username': request.form.get('username')})
+        existing_user = db.profile.find_one(
+            {'username': request.form.get('username')})
         if not existing_user:
             flash("Hmm... this username doesn't seem to exist.", "error")
             return redirect(url_for('login'))
 
-        if check_password_hash(existing_user["password"], 
-        request.form.get("password")):
+        if check_password_hash(existing_user["password"],
+                               request.form.get("password")):
             session['username'] = request.form.get('username')
-            return redirect(url_for('profile', username = session['username']))
+            return redirect(url_for('profile', username=session['username']))
         else:
             flash("Uh-oh! Username and password combo doesn't match.", "error")
             return redirect(url_for('login'))
 
     else:
-        return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn)
+        return render_template(
+            "pages/logreg.html", active="logreg", loggedIn=loggedIn)
 
 
 # Register
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    """ Check if the username already exists in the database. Return warning to the user if it exists.
-    If it doesn't exist, add user to the database and create a new document in the database.
-    This function was written with the help of Tim Nelson who helped me get the hang of Python backend coding, so I could do
-    the remaining functions on my own. """
+    """ Check if the username already exists in the database.
+    Return warning to the user if it exists. If it doesn't exist,
+    add user to the database and create a new document in the database.
+    This function was written with the help of Tim Nelson who helped
+    me get the hang of Python backend coding, so I could do the
+    remaining functions on my own. """
 
     loggedIn = True if 'username' in session else False
 
     if request.method == 'POST' and request.form['btn'] == 'register':
-        exists = db.profile.find_one({'username': request.form.get('username')})
+        exists = db.profile.find_one(
+            {'username': request.form.get('username')})
         if exists:
             flash("Sorry, this username already exists", "error")
-            return redirect(url_for('register', _anchor = 'register-tab'))
-        register = {
+            return redirect(url_for('register', _anchor='register-tab'))
+        registration = {
             "username": request.form.get('username'),
             "email": request.form.get('email'),
             "password": generate_password_hash(request.form.get('password')),
@@ -267,169 +292,201 @@ def register():
             "published": "",
             "display": False
         }
-        db.profile.insert_one(register)
+        db.profile.insert_one(registration)
         session['username'] = request.form.get('username')
-        return redirect(url_for('newprofile', username = session['username']))
+        return redirect(url_for('newprofile', username=session['username']))
 
-    return render_template("pages/logreg.html", active="logreg", loggedIn=loggedIn, _anchor='register-tab')
+    return render_template(
+        "pages/logreg.html", active="logreg",
+        loggedIn=loggedIn, _anchor='register-tab')
 
 
 # New profile
-@app.route('/newprofile/<username>', methods = ['GET', 'POST'])
+@app.route('/newprofile/<username>', methods=['GET', 'POST'])
 def newprofile(username):
     """ Check if the user selected at least skill and one desired skill.
     If they haven't, display an error message.
-    Else, if all requirements are met, add the new data to the user's database document """
+    Else, if all requirements are met, add the new data to the user's
+    database document """
 
     loggedIn = True if 'username' in session else False
 
-    if loggedIn == False:
+    if loggedIn is False:
         return redirect(url_for('forbidden'))
 
-
     if request.method == 'POST':
-        
-        if request.form.getlist("skills") and request.form.getlist("desiredSkills") != "":
-
-            db.profile.update_many( {'username': username},
-            { "$set": {
-                'shortDescription': request.form.get('shortDescription'),
-                "imgURL": request.form.get('imgURL'),
-                "district": request.form.get('district'),
-                "skills": request.form.getlist("skills"),
-                "desiredSkills": request.form.getlist("desiredSkills"),
-                "communicationStyle": request.form.getlist("communicationStyle"),
-                "otherDetails": request.form.getlist("other"),
-                "published": datetime.now().strftime("%d-%b-%Y"),
-                "github": request.form.get('github'),
-                "description": request.form.get('description')
-            }})
+        if request.form.getlist("skills") and (
+                request.form.getlist("desiredSkills") != ""):
+            db.profile.update_many({'username': username},
+                                   {"$set": {
+                                      'shortDescription': request.form.get('shortDescription'),
+                                      "imgURL": request.form.get('imgURL'),
+                                      "district": request.form.get('district'),
+                                      "skills": request.form.getlist("skills"),
+                                      "desiredSkills": request.form.getlist("desiredSkills"),
+                                      "communicationStyle": request.form.getlist("communicationStyle"),
+                                      "otherDetails": request.form.getlist("other"),
+                                      "published": datetime.now().strftime("%d-%b-%Y"),
+                                      "github": request.form.get('github'),
+                                      "description": request.form.get('description')}})
 
             flash("Changes saved successfully. Scroll down to preview or edit.", "success")
 
-            return redirect(url_for('profile', username = session['username']))
+            return redirect(url_for('profile', username=session['username']))
 
         else:
-            flash("Please select at least one acquired and one desired skill", "error")
-            return redirect(url_for('newprofile', username = session['username'])) 
+            flash(
+                "Please select at least one acquired and one desired skill",
+                "error")
+            return redirect(url_for('newprofile',
+                                    username=session['username']))
 
-    return render_template("pages/newprofile.html", username=username, active="profile", loggedIn=loggedIn, skills=skills,
-    commstyles=commstyles, other=other)
+    return render_template(
+        "pages/newprofile.html", username=username, active="profile",
+        loggedIn=loggedIn, skills=skills,
+        commstyles=commstyles, other=other)
 
 
 # Profile page
-@app.route('/myprofile/<username>', methods = ['GET', 'POST'])
+@app.route('/myprofile/<username>', methods=['GET', 'POST'])
 def profile(username):
-    """ Checks in if the user is logged in. If they are not, redirect to custom forbidden page.
-    If they are, continue. If the 'preview' button was clicked, redirect to the 'preview' function.
-    If the 'edit' button was clicked, redirect to the 'edit' function.
-    If the 'unpublish', find the user in the database, and set 'display' to False, and reload the page.    
+    """ Checks in if the user is logged in. If they are not,
+    redirect to custom forbidden page.
+    If they are, continue. If the 'preview' button was clicked,
+    redirect to the 'preview' function.
+    If the 'edit' button was clicked,
+    redirect to the 'edit' function.
+    If the 'unpublish', find the user in the database,
+    and set 'display' to False, and reload the page.
     """
+
     loggedIn = True if 'username' in session else False
 
-    if loggedIn == False:
+    if loggedIn is False:
         return redirect(url_for('forbidden'))
 
     username = db.profile.find_one({"username": username})
 
     if request.method == 'POST' and request.form['btn'] == 'preview':
 
-        username=session['username']
-        return redirect(url_for('preview', loggedIn=loggedIn, username=username))
+        username = session['username']
+        return redirect(
+            url_for('preview', loggedIn=loggedIn, username=username))
 
     if request.method == 'POST' and request.form['btn'] == 'edit':
-        username=session['username']
+        username = session['username']
         return redirect(url_for('edit', username=username))
 
     if request.method == 'POST' and request.form['btn'] == 'unpublish':
 
-        db.profile.find_one_and_update({"username": session['username']}, {"$set": {"display": False}})
+        db.profile.find_one_and_update(
+            {"username": session['username']}, {"$set": {"display": False}})
         username = session['username']
         flash("Your profile has been unpublished.", "success")
         return redirect(url_for('profile', username=username))
 
-    return render_template("pages/profile.html", username=username, active="profile", loggedIn=loggedIn, commstyles=commstyles, other=other)
+    return render_template(
+        "pages/profile.html", username=username, active="profile",
+        loggedIn=loggedIn, commstyles=commstyles, other=other)
 
 
 # Preview
-@app.route('/preview/<username>', methods = ['GET', 'POST'])
+@app.route('/preview/<username>', methods=['GET', 'POST'])
 def preview(username):
     """ Grab the details of the user and display them in the user_details template.
-    If the user pushes the 'publish' button, the display variable is set to True, so
-    that the user can now be found in searches or show up on the carousel on index.html. """
+    If the user pushes the 'publish' button, the display variable is set to
+    True, so that the user can now be found in searches or show up on the
+    carousel on index.html.
+    If the 'discard' button has been pushed, re-set all data fields to be
+    empty.
+    """
 
     loggedIn = True if 'username' in session else False
 
-    if loggedIn == False:
+    if loggedIn is False:
         return redirect(url_for('forbidden'))
 
     user = db.profile.find_one({"username": username})
 
     if request.method == 'POST' and request.form['btn'] == 'publish':
-        db.profile.find_one_and_update({"username": username}, {"$set": {"display": True}})
+        db.profile.find_one_and_update(
+            {"username": username}, {"$set": {"display": True}})
 
-        flash("You have been published on tanDev. You will now show up in search results.", "success")
+        flash(
+            "You have been published on tanDev. You will now show up in search results.",
+            "success")
 
-        return redirect(url_for('user_details', username=session['username'] ))
-
+        return redirect(url_for('user_details', username=session['username']))
 
     if request.method == 'POST' and request.form['btn'] == 'discard':
-        db.profile.update_many( {'username': username},
-        { "$set": {
-                'shortDescription': "",
-                "imgURL": "",
-                "district": "",
-                "skills": [],
-                "desiredSkills": [],
-                "communicationStyle": [],
-                "otherDetails": [],
-                "published": "",
-                "github": "",
-        }})
+        db.profile.update_many({'username': username},
+                               {"$set": {
+                                   'shortDescription': "",
+                                   "imgURL": "",
+                                   "district": "",
+                                   "skills": [],
+                                   "desiredSkills": [],
+                                   "communicationStyle": [],
+                                   "otherDetails": [],
+                                   "published": "",
+                                   "github": "",
+                               }})
         username = session['username']
         flash("Your changes have been discarded.", "success")
-        return redirect(url_for('newprofile', username = username, discarded=True, skills=skills,
-        commstyles=commstyles, other=other))
+        return redirect(
+            url_for('newprofile', username=username,
+                    discarded=True, skills=skills,
+                    commstyles=commstyles, other=other))
 
-    return render_template("pages/user_details.html", active="profile", user=user, loggedIn = loggedIn, preview=True)
+    return render_template(
+        "pages/user_details.html",
+        active="profile", user=user,
+        loggedIn=loggedIn, preview=True)
 
 
 # Edit Profile
-@app.route('/edit/<username>', methods = ['GET', 'POST'])
+@app.route('/edit/<username>', methods=['GET', 'POST'])
 def edit(username):
-    """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
-    If the 'save' button was clicked, update the corresponding database fields with their
-    new values before redirecting to the profile page.
+    """ Checks if the user is logged in, if they are not, redirect to
+    custom forbidden page.
+    If the 'save' button was clicked, update the corresponding database
+    fields with their new values before redirecting
+    to the profile page.
     """
 
     loggedIn = True if 'username' in session else False
 
-    if loggedIn == False:
+    if loggedIn is False:
         return redirect(url_for('forbidden'))
 
     if request.method == 'POST' and request.form['btn'] == 'save':
-        db.profile.update_many( {'username': session['username']},
-        { "$set": {
-        'shortDescription': request.form.get('shortDescription'),
-        "imgURL": request.form.get('imgURL'),
-        "district": request.form.get('district'),
-        "skills": request.form.getlist("skills"),
-        "description": request.form.get('description'),
-        "desiredSkills": request.form.getlist("desiredSkills"),
-        "communicationStyle": request.form.getlist("communicationStyle"),
-        "otherDetails": request.form.getlist("other"),
-        "github": request.form.get('github'),
+        db.profile.update_many(
+            {'username': session['username']},
+            {"$set": {
+                'shortDescription': request.form.get('shortDescription'),
+                "imgURL": request.form.get('imgURL'),
+                "district": request.form.get('district'),
+                "skills": request.form.getlist("skills"),
+                "description": request.form.get('description'),
+                "desiredSkills": request.form.getlist("desiredSkills"),
+                "communicationStyle": request.form.getlist("communicationStyle"),
+                "otherDetails": request.form.getlist("other"),
+                "github": request.form.get('github'),
 
-        }})
+            }})
 
-        flash("Edits saved successfully. Scroll down to preview and publish.", "success")
+        flash(
+            "Edits saved successfully. Scroll down to preview and publish.",
+            "success")
 
         return redirect(url_for('profile', username=session['username']))
 
     username = db.profile.find_one({"username": username})
 
-    return render_template('pages/editprofile.html', loggedIn=loggedIn, username=username, active="profile", skills=skills,
-    commstyles=commstyles, other=other)
+    return render_template(
+        'pages/editprofile.html', loggedIn=loggedIn, username=username,
+        active="profile", skills=skills,
+        commstyles=commstyles, other=other)
 
 
 # Settings
@@ -463,7 +520,7 @@ def settings():
 @app.route('/settings/edit', methods = ['GET', 'POST'])
 def edit_settings():
     """ Checks if the user is logged in, if they are not, redirect to custom forbidden page.
-    If the user clicked on the 'save changes' button, update the relevant fields, and redirect to 
+    If the user clicked on the 'save changes' button, update the relevant fields, and redirect to
     the settings route.
     """
 
