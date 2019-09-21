@@ -49,7 +49,7 @@
                     <div class="form-check">
                         <input class="form-check-input search-card" type="checkbox" name="skill" value="{{skill}}"
                             id="{{skill}}" checked>
-                        <label for="{{skill}}" class="form-check-label" for="skill-box">
+                        <label for="{{skill}}" class="form-check-label">
                             {{skill}}
                         </label>
                     </div>
@@ -167,16 +167,14 @@
                         {% if commstyle not in comm_arg %}
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
-                                id="comm-box">
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}">
                             <label class="form-check-label" for="skill-box">
                                 {{commstyle}}
                             </label>
                         </div>
                         {% elif commstyle in comm_arg %}
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}"
-                                id="comm-box" checked>
+                            <input class="form-check-input" type="checkbox" name="commstyle" value="{{commstyle}}" checked>
                             <label class="form-check-label" for="skill-box">
                                 {{commstyle}}
                             </label>
