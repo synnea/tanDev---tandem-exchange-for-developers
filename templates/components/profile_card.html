@@ -1,15 +1,30 @@
 <a href="{{url_for('user_details', username=profile.username)}}">
+
+    <!-- BEGIN CARD -->
+
     <div class="card">
-        <img src="{{profile.imgURL}}" class="card-img-top" alt="...">
+
+        <!-- Image at the top of the card. -->
+
+        <img src="{{profile.imgURL}}" class="card-img-top" alt="{{profile.username}}'s piture">
+
+        <!-- Card body. -->
+
         <div class="card-body">
             <h5 class="card-title">{{profile.username}}</h5>
             <div class="text-container">
                 <p class="card-text">{{profile.shortDescription}}</p>
             </div>
         </div>
+
+        <!-- Card footer. -->
+
         <div class="card-footer">
             <p class="card-callout"><i class="fas fa-search-plus card-icon" data-fa-transform="shrink-3"></i>Click for
                 more!</p>
         </div>
     </div>
+
+    <!-- END CARD -->
+    
 </a>
