@@ -15,6 +15,7 @@ The tandem exchange concept is taken to connect developers and designers skilled
 ## Table of Contents
 
 1. [UX](#UX)
+    1.2. [Logo Design](#logo)
 
 ## UX <a name="UX"></a>
 
@@ -30,7 +31,7 @@ The design features a static navbar which is transparent and appears upon scroll
 
 FontAwesome icons are provided throughout the website to aid intuitive information input.
 
-### Logo Design
+### Logo Design  <a name="logo"></a>
 
 The logo was designed to invoke a tech-y feel. The letter 'a' in tanDev was manipulated to look like a speech bubble, to symbolize the exchange of technical skills. The original design was made in Adobe Illustrator. 
 
