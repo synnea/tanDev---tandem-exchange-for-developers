@@ -158,10 +158,14 @@
     margin-left: 2rem;
     max-width: 80%;
 
-    @media (min-with: $bp-desktop) {
-        max-width: 50%;
+}
+
+.carousel-container {
+
+    @media (min-width: $bp-desktop) {
+        width: 70%
     }
- 
+
 }
 
 .card-title {
