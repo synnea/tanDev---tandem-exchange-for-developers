@@ -299,6 +299,7 @@ ul ul a {
 
 .paging {
     margin-top: 3vh;
+    max-width: 80%;
 }
 
 .skill-desc {
@@ -323,12 +324,13 @@ bootstrap-select > .dropdown-toggle {
 
 #search-deck {
     margin-top: 10vh;
+    max-width: 80% !important;
 
     @media screen and (orientation: landscape) {
         margin-left: 3.5rem;
     }
 }
 
-.deck-margin {
-    margin-left: 15vw;
+.search-card {
+    max-width: 80%;
 }

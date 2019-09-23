@@ -685,7 +685,6 @@ ul {
 
 .card {
   display: inline-block;
-  width: 50vh;
   height: auto;
   margin-left: 2rem;
   max-width: 80%;
@@ -1404,6 +1403,7 @@ ul ul a {
 
 .paging {
   margin-top: 3vh;
+  max-width: 80%;
 }
 
 .skill-desc {
@@ -1427,6 +1427,7 @@ ul ul a {
 
 #search-deck {
   margin-top: 10vh;
+  max-width: 80% !important;
 }
 
 @media screen and (orientation: landscape) {
@@ -1435,8 +1436,8 @@ ul ul a {
   }
 }
 
-.deck-margin {
-  margin-left: 15vw;
+.search-card {
+  max-width: 80%;
 }
 
 .logreg-wrapper {
