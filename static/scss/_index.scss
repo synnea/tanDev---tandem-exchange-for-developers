@@ -147,7 +147,7 @@
     margin-bottom: 35vh;
     margin-left: 2rem;
 
-    @media screen and (orientation: landscape) {
+    @media (max-width: $bp-ipadpro) and (orientation: landscape) {
         height: 80vh;
         margin-top: 10vh;
     }
@@ -189,6 +189,11 @@
     @media screen and (orientation: landscape) {
         height: 55vh;
     }
+
+    @media (min-width: $bp-desktop) {
+        height: auto;
+    }
+
 }
 
 .card-footer {

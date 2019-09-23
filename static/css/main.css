@@ -656,7 +656,7 @@ ul {
   margin-left: 2rem;
 }
 
-@media screen and (orientation: landscape) {
+@media (max-width: 1024px) and (orientation: landscape) {
   .card-deck {
     height: 80vh;
     margin-top: 10vh;
@@ -702,6 +702,12 @@ ul {
 @media screen and (orientation: landscape) {
   .card-body {
     height: 55vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-body {
+    height: auto;
   }
 }
 
@@ -1083,7 +1089,7 @@ ul {
 
 @media (min-width: 1200px) {
   .wrapper {
-    height: 240vh;
+    height: 200vh;
   }
 }
 
@@ -1104,6 +1110,12 @@ ul {
   #sidebar {
     width: 800px !important;
     margin-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #sidebar {
+    width: 30% !important;
   }
 }
 
@@ -1360,7 +1372,13 @@ ul ul a {
   width: 70vw;
 }
 
-@media screen and (orientation: landscape) {
+@media (min-width: 1200px) {
+  .results {
+    margin: 8rem;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
   .results {
     margin-left: 1rem !important;
   }
