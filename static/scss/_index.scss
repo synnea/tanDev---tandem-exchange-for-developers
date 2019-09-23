@@ -172,15 +172,11 @@
     color: $brightmidblue;
 }
 
-.card-text {
-    text-overflow: ellipsis;
-    white-space: normal;
-    overflow: hidden;
-}
 
 
 .card-body {
     height: 30vh;
+    overflow: auto;
 
     @media (width: 1024px) and (orientation: landscape) {
         height: 30vh;
