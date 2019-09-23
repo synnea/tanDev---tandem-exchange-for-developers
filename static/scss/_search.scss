@@ -1,7 +1,7 @@
 // As with the HTML code for the sidebar, much of the CSS was taken from  https://bootstrapious.com/p/bootstrap-sidebar and heavily edited.
 
 
-// Style Sidebar
+// Main container
 
 .wrapper {
     display: flex;
@@ -29,6 +29,8 @@
     }
 
 }
+
+// Sidebar styling.
 
 #sidebar {
     background: $brightmidblue;
@@ -60,6 +62,8 @@
 
 }
 
+// Styling for the button that collapses the sidebar.
+
 #sidebarCollapse {
     @media (min-width: $bp-ipadpro) {
         margin-left: 15vw;
@@ -76,6 +80,8 @@
 #sidebarCollapse:hover {
     background-color: $redbrown;
 }
+
+// Styling for the active sidebar.
 
 #sidebar.active {
     transition: all 1s ease;
@@ -94,13 +100,11 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar .sidebar-header {
-    // padding: 20px;
     background: $brightmidblue;
     text-transform: uppercase;
 }
 
 #sidebar ul.components {
-    // padding: 20px 0;
     border-bottom: 1px solid $midblue;
 }
 
@@ -127,7 +131,6 @@ a[aria-expanded="true"] {
 
 ul ul a {
     font-size: 0.7em !important;
-    // padding-left: 30px !important;
     background: $midblue;
 }
 
@@ -193,6 +196,8 @@ ul ul a {
     margin-left: 1em;
 }
 
+// Button styling.
+
 .search-btn {
 
     @include custom-btn-hover;
@@ -216,6 +221,8 @@ ul ul a {
 .search-btn:hover {
     @include custom-btn;
 }
+
+// Styling for the content part to the right of the search page.
 
 #content {
     width: 0;
@@ -253,35 +260,14 @@ h5 {
     max-width: 80%;
 }
 
-
-/* display .overlay when it has the .active class */
-.search-overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-// Styling for the pagination pages from flask-paginate taken from https://pythonhosted.org/Flask-paginate/
-
-.pagination-page-info {
-    padding: .6em;
-    padding-left: 0;
-    width: 40em;
-    margin: .5em;
-    margin-left: 0;
-    font-size: 12px;
-}
-
-.pagination-page-info b {
-    color: black;
-    background: #6aa6ed;
-    padding-left: 2px;
-    padding: .1em .25em;
-    font-size: 150%;
-}
+// Class that gives the prev and next buttons a grey color
+// when they are not clickable.
 
 .disabled {
     color: gray;
 }
+
+// Search result styling.
 
 .matches {
     background-color: $brightmidblue;
@@ -293,6 +279,8 @@ h5 {
         line-height: 1.6;
     }
 }
+
+// Results box.
 
 .results {
     margin: 4rem;
@@ -328,6 +316,8 @@ bootstrap-select>.dropdown-toggle {
         width: 80vw !important;
     }
 }
+
+// Card deck for the search results.
 
 #search-deck {
     margin-top: 10vh;

@@ -1,3 +1,5 @@
+/* General styling throughout the website. */
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -26,6 +28,8 @@ a:hover {
 .container-fluid {
   padding: 0;
 }
+
+/* Navbar styling. */
 
 .navLogo {
   height: 8vh;
@@ -86,6 +90,8 @@ a:hover {
   }
 }
 
+/* Header styling, */
+
 .page-header {
   font-family: 'Montserrat';
   font-weight: 700;
@@ -119,6 +125,9 @@ h3.heading {
   margin: 0 auto;
   display: block;
 }
+
+/* Footer styling, highly responsive and tweaked to display well across numerous
+devices. */
 
 footer {
   height: 29vh;
@@ -159,6 +168,8 @@ footer {
   }
 }
 
+/* Github logo in the footer. */
+
 .fa-github {
   color: white;
   font-size: 2rem;
@@ -169,9 +180,7 @@ footer {
   color: #2581B0;
 }
 
-.row {
-  margin-right: 0;
-}
+
 
 .footer {
   position: absolute;
@@ -1348,29 +1357,6 @@ h5 {
   max-width: 80%;
 }
 
-/* display .overlay when it has the .active class */
-.search-overlay.active {
-  display: block;
-  opacity: 1;
-}
-
-.pagination-page-info {
-  padding: .6em;
-  padding-left: 0;
-  width: 40em;
-  margin: .5em;
-  margin-left: 0;
-  font-size: 12px;
-}
-
-.pagination-page-info b {
-  color: black;
-  background: #6aa6ed;
-  padding-left: 2px;
-  padding: .1em .25em;
-  font-size: 150%;
-}
-
 .disabled {
   color: gray;
 }
@@ -1738,12 +1724,6 @@ h5 {
 
 .sm-logo-col {
   fill: #2581B0;
-}
-
-.heart-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 #preview {

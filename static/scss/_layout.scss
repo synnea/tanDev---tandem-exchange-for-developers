@@ -1,5 +1,7 @@
 // This SCSS file contains layouts and commonly occuring components across the pages.
 
+// General styling.
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -235,6 +237,9 @@ col-4 {
 ul {
     margin: 0;
 }
+
+// Flash message styling. Two categories are in use throughout the project: error 
+// and success messages.
 
 .error > .message {
     color: $pink;

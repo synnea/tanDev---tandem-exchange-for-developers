@@ -2,6 +2,8 @@
 
 @import "_layout.scss";
 
+// Create mixin to scale the height responsively.
+
 @mixin about-height-scaling {
     height: 50vh;
 
@@ -10,6 +12,8 @@
         height: 80vh;
     }
 }
+
+// Banner styling.
 
 .about-banner {
 
@@ -24,8 +28,6 @@
         background: url("/static/img/hero.jpg") center top no-repeat scroll;
         background-size: cover;
     }
-
-
 }
 
 .page-header-box {

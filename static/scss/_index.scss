@@ -6,6 +6,8 @@
 
 // Landing Page
 
+// Create height scale mixin to be used for responsive design.
+
 @mixin height-scaling {
     height: 60vh;
 
@@ -26,6 +28,7 @@
     }
 }
 
+// Main image. Uses a smaller version of the same image for small devices in order to cut down on loading times.
 
 #hero {
     background: url("/static/img/puzzle-uncropped-xs.jpg") center center no-repeat;
@@ -91,18 +94,6 @@
 
 }
 
-// #btn-div {
-//     position: absolute;
-
-//     top: 60%;
-//     left: 37%;
-
-
-//     @media (min-width: $bp-mobile) {
-//         left: 46%;
-//     }
-// }
-
 .hero-btn {
 
     margin-top: 8vh;
@@ -122,6 +113,8 @@
 .hero-btn:hover {
     @include custom-btn-hover;
 }
+
+// Image overlay styling.
 
 .img-overlay-index {
     position: absolute;
@@ -161,7 +154,6 @@
 
 .card {
     display: inline-block;
-    // width: 50vh;
     height: auto;
     margin-left: 2rem;
     max-width: 80%;
@@ -171,7 +163,6 @@
 .card-title {
     color: $brightmidblue;
 }
-
 
 
 .card-body {

@@ -1,3 +1,7 @@
+// This SCSS file styles the user details/full profile view.
+
+// Main container
+
 .user-wrapper {
     padding: 6%;
     text-align: center;
@@ -71,17 +75,12 @@
     fill: $brightmidblue;
 }
 
-.heart-row {
-display: flex;
-
-
-}
-
-
 #preview {
     margin-bottom: 5vh !important;
 }
 
+// Animated, dancing username. Keyframe code taken from here: https://www.mediaevent.de/css/text-shadow.html
+// and edited heavily.
 
 .username {
 margin-top: 5vh;

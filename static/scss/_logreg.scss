@@ -1,5 +1,8 @@
 @import "_base.scss";
 
+// This SCSS file contains components which are used only on about.html
+
+// Main container.
 
 .logreg-wrapper {
     height: 140vh;
@@ -9,6 +12,8 @@
     -moz-background-size: cover !important;
     -o-background-size: cover !important;
 }
+
+// Main jumbotron.
 
 .form-jumbo {
     background: rgba(255, 255, 255, 0.3);
@@ -47,6 +52,8 @@
         max-width: 70%;
     }
 }
+
+// Tab styling.
 
 .tab-nav-item {
     margin-top: 5vh;
