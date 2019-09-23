@@ -10,7 +10,7 @@ $(document).ready(function () {
 
   $(function () {
     $('#hamburger').on("click", function () {
-      $("#about-overlay").toggleClass("overlay-open")
+      $("#about-overlay").toggleClass("overlay-open");
     });
   });
 

@@ -15,7 +15,7 @@ $(document).ready(function () {
     $(function () {
         $(".skill-field").on("click", function () {
             $(".skill-options").fadeOut();
-            let clicked = $(this).next(".skill-options")
+            var clicked = $(this).next(".skill-options");
             $(clicked).slideToggle("slow");
 
             return false;

@@ -20,13 +20,13 @@ $(document).ready(function () {
     $(function() {
         $('#register-tab').on("click", function() {
             $(".flashes").hide();
-        })
+        });
     });
 
     $(function() {
         $('#login-tab').on("click", function() {
             $(".flashes").hide();
-        })
+        });
     });
 
 });

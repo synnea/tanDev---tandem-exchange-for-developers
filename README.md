@@ -192,10 +192,11 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
 
 **CSS**  
 * [CSS Validator](https://jigsaw.w3.org/css-validator/).
-    - The project contains 1 CSS file (along with several SCSS ones).
+    - The project contains 1 CSS file (along with several SCSS ones). The file passes validation without any errors.
 
 **JavaScript** 
 * [JSHint.com](https://jshint.com/). 
+    - The project contains 7 JavaScript files. All of them are semantically correct. The files contain a total of 27 functions, and the most complex function has a cyclomatic complexity value of 2.
 
 **Python**
 * [PEP8Online](http://pep8online.com/).
