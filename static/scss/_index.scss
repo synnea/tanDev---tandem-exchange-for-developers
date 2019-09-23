@@ -157,6 +157,10 @@
     height: auto;
     margin-left: 2rem;
     max-width: 80%;
+
+    @media (min-with: $bp-desktop) {
+        max-width: 50%;
+    }
  
 }
 

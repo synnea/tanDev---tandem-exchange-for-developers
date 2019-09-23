@@ -690,6 +690,12 @@ ul {
   max-width: 80%;
 }
 
+@media (min-with: 1200px) {
+  .card {
+    max-width: 50%;
+  }
+}
+
 .card-title {
   color: #2581B0;
 }
