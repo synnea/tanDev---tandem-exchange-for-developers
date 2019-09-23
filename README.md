@@ -15,7 +15,7 @@ The tandem exchange concept is taken to connect developers and designers skilled
 ## Table of Contents
 
 1. [UX](#UX)
-    1.2. [Logo Design](#logo)
+    - [Logo Design](#logo)
 
 ## UX <a name="UX"></a>
 
