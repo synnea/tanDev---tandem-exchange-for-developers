@@ -20,7 +20,6 @@ The tandem exchange concept is taken to connect developers and designers skilled
     - [Wireframes](#wireframes)
 
 2. [Data](#data)
-    -[Data Schema](#schema)
 
 3. [Features](#features)
     - [Current Features](#current-features)
@@ -93,9 +92,6 @@ For the most part, the wireframes are similar to the finished product. However, 
 An initially envisioned option to favorite other users was also removed, and has been added to the 'future features' wishlist.
 
 ## Data <a name="data"></a>
-
-
-### Data Schema <a name="schema"></a>
 
 tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is the data schema used for individual documents in this collection:
 
