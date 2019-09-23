@@ -12,7 +12,11 @@ The term 'tandem' is taken from the language learning community, in which it mea
 
 The tandem exchange concept is taken to connect developers and designers skilled in some languages or areas of development who wish to improve their skills in others.
 
-## UX
+## Table of Contents
+
+1. [UX](#UX)
+
+## UX <a name="UX"></a>
 
 The website's target audience are developers and designers. For developers based in Berlin, the option to search for users by district is useful; for all others, tanDev also seeks to connect individuals who wish to exchange their skills via text or video.
 
@@ -262,7 +266,7 @@ The project was developed locally with Visual Studio Code. Environment variables
 
 ## Credits
 
-Credit for the tanDev logo design goes to my friend Devin Palmer. 
+Credit for the logo goes to he-who-prefers-to-go-uncredited. You're awesome.
 
 Many thanks to [Tim Nelson](https://github.com/TravelTimN), whose patience helped me to get started on the sever-side development.
 
