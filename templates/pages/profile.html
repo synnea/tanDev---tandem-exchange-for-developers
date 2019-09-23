@@ -3,53 +3,59 @@
 {% block content %}
 
 <div class="container myprofile-wrapper">
+
+    <!-- Display flashed messages. -->
+
     <div class="profile-messages"> {% include 'components/message.html' %}</div>
     <div class="container">
         <div class="row welcome-row justify-content-center mt-5 align-items-center">
             <div class="col-12">
+
+                <!-- User greeting -->
+
                 <h1 class="profile-nav">Welcome back, {{username.username}}</h1>
+
+                <!-- If the profile is published, the user is informed of this in the line below the greeting.
+                    The page features two unpublish buttons, depending on the screen width. If the user is on desktop, the unpublish button
+                shows up here near the top of the screen. -->
 
             </div>
             {% if username.display == True %}
 
             <div class="col-10">
-
                 <h4 class="profile-subnav">Your profile is currently public</h4>
-
             </div>
 
             <form id="unpublish-btn" method="POST">
-
                 <div class="col-2">
-
                     <button type="submit" class="btn btn-danger btn-large" id="desktop-unpublish" name="btn"
                         value="unpublish">Unpublish
                         Profile</button>
                 </div>
             </form>
-
-
-
             {% endif %}
+
+            <!-- If the profile is not displayed, the user is informed of this. -->
 
             {% if username.display == False %}
 
             <div class="col-12 d-block">
-
                 <h4 class="profile-subnav mb-3">Your profile is currently not published.</h4>
             </div>
-
             {% endif %}
         </div>
 
     </div>
 
-    <div class="jumbotron profile-jumbo">
+    <!-- BEGIN MAIN FORM -->
 
+    <form id="profile-form" method="POST">
 
-        <form id="profile-form" method="POST">
+        <!-- Begin Header jumbotron -->
 
+        <div class="jumbotron profile-jumbo">
 
+            <!-- Header image -->
 
             <div class="row">
 
@@ -59,7 +65,7 @@
                 </div>
                 <div class="col-12 col-md-6">
 
-
+                    <!-- Short Description field -->
 
                     <label class="profile-label" for="profile-shortDesc">
                         Short Description
@@ -68,10 +74,9 @@
                         maxlength="200" value="{{username.shortDescription}}" readonly>
                 </div>
 
-
+                <!-- Image URL field. -->
 
                 <div class="col-12 col-md-6">
-
 
                     <label class="profile-label" for="profile-img">
                         Profile Image.
@@ -83,7 +88,7 @@
                 </div>
             </div>
 
-
+            <!-- District dropdown. -->
 
             <div class="form-group">
                 <div class="row">
@@ -96,271 +101,260 @@
 
                     <div class="col-12">
 
+                        <!-- Selected district dropdown value. -->
+
                         <select class="form-control" name="district" id="profileSelect" readonly>
                             <option value selected="{{username.district}}">{{username.district}}</option>
-
-                        </select>
-
                         </select>
                     </div>
-
-
-
                 </div>
             </div>
-    </div>
 
-    <div class="jumbotron profile-jumbo">
-        <div class="form-group">
+            <!-- End header jumbotron. -->
 
+        </div>
 
+        <!-- Begin body jumbotron. -->
 
-            <div class="col-12 justify-content-center">
+        <div class="jumbotron profile-jumbo">
+            <div class="form-group">
 
-                <h3 class="profile-heading">
-                    <img class="profile-parts" src="/static/img/body.png" />
-                    </header>
-                </h3>
+                <!-- Body image. -->
 
-            </div>
+                <div class="col-12 justify-content-center">
 
-            <!-- MY SKILLS SECTION -->
+                    <h3 class="profile-heading">
+                        <img class="profile-parts" src="/static/img/body.png" />
+                        </header>
+                    </h3>
 
-            <div class="col-12">
-                <label class="profile-label" for="profile-skills">
-                    My skills
-                </label>
-            </div>
+                </div>
 
-            <!-- The Tabs -->
+                <!-- My Skills section -->
 
-            <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
-            <div class="row">
-                <nav>
-                    <ul class="nav nav-tabs ml-2">
+                <div class="col-12">
+                    <label class="profile-label" for="profile-skills">
+                        My skills
+                    </label>
+                </div>
 
+                <!-- The Tabs -->
 
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab" role="tab"
-                                aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
-                                proficient
-                                in...</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkills-tab"
-                                role="tab" aria-controls="desiredSkills"><i class="fas fa-search"></i> Looking
-                                for...</a>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-            <!-- Tab Contents -->
-
-            <div class="row">
-
-                <div class="tab-content">
+                <!-- Skill tabs, code for nav tabs taken from https://www.w3schools.com/bootstrap4/bootstrap_navs.asp -->
+                <div class="row">
+                    <nav>
+                        <ul class="nav nav-tabs ml-2">
 
 
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#skillsTab" id="skills-tab"
+                                    role="tab" aria-controls="skills"><i class="fas fa-share-alt"></i> I'm
+                                    proficient
+                                    in...</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#desiredSkillsTab" id="desiredSkills-tab"
+                                    role="tab" aria-controls="desiredSkills"><i class="fas fa-search"></i> Looking
+                                    for...</a>
+                            </li>
 
-                    <!-- Begin "I'm proficient in..." Skills Tab -->
-                    <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
-                        aria-labelledby="skills-tab">
-                        <div class="skill-column">
-                            <div class="col-12">
-                                {% for skill in username.skills %}
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Tab Contents -->
 
+                <div class="row">
 
+                    <div class="tab-content">
 
+                        <!-- Begin "I'm proficient in..." Skills Tab -->
+                        <div class="tab-pane container fade show active" id="skillsTab" role="tabpanel"
+                            aria-labelledby="skills-tab">
+                            <div class="skill-column">
+                                <div class="col-12">
 
-                                <span class="d-block"> <i class="fa fa-code"></i> {{skill}} </span>
+                                    <!-- loops through the skills the user has selected, and display them. -->
 
+                                    {% for skill in username.skills %}
+
+                                    <span class="d-block"> <i class="fa fa-code"></i> {{skill}} </span>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- End "I'm proficient in..." Skills Tab -->
+                        </div>
+
+                        <!-- Begin "Looking for..." desired skills tab -->
+
+                        <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
+                            aria-labelledby="desiredSkills-tab">
+
+                            <div class="skill-column">
+
+                                {% for skill in username.desiredSkills %}
+
+                                <span class="d-block"> <i class="fas fa-search"></i> {{skill}} </span>
 
                                 {% endfor %}
                             </div>
-
                         </div>
-
-                        <!-- End "I'm proficient in..." Skills Tab -->
+                        <!-- End "Looking for..." desired skills tab -->
                     </div>
-
-
-                    <!-- Begin "Looking for..." desired skills tab -->
-
-
-                    <div class="tab-pane container fade show" id="desiredSkillsTab" role="tabpanel"
-                        aria-labelledby="desiredSkills-tab">
-
-                        <div class="skill-column">
-
-                            {% for skill in username.desiredSkills %}
-
-
-
-
-                            <span class="d-block"> <i class="fas fa-search"></i> {{skill}} </span>
-
-
-                            {% endfor %}
-                        </div>
-
-
-                    </div>
-                    <!-- End "Looking for..." desired skills tab -->
                 </div>
 
+                <!-- Description Field -->
 
+                <div class="row">
+
+                    <div class="col-12">
+                        <label class="profile-label" for="profile-description">
+                            Full Description
+                        </label>
+                        <input class="form-control" type="textarea" id="profile-description" name="description" rows="3"
+                            maxlength="500" rows="3" value="{{username.description}}" readonly></input>
+                    </div>
+                </div>
+
+                <!-- Communication style checkboxes -->
+
+                <div class="row">
+                    <div class="col-6">
+                        <label class="profile-label" for="profile-commstyle">
+                            Communication Style
+                        </label>
+                        {% for comm in commstyles %}
+
+                        {% if comm in username.communicationStyle %}
+
+                        <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
+
+                        {% else %}
+
+                        <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
+                        {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+
+                    <!-- Other Fields -->
+
+                    <div class="col-6">
+                        <label class="profile-label" for="profile-other">
+                            Other
+                        </label>
+
+
+                        {% for other in other %}
+
+                        {% if other in username.otherDetails %}
+
+                        {% if other == 'lookingforCoFounder' %}
+
+                        <span class="d-block"><i class="fas fa-check"></i> Looking for Co-Founder </span>
+
+
+                        {% elif other == 'availableForProjects' %}
+
+                        <span class="d-block"><i class="fas fa-check"></i> Available for Projects </span>
+
+                        {% elif other == 'availableForHire' %}
+
+                        <span class="d-block"><i class="fas fa-check"></i> Available for Hire </span>
+
+                        {% endif %}
+                        {% elif other != username.otherDetails %}
+
+                        {% if other == 'lookingforCoFounder' %}
+
+                        <span class="d-block"><i class="fas fa-times"></i> Looking for Co-Founder </span>
+
+                        {% elif other == 'availableForProjects' %}
+
+                        <span class="d-block"><i class="fas fa-times"></i> Available for Projects </span>
+
+                        {% elif other == 'availableForHire' %}
+
+                        <span class="d-block"><i class="fas fa-times"></i> Available for Hire </span>
+
+                        {% endif %}
+                        {% endif %}
+
+                        {% endfor %}
+                    </div>
+
+
+                </div>
             </div>
 
-            <!-- DESCRIPTION SECTION -->
+            <!-- End body jumbotron -->
+
+        </div>
+
+        <!-- Begin footer jumbotron. -->
+
+        <div class="jumbotron profile-jumbo">
 
             <div class="row">
+
+                <!-- Footer image. -->
 
                 <div class="col-12">
-                    <label class="profile-label" for="profile-description">
-                        Full Description
-                    </label>
-                    <input class="form-control" type="textarea" id="profile-description" name="description" rows="3"
-                        maxlength="500" rows="3" value="{{username.description}}" readonly></input>
+                    <h3 class="profile-heading justify-content-center">
+                        <img class="profile-parts" src="/static/img/footer.png" />
+
+                    </h3>
                 </div>
-            </div>
-
-
-            <!-- COMMUNICATION STYLE SECTION -->
-
-            <div class="row">
-
-
-                <div class="col-6">
-                    <label class="profile-label" for="profile-commstyle">
-                        Communication Style
-                    </label>
-                    {% for comm in commstyles %}
-
-                    {% if comm in username.communicationStyle %}
-
-                    <span class="d-block"><i class="fas fa-check"></i> {{comm}} </span>
-
-                    {% else %}
-
-                    <span class="d-block"><i class="fas fa-times"></i> {{comm}} </span>
-                    {% endif %}
-
-                    {% endfor %}
-
-
-                </div>
-
-
-
-
-                <!-- OTHER SECTION -->
-
-                <div class="col-6">
-                    <label class="profile-label" for="profile-other">
-                        Other
-                    </label>
-
-
-                    {% for other in other %}
-
-                    {% if other in username.otherDetails %}
-
-                    {% if other == 'lookingforCoFounder' %}
-
-                    <span class="d-block"><i class="fas fa-check"></i> Looking for Co-Founder </span>
-
-
-                    {% elif other == 'availableForProjects' %}
-
-                    <span class="d-block"><i class="fas fa-check"></i> Available for Projects </span>
-
-                    {% elif other == 'availableForHire' %}
-
-                    <span class="d-block"><i class="fas fa-check"></i> Available for Hire </span>
-
-                    {% endif %}
-                    {% elif other != username.otherDetails %}
-
-                    {% if other == 'lookingforCoFounder' %}
-
-                    <span class="d-block"><i class="fas fa-times"></i> Looking for Co-Founder </span>
-
-                    {% elif other == 'availableForProjects' %}
-
-                    <span class="d-block"><i class="fas fa-times"></i> Available for Projects </span>
-
-                    {% elif other == 'availableForHire' %}
-
-                    <span class="d-block"><i class="fas fa-times"></i> Available for Hire </span>
-
-                    {% endif %}
-                    {% endif %}
-
-                    {% endfor %}
-                </div>
-
 
             </div>
-        </div>
-
-    </div>
-
-
-    <div class="jumbotron profile-jumbo">
-
-
-        <div class="row">
 
             <div class="col-12">
-                <h3 class="profile-heading justify-content-center">
-                    <img class="profile-parts" src="/static/img/footer.png" />
 
-                </h3>
+                <!-- Github field. -->
+
+                <label class="contact" for="profile-contact">
+                    Github
+                </label>
+                <input id="github" class="form-control" type="text" name="github" maxlength="50"
+                    value="{{username.github}}" readonly>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+
+                <!-- Preview Profile button -->
+
+                <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5 d-block" name="btn"
+                    value="preview">Preview
+                    Profile</button>
+
+                <!-- Edit button -->
+
+                <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5 d-block" name="btn"
+                    value="edit">Edit</button>
             </div>
 
+            <!-- If the profile is published and the user is on mobile, show the unpublish button here. -->
+
+            {% if username.display == True %}
+
+            <div class="col-12 d-flex justify-content-center mb-2">
+                <button type="submit" class="btn btn-danger btn-large" id="mobile-unpublish" name="btn"
+                    value="unpublish">Unpublish
+                    Profile</button>
+
+            </div>
+
+            {% endif %}
         </div>
 
-        <div class="col-12">
+    </form>
 
-            <label class="contact" for="profile-contact">
-                Github
-            </label>
-            <input id="github" class="form-control" type="text" name="github" maxlength="50" value="{{username.github}}"
-                readonly>
-        </div>
-
-    </div>
-</div>
-
-<div class="row justify-content-center">
-
-    <div class="col-12 d-flex justify-content-center">
-
-        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5 d-block" name="btn"
-            value="preview">Preview
-            Profile</button>
-
-        <button type="submit" class="btn btn-primary btn-large userarea-btn mt-5 mb-5 d-block" name="btn"
-            value="edit">Edit</button>
-    </div>
-
-    {% if username.display == True %}
-
-    <div class="col-12 d-flex justify-content-center mb-2">
-            <button type="submit" class="btn btn-danger btn-large" id="mobile-unpublish" name="btn"
-            value="unpublish">Unpublish
-            Profile</button>
-    </div>
-
-    {% endif %}
-</div>
-
-</form>
-
-
+    <!-- END FORM -->
 
 </div>
-
 
 {% endblock %}
