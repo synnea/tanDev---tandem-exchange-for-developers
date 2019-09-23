@@ -329,6 +329,10 @@ bootstrap-select > .dropdown-toggle {
     @media screen and (orientation: landscape) {
         margin-left: 3.5rem;
     }
+
+    @media (min-width: $bp-desktop) {
+        margin-left: 5rem;
+    }
 }
 
 .search-card {

@@ -149,7 +149,7 @@ footer {
 
 @media (min-width: 992px) {
   footer {
-    height: 13vh;
+    height: 16vh;
   }
 }
 
@@ -397,7 +397,7 @@ footer {
 
 @media (min-width: 992px) {
   footer {
-    height: 13vh;
+    height: 16vh;
   }
 }
 
@@ -907,7 +907,7 @@ footer {
 
 @media (min-width: 992px) {
   footer {
-    height: 13vh;
+    height: 16vh;
   }
 }
 
@@ -1433,6 +1433,12 @@ ul ul a {
 @media screen and (orientation: landscape) {
   #search-deck {
     margin-left: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #search-deck {
+    margin-left: 5rem;
   }
 }
 
