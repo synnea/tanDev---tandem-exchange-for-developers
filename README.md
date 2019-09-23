@@ -26,6 +26,15 @@ The design features a static navbar which is transparent and appears upon scroll
 
 FontAwesome icons are provided throughout the website to aid intuitive information input.
 
+### Logo Design
+
+The logo was designed to invoke a tech-y feel. The letter 'a' in tanDev was manipulated to look like a speech bubble, to symbolize the exchange of technical skills. The original design was made in Adobe Illustrator. 
+
+Several versions of the logo in different brand colors were created. Here is one example:
+
+![tandevlogo](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/logos/tandev_v1_brightmidblue.svg)
+
+
 ### User Stories
 
 The following user stories were used to design the website:
@@ -185,7 +194,7 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
 
 **Python**
 * [PEP8Online](http://pep8online.com/).
-    - At the time of writing this readme, the Python code in this project contains a total of 10 lines which exceed the recommended max length of 79 characters. I chose to leave them in because breaking them up resulted in less readability. The PEP8 guide states that its guidelines could be bent on an individual basis when doing so raised readability, hence I chose to do so here. Apart from those 10 lines, the code is fully PEP8-compliant.
+    - The project contains a total of 1 Python file. At the time of writing this readme, the Python code in this project contains a total of 10 lines which exceed the recommended max length of 79 characters. I chose to leave them in because breaking them up resulted in less readability. The PEP8 guide states that its guidelines could be bent on an individual basis when doing so raised readability, hence I chose to do so here. Apart from those 10 lines, the code is fully PEP8-compliant.
 
 ### User Story Testing
 
@@ -249,9 +258,6 @@ Many thanks to [Tim Nelson](https://github.com/TravelTimN), whose patience helpe
 
 Most of the images used on tanDev have been sourced from [Adobe Stock](https://stock.adobe.com/).
 
-### Inspiration & Acknowledgements
-
-Many thanks to , who took an incredible amount of time out of his day to teach me the ropes of backend development.
 
 
 
