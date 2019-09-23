@@ -16,6 +16,10 @@
         height: 200vh;
     }
 
+    @media (max-width: $bp-mobile ) and (orientation:landscape) {
+        height: 400vh;
+    }
+
     @media (min-width: $bp-mobile) and (orientation: landscape) {
         height: 300vh;
     }

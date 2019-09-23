@@ -1088,6 +1088,12 @@ ul {
   }
 }
 
+@media (max-width: 768px) and (orientation: landscape) {
+  .wrapper {
+    height: 400vh;
+  }
+}
+
 @media (min-width: 768px) and (orientation: landscape) {
   .wrapper {
     height: 300vh;
