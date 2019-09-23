@@ -232,6 +232,11 @@ Solution: upon landing on the main page, the imagry and slogan quickly give me a
 
 ### Known Bugs
 
+When C++ or C# is selected, the other C language is selected as well.
+
+This is due to the fact that I chose to use text search to search the database for matches. When I chose this approach, I did not consider that it would cause problems with similar languages.
+
+When I noticed the bug, I judged it too late to change it, but it will be addressed at a later date. The way that the search on the skill field is executed will have to be changed.
 
 
 ## Deployment
