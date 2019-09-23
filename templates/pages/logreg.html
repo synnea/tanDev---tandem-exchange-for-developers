@@ -1,30 +1,29 @@
-<!-- templates/signup.html -->
-
 {% extends 'layouts/base.html' %}
 
 {% block content %}
 
 <div class="container-fluid logreg-wrapper">
 
-
     <div class="row form-row justify-content-center align-items-center">
 
-        <!-- Create centered jumbotron -->
+        <!-- Begin centered jumbotron -->
 
         <div class="jumbotron form-jumbo">
             <div class="col-12 jumbo-content mx-auto">
 
-                <!-- Create separate login and register tabs. -->
+                <!--Login Tab. -->
 
                 <nav>
                     <ul class="nav nav-tabs">
 
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#loginTab" id="login-tab" role="tab"
+                            <a class="nav-link active" data-toggle="tab" href="#loginTab" id="login" role="tab"
                                 aria-controls="login"><i class="fas fa-sign-in-alt"></i> Login</a>
                         </li>
+
+                        <!-- Register Tab. -->
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#registerTab" id="register-tab" role="tab"
+                            <a class="nav-link" data-toggle="tab" href="#registerTab" id="register" role="tab"
                                 aria-controls="register"><i class="fas fa-user-plus"></i> Register</a>
                         </li>
 
@@ -38,7 +37,7 @@
 
                     <!-- Begin Login Tab -->
                     <div class="tab-pane container fade show active" id="loginTab" role="tabpanel"
-                        aria-labelledby="login-tab">
+                        aria-labelledby="login">
 
                         <!-- Login Form -->
 
@@ -59,13 +58,12 @@
                             <button type="submit" class="btn btn-primary btn-large logreg-btn my-auto" name="btn"
                                 value="login">Login</button>
                         </form>
-
+                        <!-- End Login Tab -->
                     </div>
 
                     <!-- Begin Register Tab -->
 
-                    <div class="tab-pane container fade" id="registerTab" role="tabpanel"
-                        aria-labelledby="register-tab">
+                    <div class="tab-pane container fade" id="registerTab" role="tabpanel" aria-labelledby="register">
 
                         <!-- Registration Form -->
 
@@ -96,13 +94,17 @@
                                     title="email addresses must follow standard email pattern" required>
                             </div>
 
+                            <!-- Password input form. Pattern enforces that passwords must not contain special characters and be at least 6 characters long. -->
+                            <!-- A checkbox below the form allows the user to view the password they have typed. -->
+
                             <div class="form-group">
                                 <label class="logreg-label" for="newPassword">Password</label>
                                 <input type="password" class="form-control" name="password" id="newPassword"
                                     placeholder="Password" pattern="[a-zA-Z0-9\-]{6,}"
                                     title="allow passwords with minimum 6 characters" required>
-                                    <input type="checkbox" class="mt-1 mb-1" onclick="showPW()">Show Password
-                                <p class="d-block"><small>* Passwords must not contain special characters other than hyphens. Please
+                                <input type="checkbox" class="mt-1 mb-1" onclick="showPW()">Show Password
+                                <p class="d-block"><small>* Passwords must not contain special characters other than
+                                        hyphens. Please
                                         choose a password that is at least 6 characters long.</small></p>
                             </div>
 
@@ -112,11 +114,10 @@
                                 value="register">Register</button>
 
                         </form>
-
                     </div>
 
                     <!-- Display flashed messages. -->
-                    
+
                     {% include 'components/message.html' %}
 
                 </div>
@@ -125,17 +126,17 @@
     </div>
 </div>
 
-</div>
+<!-- JavaScript code to display the encrypted password. -->
 
 <script>
-        function showPW() {
-            var x = document.getElementById("newPassword");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
+    function showPW() {
+        var x = document.getElementById("newPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
         }
-    </script>
+    }
+</script>
 
 {% endblock %}
