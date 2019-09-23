@@ -142,7 +142,7 @@ footer {
 
 @media (min-width: 768px) {
   footer {
-    height: 18vh;
+    height: 22vh;
     font-size: 0.8em;
   }
 }
@@ -390,7 +390,7 @@ footer {
 
 @media (min-width: 768px) {
   footer {
-    height: 18vh;
+    height: 22vh;
     font-size: 0.8em;
   }
 }
@@ -895,7 +895,7 @@ footer {
 
 @media (min-width: 768px) {
   footer {
-    height: 18vh;
+    height: 22vh;
     font-size: 0.8em;
   }
 }
@@ -1073,9 +1073,10 @@ ul {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  height: 400vh;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 576px) {
   .wrapper {
     height: 350vh;
   }
@@ -1087,9 +1088,9 @@ ul {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: landscape) {
   .wrapper {
-    height: 550vh;
+    height: 300vh;
   }
 }
 
@@ -1438,10 +1439,6 @@ h5 {
   #search-deck {
     margin-left: 8rem;
   }
-}
-
-.search-card {
-  max-width: 80%;
 }
 
 .logreg-wrapper {

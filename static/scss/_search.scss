@@ -6,8 +6,9 @@
 .wrapper {
     display: flex;
     align-items: stretch;
-
-    @media (max-width: 767px) {
+    height: 400vh;
+    
+    @media (min-width: $bp-mini) {
         height: 350vh;
     }
 
@@ -15,8 +16,8 @@
         height: 200vh;
     }
 
-    @media screen and (orientation: landscape) {
-        height: 550vh;
+    @media (min-width: $bp-mobile) and (orientation: landscape) {
+        height: 300vh;
     }
 
     @media (width: $bp-ipadpro) and (orientation: landscape) {
@@ -144,7 +145,7 @@ ul ul a {
     @media (min-width: $bp-mobile) {
         padding: 2rem;
     }
-    }
+}
 
 
 .search-comm {
@@ -269,6 +270,7 @@ h5 {
     margin-left: 0;
     font-size: 12px;
 }
+
 .pagination-page-info b {
     color: black;
     background: #6aa6ed;
@@ -321,7 +323,7 @@ h5 {
 
 }
 
-bootstrap-select > .dropdown-toggle {
+bootstrap-select>.dropdown-toggle {
     @media (max-width: $bp-mobile) {
         width: 80vw !important;
     }
@@ -338,8 +340,4 @@ bootstrap-select > .dropdown-toggle {
     @media (min-width: $bp-desktop) {
         margin-left: 8rem;
     }
-}
-
-.search-card {
-    max-width: 80%;
 }
