@@ -1335,13 +1335,17 @@ ul ul a {
 
 .search-row {
   height: 50vh;
-  width: 100vw;
+  width: 80vw;
 }
 
 @media (min-width: 768px) {
   .search-row {
     width: 50vw;
   }
+}
+
+.search-indicators {
+  max-width: 80%;
 }
 
 /* display .overlay when it has the .active class */

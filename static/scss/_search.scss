@@ -237,11 +237,15 @@ ul ul a {
 
 .search-row {
     height: 50vh;
-    width: 100vw;
+    width: 80vw;
 
     @media (min-width: $bp-mobile) {
         width: 50vw;
     }
+}
+
+.search-indicators {
+    max-width: 80%;
 }
 
 
