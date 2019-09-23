@@ -20,12 +20,17 @@
 
                 <form id="settingsform" method="POST">
 
+                    <!-- Username field in readonly setting, as tanDev does not allow users to change their usernames. -->
+
                     <div class="form-group">
-                        <label class="settings-label" for="settingsUsername">Username*</label>
+                        <label class="settings-label" for="Username">Username*</label>
                         <input type="text" class="form-control" id="Username" name="username"
                             value="{{username.username}}" readonly>
                         *<small> Username cannot be changed.</small>
                     </div>
+
+                    <!-- Password field. Label and placeholder say 'Password' or 'New Password' depending on if the user is in Edit view.
+                    A checkbox below the form allows the user to toggle password visibility. -->
 
                     <div class="form-group">
                         <label class="settings-label" for="settingsPassword">{% if edit == True %} New {% endif %}
@@ -37,9 +42,12 @@
                         {% if edit != True %} <small class="d-block">* tanDev does not show your current password for
                             security reasons.</small>{% endif %}
                     </div>
+
+                    <!-- Email field. Readonly in standard view, editable in edit mode.  -->
+
                     <div class="form-group">
                         <label class="settings-label" for="Email">E-Mail</label>
-                        <input type="email" class="form-control" name="email" id="settingsEmail"
+                        <input type="email" class="form-control" name="email" id="Email"
                             placeholder="myemail@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                             title="email addresses must follow standard email pattern" value="{{username.email}}"
                             {% if edit != True %} readonly {% endif %}>
@@ -48,6 +56,7 @@
                     <!-- Edit Button  -->
                     <div class="row justify-content-center">
 
+<!-- If the user is in edit mode, show 'save changes' button. -->
 
                         {% if edit == True %}
 
@@ -58,6 +67,8 @@
 
                         </div>
                         {% endif %}
+
+                        <!-- If the user is not in edit mode, show 'edit settings' and 'delete account' buttons. -->
 
                         {% if edit != True %}
 
