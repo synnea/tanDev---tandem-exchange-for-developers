@@ -16,6 +16,33 @@ The tandem exchange concept is taken to connect developers and designers skilled
 
 1. [UX](#UX)
     - [Logo Design](#logo)
+    - [User Stories](#userstories)
+    - [Wireframes](#wireframes)
+
+2. [Data](#data)
+    -[Data Schema](#schema)
+
+3. [Features](#features)
+    - [Current Features](#current-features)
+    - [Features left to implement](#future-features)
+
+4. [Technologies](#technologies)
+    - [Programming Languages](#languages)
+    - [Libraries](#libraries)
+    - [Other Technologies](#other)
+
+5. [Testing](#testing)
+    - [Responsiveness Testing](#responsiveness-testing)
+    - [Code Testing](#code-testing)
+    - [User Stories Testing](#user-stories-testing)
+
+6. [Known Bugs](#bugs)
+
+7. [Deployment](#deployment)
+    - [Deployment Writeup](#deployment-writeup)
+    - [Differences between local and deployed versions](#deployment-differences)
+
+8. [Credits](#credits)
 
 ## UX <a name="UX"></a>
 
@@ -40,7 +67,7 @@ Several versions of the logo in different brand colors were created. Here is one
 ![tandevlogo](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/static/img/logos/tandev_v1_brightmidblue.svg)
 
 
-### User Stories
+### User Stories <a name="userstories"></a>
 
 The following user stories were used to design the website:
 
@@ -50,7 +77,7 @@ The following user stories were used to design the website:
 - I am a startup entrepreneur interested in finding a co-founder. I am a designer and need a programmer with strong backend skills to bring my product to life.
 
 
-### Wireframes
+### Wireframes <a name="wireframes"></a>
 
 Extensive wireframes with Balsamiq were created for the project. As an example, here is a wireframe for the index page:
 
@@ -65,7 +92,10 @@ For the most part, the wireframes are similar to the finished product. However, 
 
 An initially envisioned option to favorite other users was also removed, and has been added to the 'future features' wishlist.
 
-### Data Schema
+## Data <a name="data"></a>
+
+
+### Data Schema <a name="schema"></a>
 
 tanDev is backed by a MongoDB database. Only one collection is in use, the 'profile' collection. Here is the data schema used for individual documents in this collection:
 
@@ -87,9 +117,9 @@ tanDev is backed by a MongoDB database. Only one collection is in use, the 'prof
 The database was populated early on with 13 original profiles. 
 
 
-## Features
+## Features <a name="features"></a>
 
-### Current Features
+### Current Features <a name="current-features"></a>
 
 #### Feature 1 - Carousel
 The index page features a carousel of user profiles who have been published on tanDev.
@@ -114,7 +144,7 @@ On the search and about pages, the navbar is transparent and pops into view upon
 
 
 
-### Features Left to Implement
+### Features Left to Implement <a name="future-features"></a>
 
 #### Messaging 
 Currently, there is no way for users to connect with other users on tanDev. A messaging function of some sort is needed.
@@ -122,9 +152,9 @@ Currently, there is no way for users to connect with other users on tanDev. A me
 #### Favoriting
 The option to favorite users and save them in a 'my favorites' tab of the my account dropdown is also a feature that is missing and which would add a lot of value to the website's UX.
 
-## Technologies Used
+## Technologies Used <a name="technologies"></a>
 
-### Programming Languages
+### Programming Languages  <a name="languages"></a>
 
  [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
     - The project uses **HTML5** to build the structure of the content.
@@ -145,7 +175,7 @@ The option to favorite users and save them in a 'my favorites' tab of the my acc
 [Flask](https://flask.palletsprojects.com/en/1.0.x/)
     - The project uses *Flask**, a Python framework.
 
-### Libraries
+### Libraries <a name="libraries"></a>
 
 [jQuery.js, version 3.4.1](https://jquery.com/)
     - The project uses **jQuery.js**, a JavaScript library used for event handling.
@@ -153,7 +183,10 @@ The option to favorite users and save them in a 'my favorites' tab of the my acc
 [AOS](https://michalsnik.github.io/aos/)
     - The project uses **Animate on Scroll**.
 
-### Other
+### Other Technologies <a name="other"></a>
+
+[Pymongo](https://api.mongodb.com/python/current/)
+    - The project uses **Pymongo** to manipulate the data using Python.
 
 [Font Awesome](https://fontawesome.com/)
     - The project uses **Font Awesome**, free icons for improved UI.
@@ -161,10 +194,10 @@ The option to favorite users and save them in a 'my favorites' tab of the my acc
 [Google Fonts](https://developers.google.com/fonts/)
      - The project uses **Google Fonts** for its typography.  
 
+ 
+## Testing <a name="testing"></a>
 
-## Testing
-
-### Responsiveness Testing
+### Responsiveness Testing <a name="responsiveness-testing"></a>
 
 The responsiveness of the website was tested on Responsinator.
 
@@ -185,7 +218,7 @@ I collected the results in a responsiveness matrix:
 
 The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev--tandem-for-devs/blob/master/tests/responsiveness_test_matrix.xls).
 
-### Code Testing
+### Code Testing <a name="code-testing"></a>
 
 **HTML** 
 * [HTML Validator](https://www.freeformatter.com/html-validator.html).
@@ -207,7 +240,7 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
 * [PEP8Online](http://pep8online.com/).
     - The project contains a total of 1 Python file. At the time of writing this readme, the Python code in this project contains a total of 10 lines which exceed the recommended max length of 79 characters. I chose to leave them in because breaking them up resulted in less readability. The PEP8 guide states that its guidelines could be bent on an individual basis when doing so raised readability, hence I chose to do so here. Apart from those 10 lines, the code is fully PEP8-compliant.
 
-### User Story Testing
+### User Story Testing <a name="user-stories-testing"></a>
 
 Here are the results for the user story tests:
 
@@ -237,12 +270,14 @@ Solution: upon landing on the main page, the imagry and slogan quickly give me a
 Solution: upon landing on the main page, the imagry and slogan quickly give me an idea that I've come to a place where I can find someone to help me. The 'search' button seems most relevant to me, so I click on it. There, among the search options, I find the 'looking for Co-Founder' checkbox. I select it, and then select several backend languages in the skills menu. This gives me a list of people who have the skills I need, and who are open to being approached about co-founding opportunities. I decide to send one or several of them a message. The last point is not achieved yet, as tanDev at present does not feature a messaging function.
 
 
-### Known Bugs
+### Known Bugs <a name="bugs"></a>
 
 On iPhones, the carousel on the index page overlaps with the indicators below. I was not able to find a good fix for it before it was time to submit, but I would like to fix this eventually.
 
-## Deployment
+## Deployment <a name="deployment"></a>
 
+### Deployment Writeup <a name="deployment-writeup"></a>
+ 
 To deploy tanDev on heroku, I took the following steps:
 
 1. I created a requirements.txt file using the terminal command pip freeze > requirements.txt.
@@ -261,11 +296,11 @@ To deploy tanDev on heroku, I took the following steps:
 
 8. The app is now successfully deployed!
 
-## Differences between local and deployed versions
+### Differences between local and deployed versions <a name="deployment-differences"></a>
 
 The project was developed locally with Visual Studio Code. Environment variables, including secret key and Mongo URI, were saved in a settings.json file which was added to .gitignore. For the deployed version, as mentioned in the deployment writeup above, environemnt variables were set in the Config Variables.
 
-## Credits
+## Credits <a name="credits"></a>
 
 Credit for the logo goes to he-who-prefers-to-go-uncredited. You're awesome.
 
