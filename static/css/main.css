@@ -1348,6 +1348,10 @@ ul ul a {
   max-width: 80%;
 }
 
+h5 {
+  max-width: 80%;
+}
+
 /* display .overlay when it has the .active class */
 .search-overlay.active {
   display: block;
@@ -1390,18 +1394,12 @@ ul ul a {
 
 .results {
   margin: 4rem;
-  width: 70vw;
+  width: 50vw;
 }
 
 @media (min-width: 1200px) {
   .results {
     margin: 8rem;
-  }
-}
-
-@media (max-width: 1024px) and (orientation: landscape) {
-  .results {
-    margin-left: 1rem !important;
   }
 }
 
