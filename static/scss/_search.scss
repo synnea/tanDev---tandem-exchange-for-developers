@@ -295,6 +295,7 @@ h5 {
 .results {
     margin: 4rem;
     width: 50vw;
+    line-height: 2.5;
 
     @media (min-width: $bp-desktop) {
         margin: 8rem;
@@ -330,12 +331,12 @@ bootstrap-select > .dropdown-toggle {
     margin-top: 10vh;
     max-width: 80% !important;
 
-    @media screen and (orientation: landscape) {
+    @media (orientation: landscape) {
         margin-left: 3.5rem;
     }
 
     @media (min-width: $bp-desktop) {
-        margin-left: 5rem;
+        margin-left: 8rem;
     }
 }
 

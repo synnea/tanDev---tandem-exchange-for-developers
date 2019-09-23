@@ -1395,6 +1395,7 @@ h5 {
 .results {
   margin: 4rem;
   width: 50vw;
+  line-height: 2.5;
 }
 
 @media (min-width: 1200px) {
@@ -1432,7 +1433,7 @@ h5 {
   max-width: 80% !important;
 }
 
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   #search-deck {
     margin-left: 3.5rem;
   }
@@ -1440,7 +1441,7 @@ h5 {
 
 @media (min-width: 1200px) {
   #search-deck {
-    margin-left: 5rem;
+    margin-left: 8rem;
   }
 }
 
