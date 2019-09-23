@@ -1073,18 +1073,18 @@ ul {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  height: 450vh;
+  height: 400vh;
+}
+
+@media screen and (orientation: landscape) {
+  .wrapper {
+    height: 400vh;
+  }
 }
 
 @media (width: 768px) {
   .wrapper {
     height: 200vh;
-  }
-}
-
-@media (min-width: 576px) and (orientation: landscape) {
-  .wrapper {
-    height: 400vh;
   }
 }
 
