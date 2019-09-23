@@ -196,7 +196,7 @@ footer {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   .footer-col > h6 {
     font-size: 0.8em !important;
   }
@@ -205,6 +205,12 @@ footer {
 @media (max-width: 576px) {
   .footer-col > h6 {
     font-size: 0.8em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-col > h6 {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -438,7 +444,7 @@ footer {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   .footer-col > h6 {
     font-size: 0.8em !important;
   }
@@ -447,6 +453,12 @@ footer {
 @media (max-width: 576px) {
   .footer-col > h6 {
     font-size: 0.8em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-col > h6 {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -943,7 +955,7 @@ footer {
   }
 }
 
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   .footer-col > h6 {
     font-size: 0.8em !important;
   }
@@ -952,6 +964,12 @@ footer {
 @media (max-width: 576px) {
   .footer-col > h6 {
     font-size: 0.8em !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-col > h6 {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -1103,7 +1121,7 @@ ul {
   min-height: 100vh;
   max-height: 180vh;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 @media (min-width: 768px) {
