@@ -187,11 +187,12 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
     - The project contains a total of 16 html files. Throughout all of them, the HTML Validator did not recognize templating language, such as printing variables in double curly braces, as valid HTML, and threw errors. This was ignored throughout all files. Apart from Jinja-specific errors, the following anomalies remain:
         - in the 'forbidden.html' file, the HTML Validator throws an error that inline style CSS is not allowed in this context. However, moving the CSS to a separate file leads to the CSS not being rendered at all. Thus, I chose to keep the inline styling.
         - in the 'logreg.html' file, the HTML Validator throws the error that tabpanels must be part of a tablist. However, adding a div with the role of tablist disabled the functionality. Thus, the semantic problem remains uncorrected.
+        - similarly, the profile pages also throw the tabpanel and tablist error. Not wanting to break the functionality, I chose to leave it alone.
         - for the 'base.html' file, the HTML Validator throws the error that the "|" character is not allowed in a query. However, it has been copied as part of a query to Google Fonts to import several different custom fonts, and was left in.
 
-
 **CSS**  
-* [CSS Validator](https://jigsaw.w3.org/css-validator/validator). 
+* [CSS Validator](https://jigsaw.w3.org/css-validator/validator).
+    - The project contains 1 CSS file (along with several SCSS ones).
 
 **JavaScript** 
 * [JSHint.com](https://jshint.com/). 

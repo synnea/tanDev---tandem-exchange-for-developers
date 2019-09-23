@@ -18,7 +18,7 @@
 
     <form id="edit-form" method="POST">
 
-            <!-- Begin Header jumbotron -->
+        <!-- Begin Header jumbotron -->
 
         <div class="jumbotron profile-jumbo">
 
@@ -156,7 +156,8 @@
                                     {% if skill in username.skills %}
 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}" checked>
+                                        <input class="form-check-input" type="checkbox" name="skills" value="{{skill}}"
+                                            checked>
                                         <label class="form-check-label" for="{{skill}}">
                                             {{skill}}
                                         </label>
@@ -209,8 +210,8 @@
                     <label class="profile-label" for="profile-description">
                         Full Description
                     </label>
-                    <input class="form-control" type="text" id="profile-description" name="description"
-                        maxlength="500" rows="3" value="{{username.description}}">
+                    <input class="form-control" type="text" id="profile-description" name="description" maxlength="500"
+                        rows="3" value="{{username.description}}">
                 </div>
             </div>
 
@@ -235,7 +236,8 @@
                     {% if commstyle in username.communicationStyle %}
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="communicationStyle" value="{{commstyle}}" checked>
+                        <input class="form-check-input" type="checkbox" name="communicationStyle" value="{{commstyle}}"
+                            checked>
                         <label class="form-check-label" for="{{commstyle}}">
                             {{commstyle}}
                         </label>
@@ -254,22 +256,67 @@
 
                     {% if other not in username.otherDetails %}
 
+                    {% if other == 'lookingforCoFounder' %}
+
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="other" value="{{other}}">
-                        <label class="form-check-label" for="{{other}}">
-                            {{other}}
+                        <input class="form-check-input" type="checkbox" name="other" value="lookingforCoFounder">
+                        <label class="form-check-label" for="lookingforCoFounder">
+                            Looking for Co-Founder
                         </label>
                     </div>
+
+                    {% elif other == 'availableForProjects' %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="availableForProjects">
+                        <label class="form-check-label" for="availableForProjects">
+                            Available for Projects
+                        </label>
+                    </div>
+
+                    {% elif other == 'availableForHire' %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="availableForHire">
+                        <label class="form-check-label" for="availableForHire">
+                            Available for Hire
+                        </label>
+                    </div>
+
+                    {% endif %}
                     {% endif %}
 
                     {% if other in username.otherDetails %}
+
+                    {% if other == 'lookingforCoFounder' %}
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="other" value="{{other}}"
+                        <input class="form-check-input" type="checkbox" name="other" value="lookingforCoFounder"
                             checked>
-                        <label class="form-check-label" for="{{other}}">
-                            {{other}}
+                        <label class="form-check-label" for="lookingforCoFounder">
+                            Looking for Co-Founder
                         </label>
                     </div>
+
+                    {% elif other == 'availableForProjects' %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="availableForProjects"
+                            checked>
+                        <label class="form-check-label" for="availableForProjects">
+                            Available for Projects
+                        </label>
+                    </div>
+
+                    {% elif other == 'availableForHire' %}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="other" value="availableForHire" checked>
+                        <label class="form-check-label" for="availableForHire">
+                            Available for Hire
+                        </label>
+                    </div>
+
+                    {% endif %}
                     {% endif %}
                     {% endfor %}
                 </div>
