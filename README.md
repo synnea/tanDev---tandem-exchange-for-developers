@@ -23,17 +23,18 @@ The tandem exchange concept is taken to connect developers and designers skilled
 
 3. [Features](#features)
     - [Current Features](#current-features)
-    - [Features left to implement](#future-features)
+    - [Features Left to Implement](#future-features)
 
-4. [Technologies](#technologies)
+4. [Technologies Used](#technologies)
     - [Programming Languages](#languages)
+    - [Frameworks](#frameworks)
     - [Libraries](#libraries)
     - [Other Technologies](#other)
 
 5. [Testing](#testing)
     - [Responsiveness Testing](#responsiveness-testing)
     - [Code Testing](#code-testing)
-    - [User Stories Testing](#user-stories-testing)
+    - [User Story Testing](#user-stories-testing)
 
 6. [Known Bugs](#bugs)
 
@@ -164,7 +165,7 @@ The option to favorite users and save them in a 'my favorites' tab of the my acc
 [Python](https://docs.python.org/3/)
     - The project uses **Python** to manage its database backend.
     
-### Frameworks
+### Frameworks <a name="frameworks"></a>
 [Bootstrap](https://getbootstrap.com/)
     - The project uses **Bootstrap**, a CSS3 and JavaScript framework.
 
@@ -266,7 +267,7 @@ Solution: upon landing on the main page, the imagry and slogan quickly give me a
 Solution: upon landing on the main page, the imagry and slogan quickly give me an idea that I've come to a place where I can find someone to help me. The 'search' button seems most relevant to me, so I click on it. There, among the search options, I find the 'looking for Co-Founder' checkbox. I select it, and then select several backend languages in the skills menu. This gives me a list of people who have the skills I need, and who are open to being approached about co-founding opportunities. I decide to send one or several of them a message. The last point is not achieved yet, as tanDev at present does not feature a messaging function.
 
 
-### Known Bugs <a name="bugs"></a>
+## Known Bugs <a name="bugs"></a>
 
 On iPhones, the carousel on the index page overlaps with the indicators below. I was not able to find a good fix for it before it was time to submit, but I would like to fix this eventually.
 
