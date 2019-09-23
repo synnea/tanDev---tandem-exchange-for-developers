@@ -9,7 +9,11 @@
     height: 400vh;
 
     @media screen and (orientation:landscape) {
-        height: 400vh;
+        height: 530vh;
+    }
+
+    @media (width: $bp-desktop) and (orientation: portrait) {
+        height: 150vh !important;
     }
 
     @media (width: $bp-mobile) {
@@ -17,14 +21,16 @@
     }
 
     @media (min-width: $bp-mobile) and (orientation: landscape) {
-        height: 300vh;
+        height: 400vh;
     }
 
     @media (width: $bp-ipadpro) and (orientation: landscape) {
         height: 230vh;
     }
 
-    @media (min-width: $bp-desktop) {
+
+
+    @media (min-width: $bp-desktop + 1) {
         height: 200vh;
     }
 
