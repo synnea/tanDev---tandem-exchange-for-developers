@@ -6,18 +6,14 @@
 .wrapper {
     display: flex;
     align-items: stretch;
-    height: 400vh;
-    
-    @media (min-width: $bp-mini) {
-        height: 350vh;
-    }
+    height: 450vh;
 
     @media (width: $bp-mobile) {
         height: 200vh;
     }
 
     @media (min-width: $bp-mini ) and (orientation:landscape) {
-        height: 450vh;
+        height: 400vh;
     }
 
     @media (min-width: $bp-mobile) and (orientation: landscape) {

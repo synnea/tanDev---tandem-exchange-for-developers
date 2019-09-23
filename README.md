@@ -234,7 +234,7 @@ Solution: upon landing on the main page, the imagry and slogan quickly give me a
 
 ### Known Bugs
 
-On Chrome, toggling mobile phones, the search page sometimes shows excess margin on the left. However, this is not reproduceable on responsinator or my own mobile devices. After reaching out to the Code Institute tutor team, I was told that this was likely a Chrome emulator bug.
+On iPhones, the carousel on the index page overlaps with the indicators below. I was not able to find a good fix for it before it was time to submit, but I would like to fix this eventually.
 
 ## Deployment
 
