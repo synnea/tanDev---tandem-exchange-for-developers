@@ -254,6 +254,10 @@ To deploy tanDev on heroku, I took the following steps:
 
 8. The app is now successfully deployed!
 
+## Differences between local and deployed versions
+
+The project was developed locally with Visual Studio Code. Environment variables, including secret key and Mongo URI, were saved in a settings.json file which was added to .gitignore. For the deployed version, as mentioned in the deployment writeup above, environemnt variables were set in the Config Variables.
+
 ## Credits
 
 Credit for the tanDev logo design goes to my friend Devin Palmer. 
