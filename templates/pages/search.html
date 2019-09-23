@@ -273,14 +273,14 @@
                 {% for profile in profiles %}
 
                 {% if loop.index % 2 == 1 %}
-                <div class="col-12 col-md-6 justify-content-center mt-3 search-card">
+                <div class="col-12 col-md-6 mt-3 search-card">
                     {% include 'components/profile_card.html' %}
                 </div>
 
                 {% endif %}
 
                 {% if loop.index % 2 == 0 %}
-                <div class="col-12 col-md-6 justify-content-center mt-3 search-card">
+                <div class="col-12 col-md-6 mt-3 search-card">
                     {% include 'components/profile_card.html' %}
                 </div>
                 {% endif %}
