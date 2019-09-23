@@ -58,11 +58,6 @@ a:hover {
 
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-    background-color: auto;
-}
-
-
 .navbar-collapse {
 
     @media(max-width: $bp-tablet) {
@@ -100,7 +95,8 @@ a:hover {
 // Page Headers
 
 .page-header {
-    font-family: 'Montserrat', 700;
+    font-family: 'Montserrat';
+    font-weight: 700;
     color: white;
     text-shadow: 1em 0.5em $darkblue;
     text-transform: uppercase;
@@ -111,7 +107,7 @@ h3.heading {
     padding-top: 10vh;
     padding-bottom: 5vh;
     font-size: 1.6rem;
-    font-family: 700;
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     display: block;

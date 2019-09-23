@@ -191,7 +191,7 @@ The complete .xls file has been uploaded [here](https://github.com/synnea/tanDev
         - for the 'base.html' file, the HTML Validator throws the error that the "|" character is not allowed in a query. However, it has been copied as part of a query to Google Fonts to import several different custom fonts, and was left in.
 
 **CSS**  
-* [CSS Validator](https://jigsaw.w3.org/css-validator/validator).
+* [CSS Validator](https://jigsaw.w3.org/css-validator/).
     - The project contains 1 CSS file (along with several SCSS ones).
 
 **JavaScript** 

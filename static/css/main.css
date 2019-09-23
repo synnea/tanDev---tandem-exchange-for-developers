@@ -52,10 +52,6 @@ a:hover {
   }
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-  background-color: auto;
-}
-
 @media (max-width: 992px) {
   .navbar-collapse {
     margin-right: 35%;
@@ -91,7 +87,8 @@ a:hover {
 }
 
 .page-header {
-  font-family: 'Montserrat', 700;
+  font-family: 'Montserrat';
+  font-weight: 700;
   color: white;
   text-shadow: 1em 0.5em #0B132B;
   text-transform: uppercase;
@@ -101,7 +98,7 @@ h3.heading {
   padding-top: 10vh;
   padding-bottom: 5vh;
   font-size: 1.6rem;
-  font-family: 700;
+  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   display: block;
@@ -297,10 +294,6 @@ a:hover {
   }
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-  background-color: auto;
-}
-
 @media (max-width: 992px) {
   .navbar-collapse {
     margin-right: 35%;
@@ -336,7 +329,8 @@ a:hover {
 }
 
 .page-header {
-  font-family: 'Montserrat', 700;
+  font-family: 'Montserrat';
+  font-weight: 700;
   color: white;
   text-shadow: 1em 0.5em #0B132B;
   text-transform: uppercase;
@@ -346,7 +340,7 @@ h3.heading {
   padding-top: 10vh;
   padding-bottom: 5vh;
   font-size: 1.6rem;
-  font-family: 700;
+  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   display: block;
@@ -691,7 +685,7 @@ ul {
 
 .card-text {
   text-overflow: ellipsis;
-  white-space: wrap;
+  white-space: normal;
   overflow: hidden;
 }
 
@@ -799,10 +793,6 @@ a:hover {
   }
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-  background-color: auto;
-}
-
 @media (max-width: 992px) {
   .navbar-collapse {
     margin-right: 35%;
@@ -838,7 +828,8 @@ a:hover {
 }
 
 .page-header {
-  font-family: 'Montserrat', 700;
+  font-family: 'Montserrat';
+  font-weight: 700;
   color: white;
   text-shadow: 1em 0.5em #0B132B;
   text-transform: uppercase;
@@ -848,7 +839,7 @@ h3.heading {
   padding-top: 10vh;
   padding-bottom: 5vh;
   font-size: 1.6rem;
-  font-family: 700;
+  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   display: block;
@@ -1539,7 +1530,7 @@ ul ul a {
 
 .profile-heading {
   font-size: 1.6rem;
-  font-family: 700;
+  font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   margin-bottom: 5vh;
@@ -1817,7 +1808,6 @@ ul ul a {
 .description-row {
   color: black !important;
   min-height: 30vh;
-  max-height: auto;
 }
 
 .description-box {
